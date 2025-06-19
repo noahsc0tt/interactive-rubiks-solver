@@ -45,7 +45,7 @@
             // 
             this.btnFinish.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.btnFinish.Location = new System.Drawing.Point(1567, 834);
+            this.btnFinish.Location = new System.Drawing.Point(1384, 785);
             this.btnFinish.MinimumSize = new System.Drawing.Size(114, 45);
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.Size = new System.Drawing.Size(161, 89);
@@ -140,7 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1840, 999);
+            this.ClientSize = new System.Drawing.Size(1474, 900);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);

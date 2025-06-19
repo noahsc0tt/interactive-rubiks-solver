@@ -70,12 +70,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(23F, 46F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1540, 1005);
+            this.ClientSize = new System.Drawing.Size(1284, 1005);
             this.Controls.Add(this.lblStop);
             this.Controls.Add(this.lblTimer);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
-            this.MinimumSize = new System.Drawing.Size(1534, 974);
+            this.MinimumSize = new System.Drawing.Size(1278, 974);
             this.Name = "During_Solve";
             this.Text = "During_Solve";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

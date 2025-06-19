@@ -43,7 +43,7 @@
             this.lblCubeOrientation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCubeOrientation.BackColor = System.Drawing.Color.Thistle;
             this.lblCubeOrientation.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCubeOrientation.Location = new System.Drawing.Point(-13, 36);
+            this.lblCubeOrientation.Location = new System.Drawing.Point(-46, -16);
             this.lblCubeOrientation.MinimumSize = new System.Drawing.Size(598, 164);
             this.lblCubeOrientation.Name = "lblCubeOrientation";
             this.lblCubeOrientation.Size = new System.Drawing.Size(598, 205);
@@ -56,7 +56,7 @@
             this.lblSequenceOfMoves.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSequenceOfMoves.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSequenceOfMoves.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F);
-            this.lblSequenceOfMoves.Location = new System.Drawing.Point(-13, 409);
+            this.lblSequenceOfMoves.Location = new System.Drawing.Point(-46, 357);
             this.lblSequenceOfMoves.Name = "lblSequenceOfMoves";
             this.lblSequenceOfMoves.Size = new System.Drawing.Size(598, 419);
             this.lblSequenceOfMoves.TabIndex = 1;
@@ -66,7 +66,7 @@
             // 
             this.btnFinish.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.btnFinish.Location = new System.Drawing.Point(471, 831);
+            this.btnFinish.Location = new System.Drawing.Point(438, 779);
             this.btnFinish.MaximumSize = new System.Drawing.Size(114, 45);
             this.btnFinish.MinimumSize = new System.Drawing.Size(114, 45);
             this.btnFinish.Name = "btnFinish";
@@ -82,7 +82,7 @@
             this.lblNameOfStage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNameOfStage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblNameOfStage.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.lblNameOfStage.Location = new System.Drawing.Point(977, 221);
+            this.lblNameOfStage.Location = new System.Drawing.Point(944, 169);
             this.lblNameOfStage.MaximumSize = new System.Drawing.Size(589, 164);
             this.lblNameOfStage.MinimumSize = new System.Drawing.Size(589, 164);
             this.lblNameOfStage.Name = "lblNameOfStage";
@@ -96,7 +96,7 @@
             this.lblExplanation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblExplanation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblExplanation.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExplanation.Location = new System.Drawing.Point(977, 454);
+            this.lblExplanation.Location = new System.Drawing.Point(944, 402);
             this.lblExplanation.MaximumSize = new System.Drawing.Size(589, 559);
             this.lblExplanation.Name = "lblExplanation";
             this.lblExplanation.Size = new System.Drawing.Size(589, 374);
@@ -108,7 +108,7 @@
             this.lblSequenceHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSequenceHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSequenceHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
-            this.lblSequenceHeader.Location = new System.Drawing.Point(-13, 312);
+            this.lblSequenceHeader.Location = new System.Drawing.Point(-46, 260);
             this.lblSequenceHeader.MaximumSize = new System.Drawing.Size(598, 97);
             this.lblSequenceHeader.MinimumSize = new System.Drawing.Size(598, 97);
             this.lblSequenceHeader.Name = "lblSequenceHeader";
@@ -122,7 +122,7 @@
             this.lblExplanationHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblExplanationHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblExplanationHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExplanationHeader.Location = new System.Drawing.Point(977, 411);
+            this.lblExplanationHeader.Location = new System.Drawing.Point(944, 359);
             this.lblExplanationHeader.MaximumSize = new System.Drawing.Size(227, 43);
             this.lblExplanationHeader.MinimumSize = new System.Drawing.Size(227, 43);
             this.lblExplanationHeader.Name = "lblExplanationHeader";
@@ -147,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1540, 1005);
+            this.ClientSize = new System.Drawing.Size(1474, 900);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.lblExplanationHeader);
             this.Controls.Add(this.lblSequenceHeader);
@@ -156,7 +156,7 @@
             this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.lblSequenceOfMoves);
             this.Controls.Add(this.lblCubeOrientation);
-            this.MinimumSize = new System.Drawing.Size(1534, 974);
+            this.MinimumSize = new System.Drawing.Size(1468, 869);
             this.Name = "Output_Solution";
             this.Text = "Output_Solution";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -235,7 +235,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1540, 999);
+            this.ClientSize = new System.Drawing.Size(1474, 900);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.lblAo20);
             this.Controls.Add(this.lblAverage);
@@ -251,7 +251,7 @@
             this.Controls.Add(this.lblScramble);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblPreviousSolve);
-            this.MinimumSize = new System.Drawing.Size(1534, 974);
+            this.MinimumSize = new System.Drawing.Size(1468, 869);
             this.Name = "Before_Solve";
             this.Text = "Before_Solve";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

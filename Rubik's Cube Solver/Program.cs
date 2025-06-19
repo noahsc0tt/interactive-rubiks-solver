@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb; //allows database connectivity
-using System.Data.SqlClient;
 using System.Security.Cryptography.X509Certificates;
 
 namespace Rubik_s_Cube_Solver
@@ -50,7 +48,7 @@ namespace Rubik_s_Cube_Solver
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new Menu());
         }
     }
 }

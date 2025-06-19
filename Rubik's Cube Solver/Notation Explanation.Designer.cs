@@ -265,7 +265,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1840, 1039);
+            this.ClientSize = new System.Drawing.Size(1474, 900);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.label7);
@@ -281,7 +281,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnMenu);
-            this.MinimumSize = new System.Drawing.Size(1856, 1078);
+            this.MinimumSize = new System.Drawing.Size(1468, 869);
             this.Name = "Notation_Explanation";
             this.Text = "Notation_Explanation";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

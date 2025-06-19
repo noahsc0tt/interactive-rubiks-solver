@@ -111,7 +111,7 @@
             // 
             this.btnNextStage.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnNextStage.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.btnNextStage.Location = new System.Drawing.Point(1266, 446);
+            this.btnNextStage.Location = new System.Drawing.Point(1233, 394);
             this.btnNextStage.MaximumSize = new System.Drawing.Size(275, 104);
             this.btnNextStage.MinimumSize = new System.Drawing.Size(275, 104);
             this.btnNextStage.Name = "btnNextStage";
@@ -135,7 +135,7 @@
             "White Corners",
             "Corner Permutation",
             "Edge Permutation"});
-            this.boxChooseStage.Location = new System.Drawing.Point(1266, 618);
+            this.boxChooseStage.Location = new System.Drawing.Point(1233, 566);
             this.boxChooseStage.MaximumSize = new System.Drawing.Size(275, 0);
             this.boxChooseStage.MinimumSize = new System.Drawing.Size(275, 0);
             this.boxChooseStage.Name = "boxChooseStage";
@@ -149,7 +149,7 @@
             // 
             this.lblCubeLayout.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCubeLayout.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lblCubeLayout.Location = new System.Drawing.Point(-58, 446);
+            this.lblCubeLayout.Location = new System.Drawing.Point(-91, 394);
             this.lblCubeLayout.Name = "lblCubeLayout";
             this.lblCubeLayout.Size = new System.Drawing.Size(249, 82);
             this.lblCubeLayout.TabIndex = 2;
@@ -1043,7 +1043,7 @@
             // 
             this.lblButtonInstructions.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblButtonInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lblButtonInstructions.Location = new System.Drawing.Point(1260, 62);
+            this.lblButtonInstructions.Location = new System.Drawing.Point(1227, 10);
             this.lblButtonInstructions.Name = "lblButtonInstructions";
             this.lblButtonInstructions.Size = new System.Drawing.Size(396, 334);
             this.lblButtonInstructions.TabIndex = 17;
@@ -1055,7 +1055,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1540, 1005);
+            this.ClientSize = new System.Drawing.Size(1474, 900);
             this.Controls.Add(this.lblButtonInstructions);
             this.Controls.Add(this.blueFace);
             this.Controls.Add(this.btnMenu);
@@ -1067,7 +1067,7 @@
             this.Controls.Add(this.lblCubeLayout);
             this.Controls.Add(this.boxChooseStage);
             this.Controls.Add(this.btnNextStage);
-            this.MinimumSize = new System.Drawing.Size(1534, 974);
+            this.MinimumSize = new System.Drawing.Size(1468, 869);
             this.Name = "Checking_Moves";
             this.Text = "Checking_Moves";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
