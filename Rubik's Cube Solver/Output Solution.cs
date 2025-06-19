@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb;
 
 
-namespace Rubik_s_Cube_Solver
+namespace Rubiks_Cube_Solver
 {
     public partial class Output_Solution : Form
     {
@@ -109,49 +101,7 @@ namespace Rubik_s_Cube_Solver
 
         private void calculateSolve()
         {
-            //creating an integer value of Global.location that can be compared to the 'location' field in the Solver table
-            int locationInt = Int32.Parse(string.Join("", Global.location));
-
-            //creating database connection 
-            var conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=rubiksCubeDB.accdb");
-            conn.Open();
-
-            //creating a variable to store the select SQL statement
-            string sqlString = "SELECT * FROM Solver WHERE solveStage = " + Global.stage[0];
-
-            //executing the SQL statement and creating a reader object to search the selected values
-            OleDbCommand command = new OleDbCommand(sqlString, conn);
-            OleDbDataReader reader = command.ExecuteReader();
-
-            bool found = false; //creating a variable to check whether matching data has been found
-
-            //iterating through the 'Solver' table records
-            while (reader.Read())
-            {
-                //creating variables to store the data in the record
-                int location = (int)reader["location"];
-                string orientation = (string)reader["orientation"];
-                string sequence = (string)reader["sequence"];
-                string explanation = (string)reader["explanation"];
-
-
-                if ((string) reader["orientation"] == "null")
-                {
-                    orientation = null;
-                }
-
-
-                //checking if the record matches the position of the piece inputted by the user
-                if(location == locationInt && orientation == Global.orientation)
-                {
-                    //outputting the relevant information to the user
-                    lblSequenceOfMoves.Text = sequence;
-                    lblExplanation.Text = explanation;
-
-                    found = true;
-                }
-
-            }
+            Boolean found = false;           
 
             if (!found) //checking if the user input does not match any data from the database
 
@@ -163,9 +113,6 @@ namespace Rubik_s_Cube_Solver
                 ic.Show();
                 Visible = false;
             }
-
-            reader.Close();
-            conn.Close();
         }
 
         private void Output_Solution_Load(object sender, EventArgs e)

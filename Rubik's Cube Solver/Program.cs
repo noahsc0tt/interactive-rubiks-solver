@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Security.Cryptography.X509Certificates;
 
-namespace Rubik_s_Cube_Solver
+namespace Rubiks_Cube_Solver
 {
 
     static class Global

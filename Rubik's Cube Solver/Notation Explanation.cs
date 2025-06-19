@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Rubik_s_Cube_Solver
+namespace Rubiks_Cube_Solver
 {
     public partial class Notation_Explanation : Form
     {

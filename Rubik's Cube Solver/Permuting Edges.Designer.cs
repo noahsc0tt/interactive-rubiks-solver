@@ -1,4 +1,4 @@
-﻿namespace Rubik_s_Cube_Solver
+﻿namespace Rubiks_Cube_Solver
 {
     partial class Permuting_Edges
     {
@@ -90,7 +90,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::Rubik_s_Cube_Solver.Properties.Resources.pll_bar;
+            this.pictureBox1.Image = global::Rubiks_Cube_Solver.Properties.Resources.pll_bar;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(777, 706);
             this.pictureBox1.Name = "pictureBox1";

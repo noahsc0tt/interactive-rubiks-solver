@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Rubik_s_Cube_Solver {
+namespace Rubiks_Cube_Solver {
     
     
     /// <summary>
@@ -1598,7 +1598,7 @@ namespace Rubik_s_Cube_Solver {
         }
     }
 }
-namespace Rubik_s_Cube_Solver.rubiksCubeDBDataSetTableAdapters {
+namespace Rubiks_Cube_Solver.rubiksCubeDBDataSetTableAdapters {
     
     
     /// <summary>
@@ -1755,7 +1755,7 @@ namespace Rubik_s_Cube_Solver.rubiksCubeDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Rubik_s_Cube_Solver.Properties.Settings.Default.rubiksCubeDBConnectionString;
+            this._connection.ConnectionString = global::Rubiks_Cube_Solver.Properties.Settings.Default.rubiksCubeDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2126,7 +2126,7 @@ namespace Rubik_s_Cube_Solver.rubiksCubeDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Rubik_s_Cube_Solver.Properties.Settings.Default.rubiksCubeDBConnectionString;
+            this._connection.ConnectionString = global::Rubiks_Cube_Solver.Properties.Settings.Default.rubiksCubeDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2563,7 +2563,7 @@ namespace Rubik_s_Cube_Solver.rubiksCubeDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Rubik_s_Cube_Solver.Properties.Settings.Default.rubiksCubeDBConnectionString;
+            this._connection.ConnectionString = global::Rubiks_Cube_Solver.Properties.Settings.Default.rubiksCubeDBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
