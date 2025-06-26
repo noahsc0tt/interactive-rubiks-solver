@@ -11,5 +11,12 @@ namespace Rubiks_Cube_Solver
             nextForm.Show();
             currentForm.Hide();
         }
+        
+        internal static void Navigate<T> (Form currentForm, params object[] args) where T : Form
+        {
+            Form nextForm = (Form) Activator.CreateInstance(typeof(T), args);
+            nextForm.Show();
+            currentForm.Hide();
+        }
     }
 }
