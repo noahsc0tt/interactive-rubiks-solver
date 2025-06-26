@@ -18,8 +18,6 @@ namespace Rubiks_Cube_Solver
 
         public static bool coloured = false;
 
-        public static string time;
-
         public static string scramble;
         
         public static void incrementStage()

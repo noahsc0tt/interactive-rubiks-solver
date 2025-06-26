@@ -21,7 +21,7 @@ namespace Rubiks_Cube_Solver
         
         private void btnTimer_Click(object sender, EventArgs e)
         {
-            FormNavigator.Navigate<Before_Solve>(this);
+            FormNavigator.Navigate<Before_Solve>(this, "N/A");
         }
 
         private void btnNotation_Click(object sender, EventArgs e)
