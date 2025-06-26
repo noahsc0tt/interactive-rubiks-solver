@@ -29,7 +29,7 @@ namespace Rubiks_Cube_Solver
         {
             lblTime.Text = this.previousTime;
 
-            lblScramble.Text = Scrambler.getScramble();
+            lblScramble.Text = Scrambler.GetScramble();
 
             Global.scramble = lblScramble.Text;
         }
