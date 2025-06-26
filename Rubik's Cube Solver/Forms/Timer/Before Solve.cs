@@ -14,33 +14,6 @@ namespace Rubiks_Cube_Solver
             this.previousTime = previousTime;
         }
 
-        private string scrambler()
-        {
-            //array of all possible moves
-            string[] moves = { "U", "U'", "U2", "B", "B'", "B2", "F", "F'", "F2", "D", "D'", "D2", "L", "L'", "L2", "R", "R'", "R2" };
-
-            Random random = new Random();
-
-            string scramble = moves[random.Next(moves.Length)]; 
-            string lastMove = scramble;
-            string nextMove;
-
-            //generating 20 random moves
-            for (int i = 0; i < 19; i++)
-            {
-                do
-                {
-                    nextMove = moves[random.Next(moves.Length)];
-
-                } while (nextMove.Substring(0, 1) == lastMove.Substring(0, 1));
-
-                scramble += ", " + nextMove;
-                lastMove = nextMove;
-            }
-
-            return scramble;
-        }
-
         private void Before_Solve_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Space) // if the user presses the spacebar
@@ -56,7 +29,7 @@ namespace Rubiks_Cube_Solver
         {
             lblTime.Text = this.previousTime;
 
-            lblScramble.Text = scrambler();
+            lblScramble.Text = Scrambler.getScramble();
 
             Global.scramble = lblScramble.Text;
         }
