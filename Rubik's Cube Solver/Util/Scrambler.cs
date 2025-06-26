@@ -4,36 +4,37 @@ namespace Rubiks_Cube_Solver
 {
     internal static class Scrambler
     {
-        public static string getScramble()
-        {
-            Random random = new Random();
+        private static readonly string[] faces = { "U", "D", "F", "B", "L", "R" };
+        private static readonly string[] suffixes = { "", "'", "2" };
+        private static readonly Random random = new Random();
+        private static readonly int length = 5;
 
-            string scramble = Scrambler.getMove(random);
-            string lastMove = scramble;
+        public static string GetScramble()
+        {
+            // generate first move
+            string scramble = "";
+            char lastFace = '\0';
             string nextMove;
 
-            //generating 20 random moves
-            for (int i = 0; i < 3; i++)
+            //generate remaining moves
+            for (int i = 0; i < length; i++)
             {
                 do
                 {
-                    nextMove = Scrambler.getMove(random);
+                    nextMove = GetMove();
+                } while (nextMove[0] == lastFace); //making sure consecutive moves are on different faces
 
-                } while (nextMove.Substring(0, 1) == lastMove.Substring(0, 1)); //making sure consecutive moves are on different faces
-
-                scramble += ", " + nextMove;
-                lastMove = nextMove;
+                if (i > 0) scramble += ", ";
+                scramble += nextMove;
+                lastFace = nextMove[0];
             }
 
             return scramble;
         }
 
-        private static string getMove(Random random)
+        private static string GetMove()
         {
-            //arrays of possible moves
-            string[] moves = { "U", "D", "F", "B", "L", "R" };
-            string[] suffixes = { "", "'", "2" };
-            return moves[random.Next(moves.Length)] + suffixes[random.Next(suffixes.Length)];
+            return faces[random.Next(faces.Length)] + suffixes[random.Next(suffixes.Length)];
         }
     }
 }
