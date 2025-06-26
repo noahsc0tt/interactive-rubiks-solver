@@ -28,10 +28,7 @@ namespace Rubiks_Cube_Solver
         private void Before_Solve_Load(object sender, EventArgs e)
         {
             lblTime.Text = this.previousTime;
-
             lblScramble.Text = Scrambler.GetScramble();
-
-            Global.scramble = lblScramble.Text;
         }
 
         private void btnMenu_Click(object sender, EventArgs e)

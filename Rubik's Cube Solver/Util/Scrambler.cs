@@ -7,16 +7,14 @@ namespace Rubiks_Cube_Solver
         private static readonly string[] faces = { "U", "D", "F", "B", "L", "R" };
         private static readonly string[] suffixes = { "", "'", "2" };
         private static readonly Random random = new Random();
-        private static readonly int length = 5;
+        private static readonly int length = 20;
 
         public static string GetScramble()
         {
-            // generate first move
             string scramble = "";
             char lastFace = '\0';
             string nextMove;
 
-            //generate remaining moves
             for (int i = 0; i < length; i++)
             {
                 do

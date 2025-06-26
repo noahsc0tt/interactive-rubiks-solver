@@ -7021,7 +7021,7 @@
   <data name="label4.Text" xml:space="preserve">
     <value>1. Hold your cube with the white face on top and the green face facing towards you.
 
-2. If the bottom-right corner of the white face has white facing upwards (as shown in the diagram below (left)), perform U moves until the bottom-right corner of the white face does not have white facing upwards.
+2. If the bottom-right corner of the white face has white facing upwards (as shown in the left diagram below), perform U moves until the bottom-right corner of the white face does not have white facing upwards.
 
 3. Perform the moves: R', D', R, D. Repeat this whole sequence until the bottom-right corner of the white face has white facing upwards.
 

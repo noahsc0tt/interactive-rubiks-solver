@@ -368,5 +368,10 @@ namespace Rubiks_Cube_Solver
         {
             yellowFace.ClearSelection(); //un-highlighting a button after it is clicked
         }
+
+        private void lblButtonInstructions_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

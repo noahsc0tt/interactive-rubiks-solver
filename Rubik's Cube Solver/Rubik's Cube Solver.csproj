@@ -95,7 +95,7 @@
     <Compile Include="Forms\Timer\During Solve.Designer.cs">
       <DependentUpon>During Solve.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormNavigator.cs" />
+    <Compile Include="Util\FormNavigator.cs" />
     <Compile Include="Forms\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +146,7 @@
     <Compile Include="Forms\Solver\Top Layer Edges.Designer.cs">
       <DependentUpon>Top Layer Edges.cs</DependentUpon>
     </Compile>
+    <Compile Include="Util\Scrambler.cs" />
     <EmbeddedResource Include="Forms\Timer\Before Solve.resx">
       <DependentUpon>Before Solve.cs</DependentUpon>
     </EmbeddedResource>

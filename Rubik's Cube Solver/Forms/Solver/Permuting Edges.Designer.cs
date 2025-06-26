@@ -67,20 +67,19 @@
             // 
             // label3
             // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(336, 154);
+            this.label3.Location = new System.Drawing.Point(157, 132);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(1162, 91);
             this.label3.TabIndex = 26;
-            this.label3.Text = "At the end of this stage, the cube will be solved.\r\n\r\nRead this page carefully be" +
-    "fore making any moves on your cube.";
+            this.label3.Text = "At the end of this stage, the cube will be solved.\r\nRead this page carefully befo" +
+    "re making any moves on your cube.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTitle
             // 
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(571, 4);
+            this.lblTitle.Location = new System.Drawing.Point(392, 4);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(677, 128);
             this.lblTitle.TabIndex = 24;
@@ -92,7 +91,7 @@
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::Rubiks_Cube_Solver.Properties.Resources.pll_bar;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(777, 706);
+            this.pictureBox1.Location = new System.Drawing.Point(597, 597);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(229, 217);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -103,7 +102,7 @@
             // 
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(336, 332);
+            this.label4.Location = new System.Drawing.Point(157, 233);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(1162, 293);
             this.label4.TabIndex = 29;

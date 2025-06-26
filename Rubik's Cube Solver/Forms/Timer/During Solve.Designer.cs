@@ -40,7 +40,7 @@
             this.lblStop.BackColor = System.Drawing.Color.Transparent;
             this.lblStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStop.ForeColor = System.Drawing.Color.Black;
-            this.lblStop.Location = new System.Drawing.Point(420, 655);
+            this.lblStop.Location = new System.Drawing.Point(290, 656);
             this.lblStop.Name = "lblStop";
             this.lblStop.Size = new System.Drawing.Size(700, 229);
             this.lblStop.TabIndex = 11;
@@ -52,12 +52,12 @@
             this.lblTimer.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 150F);
-            this.lblTimer.Location = new System.Drawing.Point(279, 132);
+            this.lblTimer.Location = new System.Drawing.Point(149, 133);
             this.lblTimer.MinimumSize = new System.Drawing.Size(984, 464);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(984, 464);
             this.lblTimer.TabIndex = 10;
-            this.lblTimer.Text = "00:00.59";
+            this.lblTimer.Text = "00:00.00";
             this.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer
@@ -70,12 +70,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(23F, 46F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 1005);
+            this.ClientSize = new System.Drawing.Size(1284, 900);
             this.Controls.Add(this.lblStop);
             this.Controls.Add(this.lblTimer);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
-            this.MinimumSize = new System.Drawing.Size(1278, 974);
+            this.MinimumSize = new System.Drawing.Size(1278, 869);
             this.Name = "During_Solve";
             this.Text = "During_Solve";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
