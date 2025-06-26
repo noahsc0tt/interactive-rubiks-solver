@@ -30,9 +30,8 @@ namespace Rubiks_Cube_Solver
             return scramble;
         }
 
-        private static string GetMove()
-        {
-            return faces[random.Next(faces.Length)] + suffixes[random.Next(suffixes.Length)];
-        }
+        private static string GetMove() => 
+            faces[random.Next(faces.Length)] + suffixes[random.Next(suffixes.Length)];
+        
     }
 }
