@@ -8,7 +8,7 @@ namespace Rubiks_Cube_Solver
     {
         public static void ApplyDefaultFormSettings(this Form form)
         {
-            form.MaximumSize = new Size(1920, 1080);
+            form.MaximumSize = new Size(1920, 1040);
             form.Size = form.MaximumSize;
             form.WindowState = FormWindowState.Maximized;
             form.KeyPreview = true;

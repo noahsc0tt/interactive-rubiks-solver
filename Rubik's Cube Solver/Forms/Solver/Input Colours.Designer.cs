@@ -117,7 +117,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblInstructions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInstructions.Location = new System.Drawing.Point(31, 93);
+            this.lblInstructions.Location = new System.Drawing.Point(987, 31);
             this.lblInstructions.MaximumSize = new System.Drawing.Size(246, 114);
             this.lblInstructions.Name = "lblInstructions";
             this.lblInstructions.Size = new System.Drawing.Size(246, 114);
@@ -870,7 +870,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.colourSelector.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colourSelector.Location = new System.Drawing.Point(1030, 680);
+            this.colourSelector.Location = new System.Drawing.Point(1036, 596);
             this.colourSelector.Name = "colourSelector";
             this.colourSelector.RowHeadersVisible = false;
             this.colourSelector.RowTemplate.Height = 137;
@@ -906,7 +906,7 @@
             // 
             this.btnMenu.BackColor = System.Drawing.Color.LightCyan;
             this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.Location = new System.Drawing.Point(1237, 31);
+            this.btnMenu.Location = new System.Drawing.Point(55, 31);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(226, 86);
             this.btnMenu.TabIndex = 10;
@@ -918,7 +918,7 @@
             // btnFinish
             // 
             this.btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinish.Location = new System.Drawing.Point(1228, 836);
+            this.btnFinish.Location = new System.Drawing.Point(1234, 752);
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.Size = new System.Drawing.Size(109, 38);
             this.btnFinish.TabIndex = 11;

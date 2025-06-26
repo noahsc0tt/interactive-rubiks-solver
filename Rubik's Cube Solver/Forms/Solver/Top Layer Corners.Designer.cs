@@ -44,7 +44,7 @@
             // 
             this.btnFinish.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.btnFinish.Location = new System.Drawing.Point(1164, 765);
+            this.btnFinish.Location = new System.Drawing.Point(1164, 743);
             this.btnFinish.MinimumSize = new System.Drawing.Size(114, 45);
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.Size = new System.Drawing.Size(161, 89);
@@ -94,7 +94,7 @@
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Image = global::Rubiks_Cube_Solver.Properties.Resources.completed_oll;
             this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(839, 652);
+            this.pictureBox2.Location = new System.Drawing.Point(839, 630);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(222, 202);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -106,7 +106,7 @@
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = global::Rubiks_Cube_Solver.Properties.Resources.oriented_corner;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(394, 652);
+            this.pictureBox1.Location = new System.Drawing.Point(394, 630);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(227, 202);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

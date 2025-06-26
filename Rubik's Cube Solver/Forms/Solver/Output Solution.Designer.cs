@@ -66,11 +66,10 @@
             // 
             this.btnFinish.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.btnFinish.Location = new System.Drawing.Point(600, 829);
-            this.btnFinish.MaximumSize = new System.Drawing.Size(114, 45);
+            this.btnFinish.Location = new System.Drawing.Point(1213, 745);
             this.btnFinish.MinimumSize = new System.Drawing.Size(114, 45);
             this.btnFinish.Name = "btnFinish";
-            this.btnFinish.Size = new System.Drawing.Size(114, 45);
+            this.btnFinish.Size = new System.Drawing.Size(176, 81);
             this.btnFinish.TabIndex = 2;
             this.btnFinish.TabStop = false;
             this.btnFinish.Text = "Finish";
@@ -84,9 +83,8 @@
             this.lblNameOfStage.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.lblNameOfStage.Location = new System.Drawing.Point(847, 34);
             this.lblNameOfStage.MaximumSize = new System.Drawing.Size(589, 164);
-            this.lblNameOfStage.MinimumSize = new System.Drawing.Size(589, 164);
             this.lblNameOfStage.Name = "lblNameOfStage";
-            this.lblNameOfStage.Size = new System.Drawing.Size(589, 164);
+            this.lblNameOfStage.Size = new System.Drawing.Size(542, 164);
             this.lblNameOfStage.TabIndex = 3;
             this.lblNameOfStage.Text = "Stage:";
             this.lblNameOfStage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -96,7 +94,7 @@
             this.lblExplanation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblExplanation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblExplanation.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExplanation.Location = new System.Drawing.Point(817, 407);
+            this.lblExplanation.Location = new System.Drawing.Point(847, 351);
             this.lblExplanation.MaximumSize = new System.Drawing.Size(589, 559);
             this.lblExplanation.Name = "lblExplanation";
             this.lblExplanation.Size = new System.Drawing.Size(542, 374);
@@ -122,7 +120,7 @@
             this.lblExplanationHeader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblExplanationHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblExplanationHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExplanationHeader.Location = new System.Drawing.Point(817, 364);
+            this.lblExplanationHeader.Location = new System.Drawing.Point(847, 308);
             this.lblExplanationHeader.MaximumSize = new System.Drawing.Size(227, 43);
             this.lblExplanationHeader.MinimumSize = new System.Drawing.Size(227, 43);
             this.lblExplanationHeader.Name = "lblExplanationHeader";
