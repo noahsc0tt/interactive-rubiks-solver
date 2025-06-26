@@ -15,14 +15,12 @@ namespace Rubiks_Cube_Solver
         public Notation_Explanation()
         {
             InitializeComponent();
+            this.ApplyDefaultFormSettings();
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            //opening menu
-            Menu menu = new Menu();
-            menu.Show();
-            Visible = false;
+            FormNavigator.Navigate<Menu>(this);
         }
 
 

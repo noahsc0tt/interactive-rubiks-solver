@@ -76,147 +76,129 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Before Solve.cs">
+    <Compile Include="Forms\Timer\Before Solve.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Before Solve.Designer.cs">
+    <Compile Include="Forms\Timer\Before Solve.Designer.cs">
       <DependentUpon>Before Solve.cs</DependentUpon>
     </Compile>
-    <Compile Include="Checking Moves.cs">
+    <Compile Include="Forms\Solver\Checking Moves.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Checking Moves.Designer.cs">
+    <Compile Include="Forms\Solver\Checking Moves.Designer.cs">
       <DependentUpon>Checking Moves.cs</DependentUpon>
     </Compile>
-    <Compile Include="During Solve.cs">
+    <Compile Include="Forms\DefaultFormSettings.cs" />
+    <Compile Include="Forms\Timer\During Solve.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="During Solve.Designer.cs">
+    <Compile Include="Forms\Timer\During Solve.Designer.cs">
       <DependentUpon>During Solve.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="Forms\FormNavigator.cs" />
+    <Compile Include="Forms\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
+    <Compile Include="Forms\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Notation Explanation.cs">
+    <Compile Include="Forms\Notation Explanation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Notation Explanation.Designer.cs">
+    <Compile Include="Forms\Notation Explanation.Designer.cs">
       <DependentUpon>Notation Explanation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Output Solution.cs">
+    <Compile Include="Forms\Solver\Output Solution.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Output Solution.Designer.cs">
+    <Compile Include="Forms\Solver\Output Solution.Designer.cs">
       <DependentUpon>Output Solution.cs</DependentUpon>
     </Compile>
-    <Compile Include="Permuting Corners.cs">
+    <Compile Include="Forms\Solver\Permuting Corners.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Permuting Corners.Designer.cs">
+    <Compile Include="Forms\Solver\Permuting Corners.Designer.cs">
       <DependentUpon>Permuting Corners.cs</DependentUpon>
     </Compile>
-    <Compile Include="Permuting Edges.cs">
+    <Compile Include="Forms\Solver\Permuting Edges.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Permuting Edges.Designer.cs">
+    <Compile Include="Forms\Solver\Permuting Edges.Designer.cs">
       <DependentUpon>Permuting Edges.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Input Colours.cs">
+    <Compile Include="Forms\Solver\Input Colours.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Input Colours.Designer.cs">
+    <Compile Include="Forms\Solver\Input Colours.Designer.cs">
       <DependentUpon>Input Colours.cs</DependentUpon>
     </Compile>
-    <Compile Include="rubiksCubeDBDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rubiksCubeDBDataSet1.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Top Layer Corners.cs">
+    <Compile Include="Forms\Solver\Top Layer Corners.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Top Layer Corners.Designer.cs">
+    <Compile Include="Forms\Solver\Top Layer Corners.Designer.cs">
       <DependentUpon>Top Layer Corners.cs</DependentUpon>
     </Compile>
-    <Compile Include="Top Layer Edges.cs">
+    <Compile Include="Forms\Solver\Top Layer Edges.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Top Layer Edges.Designer.cs">
+    <Compile Include="Forms\Solver\Top Layer Edges.Designer.cs">
       <DependentUpon>Top Layer Edges.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Before Solve.resx">
+    <EmbeddedResource Include="Forms\Timer\Before Solve.resx">
       <DependentUpon>Before Solve.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Checking Moves.resx">
+    <EmbeddedResource Include="Forms\Solver\Checking Moves.resx">
       <DependentUpon>Checking Moves.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="During Solve.resx">
+    <EmbeddedResource Include="Forms\Timer\During Solve.resx">
       <DependentUpon>During Solve.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
+    <EmbeddedResource Include="Forms\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Notation Explanation.resx">
+    <EmbeddedResource Include="Forms\Notation Explanation.resx">
       <DependentUpon>Notation Explanation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Output Solution.resx">
+    <EmbeddedResource Include="Forms\Solver\Output Solution.resx">
       <DependentUpon>Output Solution.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Permuting Corners.resx">
+    <EmbeddedResource Include="Forms\Solver\Permuting Corners.resx">
       <DependentUpon>Permuting Corners.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Permuting Edges.resx">
+    <EmbeddedResource Include="Forms\Solver\Permuting Edges.resx">
       <DependentUpon>Permuting Edges.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>Rubiks_Cube_Solver.Properties</CustomToolNamespace>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="Input Colours.resx">
+    <EmbeddedResource Include="Forms\Solver\Input Colours.resx">
       <DependentUpon>Input Colours.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Top Layer Corners.resx">
+    <EmbeddedResource Include="Forms\Solver\Top Layer Corners.resx">
       <DependentUpon>Top Layer Corners.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Top Layer Edges.resx">
+    <EmbeddedResource Include="Forms\Solver\Top Layer Edges.resx">
       <DependentUpon>Top Layer Edges.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Rubik%27s Cube Solver_TemporaryKey.pfx" />
-    <None Include="rubiksCubeDBDataSet1.xsc">
-      <DependentUpon>rubiksCubeDBDataSet1.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="rubiksCubeDBDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>rubiksCubeDBDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="rubiksCubeDBDataSet1.xss">
-      <DependentUpon>rubiksCubeDBDataSet1.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Notation 1.PNG" />
@@ -232,9 +214,6 @@
     <None Include="Resources\corner.png" />
     <None Include="Resources\edge.png" />
     <None Include="Resources\centre.png" />
-    <Content Include="rubiksCubeDB.accdb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

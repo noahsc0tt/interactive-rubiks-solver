@@ -37,9 +37,9 @@
             // 
             this.btnSolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
             this.btnSolver.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSolver.Location = new System.Drawing.Point(71, 99);
+            this.btnSolver.Location = new System.Drawing.Point(71, 70);
             this.btnSolver.Name = "btnSolver";
-            this.btnSolver.Size = new System.Drawing.Size(1691, 353);
+            this.btnSolver.Size = new System.Drawing.Size(1329, 353);
             this.btnSolver.TabIndex = 0;
             this.btnSolver.TabStop = false;
             this.btnSolver.Text = "Rubik\'s Cube Solver";
@@ -51,7 +51,7 @@
             this.btnTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
             this.btnTimer.Location = new System.Drawing.Point(71, 548);
             this.btnTimer.Name = "btnTimer";
-            this.btnTimer.Size = new System.Drawing.Size(701, 343);
+            this.btnTimer.Size = new System.Drawing.Size(568, 250);
             this.btnTimer.TabIndex = 1;
             this.btnTimer.TabStop = false;
             this.btnTimer.Text = "Timer";
@@ -61,9 +61,9 @@
             // btnNotation
             // 
             this.btnNotation.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
-            this.btnNotation.Location = new System.Drawing.Point(1114, 548);
+            this.btnNotation.Location = new System.Drawing.Point(832, 548);
             this.btnNotation.Name = "btnNotation";
-            this.btnNotation.Size = new System.Drawing.Size(648, 343);
+            this.btnNotation.Size = new System.Drawing.Size(568, 250);
             this.btnNotation.TabIndex = 2;
             this.btnNotation.TabStop = false;
             this.btnNotation.Text = "Notation Explanation";
@@ -74,11 +74,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1540, 1005);
+            this.ClientSize = new System.Drawing.Size(1474, 900);
             this.Controls.Add(this.btnNotation);
             this.Controls.Add(this.btnTimer);
             this.Controls.Add(this.btnSolver);
-            this.MinimumSize = new System.Drawing.Size(1534, 974);
             this.Name = "Menu";
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

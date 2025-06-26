@@ -6,7 +6,7 @@ namespace Rubiks_Cube_Solver
     // extension Form class
     internal static class DefaultFormSettings
     {
-        public static void applyDefaultFormSettings(this Form form)
+        public static void ApplyDefaultFormSettings(this Form form)
         {
             form.MaximumSize = new Size(1920, 1080);
             form.Size = form.MaximumSize;

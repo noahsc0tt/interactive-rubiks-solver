@@ -22,7 +22,7 @@ namespace Rubiks_Cube_Solver.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Rubiks_Cube_Solver.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Rubik_s_Cube_Solver.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Rubiks_Cube_Solver.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Rubiks_Cube_Solver.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap centre {
+        public static System.Drawing.Bitmap centre {
             get {
                 object obj = ResourceManager.GetObject("centre", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace Rubiks_Cube_Solver.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap completed_oll {
+        public static System.Drawing.Bitmap completed_oll {
             get {
                 object obj = ResourceManager.GetObject("completed oll", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace Rubiks_Cube_Solver.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap corner {
+        public static System.Drawing.Bitmap corner {
             get {
                 object obj = ResourceManager.GetObject("corner", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +93,7 @@ namespace Rubiks_Cube_Solver.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap edge {
+        public static System.Drawing.Bitmap edge {
             get {
                 object obj = ResourceManager.GetObject("edge", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +103,7 @@ namespace Rubiks_Cube_Solver.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap headlights {
+        public static System.Drawing.Bitmap headlights {
             get {
                 object obj = ResourceManager.GetObject("headlights", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +113,7 @@ namespace Rubiks_Cube_Solver.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Notation_1 {
+        public static System.Drawing.Bitmap Notation_1 {
             get {
                 object obj = ResourceManager.GetObject("Notation 1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +123,7 @@ namespace Rubiks_Cube_Solver.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Notation_1_NEW {
+        public static System.Drawing.Bitmap Notation_1_NEW {
             get {
                 object obj = ResourceManager.GetObject("Notation 1 NEW", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,7 +133,7 @@ namespace Rubiks_Cube_Solver.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Notation_2 {
+        public static System.Drawing.Bitmap Notation_2 {
             get {
                 object obj = ResourceManager.GetObject("Notation 2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,7 +143,7 @@ namespace Rubiks_Cube_Solver.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Notation_3 {
+        public static System.Drawing.Bitmap Notation_3 {
             get {
                 object obj = ResourceManager.GetObject("Notation 3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -153,7 +153,7 @@ namespace Rubiks_Cube_Solver.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap oriented_corner {
+        public static System.Drawing.Bitmap oriented_corner {
             get {
                 object obj = ResourceManager.GetObject("oriented corner", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -163,7 +163,7 @@ namespace Rubiks_Cube_Solver.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap permuted_corners {
+        public static System.Drawing.Bitmap permuted_corners {
             get {
                 object obj = ResourceManager.GetObject("permuted corners", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -173,7 +173,7 @@ namespace Rubiks_Cube_Solver.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pll_bar {
+        public static System.Drawing.Bitmap pll_bar {
             get {
                 object obj = ResourceManager.GetObject("pll bar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -183,7 +183,7 @@ namespace Rubiks_Cube_Solver.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tle_edited {
+        public static System.Drawing.Bitmap tle_edited {
             get {
                 object obj = ResourceManager.GetObject("tle edited", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

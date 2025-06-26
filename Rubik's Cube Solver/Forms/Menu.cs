@@ -8,6 +8,7 @@ namespace Rubiks_Cube_Solver
         public Menu()
         {
             InitializeComponent();
+            this.ApplyDefaultFormSettings();
         }
 
         private void btnSolver_Click(object sender, EventArgs e)
@@ -15,26 +16,17 @@ namespace Rubiks_Cube_Solver
             Global.stage[0] = 1;
             Global.stage[1] = 1;
 
-            //opening the first form of the solver
-            Input_Colours ic = new Input_Colours();
-            ic.Show();
-            Visible = false;
+            FormNavigator.Navigate<Input_Colours>(this);
         }
         
         private void btnTimer_Click(object sender, EventArgs e)
         {
-            //opening the first form of the timer
-            Before_Solve bs = new Before_Solve();
-            bs.Show();
-            Visible = false;
+            FormNavigator.Navigate<Before_Solve>(this);
         }
 
         private void btnNotation_Click(object sender, EventArgs e)
         {
-            //opening the notation explanation document
-            Notation_Explanation ne = new Notation_Explanation();
-            ne.Show();
-            Visible=false;
+            FormNavigator.Navigate<Notation_Explanation>(this);
         }
     }
 }
