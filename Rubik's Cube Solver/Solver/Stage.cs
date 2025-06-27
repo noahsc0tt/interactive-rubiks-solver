@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 
 namespace Rubiks_Cube_Solver
@@ -34,40 +32,26 @@ namespace Rubiks_Cube_Solver
         {
             if (Step > 2) return "Stage Name already in form";
 
-            string name = "";
-            if (Step <= 1) name += "Yellow ";
-            name += Step switch
+            string stepName = Step switch
             {
-                0 => "Cross",
-                1 => "Corners",
+                0 => "Yellow Cross",
+                1 => "Yellow Corners",
                 2 => "Middle Layer Edges"
             };
-            name += " - ";
 
-            switch (Step)
+            string subStepName = Step switch
             {
-                case 0:
-                    name += "yellow and ";
-                    name += SubStep switch
-                    {
-                        0 => "green",
-                        1 => "red",
-                        2 => "blue",
-                        3 => "orange"
-                    };
-                    name += " edge";
-                    break;
-                case 1:
-                    name += "yellow, ";
-                    name += GetColourPair();
-                    name += " corner";
-                    break;
-                case 2:
-                    name += GetColourPair();
-                    name += " edge";
-                    break;
-            }
-            return name;
+                0 => $"yellow and " + SubStep switch
+                {
+                    0 => "green",
+                    1 => "red",
+                    2 => "blue",
+                    3 => "orange"
+                } + " edge",
+                1 => "yellow, " + GetColourPair() + " corner",
+                2 => GetColourPair() + " edge"
+            };
+            return stepName + " - " + subStepName;
         }
 
         //helper method for GetName to reduce duplication
