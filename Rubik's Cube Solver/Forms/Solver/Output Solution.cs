@@ -8,17 +8,17 @@ namespace Rubiks_Cube_Solver
     {
         private readonly Stage stage;
         private PieceLocation location;
-        private bool? isGoodOrientation;
+        private Orientation orientation;
 
 
-        public Output_Solution(Stage currentStage, PieceLocation location, bool? isGood)
+        public Output_Solution(Stage currentStage, PieceLocation location, Orientation orientation)
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
 
             stage = currentStage;
             this.location = location;
-            isGoodOrientation = isGood;
+            this.orientation = orientation;
         }
 
         private void rotatePieceLocation()
@@ -62,15 +62,8 @@ namespace Rubiks_Cube_Solver
                     }
                     
                     location.Z = swap;
-                    
-                    if (isGoodOrientation == true)
-                    {
-                        isGoodOrientation = false;
-                    }
-                    else
-                    {
-                        isGoodOrientation = true;
-                    }
+
+                    orientation = orientation.Flip();
                 }
                 else //if the edge is in the bottom layer of the cube
                 {
