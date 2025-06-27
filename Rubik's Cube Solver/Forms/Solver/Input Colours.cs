@@ -7,11 +7,12 @@ namespace Rubiks_Cube_Solver
     internal partial class Input_Colours : Form
     {
         private readonly Stage stage;
+        private bool coloured = false;
+
         public Input_Colours(Stage currentStage)
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
-
             stage = currentStage;
         }
 
@@ -39,30 +40,30 @@ namespace Rubiks_Cube_Solver
 
         private void Solver_Input_Colours_Load(object sender, EventArgs e)
         {
-            Global.coloured = false;
+            coloured = false;
 
             //creating variables to store information pertaining to the instructions to be output
             string requiredFace = string.Empty;
             string requiredPiece = string.Empty;
             
             //setting the value of these variables based on the value of Global.stage
-            if (stage.step == 1)
+            if (stage.Step == 1)
             {
-                if (stage.subStep == 1)
+                if (stage.SubStep == 1)
                 {
                     requiredPiece = "green";
                 }
-                else if (stage.subStep == 2)
+                else if (stage.SubStep == 2)
                 {
                     requiredPiece = "orange";
 
                 }
-                else if (stage.subStep == 3)
+                else if (stage.SubStep == 3)
                 {
                     requiredPiece = "blue";
 
                 }
-                else if (stage.subStep == 4)
+                else if (stage.SubStep == 4)
                 {
                     requiredPiece = "red";
 
@@ -74,24 +75,24 @@ namespace Rubiks_Cube_Solver
                 Global.selectedColour = "Yellow";
 
             }
-            else if (stage.step == 2)
+            else if (stage.Step == 2)
             {
-                if (stage.subStep == 1)
+                if (stage.SubStep == 1)
                 {
                     requiredPiece = "green and red";
 
                 }
-                else if (stage.subStep == 2)
+                else if (stage.SubStep == 2)
                 {
                     requiredPiece = "orange and green";
 
                 }
-                else if (stage.subStep == 3)
+                else if (stage.SubStep == 3)
                 {
                     requiredPiece = "blue and orange";
 
                 }
-                else if (stage.subStep == 4)
+                else if (stage.SubStep == 4)
                 {
                     requiredPiece = "red and blue";
 
@@ -102,27 +103,27 @@ namespace Rubiks_Cube_Solver
                 //setting Global.selectedColour to the correct value for this stage
                 Global.selectedColour = "Yellow";
             }
-            else if (stage.step == 3)
+            else if (stage.Step == 3)
             {
-                if (stage.subStep == 1)
+                if (stage.SubStep == 1)
                 {
                     requiredPiece = "green and red";
                     requiredFace = "green";
 
                 }
-                else if (stage.subStep == 2)
+                else if (stage.SubStep == 2)
                 {
                     requiredPiece = "orange and green";
                     requiredFace = "orange";
 
                 }
-                else if (stage.subStep == 3)
+                else if (stage.SubStep == 3)
                 {
                     requiredPiece = "blue and orange";
                     requiredFace = "blue";
 
                 }
-                else if (stage.subStep == 4)
+                else if (stage.SubStep == 4)
                 {
                     requiredPiece = "red and blue";
                     requiredFace = "red";
@@ -186,10 +187,10 @@ namespace Rubiks_Cube_Solver
                 //default colour applied to cell
                 whiteFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Silver;
 
-                Global.coloured = false; //the cell has now been cleared so Global.coloured is set to false
+                coloured = false; //the cell has now been cleared so coloured is set to false
             }
 
-            else if (Global.coloured) //if a piece has already been selected
+            else if (coloured) //if a piece has already been selected
             {
                 MessageBox.Show("Cannot select more than one square.");
             }
@@ -206,7 +207,7 @@ namespace Rubiks_Cube_Solver
                     whiteFace[e.ColumnIndex, e.RowIndex].Style.BackColor = colourSelector[0, 0].Style.BackColor;
                 }
 
-                Global.coloured = true; //the cell has now been coloured so Global.coloured is set to true
+                coloured = true; //the cell has now been coloured so coloured is set to true
 
                 //setting the values of Global.location and Global.orientation based on which cell has been clicked
                 if (e.ColumnIndex == 0 && e.RowIndex == 0)
@@ -291,10 +292,10 @@ namespace Rubiks_Cube_Solver
                 //default colour applied to cell
                 orangeFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Silver;
 
-                Global.coloured = false; //the cell has now been cleared so Global.coloured is set to false
+                coloured = false; //the cell has now been cleared so coloured is set to false
             }
 
-            else if (Global.coloured) //if a piece has already been selected
+            else if (coloured) //if a piece has already been selected
             {
                 MessageBox.Show("Cannot select more than one square.");
             }
@@ -311,7 +312,7 @@ namespace Rubiks_Cube_Solver
                     orangeFace[e.ColumnIndex, e.RowIndex].Style.BackColor = colourSelector[0, 0].Style.BackColor;
                 }
 
-                Global.coloured = true; //the cell has now been coloured so Global.coloured is set to true
+                coloured = true; //the cell has now been coloured so coloured is set to true
 
                 //setting the values of Global.location and Global.orientation based on which cell has been clicked
                 if (e.ColumnIndex == 0 && e.RowIndex == 0)
@@ -395,10 +396,10 @@ namespace Rubiks_Cube_Solver
                 //default colour applied to cell
                 greenFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Silver;
 
-                Global.coloured = false; //the cell has now been cleared so Global.coloured is set to false
+                coloured = false; //the cell has now been cleared so coloured is set to false
             }
 
-            else if (Global.coloured) //if a piece has already been selected
+            else if (coloured) //if a piece has already been selected
             {
                 MessageBox.Show("Cannot select more than one square.");
             }
@@ -415,7 +416,7 @@ namespace Rubiks_Cube_Solver
                     greenFace[e.ColumnIndex, e.RowIndex].Style.BackColor = colourSelector[0, 0].Style.BackColor;
                 }
 
-                Global.coloured = true; //the cell has now been coloured so Global.coloured is set to true
+                coloured = true; //the cell has now been coloured so coloured is set to true
 
                 //setting the values of Global.location and Global.orientation based on which cell has been clicked
                 if (e.ColumnIndex == 0 && e.RowIndex == 0)
@@ -497,10 +498,10 @@ namespace Rubiks_Cube_Solver
                 //default colour applied to cell
                 redFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Silver;
 
-                Global.coloured = false; //the cell has now been cleared so Global.coloured is set to false
+                coloured = false; //the cell has now been cleared so coloured is set to false
             }
 
-            else if (Global.coloured) //if a piece has already been selected
+            else if (coloured) //if a piece has already been selected
             {
                 MessageBox.Show("Cannot select more than one square.");
             }
@@ -517,7 +518,7 @@ namespace Rubiks_Cube_Solver
                     redFace[e.ColumnIndex, e.RowIndex].Style.BackColor = colourSelector[0, 0].Style.BackColor;
                 }
 
-                Global.coloured = true; //the cell has now been coloured so Global.coloured is set to true
+                coloured = true; //the cell has now been coloured so coloured is set to true
 
                 //setting the values of Global.location and Global.orientation based on which cell has been clicked
                 if (e.ColumnIndex == 0 && e.RowIndex == 0)
@@ -599,10 +600,10 @@ namespace Rubiks_Cube_Solver
                 //default colour applied to cell
                 blueFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Silver;
 
-                Global.coloured = false; //the cell has now been cleared so Global.coloured is set to false
+                coloured = false; //the cell has now been cleared so coloured is set to false
             }
 
-            else if (Global.coloured) //if a piece has already been selected
+            else if (coloured) //if a piece has already been selected
             {
                 MessageBox.Show("Cannot select more than one square.");
             }
@@ -619,7 +620,7 @@ namespace Rubiks_Cube_Solver
                     blueFace[e.ColumnIndex, e.RowIndex].Style.BackColor = colourSelector[0, 0].Style.BackColor;
                 }
 
-                Global.coloured = true; //the cell has now been coloured so Global.coloured is set to true
+                coloured = true; //the cell has now been coloured so coloured is set to true
 
                 //setting the values of Global.location and Global.orientation based on which cell has been clicked
                 if (e.ColumnIndex == 0 && e.RowIndex == 0)
@@ -701,10 +702,10 @@ namespace Rubiks_Cube_Solver
             {                
                 yellowFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Silver; //default colour applied to cell
 
-                Global.coloured = false; //the cell has now been cleared so Global.coloured is set to false
+                coloured = false; //the cell has now been cleared so coloured is set to false
             } 
 
-            else if (Global.coloured) //if a piece has already been selected
+            else if (coloured) //if a piece has already been selected
             {
                 MessageBox.Show("Cannot select more than one square.");
             }
@@ -721,7 +722,7 @@ namespace Rubiks_Cube_Solver
                     yellowFace[e.ColumnIndex, e.RowIndex].Style.BackColor = colourSelector[0, 0].Style.BackColor;
                 }
 
-                Global.coloured = true; //the cell has now been coloured so Global.coloured is set to true
+                coloured = true; //the cell has now been coloured so coloured is set to true
 
                 //setting the values of Global.location and Global.orientation based on which cell has been clicked
                 if (e.ColumnIndex == 0 && e.RowIndex == 0)
@@ -792,7 +793,7 @@ namespace Rubiks_Cube_Solver
         private void btnFinish_Click(object sender, EventArgs e)
         {
             //checking if the user has inputted the position of the required piece
-            if (Global.coloured) 
+            if (coloured) 
             {
                 //moving on to the output solution form
                 FormNavigator.Navigate<Output_Solution>(this);

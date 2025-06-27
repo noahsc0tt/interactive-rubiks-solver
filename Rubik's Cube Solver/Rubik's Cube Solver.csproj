@@ -7,7 +7,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{162A806C-F4B8-407F-8347-18E04735E492}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Rubik_s_Cube_Solver</RootNamespace>
+    <RootNamespace>Rubiks_Cube_Solver</RootNamespace>
     <AssemblyName>Rubik%27s Cube Solver</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -60,6 +60,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Rubiks_Cube_Solver.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">

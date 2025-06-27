@@ -122,19 +122,19 @@ namespace Rubiks_Cube_Solver
         {
             //calculating the necessary cube orientation based on the value of stage.subStep
             string frontFace = string.Empty;           
-            if (stage.subStep == 1)
+            if (stage.SubStep == 1)
             {
                 frontFace = "green";
             }
-            else if (stage.subStep == 2)
+            else if (stage.SubStep == 2)
             {
                 frontFace = "orange";
             }
-            else if (stage.subStep == 3)
+            else if (stage.SubStep == 3)
             {
                 frontFace = "blue";
             }
-            else if (stage.subStep == 4)
+            else if (stage.SubStep == 4)
             {
                 frontFace = "red";
             }
@@ -144,22 +144,22 @@ namespace Rubiks_Cube_Solver
 
 
             //calling the 'rotatePieceLocation' procedure the correct number of times 
-            for (int i = 0; i < stage.subStep-1; i++)
+            for (int i = 0; i < stage.SubStep-1; i++)
             {
                 rotatePieceLocation();
             }
 
 
             //updating the 'stage' label to show the user which stage of the solve they are on
-            if (stage.step == 1)
+            if (stage.Step == 1)
             {
                 lblNameOfStage.Text = "Stage: Yellow edges";
             }
-            else if (stage.step == 2)
+            else if (stage.Step == 2)
             {
                 lblNameOfStage.Text = "Stage: Yellow corners";
             }
-            else if (stage.step == 3)
+            else if (stage.Step == 3)
             {
                 lblNameOfStage.Text = "Stage: Middle layer edges";
             }

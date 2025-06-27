@@ -102,106 +102,106 @@ namespace Rubiks_Cube_Solver
 
             //colouring the net based on the stage
 
-            if (stage.step == 1) //yellow edges
+            if (stage.Step == 1) //yellow edges
             {
-                if (stage.subStep >= 1) //yellow and green edge
+                if (stage.SubStep >= 1) //yellow and green edge
                 {
                     greenFace[1, 2].Style.BackColor = Color.Green;
                     yellowFace[1, 0].Style.BackColor = Color.Yellow;
                 }
-                if (stage.subStep >= 2) //yellow and orange edge
+                if (stage.SubStep >= 2) //yellow and orange edge
                 {
                     orangeFace[1, 2].Style.BackColor = Color.Orange;
                     yellowFace[0, 1].Style.BackColor = Color.Yellow;
                 }
-                if (stage.subStep >= 3) //yellow and blue edge
+                if (stage.SubStep >= 3) //yellow and blue edge
                 {
                     blueFace[1, 2].Style.BackColor = Color.Blue;
                     yellowFace[1, 2].Style.BackColor = Color.Yellow;
                 }
-                if (stage.subStep == 4) //yellow and red edge
+                if (stage.SubStep == 4) //yellow and red edge
                 {
                     redFace[1, 2].Style.BackColor = Color.Red;
                     yellowFace[2, 1].Style.BackColor = Color.Yellow;
                 }
             }
-            else if (stage.step == 2) //yellow corners
+            else if (stage.Step == 2) //yellow corners
             {
                 colourYellowEdges();
 
-                if (stage.subStep >= 1) //yellow, green and red corner
+                if (stage.SubStep >= 1) //yellow, green and red corner
                 {
                     greenFace[2, 2].Style.BackColor = Color.Green;
                     redFace[0, 2].Style.BackColor = Color.Red;
                     yellowFace[2, 0].Style.BackColor = Color.Yellow;
                 }
 
-                if (stage.subStep >= 2) //yellow orange and green corner
+                if (stage.SubStep >= 2) //yellow orange and green corner
                 {
                     greenFace[0, 2].Style.BackColor = Color.Green;
                     orangeFace[2, 2].Style.BackColor = Color.Orange;
                     yellowFace[0, 0].Style.BackColor = Color.Yellow;
                 }
-                if (stage.subStep >= 3) //yellow blue and orange corner
+                if (stage.SubStep >= 3) //yellow blue and orange corner
                 {
                     orangeFace[0, 2].Style.BackColor = Color.Orange;
                     blueFace[2, 2].Style.BackColor = Color.Blue;
                     yellowFace[0, 2].Style.BackColor = Color.Yellow;
                 }
-                if (stage.subStep == 4) //yellow red and blue corner
+                if (stage.SubStep == 4) //yellow red and blue corner
                 {
                     blueFace[0, 2].Style.BackColor = Color.Blue;
                     redFace[2, 2].Style.BackColor = Color.Red;
                     yellowFace[2, 2].Style.BackColor = Color.Yellow;
                 }
             }
-            else if (stage.step == 3) //middle layer edges
+            else if (stage.Step == 3) //middle layer edges
             {
                 colourYellowEdges();
                 colourYellowCorners();
 
-                if (stage.subStep >= 1) //green and red edge
+                if (stage.SubStep >= 1) //green and red edge
                 {
                     greenFace[2, 1].Style.BackColor = Color.Green;
                     redFace[0, 1].Style.BackColor = Color.Red;
                 }
-                if (stage.subStep >= 2) //orange and green edge
+                if (stage.SubStep >= 2) //orange and green edge
                 {
                     orangeFace[2, 1].Style.BackColor = Color.Orange;
                     greenFace[0, 1].Style.BackColor = Color.Green;
                 }
-                if (stage.subStep >= 3) //blue and orange edge
+                if (stage.SubStep >= 3) //blue and orange edge
                 {
                     blueFace[2, 1].Style.BackColor = Color.Blue;
                     orangeFace[0, 1].Style.BackColor = Color.Orange;
                 }
-                if (stage.subStep == 4) //red and blue edge
+                if (stage.SubStep == 4) //red and blue edge
                 {
                     redFace[2, 1].Style.BackColor = Color.Red;
                     blueFace[0, 1].Style.BackColor = Color.Blue;
                 }
             }
-            else if (stage.step == 4)
+            else if (stage.Step == 4)
             {
                 colourYellowEdges();
                 colourYellowCorners();
                 colourMiddleEdges();
 
-                if (stage.subStep >= 1) //top layer edges
+                if (stage.SubStep >= 1) //top layer edges
                 {
                     whiteFace[0, 1].Style.BackColor = Color.White;
                     whiteFace[1, 0].Style.BackColor = Color.White;
                     whiteFace[2, 1].Style.BackColor = Color.White;
                     whiteFace[1, 2].Style.BackColor = Color.White;
                 }
-                if (stage.subStep >= 2) //top layer corners
+                if (stage.SubStep >= 2) //top layer corners
                 {
                     whiteFace[0, 0].Style.BackColor = Color.White;
                     whiteFace[2, 0].Style.BackColor = Color.White;
                     whiteFace[0, 2].Style.BackColor = Color.White;
                     whiteFace[2, 2].Style.BackColor = Color.White;
                 }
-                if (stage.subStep >= 3) //permuting corners
+                if (stage.SubStep >= 3) //permuting corners
                 {
                     greenFace[0, 0].Style.BackColor = Color.Green;
                     greenFace[2, 0].Style.BackColor = Color.Green;
@@ -213,7 +213,7 @@ namespace Rubiks_Cube_Solver
                     redFace[2, 0].Style.BackColor = Color.Red;
 
                 }
-                if (stage.subStep == 4) //permuting edges
+                if (stage.SubStep == 4) //permuting edges
                 {
                     greenFace[1, 0].Style.BackColor = Color.Green;
                     orangeFace[1, 0].Style.BackColor = Color.Orange;
@@ -227,7 +227,7 @@ namespace Rubiks_Cube_Solver
         private void Checking_Moves_Load(object sender, EventArgs e)
         {
             //changing the text of the 'Next Stage' button if the user has completed the solve
-            if (stage.step == 4 && stage.subStep == 4)
+            if (stage.Step == 4 && stage.SubStep == 4)
             {
                 btnNextStage.Visible = false;
 
@@ -248,24 +248,24 @@ namespace Rubiks_Cube_Solver
         {
             stage.Increment();
 
-            if (stage.step == 4)
+            if (stage.Step == 4)
             {
-                if (stage.subStep == 1)
+                if (stage.SubStep == 1)
                 {
                     FormNavigator.Navigate<Top_Layer_Edges>(this);
 
                 }
-                else if (stage.subStep == 2)
+                else if (stage.SubStep == 2)
                 {
                     FormNavigator.Navigate<Top_Layer_Corners>(this);
 
                 }
-                else if (stage.subStep == 3)
+                else if (stage.SubStep == 3)
                 {
                     FormNavigator.Navigate<Permuting_Corners>(this);
 
                 }
-                else if (stage.subStep == 4)
+                else if (stage.SubStep == 4)
                 {
                     FormNavigator.Navigate<Permuting_Edges>(this);
                 }
