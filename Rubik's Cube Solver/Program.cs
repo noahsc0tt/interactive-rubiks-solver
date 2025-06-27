@@ -13,7 +13,6 @@ namespace Rubiks_Cube_Solver
 
         public static string selectedColour;
 
-        public static bool coloured = false;
         
     }
 
