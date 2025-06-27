@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblInstructions = new System.Windows.Forms.Label();
             this.orangeFace = new System.Windows.Forms.DataGridView();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -86,9 +85,6 @@
             this.dataGridViewButtonColumn46 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn47 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn48 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colourSelector = new System.Windows.Forms.DataGridView();
-            this.x = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.y = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnMenu = new System.Windows.Forms.Button();
             this.btnFinish = new System.Windows.Forms.Button();
             this.dataGridViewButtonColumn30 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -101,12 +97,12 @@
             this.dataGridViewButtonColumn23 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn22 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.blueFace = new System.Windows.Forms.DataGridView();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.orangeFace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redFace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.greenFace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yellowFace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.whiteFace)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.colourSelector)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueFace)).BeginInit();
             this.SuspendLayout();
             // 
@@ -850,58 +846,6 @@
             this.dataGridViewButtonColumn48.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewButtonColumn48.Width = 76;
             // 
-            // colourSelector
-            // 
-            this.colourSelector.AllowUserToAddRows = false;
-            this.colourSelector.AllowUserToDeleteRows = false;
-            this.colourSelector.AllowUserToResizeColumns = false;
-            this.colourSelector.AllowUserToResizeRows = false;
-            this.colourSelector.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.colourSelector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.colourSelector.ColumnHeadersVisible = false;
-            this.colourSelector.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.x,
-            this.y});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.colourSelector.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colourSelector.Location = new System.Drawing.Point(1036, 596);
-            this.colourSelector.Name = "colourSelector";
-            this.colourSelector.RowHeadersVisible = false;
-            this.colourSelector.RowTemplate.Height = 137;
-            this.colourSelector.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colourSelector.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.colourSelector.Size = new System.Drawing.Size(307, 137);
-            this.colourSelector.TabIndex = 9;
-            this.colourSelector.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.colourSelector_CellClick);
-            // 
-            // x
-            // 
-            this.x.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.x.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.x.HeaderText = "";
-            this.x.Name = "x";
-            this.x.ReadOnly = true;
-            this.x.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.x.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.x.Text = "Colour";
-            // 
-            // y
-            // 
-            this.y.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.y.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.y.HeaderText = "";
-            this.y.Name = "y";
-            this.y.ReadOnly = true;
-            this.y.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.y.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.y.Text = "Clear";
-            // 
             // btnMenu
             // 
             this.btnMenu.BackColor = System.Drawing.Color.LightCyan;
@@ -1053,14 +997,14 @@
             this.dataGridViewButtonColumn28,
             this.dataGridViewButtonColumn29,
             this.dataGridViewButtonColumn30});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.blueFace.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.blueFace.DefaultCellStyle = dataGridViewCellStyle6;
             this.blueFace.Location = new System.Drawing.Point(1003, 267);
             this.blueFace.Name = "blueFace";
             this.blueFace.RowHeadersVisible = false;
@@ -1071,14 +1015,25 @@
             this.blueFace.TabIndex = 6;
             this.blueFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.blueFace_CellClick);
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Silver;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
+            this.btnClear.Location = new System.Drawing.Point(1036, 596);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(307, 137);
+            this.btnClear.TabIndex = 12;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            // 
             // Input_Colours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1474, 900);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.btnMenu);
-            this.Controls.Add(this.colourSelector);
             this.Controls.Add(this.whiteFace);
             this.Controls.Add(this.yellowFace);
             this.Controls.Add(this.blueFace);
@@ -1097,7 +1052,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.greenFace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yellowFace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.whiteFace)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.colourSelector)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueFace)).EndInit();
             this.ResumeLayout(false);
 
@@ -1156,9 +1110,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn46;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn47;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn48;
-        private System.Windows.Forms.DataGridView colourSelector;
-        private System.Windows.Forms.DataGridViewButtonColumn x;
-        private System.Windows.Forms.DataGridViewButtonColumn y;
         private System.Windows.Forms.Button btnMenu;
         private System.Windows.Forms.Button btnFinish;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn30;
@@ -1171,5 +1122,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn23;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn22;
         private System.Windows.Forms.DataGridView blueFace;
+        private System.Windows.Forms.Button btnClear;
     }
 }
