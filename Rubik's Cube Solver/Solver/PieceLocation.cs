@@ -8,8 +8,6 @@ namespace Rubiks_Cube_Solver
         private int _y;
         private int _z;
 
-        public bool IsGoodOrientation { get; set; }
-
         public int X
         {
             get => _x;
@@ -39,7 +37,8 @@ namespace Rubiks_Cube_Solver
                 _z = value;
             }
         }
-        public PieceLocation(int x, int y, int z, bool isGood)
+        public PieceLocation((int x, int y, int z) location) : this(location.x, location.y, location.z) { }
+        public PieceLocation(int x, int y, int z)
         {
             ValidateArg(x, nameof(x));
             ValidateArg(y, nameof(y));
@@ -47,7 +46,6 @@ namespace Rubiks_Cube_Solver
             _x = x;
             _y = y;
             _z = z;
-            IsGoodOrientation = isGood;
         }
         private static bool IsArgValid(int coord) => coord >= 0 && coord <= 2;
 
