@@ -2,6 +2,11 @@
 
 namespace Rubiks_Cube_Solver
 {
+    internal enum Orientation
+    {
+        Good, Bad
+    }
+
     internal class PieceLocation
     {
         private int _x;
@@ -49,7 +54,7 @@ namespace Rubiks_Cube_Solver
         }
         private static bool IsCoordValid(int coord) => coord >= 0 && coord <= 2;
 
-        private static void ValidateCoord(int coord, string paramName)
+        public static void ValidateCoord(int coord, string paramName)
         {
             if (!IsCoordValid(coord))
                 throw new ArgumentOutOfRangeException(paramName, "Coordinate must be in the range 0-2");
