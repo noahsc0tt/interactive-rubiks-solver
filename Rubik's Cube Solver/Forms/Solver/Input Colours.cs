@@ -6,7 +6,7 @@ namespace Rubiks_Cube_Solver
 {
     internal partial class Input_Colours : Form
     {
-        private Stage stage;
+        private readonly Stage stage;
         public Input_Colours(Stage currentStage)
         {
             InitializeComponent();
@@ -15,7 +15,27 @@ namespace Rubiks_Cube_Solver
             stage = currentStage;
         }
 
-        
+        private void PopulateFace(DataGridView face, Color colour)
+        {
+            // adding the cells to the face and colouring the centre cell
+            for (int i = 0; i < 3; i++)
+            {
+                face.Rows.Add("", "", "");
+            }
+            face[1, 1].Style.BackColor = colour;
+            face.ClearSelection(); //un-highlighting buttons
+        }
+
+        private void PopulateDataGrids()
+        {
+            //populating each face of the cube
+            PopulateFace(orangeFace, Color.Orange);
+            PopulateFace(redFace, Color.Red);
+            PopulateFace(whiteFace, Color.White);
+            PopulateFace(yellowFace, Color.Yellow);
+            PopulateFace(blueFace, Color.RoyalBlue);
+            PopulateFace(greenFace, Color.Green);
+        }
 
         private void Solver_Input_Colours_Load(object sender, EventArgs e)
         {
@@ -116,7 +136,7 @@ namespace Rubiks_Cube_Solver
 
             }
 
-            //populateDataGrids();
+            PopulateDataGrids();
 
 
         }
