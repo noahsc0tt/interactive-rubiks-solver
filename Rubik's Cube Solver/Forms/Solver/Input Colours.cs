@@ -7,7 +7,9 @@ namespace Rubiks_Cube_Solver
     internal partial class Input_Colours : Form
     {
         private readonly Stage stage;
-        private bool coloured = false;
+        private bool selectionMade = false;
+        private PieceLocation selectedPiece;
+        private bool? goodEdgeOrientation;
 
         public Input_Colours(Stage currentStage)
         {
@@ -40,7 +42,7 @@ namespace Rubiks_Cube_Solver
 
         private void Solver_Input_Colours_Load(object sender, EventArgs e)
         {
-            coloured = false;
+            selectionMade = false;
 
             //creating variables to store information pertaining to the instructions to be output
             string requiredFace = string.Empty;
@@ -70,10 +72,6 @@ namespace Rubiks_Cube_Solver
                 }
                 //outputting the instructions
                 lblInstructions.Text = "Input the position of the yellow square on the yellow and " + requiredPiece + " edge.";
-
-                //setting Global.selectedColour to the correct value for this stage
-                Global.selectedColour = "Yellow";
-
             }
             else if (stage.Step == 2)
             {
@@ -99,9 +97,6 @@ namespace Rubiks_Cube_Solver
                 }
                 //outputting the instructions
                 lblInstructions.Text = "Input the position of the yellow square on the yellow, " + requiredPiece + " corner.";
-
-                //setting Global.selectedColour to the correct value for this stage
-                Global.selectedColour = "Yellow";
             }
             else if (stage.Step == 3)
             {
@@ -131,40 +126,11 @@ namespace Rubiks_Cube_Solver
                 }
                 //outputting the instructions
                 lblInstructions.Text = "Input the position of the " + requiredFace + " square on the " + requiredPiece + " edge.";
-
-                //setting Global.selectedColour to the correct value for this stage
-                Global.selectedColour = (char.ToUpper(requiredFace[0]) + requiredFace.Substring(1));
-
             }
 
             PopulateDataGrids();
 
 
-        }
-
-
-        private void colourSelector_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            colourSelector.ClearSelection(); //un-highlighting buttons
-
-            
-            //updating the value of selectedColour based on which cell in the colour selector is clicked
-
-            if (e.RowIndex == 0 && e.ColumnIndex == 0)
-            {
-                if(colourSelector[e.ColumnIndex, e.RowIndex].Style.BackColor == Color.RoyalBlue)
-                {
-                    Global.selectedColour = "Blue";
-                }
-                else
-                {
-                    Global.selectedColour = colourSelector[e.ColumnIndex, e.RowIndex].Style.BackColor.Name;
-                }
-            }
-            else if(e.RowIndex == 0 && e.ColumnIndex == 1)
-            {
-                Global.selectedColour = null;
-            }
         }
 
         private void whiteFace_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -176,97 +142,44 @@ namespace Rubiks_Cube_Solver
                 MessageBox.Show("Centre colours cannot be changed.");
             }
 
-            //if the user wants to clear a cell that is already clear
-            else if (Global.selectedColour == null && whiteFace[e.ColumnIndex, e.RowIndex].Style.BackColor != colourSelector[0, 0].Style.BackColor && whiteFace[e.ColumnIndex, e.RowIndex].Style.BackColor != Color.Blue)
+            //setting the values of Global.location and Global.orientation based on which cell has been clicked
+            if (e.ColumnIndex == 0 && e.RowIndex == 0)
             {
-                MessageBox.Show("Square is already clear.");
+                selectedPiece = new PieceLocation(1, 3, 3);
             }
-
-            else if (Global.selectedColour == null) //if the user wants to clear a coloured cell
+            else if (e.ColumnIndex == 1 && e.RowIndex == 0)
             {
-                //default colour applied to cell
-                whiteFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Silver;
-
-                coloured = false; //the cell has now been cleared so coloured is set to false
+                selectedPiece = new PieceLocation(2,3,3);
+                goodEdgeOrientation = true;
             }
-
-            else if (coloured) //if a piece has already been selected
+            else if (e.ColumnIndex == 2 && e.RowIndex == 0)
             {
-                MessageBox.Show("Cannot select more than one square.");
+                selectedPiece = new PieceLocation(3,3,3);
             }
-
-            else //if a valid piece is clicked
+            else if (e.ColumnIndex == 0 && e.RowIndex == 1)
             {
-                //colouring the square
-                if (Global.selectedColour == "Blue")
-                {
-                    whiteFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Blue;
-                }
-                else
-                {
-                    whiteFace[e.ColumnIndex, e.RowIndex].Style.BackColor = colourSelector[0, 0].Style.BackColor;
-                }
-
-                coloured = true; //the cell has now been coloured so coloured is set to true
-
-                //setting the values of Global.location and Global.orientation based on which cell has been clicked
-                if (e.ColumnIndex == 0 && e.RowIndex == 0)
-                {
-                    Global.location[0] = 1;
-                    Global.location[1] = 3;
-                    Global.location[2] = 3;
-                    Global.orientation = null;
-                }
-                else if (e.ColumnIndex == 1 && e.RowIndex == 0)
-                {
-                    Global.location[0] = 2;
-                    Global.location[1] = 3;
-                    Global.location[2] = 3;
-                    Global.orientation = "good";
-                }
-                else if (e.ColumnIndex == 2 && e.RowIndex == 0)
-                {
-                    Global.location[0] = 3;
-                    Global.location[1] = 3;
-                    Global.location[2] = 3;
-                    Global.orientation = null;
-                }
-                else if (e.ColumnIndex == 0 && e.RowIndex == 1)
-                {
-                    Global.location[0] = 1;
-                    Global.location[1] = 3;
-                    Global.location[2] = 2;
-                    Global.orientation = "good";
-                }
-                else if (e.ColumnIndex == 2 && e.RowIndex == 1)
-                {
-                    Global.location[0] = 3;
-                    Global.location[1] = 3;
-                    Global.location[2] = 2;
-                    Global.orientation = "good";
-                }
-                else if (e.ColumnIndex == 0 && e.RowIndex == 2)
-                {
-                    Global.location[0] = 1;
-                    Global.location[1] = 3;
-                    Global.location[2] = 1;
-                    Global.orientation = null;
-                }
-                else if (e.ColumnIndex == 1 && e.RowIndex == 2)
-                {
-                    Global.location[0] = 2;
-                    Global.location[1] = 3;
-                    Global.location[2] = 1;
-                    Global.orientation = "good";
-                }
-                else if (e.ColumnIndex == 2 && e.RowIndex == 2)
-                {
-                    Global.location[0] = 3;
-                    Global.location[1] = 3;
-                    Global.location[2] = 1;
-                    Global.orientation = null;
-                }
+                selectedPiece = new PieceLocation(1,3,2);
+                goodEdgeOrientation = true;
             }
+            else if (e.ColumnIndex == 2 && e.RowIndex == 1)
+            {
+                selectedPiece = new PieceLocation(3,3,2);
+                goodEdgeOrientation = true;
+            }
+            else if (e.ColumnIndex == 0 && e.RowIndex == 2)
+            {
+                selectedPiece = new PieceLocation(1,3,1);
+            }
+            else if (e.ColumnIndex == 1 && e.RowIndex == 2)
+            {
+                selectedPiece = new PieceLocation(2,3,1);
+                goodEdgeOrientation = true;
+            }
+            else if (e.ColumnIndex == 2 && e.RowIndex == 2)
+            {
+                selectedPiece = new PieceLocation(3,3,1);
+            }
+            
           
 
 
@@ -281,21 +194,7 @@ namespace Rubiks_Cube_Solver
                 MessageBox.Show("Centre colours cannot be changed.");
             }
 
-            //if the user wants to clear a cell that is already clear
-            else if (Global.selectedColour == null && orangeFace[e.ColumnIndex, e.RowIndex].Style.BackColor != colourSelector[0, 0].Style.BackColor && orangeFace[e.ColumnIndex, e.RowIndex].Style.BackColor != Color.Blue)
-            {
-                MessageBox.Show("Square is already clear.");
-            }
-
-            else if (Global.selectedColour == null) //if the user wants to clear a coloured cell
-            {
-                //default colour applied to cell
-                orangeFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Silver;
-
-                coloured = false; //the cell has now been cleared so coloured is set to false
-            }
-
-            else if (coloured) //if a piece has already been selected
+            else if (selectionMade) //if a piece has already been selected
             {
                 MessageBox.Show("Cannot select more than one square.");
             }
@@ -303,74 +202,47 @@ namespace Rubiks_Cube_Solver
             else //if a valid piece is clicked
             {
                 //colouring the square
-                if (Global.selectedColour == "Blue")
-                {
-                    orangeFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Blue;
-                }
-                else
-                {
-                    orangeFace[e.ColumnIndex, e.RowIndex].Style.BackColor = colourSelector[0, 0].Style.BackColor;
-                }
+                orangeFace[e.ColumnIndex, e.RowIndex].Style.BackColor = stage.GetColour();
 
-                coloured = true; //the cell has now been coloured so coloured is set to true
+                selectionMade = true; //the cell has now been coloured so coloured is set to true
 
                 //setting the values of Global.location and Global.orientation based on which cell has been clicked
                 if (e.ColumnIndex == 0 && e.RowIndex == 0)
                 {
-                    Global.location[0] = 1;
-                    Global.location[1] = 3;
-                    Global.location[2] = 3;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(1,3,3);
+                    }
                 else if (e.ColumnIndex == 1 && e.RowIndex == 0)
                 {
-                    Global.location[0] = 1;
-                    Global.location[1] = 3;
-                    Global.location[2] = 2;
-                    Global.orientation = "bad";
+                    selectedPiece = new PieceLocation(1,3,2);
+                    goodEdgeOrientation = false;
                 }
                 else if (e.ColumnIndex == 2 && e.RowIndex == 0)
                 {
-                    Global.location[0] = 1;
-                    Global.location[1] = 3;
-                    Global.location[2] = 1;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(1,3,1);
+                    }
                 else if (e.ColumnIndex == 0 && e.RowIndex == 1)
                 {
-                    Global.location[0] = 1;
-                    Global.location[1] = 2;
-                    Global.location[2] = 3;
-                    Global.orientation = "bad";
+                    selectedPiece = new PieceLocation(1,2,3);
+                    goodEdgeOrientation = false;
                 }
                 else if (e.ColumnIndex == 2 && e.RowIndex == 1)
                 {
-                    Global.location[0] = 1;
-                    Global.location[1] = 2;
-                    Global.location[2] = 1;
-                    Global.orientation = "bad";
+                    selectedPiece = new PieceLocation(1,2,1);
+                    goodEdgeOrientation = false;
                 }
                 else if (e.ColumnIndex == 0 && e.RowIndex == 2)
                 {
-                    Global.location[0] = 1;
-                    Global.location[1] = 1;
-                    Global.location[2] = 3;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(1,1,3);
+                    }
                 else if (e.ColumnIndex == 1 && e.RowIndex == 2)
                 {
-                    Global.location[0] = 1;
-                    Global.location[1] = 1;
-                    Global.location[2] = 2;
-                    Global.orientation = "bad";
+                    selectedPiece = new PieceLocation(1,1,2);
+                    goodEdgeOrientation = false;
                 }
                 else if (e.ColumnIndex == 2 && e.RowIndex == 2)
                 {
-                    Global.location[0] = 1;
-                    Global.location[1] = 1;
-                    Global.location[2] = 1;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(1,1,1);
+                    }
             }
 
 
@@ -385,21 +257,7 @@ namespace Rubiks_Cube_Solver
                 MessageBox.Show("Centre colours cannot be changed.");
             }
 
-            //if the user wants to clear a cell that is already clear
-            else if (Global.selectedColour == null && greenFace[e.ColumnIndex, e.RowIndex].Style.BackColor != colourSelector[0, 0].Style.BackColor && greenFace[e.ColumnIndex, e.RowIndex].Style.BackColor != Color.Blue)
-            {
-                MessageBox.Show("Square is already clear.");
-            }
-
-            else if (Global.selectedColour == null) //if the user wants to clear a coloured cell
-            {
-                //default colour applied to cell
-                greenFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Silver;
-
-                coloured = false; //the cell has now been cleared so coloured is set to false
-            }
-
-            else if (coloured) //if a piece has already been selected
+            else if (selectionMade) //if a piece has already been selected
             {
                 MessageBox.Show("Cannot select more than one square.");
             }
@@ -407,74 +265,47 @@ namespace Rubiks_Cube_Solver
             else //if a valid piece is clicked
             {
                 //colouring the square
-                if (Global.selectedColour == "Blue")
-                {
-                    greenFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Blue;
-                }
-                else
-                {
-                    greenFace[e.ColumnIndex, e.RowIndex].Style.BackColor = colourSelector[0, 0].Style.BackColor;
-                }
+                greenFace[e.ColumnIndex, e.RowIndex].Style.BackColor = stage.GetColour();
 
-                coloured = true; //the cell has now been coloured so coloured is set to true
+                selectionMade = true; //the cell has now been coloured so coloured is set to true
 
                 //setting the values of Global.location and Global.orientation based on which cell has been clicked
                 if (e.ColumnIndex == 0 && e.RowIndex == 0)
                 {
-                    Global.location[0] = 1;
-                    Global.location[1] = 3;
-                    Global.location[2] = 1;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(1,3,1);
+                    }
                 else if (e.ColumnIndex == 1 && e.RowIndex == 0)
                 {
-                    Global.location[0] = 2;
-                    Global.location[1] = 3;
-                    Global.location[2] = 1;
-                    Global.orientation = "bad";
+                    selectedPiece = new PieceLocation(2,3,1);
+                    goodEdgeOrientation = false;
                 }
                 else if (e.ColumnIndex == 2 && e.RowIndex == 0)
                 {
-                    Global.location[0] = 3;
-                    Global.location[1] = 3;
-                    Global.location[2] = 1;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(3,3,1);
+                    }
                 else if (e.ColumnIndex == 0 && e.RowIndex == 1)
                 {
-                    Global.location[0] = 1;
-                    Global.location[1] = 2;
-                    Global.location[2] = 1;
-                    Global.orientation = "good";
+                    selectedPiece = new PieceLocation(1,2,1);
+                    goodEdgeOrientation = true;
                 }
                 else if (e.ColumnIndex == 2 && e.RowIndex == 1)
                 {
-                    Global.location[0] = 3;
-                    Global.location[1] = 2;
-                    Global.location[2] = 1;
-                    Global.orientation = "good";
+                    selectedPiece = new PieceLocation(3,2,1);
+                    goodEdgeOrientation = true;
                 }
                 else if (e.ColumnIndex == 0 && e.RowIndex == 2)
                 {
-                    Global.location[0] = 1;
-                    Global.location[1] = 1;
-                    Global.location[2] = 1;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(1,1,1);
+                    }
                 else if (e.ColumnIndex == 1 && e.RowIndex == 2)
                 {
-                    Global.location[0] = 2;
-                    Global.location[1] = 1;
-                    Global.location[2] = 1;
-                    Global.orientation = "bad";
+                    selectedPiece = new PieceLocation(2,1,1);
+                    goodEdgeOrientation = false;
                 }
                 else if (e.ColumnIndex == 2 && e.RowIndex == 2)
                 {
-                    Global.location[0] = 3;
-                    Global.location[1] = 1;
-                    Global.location[2] = 1;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(3,1,1);
+                    }
             }
         }
 
@@ -487,21 +318,7 @@ namespace Rubiks_Cube_Solver
                 MessageBox.Show("Centre colours cannot be changed.");
             }
 
-            //if the user wants to clear a cell that is already clear
-            else if (Global.selectedColour == null && redFace[e.ColumnIndex, e.RowIndex].Style.BackColor != colourSelector[0, 0].Style.BackColor && redFace[e.ColumnIndex, e.RowIndex].Style.BackColor != Color.Blue)
-            {
-                MessageBox.Show("Square is already clear.");
-            }
-
-            else if (Global.selectedColour == null) //if the user wants to clear a coloured cell
-            {
-                //default colour applied to cell
-                redFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Silver;
-
-                coloured = false; //the cell has now been cleared so coloured is set to false
-            }
-
-            else if (coloured) //if a piece has already been selected
+            else if (selectionMade) //if a piece has already been selected
             {
                 MessageBox.Show("Cannot select more than one square.");
             }
@@ -509,74 +326,47 @@ namespace Rubiks_Cube_Solver
             else //if a valid piece is clicked
             {
                 //colouring the square
-                if (Global.selectedColour == "Blue")
-                {
-                    redFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Blue;
-                }
-                else
-                {
-                    redFace[e.ColumnIndex, e.RowIndex].Style.BackColor = colourSelector[0, 0].Style.BackColor;
-                }
+                redFace[e.ColumnIndex, e.RowIndex].Style.BackColor = stage.GetColour();
 
-                coloured = true; //the cell has now been coloured so coloured is set to true
+                selectionMade = true; //the cell has now been coloured so coloured is set to true
 
                 //setting the values of Global.location and Global.orientation based on which cell has been clicked
                 if (e.ColumnIndex == 0 && e.RowIndex == 0)
                 {
-                    Global.location[0] = 3;
-                    Global.location[1] = 3;
-                    Global.location[2] = 1;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(3,3,1);
+                    }
                 else if (e.ColumnIndex == 1 && e.RowIndex == 0)
                 {
-                    Global.location[0] = 3;
-                    Global.location[1] = 3;
-                    Global.location[2] = 2;
-                    Global.orientation = "bad";
+                    selectedPiece = new PieceLocation(3,3,2);
+                    goodEdgeOrientation = false;
                 }
                 else if (e.ColumnIndex == 2 && e.RowIndex == 0)
                 {
-                    Global.location[0] = 3;
-                    Global.location[1] = 3;
-                    Global.location[2] = 3;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(3,3,3);
+                    }
                 else if (e.ColumnIndex == 0 && e.RowIndex == 1)
                 {
-                    Global.location[0] = 3;
-                    Global.location[1] = 2;
-                    Global.location[2] = 1;
-                    Global.orientation = "bad";
+                    selectedPiece = new PieceLocation(3,2,1);
+                    goodEdgeOrientation = false;
                 }
                 else if (e.ColumnIndex == 2 && e.RowIndex == 1)
                 {
-                    Global.location[0] = 3;
-                    Global.location[1] = 2;
-                    Global.location[2] = 3;
-                    Global.orientation = "bad";
+                    selectedPiece = new PieceLocation(3,2,3);
+                    goodEdgeOrientation = false;
                 }
                 else if (e.ColumnIndex == 0 && e.RowIndex == 2)
                 {
-                    Global.location[0] = 3;
-                    Global.location[1] = 1;
-                    Global.location[2] = 1;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(3,1,1);
+                    }
                 else if (e.ColumnIndex == 1 && e.RowIndex == 2)
                 {
-                    Global.location[0] = 3;
-                    Global.location[1] = 1;
-                    Global.location[2] = 2;
-                    Global.orientation = "bad";
+                    selectedPiece = new PieceLocation(3,1,2);
+                    goodEdgeOrientation = false;
                 }
                 else if (e.ColumnIndex == 2 && e.RowIndex == 2)
                 {
-                    Global.location[0] = 3;
-                    Global.location[1] = 1;
-                    Global.location[2] = 3;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(3,1,3);
+                    }
             }
         }
 
@@ -589,21 +379,7 @@ namespace Rubiks_Cube_Solver
                 MessageBox.Show("Centre colours cannot be changed.");
             }
 
-            //if the user wants to clear a cell that is already clear
-            else if (Global.selectedColour == null && blueFace[e.ColumnIndex, e.RowIndex].Style.BackColor != colourSelector[0, 0].Style.BackColor && blueFace[e.ColumnIndex, e.RowIndex].Style.BackColor != Color.Blue)
-            {
-                MessageBox.Show("Square is already clear.");
-            }
-
-            else if (Global.selectedColour == null) //if the user wants to clear a coloured cell
-            {
-                //default colour applied to cell
-                blueFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Silver;
-
-                coloured = false; //the cell has now been cleared so coloured is set to false
-            }
-
-            else if (coloured) //if a piece has already been selected
+            else if (selectionMade) //if a piece has already been selected
             {
                 MessageBox.Show("Cannot select more than one square.");
             }
@@ -611,74 +387,47 @@ namespace Rubiks_Cube_Solver
             else //if a valid piece is clicked
             {
                 //colouring the square
-                if (Global.selectedColour == "Blue")
-                {
-                    blueFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Blue;
-                }
-                else
-                {
-                    blueFace[e.ColumnIndex, e.RowIndex].Style.BackColor = colourSelector[0, 0].Style.BackColor;
-                }
+                blueFace[e.ColumnIndex, e.RowIndex].Style.BackColor = stage.GetColour();
 
-                coloured = true; //the cell has now been coloured so coloured is set to true
+                selectionMade = true; //the cell has now been coloured so coloured is set to true
 
                 //setting the values of Global.location and Global.orientation based on which cell has been clicked
                 if (e.ColumnIndex == 0 && e.RowIndex == 0)
                 {
-                    Global.location[0] = 3;
-                    Global.location[1] = 3;
-                    Global.location[2] = 3;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(3,3,3);
+                    }
                 else if (e.ColumnIndex == 1 && e.RowIndex == 0)
                 {
-                    Global.location[0] = 2;
-                    Global.location[1] = 3;
-                    Global.location[2] = 3;
-                    Global.orientation = "bad";
+                    selectedPiece = new PieceLocation(2,3,3);
+                    goodEdgeOrientation = false;
                 }
                 else if (e.ColumnIndex == 2 && e.RowIndex == 0)
                 {
-                    Global.location[0] = 1;
-                    Global.location[1] = 3;
-                    Global.location[2] = 3;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(1,3,3);
+                    }
                 else if (e.ColumnIndex == 0 && e.RowIndex == 1)
                 {
-                    Global.location[0] = 3;
-                    Global.location[1] = 2;
-                    Global.location[2] = 3;
-                    Global.orientation = "good";
+                    selectedPiece = new PieceLocation(3,2,3);
+                    goodEdgeOrientation = true;
                 }
                 else if (e.ColumnIndex == 2 && e.RowIndex == 1)
                 {
-                    Global.location[0] = 1;
-                    Global.location[1] = 2;
-                    Global.location[2] = 3;
-                    Global.orientation = "good";
+                    selectedPiece = new PieceLocation(1,2,3);
+                    goodEdgeOrientation = true;
                 }
                 else if (e.ColumnIndex == 0 && e.RowIndex == 2)
                 {
-                    Global.location[0] = 3;
-                    Global.location[1] = 1;
-                    Global.location[2] = 3;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(3,1,3);
+                    }
                 else if (e.ColumnIndex == 1 && e.RowIndex == 2)
                 {
-                    Global.location[0] = 2;
-                    Global.location[1] = 1;
-                    Global.location[2] = 3;
-                    Global.orientation = "bad";
+                    selectedPiece = new PieceLocation(2,1,3);
+                    goodEdgeOrientation = false;
                 }
                 else if (e.ColumnIndex == 2 && e.RowIndex == 2)
                 {
-                    Global.location[0] = 1;
-                    Global.location[1] = 1;
-                    Global.location[2] = 3;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(1,1,3);
+                    }
             }
 
         }
@@ -691,21 +440,7 @@ namespace Rubiks_Cube_Solver
             {
                 MessageBox.Show("Centre colours cannot be changed.");
             }
-
-            //if the user wants to clear a cell that is already clear
-            else if (Global.selectedColour == null && yellowFace[e.ColumnIndex, e.RowIndex].Style.BackColor != colourSelector[0, 0].Style.BackColor && yellowFace[e.ColumnIndex, e.RowIndex].Style.BackColor != Color.Blue)
-            {
-                MessageBox.Show("Square is already clear.");
-            }
-            
-            else if(Global.selectedColour == null) //if the user wants to clear a coloured cell
-            {                
-                yellowFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Silver; //default colour applied to cell
-
-                coloured = false; //the cell has now been cleared so coloured is set to false
-            } 
-
-            else if (coloured) //if a piece has already been selected
+            else if (selectionMade) //if a piece has already been selected
             {
                 MessageBox.Show("Cannot select more than one square.");
             }
@@ -713,74 +448,47 @@ namespace Rubiks_Cube_Solver
             else //if a valid piece is clicked
             {
                 //colouring the square
-                if (Global.selectedColour == "Blue")
-                {
-                    yellowFace[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Blue;
-                }
-                else
-                {
-                    yellowFace[e.ColumnIndex, e.RowIndex].Style.BackColor = colourSelector[0, 0].Style.BackColor;
-                }
+                yellowFace[e.ColumnIndex, e.RowIndex].Style.BackColor = stage.GetColour();
 
-                coloured = true; //the cell has now been coloured so coloured is set to true
+                selectionMade = true; //the cell has now been coloured so coloured is set to true
 
                 //setting the values of Global.location and Global.orientation based on which cell has been clicked
                 if (e.ColumnIndex == 0 && e.RowIndex == 0)
                 {
-                    Global.location[0] = 1;
-                    Global.location[1] = 1;
-                    Global.location[2] = 1;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(1,1,1);
+                    }
                 else if (e.ColumnIndex == 1 && e.RowIndex == 0)
                 {
-                    Global.location[0] = 2;
-                    Global.location[1] = 1;
-                    Global.location[2] = 1;
-                    Global.orientation = "good";
+                    selectedPiece = new PieceLocation(2,1,1);
+                    goodEdgeOrientation = true;
                 }
                 else if (e.ColumnIndex == 2 && e.RowIndex == 0)
                 {
-                    Global.location[0] = 3;
-                    Global.location[1] = 1;
-                    Global.location[2] = 1;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(3,1,1);
+                    }
                 else if (e.ColumnIndex == 0 && e.RowIndex == 1)
                 {
-                    Global.location[0] = 1;
-                    Global.location[1] = 1;
-                    Global.location[2] = 2;
-                    Global.orientation = "good";
+                    selectedPiece = new PieceLocation(1,1,2);
+                    goodEdgeOrientation = true;
                 }
                 else if (e.ColumnIndex == 2 && e.RowIndex == 1)
                 {
-                    Global.location[0] = 3;
-                    Global.location[1] = 1;
-                    Global.location[2] = 2;
-                    Global.orientation = "good";
+                    selectedPiece = new PieceLocation(3,1,2);
+                    goodEdgeOrientation = true;
                 }
                 else if (e.ColumnIndex == 0 && e.RowIndex == 2)
                 {
-                    Global.location[0] = 1;
-                    Global.location[1] = 1;
-                    Global.location[2] = 3;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(1,1,3);
+                    }
                 else if (e.ColumnIndex == 1 && e.RowIndex == 2)
                 {
-                    Global.location[0] = 2;
-                    Global.location[1] = 1;
-                    Global.location[2] = 3;
-                    Global.orientation = "good";
+                    selectedPiece = new PieceLocation(2,1,3);
+                    goodEdgeOrientation = true;
                 }
                 else if (e.ColumnIndex == 2 && e.RowIndex == 2)
                 {
-                    Global.location[0] = 3;
-                    Global.location[1] = 1;
-                    Global.location[2] = 3;
-                    Global.orientation = null;
-                }
+                    selectedPiece = new PieceLocation(3,1,3);
+                    }
             }
         }
 
@@ -793,7 +501,7 @@ namespace Rubiks_Cube_Solver
         private void btnFinish_Click(object sender, EventArgs e)
         {
             //checking if the user has inputted the position of the required piece
-            if (coloured) 
+            if (selectionMade) 
             {
                 //moving on to the output solution form
                 FormNavigator.Navigate<Output_Solution>(this);
@@ -806,5 +514,12 @@ namespace Rubiks_Cube_Solver
 
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            selectedPiece = null;
+            goodEdgeOrientation = null;
+
+
+        }
     }
 }
