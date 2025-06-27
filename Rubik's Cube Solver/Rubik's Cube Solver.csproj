@@ -2,6 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <LangVersion>latest</LangVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{162A806C-F4B8-407F-8347-18E04735E492}</ProjectGuid>
@@ -95,6 +96,8 @@
     <Compile Include="Forms\Timer\During Solve.Designer.cs">
       <DependentUpon>During Solve.cs</DependentUpon>
     </Compile>
+    <Compile Include="Solver\PieceLocation.cs" />
+    <Compile Include="Solver\Stage.cs" />
     <Compile Include="Util\FormNavigator.cs" />
     <Compile Include="Forms\Menu.cs">
       <SubType>Form</SubType>
@@ -228,5 +231,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
