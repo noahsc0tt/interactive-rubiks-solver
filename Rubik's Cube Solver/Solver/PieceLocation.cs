@@ -4,17 +4,50 @@ namespace Rubiks_Cube_Solver
 {
     internal class PieceLocation
     {
-        public int X { get; private set; }
-        public int Y { get; private set;}
-        public int Z { get; private set;}
-        public PieceLocation(int x, int y, int z)
+        private int _x;
+        private int _y;
+        private int _z;
+
+        public bool IsGoodOrientation { get; set; }
+
+        public int X
+        {
+            get => _x;
+            set
+            {
+                ValidateArg(value, nameof(X));
+                _x = value;
+            }
+        }
+
+        public int Y
+        {
+            get => _y;
+            set
+            {
+                ValidateArg(value, nameof(Y));
+                _y = value;
+            }
+        }
+
+        public int Z
+        {
+            get => _z;
+            set
+            {
+                ValidateArg(value, nameof(Z));
+                _z = value;
+            }
+        }
+        public PieceLocation(int x, int y, int z, bool isGood)
         {
             ValidateArg(x, nameof(x));
             ValidateArg(y, nameof(y));
             ValidateArg(z, nameof(z));
-            X = x;
-            Y = y;
-            Z = z;
+            _x = x;
+            _y = y;
+            _z = z;
+            IsGoodOrientation = isGood;
         }
         private static bool IsArgValid(int coord) => coord >= 0 && coord <= 2;
 
@@ -23,23 +56,6 @@ namespace Rubiks_Cube_Solver
             if (!IsArgValid(coord))
                 throw new ArgumentOutOfRangeException(paramName, "Coordinate must be in the range 0-2");
         }
-
-        public void setX(int x)
-        {
-            ValidateArg(x, nameof(x));
-            X = x;
-        }
-        public void setY(int y)
-        {
-            ValidateArg(y, nameof(y));
-            Y = y;
-        }
-        public void setZ(int z)
-        {
-            ValidateArg(z, nameof(z));
-            Z = z;
-        }
-
-        public int[] GetLocation() => [ X, Y, Z];
+        public (int X, int Y, int Z) GetLocation() => (X, Y, Z);
     }
 }

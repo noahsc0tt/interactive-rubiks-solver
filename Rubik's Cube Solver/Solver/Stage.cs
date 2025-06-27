@@ -6,28 +6,9 @@ using System.Collections.ObjectModel;
 
 namespace Rubiks_Cube_Solver
 {
-    internal readonly struct StageInfo
-    {
-        public string Name { get; }
-        public Color InputColour { get; }
-
-        public StageInfo(string name, Color colour)
-        {
-            this.Name = name;
-            InputColour = colour;
-        }
-    }
     internal class Stage
     {
-        public static readonly ReadOnlyDictionary<(int Step, int SubStep), StageInfo> StageInfoDict =
-            new ReadOnlyDictionary<(int Step, int SubStep), StageInfo>(new Dictionary<(int Step, int SubStep), StageInfo>
-            {
-                { new Stage(0, 0), new StageInfo("Cross", Color.Red) },
-                { new Stage(1, 0), new StageInfo("F2L", Color.Green) },
-                { new Stage(2, 0), new StageInfo("OLL", Color.Blue) },
-                { new Stage(3, 0), new StageInfo("PLL", Color.Yellow) }
-            });
-public int Step { get; private set; }
+        public int Step { get; private set; }
         public int SubStep { get; private set; }
 
         public Stage() : this(0,0) { }
@@ -47,8 +28,69 @@ public int Step { get; private set; }
                 throw new ArgumentOutOfRangeException(paramName, "Argument must be in the range 0-3");
         }
 
-        
-        public int[] GetStage() => [Step, SubStep];
+        public (int Step, int SubStep) GetStage() => (Step, SubStep);
+
+        public string GetName()
+        {
+            if (Step > 2) return "Stage Name already in form";
+
+            string name = "";
+            if (Step <= 1) name += "Yellow ";
+            name += Step switch
+            {
+                0 => "Cross",
+                1 => "Corners",
+                2 => "Middle Layer Edges"
+            };
+            name += " - ";
+
+            switch (Step)
+            {
+                case 0:
+                    name += "yellow and ";
+                    name += SubStep switch
+                    {
+                        0 => "green",
+                        1 => "red",
+                        2 => "blue",
+                        3 => "orange"
+                    };
+                    name += " edge";
+                    break;
+                case 1:
+                    name += "yellow, ";
+                    name += GetColourPair();
+                    name += " corner";
+                    break;
+                case 2:
+                    name += GetColourPair();
+                    name += " edge";
+                    break;
+            }
+            return name;
+        }
+
+        //helper method for GetName to reduce duplication
+        private string GetColourPair() => SubStep switch
+        {
+            0 => "green and red",
+            1 => "red and blue",
+            2 => "blue and orange",
+            3 => "orange and green"
+        };
+
+        public Color GetColour() => Step switch
+        {
+            0 or 1 => Color.Yellow,
+            2 => SubStep switch
+            {
+                0 => Color.Green,
+                1 => Color.Red,
+                2 => Color.RoyalBlue,
+                3 => Color.Orange
+            },
+            _ => Color.Gray // default colour since step 3 does not have colours
+        };
 
         public void Increment()
         {
