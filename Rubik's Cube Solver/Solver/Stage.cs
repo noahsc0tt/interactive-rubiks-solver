@@ -41,15 +41,15 @@ namespace Rubiks_Cube_Solver
 
             string subStepName = Step switch
             {
-                0 => $"yellow and " + SubStep switch
+                0 => $"yellow and {SubStep switch
                 {
                     0 => "green",
                     1 => "red",
                     2 => "blue",
                     3 => "orange"
-                } + " edge",
-                1 => "yellow, " + GetColourPair() + " corner",
-                2 => GetColourPair() + " edge"
+                }} edge",
+                1 => $"yellow, {GetColourPair()} corner",
+                2 => $"{GetColourPair()} edge"
             };
             return stepName + " - " + subStepName;
         }
