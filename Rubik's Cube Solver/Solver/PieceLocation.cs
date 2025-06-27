@@ -4,7 +4,17 @@ namespace Rubiks_Cube_Solver
 {
     internal enum Orientation
     {
-        Good, Bad
+        Good, Bad, Corner
+    }
+
+    internal static class OrientationFlipExtension
+    {
+        public static Orientation Flip(this Orientation original) => original switch
+        {
+            Orientation.Good => Orientation.Bad,
+            Orientation.Bad => Orientation.Good,
+            Orientation.Corner => Orientation.Corner
+        };
     }
 
     internal class PieceLocation
