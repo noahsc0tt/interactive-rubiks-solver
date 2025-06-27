@@ -7,99 +7,104 @@ namespace Rubiks_Cube_Solver
     internal partial class Output_Solution : Form
     {
         private readonly Stage stage;
+        private PieceLocation location;
+        private bool? isGoodOrientation;
 
-        public Output_Solution(Stage currentStage)
+
+        public Output_Solution(Stage currentStage, PieceLocation location, bool? isGood)
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
 
             stage = currentStage;
+            this.location = location;
+            isGoodOrientation = isGood;
         }
 
         private void rotatePieceLocation()
         {
             //checking if the piece is an edge
-            if (Global.location[0] == 2 || Global.location[1] == 2 || Global.location[2] == 2)
+            if (location.X == 1 || location.Y == 1 || location.Z == 1)
             {
-                if (Global.location[1] == 3) //checking if the edge is in the top layer of the cube
+                if (location.Y == 2) //checking if the edge is in the top layer of the cube
                 {
-                    if (Global.location[0] == 2)
+                    if (location.X == 1)
                     {
-                        if (Global.location[2] == 3)
+                        if (location.Z == 2)
                         {
-                            Global.location[0] = 1;
-                            Global.location[2] = 2;
+                            location.X = 0;
+                            location.Z = 1;
                         }
                         else
                         {
-                            Global.location[0] = 3;
-                            Global.location[2] = 2;
+                            location.X = 2;
+                            location.Z = 1;
                         }
                     }
                     else
                     {
-                        int swap = Global.location[0];
-                        Global.location[0] = Global.location[2];
-                        Global.location[2] = swap;
+                        int swap = location.X;
+                        location.X = location.Z;
+                        location.Z = swap;
                     }
                 }
-                else if (Global.location[1] == 2) //checking if the edge is in the middle layer of the cube
+                else if (location.Y == 1) //checking if the edge is in the middle layer of the cube
                 {
-                    int swap = Global.location[0];
+                    int swap = location.X;
 
-                    if (Global.location[2] == 1)
+                    if (location.Z == 0)
                     {
-                        Global.location[0] = 3;
+                        location.X = 2;
                     }
                     else
                     {
-                        Global.location[0] = 1;
+                        location.X = 0;
                     }
                     
-                    Global.location[2] = swap;
+                    location.Z = swap;
                     
-                    if (Global.orientation == "good")
+                    if (isGoodOrientation == true)
                     {
-                        Global.orientation = "bad";
+                        isGoodOrientation = false;
                     }
                     else
                     {
-                        Global.orientation = "good";
+                        isGoodOrientation = true;
                     }
                 }
                 else //if the edge is in the bottom layer of the cube
                 {
-                    if (Global.location[2] == 1)
+                    if (location.Z == 0)
                     {
-                        Global.location[0] = 3;
-                        Global.location[2] = 2;
+                        location.X = 2;
+                        location.Z = 1;
                     }
-                    else if (Global.location[2] == 2)
+                    else if (location.Z == 1)
                     {
-                        int swap = Global.location[0];
-                        Global.location[0] = Global.location[2];
-                        Global.location[2] = swap;
+                        int swap = location.X;
+                        location.X = location.Z;
+                        location.Z = swap;
                     }
                     else
                     {
-                        Global.location[0] = 1;
-                        Global.location[2] = 2;
+                        location.X = 0;
+                        location.Z = 1;
                     }
                 }
             }
             else //if the piece is a corner
             {
-                int swap = Global.location[0];
+                int swap = location.X;
 
-                if (Global.location[2] == 1)
+                if (location.Z == 0)
                 {
-                    Global.location[0] = 3;
+                    location.X = 2;
                 }
                 else
                 {
-                    Global.location[0] = 1;
+                    location.X = 0;
                 }
-                Global.location[2] = swap;
+                location.Z = swap;
             }
         }
 
@@ -122,15 +127,15 @@ namespace Rubiks_Cube_Solver
         {
             //calculating the necessary cube orientation based on the value of stage.subStep
             string frontFace = string.Empty;           
-            if (stage.SubStep == 1)
+            if (stage.SubStep == 0)
             {
                 frontFace = "green";
             }
-            else if (stage.SubStep == 2)
+            else if (stage.SubStep == 1)
             {
                 frontFace = "orange";
             }
-            else if (stage.SubStep == 3)
+            else if (stage.SubStep == 2)
             {
                 frontFace = "blue";
             }
@@ -151,15 +156,15 @@ namespace Rubiks_Cube_Solver
 
 
             //updating the 'stage' label to show the user which stage of the solve they are on
-            if (stage.Step == 1)
+            if (stage.Step == 0)
             {
                 lblNameOfStage.Text = "Stage: Yellow edges";
             }
-            else if (stage.Step == 2)
+            else if (stage.Step == 1)
             {
                 lblNameOfStage.Text = "Stage: Yellow corners";
             }
-            else if (stage.Step == 3)
+            else if (stage.Step == 2)
             {
                 lblNameOfStage.Text = "Stage: Middle layer edges";
             }
