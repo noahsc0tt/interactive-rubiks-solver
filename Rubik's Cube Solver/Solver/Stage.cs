@@ -11,16 +11,19 @@ namespace Rubiks_Cube_Solver
 
         public Stage(int step, int subStep)
         {
-            if (!IsValid(step, subStep))
+            if (!IsValid(step))
             {
-                throw new ArgumentOutOfRangeException(null, "Invalid stage arguments; both must be in the range 0-3");
+                throw new ArgumentOutOfRangeException("step", "step must be in the range 0-3");
+            }
+            else if (!IsValid(subStep))
+            {
+                throw new ArgumentOutOfRangeException("subStep", "subStep must be in the range 0-3");
             }
             this.step = step;
             this.subStep = subStep;
         }
-        
-        private static bool IsValid(int step, int subStep) => 
-            step >= 0 && step <= 3 && subStep >= 0 && subStep <= 3;
+
+        private static bool IsValid(int arg) => arg >= 0 && arg <= 3;
         
 
         public int[] GetStage() => new int[] { step, subStep };
