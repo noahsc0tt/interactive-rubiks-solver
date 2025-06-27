@@ -13,7 +13,7 @@ namespace Rubiks_Cube_Solver
             get => _x;
             set
             {
-                ValidateArg(value, nameof(X));
+                ValidateCoord(value, nameof(X));
                 _x = value;
             }
         }
@@ -23,7 +23,7 @@ namespace Rubiks_Cube_Solver
             get => _y;
             set
             {
-                ValidateArg(value, nameof(Y));
+                ValidateCoord(value, nameof(Y));
                 _y = value;
             }
         }
@@ -33,25 +33,25 @@ namespace Rubiks_Cube_Solver
             get => _z;
             set
             {
-                ValidateArg(value, nameof(Z));
+                ValidateCoord(value, nameof(Z));
                 _z = value;
             }
         }
         public PieceLocation((int x, int y, int z) location) : this(location.x, location.y, location.z) { }
         public PieceLocation(int x, int y, int z)
         {
-            ValidateArg(x, nameof(x));
-            ValidateArg(y, nameof(y));
-            ValidateArg(z, nameof(z));
+            ValidateCoord(x, nameof(x));
+            ValidateCoord(y, nameof(y));
+            ValidateCoord(z, nameof(z));
             _x = x;
             _y = y;
             _z = z;
         }
-        private static bool IsArgValid(int coord) => coord >= 0 && coord <= 2;
+        private static bool IsCoordValid(int coord) => coord >= 0 && coord <= 2;
 
-        private static void ValidateArg(int coord, string paramName)
+        private static void ValidateCoord(int coord, string paramName)
         {
-            if (!IsArgValid(coord))
+            if (!IsCoordValid(coord))
                 throw new ArgumentOutOfRangeException(paramName, "Coordinate must be in the range 0-2");
         }
         public (int X, int Y, int Z) GetLocation() => (X, Y, Z);
