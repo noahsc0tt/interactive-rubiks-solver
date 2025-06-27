@@ -1,28 +1,22 @@
 ﻿using System;
 
-namespace Rubiks_Cube_Solver.Solver
+namespace Rubiks_Cube_Solver
 {
     internal class Stage
     {
         private int step;
         private int subStep;
 
-        public Stage()
-        {
-            new Stage(0, 0);
-        }
+        public Stage() : this(0,0) { }
 
         public Stage(int step, int subStep)
         {
-            if (IsValid(step, subStep))
+            if (!IsValid(step, subStep))
             {
-                this.step = step;
-                this.subStep = subStep;
+                throw new ArgumentOutOfRangeException(null, "Invalid stage arguments; both must be in the range 0-3");
             }
-            else
-            {
-                throw new ArgumentOutOfRangeException(null, "Invalid stage arguments");
-            }
+            this.step = step;
+            this.subStep = subStep;
         }
         
         private static bool IsValid(int step, int subStep) => 
@@ -44,7 +38,7 @@ namespace Rubiks_Cube_Solver.Solver
             }
             else
             {
-                throw new InvalidOperationException("Stage is already at maximum");
+                throw new InvalidOperationException("Stage is already at maximum (3,3)");
             }
         }
     }
