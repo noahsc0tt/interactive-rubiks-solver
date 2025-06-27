@@ -4,58 +4,18 @@ using System.Windows.Forms;
 
 namespace Rubiks_Cube_Solver
 {
-    public partial class Input_Colours : Form
+    internal partial class Input_Colours : Form
     {
-
-        public Input_Colours()
+        private Stage stage;
+        public Input_Colours(Stage currentStage)
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
+
+            stage = currentStage;
         }
 
-        private void populateDataGrids()
-        {
-            colourSelector.ClearSelection();//un-highlighting button
-
-            //populating the Rubik's cube net and setting the colour of the centre pieces
-
-            orangeFace.Rows.Add("", "", "");
-            orangeFace.Rows.Add("", "", "");
-            orangeFace.Rows.Add("", "", "");
-            orangeFace.ClearSelection(); //un-highlighting buttons
-            orangeFace[1, 1].Style.BackColor = Color.Orange;
-
-            redFace.Rows.Add("", "", "");
-            redFace.Rows.Add("", "", "");
-            redFace.Rows.Add("", "", "");
-            redFace.ClearSelection(); //un-highlighting buttons
-            redFace[1, 1].Style.BackColor = Color.Red;
-
-            whiteFace.Rows.Add("", "", "");
-            whiteFace.Rows.Add("", "", "");
-            whiteFace.Rows.Add("", "", "");
-            whiteFace.ClearSelection(); //un-highlighting buttons
-            whiteFace[1, 1].Style.BackColor = Color.White;
-
-            yellowFace.Rows.Add("", "", "");
-            yellowFace.Rows.Add("", "", "");
-            yellowFace.Rows.Add("", "", "");
-            yellowFace.ClearSelection(); //un-highlighting buttons
-            yellowFace[1, 1].Style.BackColor = Color.Yellow;
-
-            blueFace.Rows.Add("", "", "");
-            blueFace.Rows.Add("", "", "");
-            blueFace.Rows.Add("", "", "");
-            blueFace.ClearSelection(); //un-highlighting buttons
-            blueFace[1, 1].Style.BackColor = Color.Blue;
-
-            greenFace.Rows.Add("", "", "");
-            greenFace.Rows.Add("", "", "");
-            greenFace.Rows.Add("", "", "");
-            greenFace.ClearSelection(); //un-highlighting buttons
-            greenFace[1, 1].Style.BackColor = Color.Green;
-
-        }
+        
 
         private void Solver_Input_Colours_Load(object sender, EventArgs e)
         {
@@ -66,23 +26,23 @@ namespace Rubiks_Cube_Solver
             string requiredPiece = string.Empty;
             
             //setting the value of these variables based on the value of Global.stage
-            if (Global.stage[0] == 1)
+            if (stage.step == 1)
             {
-                if (Global.stage[1] == 1)
+                if (stage.subStep == 1)
                 {
                     requiredPiece = "green";
                 }
-                else if (Global.stage[1] == 2)
+                else if (stage.subStep == 2)
                 {
                     requiredPiece = "orange";
 
                 }
-                else if (Global.stage[1] == 3)
+                else if (stage.subStep == 3)
                 {
                     requiredPiece = "blue";
 
                 }
-                else if (Global.stage[1] == 4)
+                else if (stage.subStep == 4)
                 {
                     requiredPiece = "red";
 
@@ -94,24 +54,24 @@ namespace Rubiks_Cube_Solver
                 Global.selectedColour = "Yellow";
 
             }
-            else if (Global.stage[0] == 2)
+            else if (stage.step == 2)
             {
-                if (Global.stage[1] == 1)
+                if (stage.subStep == 1)
                 {
                     requiredPiece = "green and red";
 
                 }
-                else if (Global.stage[1] == 2)
+                else if (stage.subStep == 2)
                 {
                     requiredPiece = "orange and green";
 
                 }
-                else if (Global.stage[1] == 3)
+                else if (stage.subStep == 3)
                 {
                     requiredPiece = "blue and orange";
 
                 }
-                else if (Global.stage[1] == 4)
+                else if (stage.subStep == 4)
                 {
                     requiredPiece = "red and blue";
 
@@ -122,27 +82,27 @@ namespace Rubiks_Cube_Solver
                 //setting Global.selectedColour to the correct value for this stage
                 Global.selectedColour = "Yellow";
             }
-            else if (Global.stage[0] == 3)
+            else if (stage.step == 3)
             {
-                if (Global.stage[1] == 1)
+                if (stage.subStep == 1)
                 {
                     requiredPiece = "green and red";
                     requiredFace = "green";
 
                 }
-                else if (Global.stage[1] == 2)
+                else if (stage.subStep == 2)
                 {
                     requiredPiece = "orange and green";
                     requiredFace = "orange";
 
                 }
-                else if (Global.stage[1] == 3)
+                else if (stage.subStep == 3)
                 {
                     requiredPiece = "blue and orange";
                     requiredFace = "blue";
 
                 }
-                else if (Global.stage[1] == 4)
+                else if (stage.subStep == 4)
                 {
                     requiredPiece = "red and blue";
                     requiredFace = "red";
@@ -156,7 +116,7 @@ namespace Rubiks_Cube_Solver
 
             }
 
-            populateDataGrids();
+            //populateDataGrids();
 
 
         }

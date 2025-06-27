@@ -4,12 +4,16 @@ using System.Windows.Forms;
 
 namespace Rubiks_Cube_Solver
 {
-    public partial class Output_Solution : Form
+    internal partial class Output_Solution : Form
     {
-        public Output_Solution()
+        private readonly Stage stage;
+
+        public Output_Solution(Stage currentStage)
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
+
+            stage = currentStage;
         }
 
         private void rotatePieceLocation()
@@ -116,21 +120,21 @@ namespace Rubiks_Cube_Solver
 
         private void Output_Solution_Load(object sender, EventArgs e)
         {
-            //calculating the necessary cube orientation based on the value of Global.stage[1]
+            //calculating the necessary cube orientation based on the value of stage.subStep
             string frontFace = string.Empty;           
-            if (Global.stage[1] == 1)
+            if (stage.subStep == 1)
             {
                 frontFace = "green";
             }
-            else if (Global.stage[1] == 2)
+            else if (stage.subStep == 2)
             {
                 frontFace = "orange";
             }
-            else if (Global.stage[1] == 3)
+            else if (stage.subStep == 3)
             {
                 frontFace = "blue";
             }
-            else if (Global.stage[1] == 4)
+            else if (stage.subStep == 4)
             {
                 frontFace = "red";
             }
@@ -140,22 +144,22 @@ namespace Rubiks_Cube_Solver
 
 
             //calling the 'rotatePieceLocation' procedure the correct number of times 
-            for (int i = 0; i < Global.stage[1]-1; i++)
+            for (int i = 0; i < stage.subStep-1; i++)
             {
                 rotatePieceLocation();
             }
 
 
             //updating the 'stage' label to show the user which stage of the solve they are on
-            if (Global.stage[0] == 1)
+            if (stage.step == 1)
             {
                 lblNameOfStage.Text = "Stage: Yellow edges";
             }
-            else if (Global.stage[0] == 2)
+            else if (stage.step == 2)
             {
                 lblNameOfStage.Text = "Stage: Yellow corners";
             }
-            else if (Global.stage[0] == 3)
+            else if (stage.step == 3)
             {
                 lblNameOfStage.Text = "Stage: Middle layer edges";
             }

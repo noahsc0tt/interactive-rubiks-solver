@@ -4,12 +4,16 @@ using System.Windows.Forms;
 
 namespace Rubiks_Cube_Solver
 {
-    public partial class Checking_Moves : Form
+    internal partial class Checking_Moves : Form
     {
-        public Checking_Moves()
+        private Stage stage;
+
+        public Checking_Moves(Stage currentStage)
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
+
+            stage = currentStage;
         }
 
         public void colourYellowEdges()
@@ -98,106 +102,106 @@ namespace Rubiks_Cube_Solver
 
             //colouring the net based on the stage
 
-            if (Global.stage[0] == 1) //yellow edges
+            if (stage.step == 1) //yellow edges
             {
-                if (Global.stage[1] >= 1) //yellow and green edge
+                if (stage.subStep >= 1) //yellow and green edge
                 {
                     greenFace[1, 2].Style.BackColor = Color.Green;
                     yellowFace[1, 0].Style.BackColor = Color.Yellow;
                 }
-                if (Global.stage[1] >= 2) //yellow and orange edge
+                if (stage.subStep >= 2) //yellow and orange edge
                 {
                     orangeFace[1, 2].Style.BackColor = Color.Orange;
                     yellowFace[0, 1].Style.BackColor = Color.Yellow;
                 }
-                if (Global.stage[1] >= 3) //yellow and blue edge
+                if (stage.subStep >= 3) //yellow and blue edge
                 {
                     blueFace[1, 2].Style.BackColor = Color.Blue;
                     yellowFace[1, 2].Style.BackColor = Color.Yellow;
                 }
-                if (Global.stage[1] == 4) //yellow and red edge
+                if (stage.subStep == 4) //yellow and red edge
                 {
                     redFace[1, 2].Style.BackColor = Color.Red;
                     yellowFace[2, 1].Style.BackColor = Color.Yellow;
                 }
             }
-            else if (Global.stage[0] == 2) //yellow corners
+            else if (stage.step == 2) //yellow corners
             {
                 colourYellowEdges();
 
-                if (Global.stage[1] >= 1) //yellow, green and red corner
+                if (stage.subStep >= 1) //yellow, green and red corner
                 {
                     greenFace[2, 2].Style.BackColor = Color.Green;
                     redFace[0, 2].Style.BackColor = Color.Red;
                     yellowFace[2, 0].Style.BackColor = Color.Yellow;
                 }
 
-                if (Global.stage[1] >= 2) //yellow orange and green corner
+                if (stage.subStep >= 2) //yellow orange and green corner
                 {
                     greenFace[0, 2].Style.BackColor = Color.Green;
                     orangeFace[2, 2].Style.BackColor = Color.Orange;
                     yellowFace[0, 0].Style.BackColor = Color.Yellow;
                 }
-                if (Global.stage[1] >= 3) //yellow blue and orange corner
+                if (stage.subStep >= 3) //yellow blue and orange corner
                 {
                     orangeFace[0, 2].Style.BackColor = Color.Orange;
                     blueFace[2, 2].Style.BackColor = Color.Blue;
                     yellowFace[0, 2].Style.BackColor = Color.Yellow;
                 }
-                if (Global.stage[1] == 4) //yellow red and blue corner
+                if (stage.subStep == 4) //yellow red and blue corner
                 {
                     blueFace[0, 2].Style.BackColor = Color.Blue;
                     redFace[2, 2].Style.BackColor = Color.Red;
                     yellowFace[2, 2].Style.BackColor = Color.Yellow;
                 }
             }
-            else if (Global.stage[0] == 3) //middle layer edges
+            else if (stage.step == 3) //middle layer edges
             {
                 colourYellowEdges();
                 colourYellowCorners();
 
-                if (Global.stage[1] >= 1) //green and red edge
+                if (stage.subStep >= 1) //green and red edge
                 {
                     greenFace[2, 1].Style.BackColor = Color.Green;
                     redFace[0, 1].Style.BackColor = Color.Red;
                 }
-                if (Global.stage[1] >= 2) //orange and green edge
+                if (stage.subStep >= 2) //orange and green edge
                 {
                     orangeFace[2, 1].Style.BackColor = Color.Orange;
                     greenFace[0, 1].Style.BackColor = Color.Green;
                 }
-                if (Global.stage[1] >= 3) //blue and orange edge
+                if (stage.subStep >= 3) //blue and orange edge
                 {
                     blueFace[2, 1].Style.BackColor = Color.Blue;
                     orangeFace[0, 1].Style.BackColor = Color.Orange;
                 }
-                if (Global.stage[1] == 4) //red and blue edge
+                if (stage.subStep == 4) //red and blue edge
                 {
                     redFace[2, 1].Style.BackColor = Color.Red;
                     blueFace[0, 1].Style.BackColor = Color.Blue;
                 }
             }
-            else if (Global.stage[0] == 4)
+            else if (stage.step == 4)
             {
                 colourYellowEdges();
                 colourYellowCorners();
                 colourMiddleEdges();
 
-                if (Global.stage[1] >= 1) //top layer edges
+                if (stage.subStep >= 1) //top layer edges
                 {
                     whiteFace[0, 1].Style.BackColor = Color.White;
                     whiteFace[1, 0].Style.BackColor = Color.White;
                     whiteFace[2, 1].Style.BackColor = Color.White;
                     whiteFace[1, 2].Style.BackColor = Color.White;
                 }
-                if (Global.stage[1] >= 2) //top layer corners
+                if (stage.subStep >= 2) //top layer corners
                 {
                     whiteFace[0, 0].Style.BackColor = Color.White;
                     whiteFace[2, 0].Style.BackColor = Color.White;
                     whiteFace[0, 2].Style.BackColor = Color.White;
                     whiteFace[2, 2].Style.BackColor = Color.White;
                 }
-                if (Global.stage[1] >= 3) //permuting corners
+                if (stage.subStep >= 3) //permuting corners
                 {
                     greenFace[0, 0].Style.BackColor = Color.Green;
                     greenFace[2, 0].Style.BackColor = Color.Green;
@@ -209,7 +213,7 @@ namespace Rubiks_Cube_Solver
                     redFace[2, 0].Style.BackColor = Color.Red;
 
                 }
-                if (Global.stage[1] == 4) //permuting edges
+                if (stage.subStep == 4) //permuting edges
                 {
                     greenFace[1, 0].Style.BackColor = Color.Green;
                     orangeFace[1, 0].Style.BackColor = Color.Orange;
@@ -223,7 +227,7 @@ namespace Rubiks_Cube_Solver
         private void Checking_Moves_Load(object sender, EventArgs e)
         {
             //changing the text of the 'Next Stage' button if the user has completed the solve
-            if (Global.stage[0] == 4 && Global.stage[1] == 4)
+            if (stage.step == 4 && stage.subStep == 4)
             {
                 btnNextStage.Visible = false;
 
@@ -242,26 +246,26 @@ namespace Rubiks_Cube_Solver
 
         private void btnNextStage_Click(object sender, EventArgs e)
         {
-            Global.incrementStage();
+            stage.Increment();
 
-            if (Global.stage[0] == 4)
+            if (stage.step == 4)
             {
-                if (Global.stage[1] == 1)
+                if (stage.subStep == 1)
                 {
                     FormNavigator.Navigate<Top_Layer_Edges>(this);
 
                 }
-                else if (Global.stage[1] == 2)
+                else if (stage.subStep == 2)
                 {
                     FormNavigator.Navigate<Top_Layer_Corners>(this);
 
                 }
-                else if (Global.stage[1] == 3)
+                else if (stage.subStep == 3)
                 {
                     FormNavigator.Navigate<Permuting_Corners>(this);
 
                 }
-                else if (Global.stage[1] == 4)
+                else if (stage.subStep == 4)
                 {
                     FormNavigator.Navigate<Permuting_Edges>(this);
                 }
@@ -281,53 +285,46 @@ namespace Rubiks_Cube_Solver
 
             if ((string)boxChooseStage.SelectedItem == "Yellow Edges")
             {
-                Global.stage[0] = 1;
-                Global.stage[1] = 1;
+                stage = new Stage(1,1);
 
                 FormNavigator.Navigate<Input_Colours>(this);
                 
             }
             if ((string)boxChooseStage.SelectedItem == "Yellow Corners")
             {
-                Global.stage[0] = 2;
-                Global.stage[1] = 1;
+                stage = new Stage(2,1);
 
                 FormNavigator.Navigate<Input_Colours>(this);
                 
             }
             if ((string)boxChooseStage.SelectedItem == "Middle Layer Edges")
             {
-                Global.stage[0] = 3;
-                Global.stage[1] = 1;
+                stage = new Stage(3,1);
 
                 FormNavigator.Navigate<Input_Colours>(this);
                 
             }
             if ((string)boxChooseStage.SelectedItem == "White Edges")
             {
-                Global.stage[0] = 4;
-                Global.stage[1] = 1;
+                stage = new Stage(4,1);
 
                 FormNavigator.Navigate<Top_Layer_Edges>(this);
             }
             if ((string)boxChooseStage.SelectedItem == "White Corners")
             {
-                Global.stage[0] = 4;
-                Global.stage[1] = 2;
+                stage = new Stage(4,2);
 
                 FormNavigator.Navigate<Top_Layer_Corners>(this);
             }
             if ((string)boxChooseStage.SelectedItem == "Corner Permutation")
             {
-                Global.stage[0] = 4;
-                Global.stage[1] = 3;
+                stage = new Stage(4,3);
 
                 FormNavigator.Navigate<Top_Layer_Corners>(this);
             }
             if ((string)boxChooseStage.SelectedItem == "Edge Permutation")
             {
-                Global.stage[0] = 4;
-                Global.stage[1] = 4;
+                stage = new Stage(4,4);
 
                 FormNavigator.Navigate<Top_Layer_Edges>(this);
             }

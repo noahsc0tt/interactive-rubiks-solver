@@ -4,8 +4,8 @@ namespace Rubiks_Cube_Solver
 {
     internal class Stage
     {
-        private int step;
-        private int subStep;
+        public int step { get; private set; }
+        public int subStep { get; private set; }
 
         public Stage() : this(0,0) { }
 
@@ -25,7 +25,7 @@ namespace Rubiks_Cube_Solver
 
         public int[] GetStage() => new int[] { step, subStep };
 
-        public void IncrementStage()
+        public void Increment()
         {
             if (subStep < 3)
             {

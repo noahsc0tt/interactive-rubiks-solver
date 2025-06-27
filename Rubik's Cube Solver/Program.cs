@@ -11,24 +11,10 @@ namespace Rubiks_Cube_Solver
 
         public static string orientation;
 
-        public static int[] stage = { 3, 4 };
-
         public static string selectedColour;
 
-        public static bool coloured = false;        
-        public static void incrementStage()
-        {
-            //controlling incrementation of the Global.stage attribute through the different stages of the solve
-            if (stage[1] < 4) 
-            {
-                stage[1]++;
-            }
-            else
-            {
-                stage[0]++;
-                stage[1] = 1;
-            }
-        }
+        public static bool coloured = false;
+        
     }
 
     internal static class Program
