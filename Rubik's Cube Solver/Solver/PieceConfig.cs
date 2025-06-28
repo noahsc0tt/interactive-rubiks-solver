@@ -81,10 +81,12 @@ namespace Rubiks_Cube_Solver
 
     internal class PieceConfig
     {
-        public PieceOrientation Orientation { get; set; }
         public PieceLocation Location { get; set; }
+        public PieceOrientation Orientation { get; set; }
 
-        public PieceConfig (PieceOrientation orientation, PieceLocation location)
+        public PieceConfig((int, int, int) location, PieceOrientation orientation) :
+            this(new PieceLocation(location), orientation) { }
+        public PieceConfig(PieceLocation location, PieceOrientation orientation)
         {
             Orientation = orientation;
             Location = location;
