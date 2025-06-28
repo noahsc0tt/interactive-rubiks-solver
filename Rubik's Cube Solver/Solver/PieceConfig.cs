@@ -97,5 +97,18 @@ namespace Rubiks_Cube_Solver
             Orientation = orientation;
             Location = location;
         }
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+            PieceConfig other = (PieceConfig)obj;
+            return Orientation == other.Orientation && Location.Equals(other.Location);
+        }
+
+        public override int GetHashCode()
+        {
+            // using hash of ValueTuple
+            return (Orientation, Location).GetHashCode();
+        }
     }
 }
