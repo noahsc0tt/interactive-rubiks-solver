@@ -70,6 +70,21 @@ namespace Rubiks_Cube_Solver
                 throw new ArgumentOutOfRangeException(paramName, "Coordinate must be in the range 0-2");
         }
         public (int X, int Y, int Z) GetLocation() => (X, Y, Z);
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+                return false;
+            PieceLocation other = (PieceLocation)obj;
+            return X == other.X && Y == other.Y && Z == other.Z;
+        }
+
+        public override int GetHashCode()
+        {
+            // using hash of ValueTuple
+            return (X, Y, Z).GetHashCode();
+        }
+
     }
 
     internal class PieceConfig
