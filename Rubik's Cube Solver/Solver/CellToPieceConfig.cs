@@ -25,13 +25,8 @@ namespace Rubiks_Cube_Solver
         
         public (int X, int Y, Color Face) GetLocation() => (X, Y, Face);
 
-        public override bool Equals(object obj)
-        {
-            if (obj == null || GetType() != obj.GetType())
-                return false;
-            CubeNetCellLocation other = (CubeNetCellLocation)obj;
-            return X == other.X && Y == other.Y && Face.Equals(other.Face);
-        }
+        public override bool Equals(object obj) =>
+            (obj is CubeNetCellLocation other) && X == other.X && Y == other.Y && Face.Equals(other.Face);
 
         public override int GetHashCode()
         {

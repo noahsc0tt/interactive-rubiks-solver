@@ -71,13 +71,8 @@ namespace Rubiks_Cube_Solver
         }
         public (int X, int Y, int Z) GetLocation() => (X, Y, Z);
 
-        public override bool Equals(object obj)
-        {
-            if (obj == null || GetType() != obj.GetType())
-                return false;
-            PieceLocation other = (PieceLocation)obj;
-            return X == other.X && Y == other.Y && Z == other.Z;
-        }
+        public override bool Equals(object obj) =>
+            (obj is PieceLocation other) && X == other.X && Y == other.Y && Z == other.Z;
 
         public override int GetHashCode()
         {
@@ -97,13 +92,8 @@ namespace Rubiks_Cube_Solver
             Orientation = orientation;
             Location = location;
         }
-        public override bool Equals(object obj)
-        {
-            if (obj == null || GetType() != obj.GetType())
-                return false;
-            PieceConfig other = (PieceConfig)obj;
-            return Orientation == other.Orientation && Location.Equals(other.Location);
-        }
+        public override bool Equals(object obj) =>
+            (obj is PieceConfig other) && Orientation == other.Orientation && Location.Equals(other.Location);
 
         public override int GetHashCode()
         {
