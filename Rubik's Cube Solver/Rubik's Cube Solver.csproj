@@ -99,7 +99,8 @@
     <Compile Include="Forms\Timer\During Solve.Designer.cs">
       <DependentUpon>During Solve.cs</DependentUpon>
     </Compile>
-    <Compile Include="Solver\PieceLocation.cs" />
+    <Compile Include="Solver\CellToPieceConfig.cs" />
+    <Compile Include="Solver\PieceConfig.cs" />
     <Compile Include="Solver\Stage.cs" />
     <Compile Include="Util\FormNavigator.cs" />
     <Compile Include="Forms\Menu.cs">

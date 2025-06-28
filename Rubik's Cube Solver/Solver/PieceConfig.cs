@@ -2,18 +2,18 @@
 
 namespace Rubiks_Cube_Solver
 {
-    internal enum Orientation
+    internal enum PieceOrientation
     {
         Good, Bad, Corner
     }
 
     internal static class OrientationFlipExtension
     {
-        public static Orientation Flip(this Orientation original) => original switch
+        public static PieceOrientation Flip(this PieceOrientation original) => original switch
         {
-            Orientation.Good => Orientation.Bad,
-            Orientation.Bad => Orientation.Good,
-            Orientation.Corner => Orientation.Corner
+            PieceOrientation.Good => PieceOrientation.Bad,
+            PieceOrientation.Bad => PieceOrientation.Good,
+            PieceOrientation.Corner => PieceOrientation.Corner
         };
     }
 
@@ -70,5 +70,17 @@ namespace Rubiks_Cube_Solver
                 throw new ArgumentOutOfRangeException(paramName, "Coordinate must be in the range 0-2");
         }
         public (int X, int Y, int Z) GetLocation() => (X, Y, Z);
+    }
+
+    internal class PieceConfig
+    {
+        public PieceOrientation Orientation { get; set; }
+        public PieceLocation Location { get; set; }
+
+        public PieceConfig (PieceOrientation orientation, PieceLocation location)
+        {
+            Orientation = orientation;
+            Location = location;
+        }
     }
 }
