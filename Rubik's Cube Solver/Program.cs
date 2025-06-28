@@ -3,19 +3,6 @@ using System.Windows.Forms;
 
 namespace Rubiks_Cube_Solver
 {
-
-    static class Global
-    {
-        //Creating attributes to be used across forms
-        public static int[] location = new int[3];
-
-        public static string orientation;
-
-        public static string selectedColour;
-
-        
-    }
-
     internal static class Program
     {
         [STAThread]
