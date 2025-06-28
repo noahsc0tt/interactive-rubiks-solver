@@ -74,12 +74,9 @@ namespace Rubiks_Cube_Solver
         public override bool Equals(object obj) =>
             (obj is PieceLocation other) && X == other.X && Y == other.Y && Z == other.Z;
 
-        public override int GetHashCode()
-        {
+        public override int GetHashCode() =>
             // using hash of ValueTuple
-            return (X, Y, Z).GetHashCode();
-        }
-
+            (X, Y, Z).GetHashCode();
     }
 
     internal class PieceConfig
@@ -95,10 +92,8 @@ namespace Rubiks_Cube_Solver
         public override bool Equals(object obj) =>
             (obj is PieceConfig other) && Orientation == other.Orientation && Location.Equals(other.Location);
 
-        public override int GetHashCode()
-        {
+        public override int GetHashCode() =>
             // using hash of ValueTuple
-            return (Orientation, Location).GetHashCode();
-        }
+            (Orientation, Location).GetHashCode();
     }
 }

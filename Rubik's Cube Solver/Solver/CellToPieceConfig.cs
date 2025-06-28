@@ -28,11 +28,9 @@ namespace Rubiks_Cube_Solver
         public override bool Equals(object obj) =>
             (obj is CubeNetCellLocation other) && X == other.X && Y == other.Y && Face.Equals(other.Face);
 
-        public override int GetHashCode()
-        {
+        public override int GetHashCode() =>
             // using hash of ValueTuple
-            return (X, Y, Face).GetHashCode();
-        }
+            (X, Y, Face).GetHashCode();
     }
 
     

@@ -60,10 +60,10 @@ namespace Rubiks_Cube_Solver
             0 => "green and red",
             1 => "red and blue",
             2 => "blue and orange",
-            3 => "orange and green"
+            3 => "orange and green",
         };
 
-        public Color GetColour() => Step switch
+        public Color GetInputColour() => Step switch
         {
             0 or 1 => Color.Yellow,
             2 => SubStep switch
