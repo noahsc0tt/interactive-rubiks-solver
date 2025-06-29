@@ -8,7 +8,9 @@ namespace Rubiks_Cube_Solver
 
     internal static class CellToPieceConfig
     {
-        // dont need to be members, group them somehow (directly in switch statement?)
+        private static readonly (int, int)[] cubeFaceCellCoords =
+            [(0, 0), (1, 0), (2, 0), (1, 0), (1, 2), (2, 0), (2, 1), (2, 2)];
+
         private static readonly Dict whiteDict = CreateFaceDict
             ([
                 ((0,2,2), PieceOrientation.Corner),
@@ -87,10 +89,7 @@ namespace Rubiks_Cube_Solver
         };
 
         private static Dict CreateFaceDict(((int, int, int) location, PieceOrientation orientation)[] pieceConfigs)
-            => ImmutableDictionary.CreateRange
-            (
-                new[] { (0, 0), (1, 0), (2, 0), (1, 0), (1, 2), (2, 0), (2, 1), (2, 2) } // the cell coordinates on each face
-                .Zip(pieceConfigs, CreateEntry)
+            => ImmutableDictionary.CreateRange(cubeFaceCellCoords.Zip(pieceConfigs, CreateEntry)
             );
 
         private static Entry CreateEntry((int, int) cellLocation, ((int, int, int) location, PieceOrientation orientation) pieceConfig)
