@@ -23,7 +23,7 @@ namespace Rubiks_Cube_Solver
             FaceColour.White => Color.White,
             FaceColour.Yellow => Color.Yellow,
             FaceColour.Green => Color.Green,
-            FaceColour.Blue => Color.Blue,
+            FaceColour.Blue => Color.RoyalBlue,
             FaceColour.Red => Color.Red,
             FaceColour.Orange => Color.Orange
         };
