@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+namespace Rubiks_Cube_Solver
+{
+    internal class CubeNetCellLocation
+    {
+        public readonly int X;
+        public readonly int Y;
+        public readonly FaceColour Face;
+
+        public CubeNetCellLocation((int x, int y) location, FaceColour face) : this(location.x, location.y, face) { }
+        public CubeNetCellLocation(int x, int y, FaceColour face)
+        {
+            PieceLocation.ValidateCoord(x, nameof(x));
+            PieceLocation.ValidateCoord(y, nameof(y));
+            X = x;
+            Y = y;
+            Face = face;
+        }
+
+        public (int X, int Y, FaceColour Face) GetLocation() => (X, Y, Face);
+
+        public override bool Equals(object obj) =>
+            (obj is CubeNetCellLocation other) && X == other.X && Y == other.Y && Face.Equals(other.Face);
+
+        public override int GetHashCode() =>
+            // using hash of ValueTuple
+            (X, Y, Face).GetHashCode();
+    }
+
+}
