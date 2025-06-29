@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-namespace Rubiks_Cube_Solver
+﻿namespace Rubiks_Cube_Solver
 {
     internal class CubeNetCellLocation
     {
