@@ -1,37 +1,103 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Drawing;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Collections.Immutable;
 
 namespace Rubiks_Cube_Solver
 {
-    internal class CubeNetCellLocation
+    using Entry = System.Collections.Generic.KeyValuePair<(int, int), PieceConfig>;
+    using Dict = System.Collections.Immutable.ImmutableDictionary<(int, int), PieceConfig>;
+
+    internal static class CellToPieceConfig
     {
-        public readonly int X;
-        public readonly int Y;
-        public readonly Color Face;
+        // dont need to be members, group them somehow (directly in switch statement?)
+        private static readonly Dict whiteDict = CreateColourDict
+            ([
+                ((0,2,2), PieceOrientation.Corner),
+                ((1,2,2), PieceOrientation.Good),
+                ((2,2,2), PieceOrientation.Corner),
+                ((0,2,1), PieceOrientation.Good),
+                ((2,2,1), PieceOrientation.Good),
+                ((0,2,0), PieceOrientation.Corner),
+                ((1,2,0), PieceOrientation.Good),
+                ((2,2,0), PieceOrientation.Corner),
+            ]);
+        private static readonly Dict yellowDict = CreateColourDict
+            ([
+                ((0,2,2), PieceOrientation.Corner),
+                ((1,2,2), PieceOrientation.Good),
+                ((2,2,2), PieceOrientation.Corner),
+                ((0,2,1), PieceOrientation.Good),
+                ((2,2,1), PieceOrientation.Good),
+                ((0,2,0), PieceOrientation.Corner),
+                ((1,2,0), PieceOrientation.Good),
+                ((2,2,0), PieceOrientation.Corner),
+            ]);
+        private static readonly Dict greenDict = CreateColourDict
+            ([
+                ((0,2,2), PieceOrientation.Corner),
+                ((1,2,2), PieceOrientation.Good),
+                ((2,2,2), PieceOrientation.Corner),
+                ((0,2,1), PieceOrientation.Good),
+                ((2,2,1), PieceOrientation.Good),
+                ((0,2,0), PieceOrientation.Corner),
+                ((1,2,0), PieceOrientation.Good),
+                ((2,2,0), PieceOrientation.Corner),
+            ]);
+        private static readonly Dict blueDict = CreateColourDict
+            ([
+                ((0,2,2), PieceOrientation.Corner),
+                ((1,2,2), PieceOrientation.Good),
+                ((2,2,2), PieceOrientation.Corner),
+                ((0,2,1), PieceOrientation.Good),
+                ((2,2,1), PieceOrientation.Good),
+                ((0,2,0), PieceOrientation.Corner),
+                ((1,2,0), PieceOrientation.Good),
+                ((2,2,0), PieceOrientation.Corner),
+            ]);
+        private static readonly Dict redDict = CreateColourDict
+            ([
+                ((0,2,2), PieceOrientation.Corner),
+                ((1,2,2), PieceOrientation.Good),
+                ((2,2,2), PieceOrientation.Corner),
+                ((0,2,1), PieceOrientation.Good),
+                ((2,2,1), PieceOrientation.Good),
+                ((0,2,0), PieceOrientation.Corner),
+                ((1,2,0), PieceOrientation.Good),
+                ((2,2,0), PieceOrientation.Corner),
+            ]);
+        private static readonly Dict orangeDict = CreateColourDict
+            ([
+                ((0,2,2), PieceOrientation.Corner),
+                ((1,2,2), PieceOrientation.Good),
+                ((2,2,2), PieceOrientation.Corner),
+                ((0,2,1), PieceOrientation.Good),
+                ((2,2,1), PieceOrientation.Good),
+                ((0,2,0), PieceOrientation.Corner),
+                ((1,2,0), PieceOrientation.Good),
+                ((2,2,0), PieceOrientation.Corner),
+            ]);
 
-        public CubeNetCellLocation((int x, int y) location, Color face) : this(location.x, location.y, face) { }
-        public CubeNetCellLocation(int x, int y, Color face)
+        private static Dict GetColourDict(FaceColour colour) => colour switch
         {
-            PieceLocation.ValidateCoord(x, nameof(x));
-            PieceLocation.ValidateCoord(y, nameof(y));
-            X = x;
-            Y = y;
-            Face = face;
-        }
-        
-        public (int X, int Y, Color Face) GetLocation() => (X, Y, Face);
+            FaceColour.White => whiteDict,
+            FaceColour.Yellow => yellowDict,
+            FaceColour.Green => greenDict,
+            FaceColour.Blue => blueDict,
+            FaceColour.Red => redDict,
+            FaceColour.Orange => orangeDict
+        };
 
-        public override bool Equals(object obj) =>
-            (obj is CubeNetCellLocation other) && X == other.X && Y == other.Y && Face.Equals(other.Face);
+        private static Dict CreateColourDict(((int, int, int) location, PieceOrientation orientation)[] pieceConfigs)
+            => ImmutableDictionary.CreateRange
+            (
+                new[] { (0, 0), (1, 0), (2, 0), (1, 0), (1, 2), (2, 0), (2, 1), (2, 2) } // the cell coordinates on each face
+                .Zip(pieceConfigs, CreateEntry)
+            );
 
-        public override int GetHashCode() =>
-            // using hash of ValueTuple
-            (X, Y, Face).GetHashCode();
+        private static Entry CreateEntry((int, int) cellLocation, ((int, int, int) location, PieceOrientation orientation) pieceConfig)
+            => new(cellLocation, new PieceConfig(pieceConfig.location, pieceConfig.orientation));
+
+
+        public static PieceConfig GetPieceConfig(CubeNetCellLocation cellLocation) =>
+            GetColourDict(cellLocation.Face)[(cellLocation.X, cellLocation.Y)];
     }
-
-    
 }
