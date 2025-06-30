@@ -9,7 +9,7 @@ namespace Rubiks_Cube_Solver
     internal static class CellToPieceConfig
     {
         private static readonly (int, int)[] cubeFaceCellCoords =
-            [(0, 0), (1, 0), (2, 0), (1, 0), (1, 2), (2, 0), (2, 1), (2, 2)];
+            [(0, 0), (1, 0), (2, 0), (0, 1), (2, 1), (0, 2), (1, 2), (2, 2)];
 
         private static readonly Dict whiteDict = CreateFaceDict
             ([
