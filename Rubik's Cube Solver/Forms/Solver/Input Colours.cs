@@ -7,14 +7,25 @@ namespace Rubiks_Cube_Solver
     internal partial class Input_Colours : Form
     {
         private readonly Stage stage;
-        private bool selectionMade = false;
-        private PieceConfig selectedPiece;
+        private PieceConfig? selectedPiece;
+        private readonly (DataGridView, Color)[] faceInfo;
 
         public Input_Colours(Stage currentStage)
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
             stage = currentStage;
+
+            faceInfo =
+            [
+                (orangeFace, Color.Orange),
+                (redFace, Color.Red),
+                (whiteFace, Color.White),
+                (yellowFace, Color.Yellow),
+                (blueFace, Color.RoyalBlue),
+                (greenFace, Color.Green)
+            ];
+            
         }
 
         private void PopulateCubeFace(DataGridView face, Color colour)
@@ -31,17 +42,8 @@ namespace Rubiks_Cube_Solver
         private void PopulateCubeNet()
         {
             //populating each face of the cube
-            (DataGridView face, Color centreColour)[] facesInfo =
-            {
-                (orangeFace, Color.Orange),
-                (redFace, Color.Red),
-                (whiteFace, Color.White),
-                (yellowFace, Color.Yellow),
-                (blueFace, Color.RoyalBlue),
-                (greenFace, Color.Green)
-            };
-            foreach( var faceInfo in facesInfo)
-                PopulateCubeFace(faceInfo.face, faceInfo.centreColour);
+            foreach(var (face, centreColour) in faceInfo)
+                PopulateCubeFace(face, centreColour);
         }
 
         private void Solver_Input_Colours_Load(object sender, EventArgs e)
@@ -143,7 +145,6 @@ namespace Rubiks_Cube_Solver
             else
             {
                 selectedPiece = CellToPieceConfig.GetPieceConfig(new CubeNetCellLocation(cellCoords, colour));
-                selectionMade = true;
                 face.Rows[cellCoords.row].Cells[cellCoords.col].Style.BackColor = stage.GetInputColour().ToColor();
             }
         }
@@ -172,7 +173,7 @@ namespace Rubiks_Cube_Solver
         private void btnFinish_Click(object sender, EventArgs e)
         {
             //checking if the user has inputted the position of the required piece
-            if (selectionMade) 
+            if (selectedPiece is not null) 
                 //moving on to the output solution form
                 FormNavigator.Navigate<Output_Solution>(this, stage, selectedPiece);
             
@@ -181,6 +182,6 @@ namespace Rubiks_Cube_Solver
                 MessageBox.Show(lblInstructions.Text);
         }
 
-        private void btnClear_Click(object sender, EventArgs e) => selectionMade = false;
+        private void btnClear_Click(object sender, EventArgs e) => selectedPiece = null;
     }
 }
