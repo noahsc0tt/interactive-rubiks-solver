@@ -46,93 +46,25 @@ namespace Rubiks_Cube_Solver
                 PopulateCubeFace(face, centreColour);
         }
 
+
         private void Solver_Input_Colours_Load(object sender, EventArgs e)
         {
-            //creating variables to store information pertaining to the instructions to be output
-            string requiredFace = string.Empty;
-            string requiredPiece = string.Empty;
-            
-            //setting the value of these variables based on the value of Global.stage
-            if (stage.Step == 0)
-            {
-                if (stage.SubStep == 0)
-                {
-                    requiredPiece = "green";
-                }
-                else if (stage.SubStep == 1)
-                {
-                    requiredPiece = "orange";
-
-                }
-                else if (stage.SubStep == 2)
-                {
-                    requiredPiece = "blue";
-
-                }
-                else if (stage.SubStep == 3)
-                {
-                    requiredPiece = "red";
-
-                }
-                //outputting the instructions
-                lblInstructions.Text = "Input the position of the yellow square on the yellow and " + requiredPiece + " edge.";
-            }
-            else if (stage.Step == 1)
-            {
-                if (stage.SubStep == 0)
-                {
-                    requiredPiece = "green and red";
-
-                }
-                else if (stage.SubStep == 1)
-                {
-                    requiredPiece = "orange and green";
-
-                }
-                else if (stage.SubStep == 2)
-                {
-                    requiredPiece = "blue and orange";
-
-                }
-                else if (stage.SubStep == 3)
-                {
-                    requiredPiece = "red and blue";
-
-                }
-                //outputting the instructions
-                lblInstructions.Text = "Input the position of the yellow square on the yellow, " + requiredPiece + " corner.";
-            }
-            else if (stage.Step == 2)
-            {
-                if (stage.SubStep == 0)
-                {
-                    requiredPiece = "green and red";
-                    requiredFace = "green";
-
-                }
-                else if (stage.SubStep == 1)
-                {
-                    requiredPiece = "orange and green";
-                    requiredFace = "orange";
-
-                }
-                else if (stage.SubStep == 2)
-                {
-                    requiredPiece = "blue and orange";
-                    requiredFace = "blue";
-
-                }
-                else if (stage.SubStep == 3)
-                {
-                    requiredPiece = "red and blue";
-                    requiredFace = "red";
-
-                }
-                //outputting the instructions
-                lblInstructions.Text = "Input the position of the " + requiredFace + " square on the " + requiredPiece + " edge.";
-            }
             PopulateCubeNet();
+            lblInstructions.Text = GetInstructions();
         }
+
+        private string GetInstructions() => stage.Step switch
+        {
+            0 or 1 => $"Input the position of the yellow square on the {stage.GetRequiredPiece()}",
+            2 => $"Input the position of the square on the { stage.SubStep switch
+            {
+                0 => "green",
+                1 => "orange",
+                2 => "blue",
+                3 => "red"
+            }} square on the {stage.GetRequiredPiece()}"
+        };
+
 
         private void HandleCellClick(DataGridView face, DataGridViewCellEventArgs e, FaceColour colour)
         {
