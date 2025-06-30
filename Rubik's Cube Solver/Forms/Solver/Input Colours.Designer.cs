@@ -156,7 +156,7 @@
             this.orangeFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.orangeFace.Size = new System.Drawing.Size(230, 230);
             this.orangeFace.TabIndex = 3;
-            this.orangeFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orangeFace_CellClick);
+            this.orangeFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OrangeFace_CellClick);
             // 
             // dataGridViewButtonColumn1
             // 
@@ -301,7 +301,7 @@
             this.redFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.redFace.Size = new System.Drawing.Size(230, 230);
             this.redFace.TabIndex = 4;
-            this.redFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.redFace_CellClick);
+            this.redFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RedFace_CellClick);
             // 
             // dataGridViewButtonColumn4
             // 
@@ -446,7 +446,7 @@
             this.greenFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.greenFace.Size = new System.Drawing.Size(230, 230);
             this.greenFace.TabIndex = 5;
-            this.greenFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.greenFace_CellClick);
+            this.greenFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GreenFace_CellClick);
             // 
             // dataGridViewButtonColumn13
             // 
@@ -591,7 +591,7 @@
             this.yellowFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.yellowFace.Size = new System.Drawing.Size(230, 230);
             this.yellowFace.TabIndex = 7;
-            this.yellowFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.yellowFace_CellClick);
+            this.yellowFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.YellowFace_CellClick);
             // 
             // dataGridViewButtonColumn31
             // 
@@ -736,7 +736,7 @@
             this.whiteFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.whiteFace.Size = new System.Drawing.Size(230, 230);
             this.whiteFace.TabIndex = 8;
-            this.whiteFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.whiteFace_CellClick);
+            this.whiteFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.WhiteFace_CellClick);
             // 
             // dataGridViewButtonColumn40
             // 
@@ -1013,7 +1013,7 @@
             this.blueFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.blueFace.Size = new System.Drawing.Size(230, 230);
             this.blueFace.TabIndex = 6;
-            this.blueFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.blueFace_CellClick);
+            this.blueFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BlueFace_CellClick);
             // 
             // btnClear
             // 
@@ -1025,6 +1025,7 @@
             this.btnClear.TabIndex = 12;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // Input_Colours
             // 
