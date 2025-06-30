@@ -143,41 +143,26 @@ namespace Rubiks_Cube_Solver
             }
         }
 
-        private void WhiteFace_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void WhiteFace_CellClick(object sender, DataGridViewCellEventArgs e) =>
             HandleCellClick((DataGridView)sender, e, FaceColour.White);
-        }
 
-        private void OrangeFace_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void OrangeFace_CellClick(object sender, DataGridViewCellEventArgs e) =>
             HandleCellClick((DataGridView) sender, e, FaceColour.Orange);
-        }
 
-        private void GreenFace_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void GreenFace_CellClick(object sender, DataGridViewCellEventArgs e) =>
             HandleCellClick((DataGridView)sender, e, FaceColour.Green);
-        }
-
-        private void RedFace_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        
+        private void RedFace_CellClick(object sender, DataGridViewCellEventArgs e) =>
             HandleCellClick((DataGridView) sender, e, FaceColour.Red);
-        }
-
-        private void BlueFace_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        
+        private void BlueFace_CellClick(object sender, DataGridViewCellEventArgs e) =>
             HandleCellClick((DataGridView) sender, e, FaceColour.Blue);
-        }
 
-        private void YellowFace_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        private void YellowFace_CellClick(object sender, DataGridViewCellEventArgs e) =>
             HandleCellClick((DataGridView) sender, e, FaceColour.Yellow);
-        }
+        
 
-
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            FormNavigator.Navigate<Menu>(this);
-        }
+        private void btnMenu_Click(object sender, EventArgs e) => FormNavigator.Navigate<Menu>(this);
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
@@ -191,9 +176,6 @@ namespace Rubiks_Cube_Solver
                 MessageBox.Show(lblInstructions.Text);
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            selectionMade = false;
-        }
+        private void btnClear_Click(object sender, EventArgs e) => selectionMade = false;
     }
 }
