@@ -13,8 +13,8 @@ namespace Rubiks_Cube_Solver
         {            
             ValidateArg(step, nameof(step));
             ValidateArg(subStep, nameof(subStep));
-            this.Step = step;
-            this.SubStep = subStep;
+            Step = step;
+            SubStep = subStep;
         }
         private static bool IsArgValid(int arg) => arg >= 0 && arg <= 3;
 
@@ -45,7 +45,7 @@ namespace Rubiks_Cube_Solver
             }} edge",
             1 => $"yellow, {GetColourPair()} corner",
             2 => $"{GetColourPair()} edge",
-            _ => "No required piece"
+            _ => throw new InvalidOperationException("The last layer steps do not have required pieces")
         };
 
         public string GetName() => $"{GetStepName()} - {GetRequiredPiece()}";
