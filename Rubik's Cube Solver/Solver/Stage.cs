@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Drawing;
-
 
 namespace Rubiks_Cube_Solver
 {
@@ -63,7 +61,7 @@ namespace Rubiks_Cube_Solver
             3 => "orange and green",
         };
 
-        public FaceColour? GetInputColour() => Step switch
+        public FaceColour GetInputColour() => Step switch
         {
             0 or 1 => FaceColour.Yellow,
             2 => SubStep switch
@@ -72,8 +70,8 @@ namespace Rubiks_Cube_Solver
                 1 => FaceColour.Red,
                 2 => FaceColour.Blue,
                 3 => FaceColour.Orange
-            },
-            _ => null // step 3 does not have colours
+            }
+            // step 3 does not have colours
         };
 
         public void Increment()
