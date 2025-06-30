@@ -31,12 +31,17 @@ namespace Rubiks_Cube_Solver
         private void PopulateCubeNet()
         {
             //populating each face of the cube
-            PopulateCubeFace(orangeFace, Color.Orange);
-            PopulateCubeFace(redFace, Color.Red);
-            PopulateCubeFace(whiteFace, Color.White);
-            PopulateCubeFace(yellowFace, Color.Yellow);
-            PopulateCubeFace(blueFace, Color.RoyalBlue);
-            PopulateCubeFace(greenFace, Color.Green);
+            (DataGridView face, Color centreColour)[] facesInfo =
+            {
+                (orangeFace, Color.Orange),
+                (redFace, Color.Red),
+                (whiteFace, Color.White),
+                (yellowFace, Color.Yellow),
+                (blueFace, Color.RoyalBlue),
+                (greenFace, Color.Green)
+            };
+            foreach( var faceInfo in facesInfo)
+                PopulateCubeFace(faceInfo.face, faceInfo.centreColour);
         }
 
         private void Solver_Input_Colours_Load(object sender, EventArgs e)
