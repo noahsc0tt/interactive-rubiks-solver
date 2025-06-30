@@ -117,7 +117,7 @@
       <DependentUpon>During Solve.cs</DependentUpon>
     </Compile>
     <Compile Include="Solver\CellToPieceConfig.cs" />
-    <Compile Include="Solver\CubeNetLocation.cs" />
+    <Compile Include="Solver\CubeNetCellLocation.cs" />
     <Compile Include="Solver\FaceColour.cs" />
     <Compile Include="Solver\PieceConfig.cs" />
     <Compile Include="Solver\Stage.cs" />
