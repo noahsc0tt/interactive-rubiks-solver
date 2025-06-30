@@ -8,7 +8,7 @@ namespace Rubiks_Cube_Solver
     {
         private readonly Stage stage;
         private bool selectionMade = false;
-        private PieceConfig? selectedPiece;
+        private PieceConfig selectedPiece;
 
         public Input_Colours(Stage currentStage)
         {
@@ -127,58 +127,50 @@ namespace Rubiks_Cube_Solver
             PopulateCubeNet();
         }
 
-        private void HandleCellClick(DataGridView face, DataGridViewCellEventArgs e, PieceConfig piece)
+        private void HandleCellClick(DataGridView face, DataGridViewCellEventArgs e, FaceColour colour)
         {
             face.ClearSelection();
+
+            CubeNetCellLocation selectedCell = new CubeNetCellLocation((e.ColumnIndex, e.RowIndex), colour);
+            PieceConfig piece = CellToPieceConfig.GetPieceConfig(selectedCell);
+
             if (e.ColumnIndex == 1 && e.RowIndex == 1) //if a centre piece is clicked
                 MessageBox.Show("Centre colours cannot be changed.");
             else
             {
-                selectionMade = true;
                 selectedPiece = piece;
+                selectionMade = true;
                 face.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = stage.GetInputColour().ToColor();
             }
         }
         private void WhiteFace_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            CubeNetCellLocation selectedCell = new CubeNetCellLocation((e.ColumnIndex, e.RowIndex), FaceColour.White);
-            PieceConfig config = CellToPieceConfig.GetPieceConfig(selectedCell); 
-            HandleCellClick((DataGridView)sender, e, config);
+            HandleCellClick((DataGridView)sender, e, FaceColour.White);
         }
 
         private void OrangeFace_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            CubeNetCellLocation selectedCell = new CubeNetCellLocation((e.ColumnIndex, e.RowIndex),FaceColour.Orange);
-            PieceConfig selectedPiece = CellToPieceConfig.GetPieceConfig(selectedCell);
-            HandleCellClick((DataGridView) sender, e, selectedPiece);
+            HandleCellClick((DataGridView) sender, e, FaceColour.Orange);
         }
 
         private void GreenFace_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            CubeNetCellLocation selectedCell = new CubeNetCellLocation((e.ColumnIndex, e.RowIndex), FaceColour.Green);
-            PieceConfig selectedPiece = CellToPieceConfig.GetPieceConfig(selectedCell);
-            HandleCellClick((DataGridView)sender, e, selectedPiece);
+            HandleCellClick((DataGridView)sender, e, FaceColour.Green);
         }
 
         private void RedFace_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            CubeNetCellLocation selectedCell = new CubeNetCellLocation((e.ColumnIndex, e.RowIndex), FaceColour.Red);
-            PieceConfig selectedPiece = CellToPieceConfig.GetPieceConfig(selectedCell);
-            HandleCellClick((DataGridView) sender, e, selectedPiece);
+            HandleCellClick((DataGridView) sender, e, FaceColour.Red);
         }
 
         private void BlueFace_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            CubeNetCellLocation selectedCell = new CubeNetCellLocation((e.ColumnIndex, e.RowIndex), FaceColour.Blue);
-            PieceConfig selectedPiece = CellToPieceConfig.GetPieceConfig(selectedCell);
-            HandleCellClick((DataGridView) sender, e, selectedPiece);
+            HandleCellClick((DataGridView) sender, e, FaceColour.Blue);
         }
 
         private void YellowFace_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            CubeNetCellLocation selectedCell = new CubeNetCellLocation((e.ColumnIndex, e.RowIndex), FaceColour.Yellow);
-            PieceConfig selectedPiece = CellToPieceConfig.GetPieceConfig(selectedCell);
-            HandleCellClick((DataGridView) sender, e, selectedPiece);
+            HandleCellClick((DataGridView) sender, e, FaceColour.Yellow);
         }
 
 
@@ -192,7 +184,7 @@ namespace Rubiks_Cube_Solver
             //checking if the user has inputted the position of the required piece
             if (selectionMade) 
                 //moving on to the output solution form
-                FormNavigator.Navigate<Output_Solution>(this);
+                FormNavigator.Navigate<Output_Solution>(this, stage, selectedPiece);
             
             else
                 //error message telling the user to input the required information before moving on
@@ -201,7 +193,6 @@ namespace Rubiks_Cube_Solver
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            selectedPiece = null;
             selectionMade = false;
         }
     }
