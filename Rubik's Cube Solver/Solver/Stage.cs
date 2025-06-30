@@ -26,33 +26,31 @@ namespace Rubiks_Cube_Solver
 
         public (int Step, int SubStep) GetStage() => (Step, SubStep);
 
-        public string GetName()
+        private string GetStepName() => Step switch
         {
-            if (Step > 2) return "Stage Name already in form";
+            0 => "Yellow Cross",
+            1 => "Yellow Corners",
+            2 => "Middle Layer Edges",
+            3 => "Last Layer"
+        };
 
-            string stepName = Step switch
+        public string GetRequiredPiece() => Step switch
+        {
+            0 => $"yellow and {SubStep switch
             {
-                0 => "Yellow Cross",
-                1 => "Yellow Corners",
-                2 => "Middle Layer Edges"
-            };
+                0 => "green",
+                1 => "red",
+                2 => "blue",
+                3 => "orange"
+            }} edge",
+            1 => $"yellow, {GetColourPair()} corner",
+            2 => $"{GetColourPair()} edge",
+            _ => "No required piece"
+        };
 
-            string subStepName = Step switch
-            {
-                0 => $"yellow and {SubStep switch
-                {
-                    0 => "green",
-                    1 => "red",
-                    2 => "blue",
-                    3 => "orange"
-                }} edge",
-                1 => $"yellow, {GetColourPair()} corner",
-                2 => $"{GetColourPair()} edge"
-            };
-            return stepName + " - " + subStepName;
-        }
+        public string GetName() => $"{GetStepName()} - {GetRequiredPiece()}";
 
-        //helper method for GetName to reduce duplication
+        //helper method for GetRequiredPiece
         private string GetColourPair() => SubStep switch
         {
             0 => "green and red",
