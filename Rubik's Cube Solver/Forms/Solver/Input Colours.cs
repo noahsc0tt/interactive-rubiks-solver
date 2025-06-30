@@ -131,18 +131,18 @@ namespace Rubiks_Cube_Solver
         {
             face.ClearSelection();
 
-            CubeNetCellLocation selectedCell = new CubeNetCellLocation((e.ColumnIndex, e.RowIndex), colour);
-            PieceConfig piece = CellToPieceConfig.GetPieceConfig(selectedCell);
+            (int col, int row) cellCoords = (e.ColumnIndex, e.RowIndex);
 
-            if (e.ColumnIndex == 1 && e.RowIndex == 1) //if a centre piece is clicked
+            if (cellCoords == (1,1)) //if a centre piece is clicked
                 MessageBox.Show("Centre colours cannot be changed.");
             else
             {
-                selectedPiece = piece;
+                selectedPiece = CellToPieceConfig.GetPieceConfig(new CubeNetCellLocation(cellCoords, colour));
                 selectionMade = true;
-                face.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = stage.GetInputColour().ToColor();
+                face.Rows[cellCoords.row].Cells[cellCoords.col].Style.BackColor = stage.GetInputColour().ToColor();
             }
         }
+
         private void WhiteFace_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             HandleCellClick((DataGridView)sender, e, FaceColour.White);
