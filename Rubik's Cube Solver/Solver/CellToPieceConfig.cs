@@ -4,7 +4,7 @@ using System.Linq;
 namespace Rubiks_Cube_Solver
 {
     using Entry = System.Collections.Generic.KeyValuePair<(int, int), PieceConfig>;
-    using Dict = System.Collections.Immutable.ImmutableDictionary<(int, int), PieceConfig>;
+    using Dict = ImmutableDictionary<(int, int), PieceConfig>;
 
     internal static class CellToPieceConfig
     {
