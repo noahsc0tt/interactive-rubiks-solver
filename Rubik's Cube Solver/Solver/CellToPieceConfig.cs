@@ -88,13 +88,12 @@ namespace Rubiks_Cube_Solver
             FaceColour.Orange => orangeDict
         };
 
-        private static Dict CreateFaceDict(((int, int, int) location, PieceOrientation orientation)[] pieceConfigs)
-            => ImmutableDictionary.CreateRange(cubeFaceCellCoords.Zip(pieceConfigs, CreateEntry)
+        private static Dict CreateFaceDict(((int, int, int) location, PieceOrientation orientation)[] pieceConfigs) =>
+            ImmutableDictionary.CreateRange
+            (
+                cubeFaceCellCoords.Zip(pieceConfigs, (coord, config) => 
+                    new Entry(coord, new PieceConfig(config.location, config.orientation)))
             );
-
-        private static Entry CreateEntry((int, int) cellLocation, ((int, int, int) location, PieceOrientation orientation) pieceConfig)
-            => new(cellLocation, new PieceConfig(pieceConfig.location, pieceConfig.orientation));
-
 
         public static PieceConfig GetPieceConfig(CubeNetCellLocation cellLocation) =>
             GetFaceDict(cellLocation.Face)[(cellLocation.X, cellLocation.Y)];
