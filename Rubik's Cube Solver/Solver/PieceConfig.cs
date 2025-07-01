@@ -71,7 +71,7 @@ namespace Rubiks_Cube_Solver
         public (int X, int Y, int Z) GetLocation() => (X, Y, Z);
 
         public override bool Equals(object obj) =>
-            (obj is PieceLocation other) && X == other.X && Y == other.Y && Z == other.Z;
+            (obj is PieceLocation other) && (X,Y,Z) == (other.X, other.Y, other.Z);
 
         public override int GetHashCode() =>
             // using hash of ValueTuple

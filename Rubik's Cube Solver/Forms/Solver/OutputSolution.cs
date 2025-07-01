@@ -7,7 +7,7 @@ namespace Rubiks_Cube_Solver
     internal partial class OutputSolution : Form
     {
         private readonly Stage stage;
-        private PieceConfig pieceConfiguration;
+        private PieceConfig piece;
 
         public OutputSolution(Stage currentStage, CubeNetCellLocation cell)
         {
@@ -15,87 +15,92 @@ namespace Rubiks_Cube_Solver
             this.ApplyDefaultFormSettings();
 
             stage = currentStage;
-            pieceConfiguration = CellToPieceConfig.GetPieceConfig(cell);
+            piece = CellToPieceConfig.GetPieceConfig(cell);
         }
 
         private void rotatePieceLocation()
         {
+            (int x, int y, int z) = piece.Location.GetLocation();
+            PieceOrientation orientation = piece.Orientation;
+
             //checking if the piece is an edge
-            if (pieceConfiguration.Location.X == 1 || pieceConfiguration.Location.Y == 1 || pieceConfiguration.Location.Z == 1)
+            if (x == 1 || y == 1 || z == 1)
             {
-                if (pieceConfiguration.Location.Y == 2) //checking if the edge is in the top layer of the cube
+                if (y == 2) //checking if the edge is in the top layer of the cube
                 {
-                    if (pieceConfiguration.Location.X == 1)
+                    if (x == 1)
                     {
-                        if (pieceConfiguration.Location.Z == 2)
+                        if (z == 2)
                         {
-                            pieceConfiguration.Location.X = 0;
-                            pieceConfiguration.Location.Z = 1;
+                            x = 0;
+                            z = 1;
                         }
                         else
                         {
-                            pieceConfiguration.Location.X = 2;
-                            pieceConfiguration.Location.Z = 1;
+                            x = 2;
+                            z = 1;
                         }
                     }
                     else
                     {
-                        int swap = pieceConfiguration.Location.X;
-                        pieceConfiguration.Location.X = pieceConfiguration.Location.Z;
-                        pieceConfiguration.Location.Z = swap;
+                        int swap = x;
+                        x = z;
+                        z = swap;
                     }
                 }
-                else if (pieceConfiguration.Location.Y == 1) //checking if the edge is in the middle layer of the cube
+                else if (y == 1) //checking if the edge is in the middle layer of the cube
                 {
-                    int swap = pieceConfiguration.Location.X;
+                    int swap = x;
 
-                    if (pieceConfiguration.Location.Z == 0)
+                    if (z == 0)
                     {
-                        pieceConfiguration.Location.X = 2;
+                        x = 2;
                     }
                     else
                     {
-                        pieceConfiguration.Location.X = 0;
+                        x = 0;
                     }
                     
-                    pieceConfiguration.Location.Z = swap;
+                    z = swap;
 
-                    pieceConfiguration.Orientation = pieceConfiguration.Orientation.Flip();
+                    orientation = orientation.Flip();
                 }
                 else //if the edge is in the bottom layer of the cube
                 {
-                    if (pieceConfiguration.Location.Z == 0)
+                    if (z == 0)
                     {
-                        pieceConfiguration.Location.X = 2;
-                        pieceConfiguration.Location.Z = 1;
+                        x = 2;
+                        z = 1;
                     }
-                    else if (pieceConfiguration.Location.Z == 1)
+                    else if (z == 1)
                     {
-                        int swap = pieceConfiguration.Location.X;
-                        pieceConfiguration.Location.X = pieceConfiguration.Location.Z;
-                        pieceConfiguration.Location.Z = swap;
+                        int swap = x;
+                        x = z;
+                        z = swap;
                     }
                     else
                     {
-                        pieceConfiguration.Location.X = 0;
-                        pieceConfiguration.Location.Z = 1;
+                        x = 0;
+                        z = 1;
                     }
                 }
             }
             else //if the piece is a corner
             {
-                int swap = pieceConfiguration.Location.X;
+                int swap = x;
 
-                if (pieceConfiguration.Location.Z == 0)
+                if (z == 0)
                 {
-                    pieceConfiguration.Location.X = 2;
+                    x = 2;
                 }
                 else
                 {
-                    pieceConfiguration.Location.X = 0;
+                    x = 0;
                 }
-                pieceConfiguration.Location.Z = swap;
+                z = swap;
             }
+
+            piece = new PieceConfig((x, y, z), orientation);
         }
 
 
@@ -104,7 +109,6 @@ namespace Rubiks_Cube_Solver
             bool found = false;           
 
             if (!found)
-
             {
                 //opening the 'Input Colours' form so the user can reenter their input
                 FormNavigator.Navigate<InputColours>(this, stage);
