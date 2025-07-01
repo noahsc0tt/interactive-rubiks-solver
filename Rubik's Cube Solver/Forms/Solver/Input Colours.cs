@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Drawing;
 using System.Windows.Forms;
@@ -6,8 +7,6 @@ using System.Windows.Forms;
 namespace Rubiks_Cube_Solver
 {
     using Face = DataGridView;
-
-    using Entry = System.Collections.Generic.KeyValuePair<DataGridView, FaceColour>;
 
     internal partial class Input_Colours : Form
     {
@@ -33,28 +32,28 @@ namespace Rubiks_Cube_Solver
             faceColourDict = dictBuilder.ToImmutable();
         }
 
-        private void PopulateCubeFace(Face face, Color colour)
+        private void Solver_Input_Colours_Load(object sender, EventArgs e)
+        {
+            PopulateCubeNet();
+            lblInstructions.Text = GetInstructions();
+        }
+
+        private void PopulateCubeFace(Face face)
         {
             // adding the cells to the face and colouring the centre cell
             for (int i = 0; i < 3; i++)
             {
                 face.Rows.Add("", "", "");
             }
-            face[1, 1].Style.BackColor = colour;
+            face[1, 1].Style.BackColor = faceColourDict[face].ToColor();
             face.ClearSelection(); //un-highlighting buttons
         }
 
         private void PopulateCubeNet()
         {
             //populating each face of the cube
-            foreach(Entry entry in faceColourDict)
-                PopulateCubeFace(entry.Key, entry.Value.ToColor());
-        }
-
-        private void Solver_Input_Colours_Load(object sender, EventArgs e)
-        {
-            PopulateCubeNet();
-            lblInstructions.Text = GetInstructions();
+            foreach(KeyValuePair<Face, FaceColour> entry in faceColourDict)
+                PopulateCubeFace(entry.Key);
         }
 
         private string GetInstructions() 
@@ -67,8 +66,6 @@ namespace Rubiks_Cube_Solver
             };
             return $"Input the position of the {requiredColour} square on the {requiredPiece}";
         }
-
-
 
         private void HandleCellClick(object sender, DataGridViewCellEventArgs e)
         {
