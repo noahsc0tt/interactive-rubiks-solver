@@ -22,16 +22,15 @@ namespace Rubiks_Cube_Solver
             btnFinish.Visible = false;
 
             stage = currentStage;
-            faceColourDict = ImmutableDictionary.CreateRange
-            (
-                new Entry[] {
-                new Entry(orangeFace, FaceColour.Orange),
-                new Entry(redFace, FaceColour.Red),
-                new Entry(whiteFace, FaceColour.White),
-                new Entry(yellowFace, FaceColour.Yellow),
-                new Entry(blueFace, FaceColour.Blue),
-                new Entry(greenFace, FaceColour.Green)
-            });
+
+            var dictBuilder = ImmutableDictionary.CreateBuilder<Face, FaceColour>();
+            dictBuilder[orangeFace] = FaceColour.Orange;
+            dictBuilder[redFace] = FaceColour.Red;
+            dictBuilder[whiteFace] = FaceColour.White;
+            dictBuilder[yellowFace] = FaceColour.Yellow;
+            dictBuilder[blueFace] = FaceColour.Blue;
+            dictBuilder[greenFace] = FaceColour.Green;
+            faceColourDict = dictBuilder.ToImmutable();
         }
 
         private void PopulateCubeFace(Face face, Color colour)
@@ -75,7 +74,6 @@ namespace Rubiks_Cube_Solver
         {
             Face face = (Face)sender;
             face.ClearSelection();
-
 
             (int col, int row) cellCoords = (e.ColumnIndex, e.RowIndex);
             if (cellCoords == (1,1)) //if a centre piece is clicked
