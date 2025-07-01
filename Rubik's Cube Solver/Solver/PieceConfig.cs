@@ -80,8 +80,8 @@ namespace Rubiks_Cube_Solver
 
     internal class PieceConfig
     {
-        public PieceLocation Location { get; set; }
-        public PieceOrientation Orientation { get; set; }
+        public PieceLocation Location { get; private set; }
+        public PieceOrientation Orientation { get; private set; }
 
         public PieceConfig((int, int, int) location, PieceOrientation orientation) :
             this(new PieceLocation(location), orientation) { }
@@ -90,6 +90,7 @@ namespace Rubiks_Cube_Solver
             Orientation = orientation;
             Location = location;
         }
+
         public override bool Equals(object obj) =>
             (obj is PieceConfig other) && Orientation == other.Orientation && Location.Equals(other.Location);
 
