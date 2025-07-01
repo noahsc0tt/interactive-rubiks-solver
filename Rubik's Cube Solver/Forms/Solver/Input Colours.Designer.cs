@@ -97,7 +97,6 @@
             this.dataGridViewButtonColumn23 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn22 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.blueFace = new System.Windows.Forms.DataGridView();
-            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.orangeFace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redFace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.greenFace)).BeginInit();
@@ -860,7 +859,7 @@
             // btnFinish
             // 
             this.btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.btnFinish.Location = new System.Drawing.Point(1003, 731);
+            this.btnFinish.Location = new System.Drawing.Point(926, 622);
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.Size = new System.Drawing.Size(307, 111);
             this.btnFinish.TabIndex = 11;
@@ -1013,24 +1012,11 @@
             this.blueFace.TabIndex = 6;
             this.blueFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.HandleCellClick);
             // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.Silver;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.btnClear.Location = new System.Drawing.Point(1003, 588);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(307, 137);
-            this.btnClear.TabIndex = 12;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            // 
             // Input_Colours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1474, 900);
-            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.whiteFace);
@@ -1121,6 +1107,5 @@
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn23;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn22;
         private System.Windows.Forms.DataGridView blueFace;
-        private System.Windows.Forms.Button btnClear;
     }
 }

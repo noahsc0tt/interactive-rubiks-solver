@@ -94,15 +94,10 @@ namespace Rubiks_Cube_Solver
             }
         }
 
-        private void btnMenu_Click(object sender, EventArgs e) => FormNavigator.Navigate<Menu>(this);
+        private void btnMenu_Click(object sender, EventArgs e) =>
+            FormNavigator.Navigate<Menu>(this);
 
         private void btnFinish_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<Output_Solution>(this, stage, selectedCellLocation);
-            
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            selectedCellLocation = null;
-            btnFinish.Visible = false;
-        }
     }
 }
