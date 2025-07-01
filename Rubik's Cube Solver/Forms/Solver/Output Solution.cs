@@ -9,13 +9,13 @@ namespace Rubiks_Cube_Solver
         private readonly Stage stage;
         private PieceConfig pieceConfiguration;
 
-        public Output_Solution(Stage currentStage, PieceConfig configuration)
+        public Output_Solution(Stage currentStage, CubeNetCellLocation cell)
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
 
             stage = currentStage;
-            this.pieceConfiguration = configuration;
+            pieceConfiguration = CellToPieceConfig.GetPieceConfig(cell);
         }
 
         private void rotatePieceLocation()
@@ -103,13 +103,14 @@ namespace Rubiks_Cube_Solver
         {
             Boolean found = false;           
 
-            if (!found) //checking if the user input does not match any data from the database
+            if (!found)
 
             {
                 MessageBox.Show("Invalid piece position. Enter the position of your piece correctly.");
-
                 //opening the 'Input Colours' form so the user can reenter their input
+                // commit: FormNavigator.Navigate<Input_Colours>(this, stage);
                 
+
             }
         }
 

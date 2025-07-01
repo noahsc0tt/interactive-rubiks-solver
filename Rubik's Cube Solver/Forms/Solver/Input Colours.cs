@@ -7,7 +7,7 @@ namespace Rubiks_Cube_Solver
     internal partial class Input_Colours : Form
     {
         private readonly Stage stage;
-        private PieceConfig? selectedPiece;
+        private CubeNetCellLocation? selectedCell;
         private readonly (DataGridView, Color)[] faceInfo;
 
         public Input_Colours(Stage currentStage)
@@ -67,13 +67,13 @@ namespace Rubiks_Cube_Solver
         {
             face.ClearSelection();
 
-            (int col, int row) cellCoords = (e.ColumnIndex, e.RowIndex);
 
+            (int col, int row) cellCoords = (e.ColumnIndex, e.RowIndex);
             if (cellCoords == (1,1)) //if a centre piece is clicked
                 MessageBox.Show("Centre colours cannot be changed.");
             else
             {
-                selectedPiece = CellToPieceConfig.GetPieceConfig(new CubeNetCellLocation(cellCoords, colour));
+                selectedCell = new CubeNetCellLocation(cellCoords, colour);
                 face.Rows[cellCoords.row].Cells[cellCoords.col].Style.BackColor = stage.GetInputColour().ToColor();
                 btnFinish.Visible = true;
             }
@@ -101,11 +101,11 @@ namespace Rubiks_Cube_Solver
         private void btnMenu_Click(object sender, EventArgs e) => FormNavigator.Navigate<Menu>(this);
 
         private void btnFinish_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<Output_Solution>(this, stage, selectedPiece);
+            FormNavigator.Navigate<Output_Solution>(this, stage, selectedCell);
             
         private void btnClear_Click(object sender, EventArgs e)
         {
-            selectedPiece = null;
+            selectedCell = null;
             btnFinish.Visible = false;
         }
     }
