@@ -134,8 +134,12 @@ namespace Rubiks_Cube_Solver
             {
                 frontFace = "red";
             }
+
             //outputting the necessary cube orientation to the user
-            lblCubeOrientation.Text = "Hold your cube with the white centre piece on top and the " + frontFace + " centre piece facing you.";
+            lblCubeOrientation.Text = $"Hold your cube with the white centre piece on top and the {GetFrontFaceName()} centre piece facing you.";
+
+            //updating the 'stage' label to show the user which stage of the solve they are on
+            lblNameOfStage.Text = stage.GetName();
 
             //calling the 'rotatePieceLocation' procedure the correct number of times 
             for (int i = 0; i < stage.SubStep-1; i++)
@@ -143,22 +147,17 @@ namespace Rubiks_Cube_Solver
                 rotatePieceLocation();
             }
 
-            //updating the 'stage' label to show the user which stage of the solve they are on
-            if (stage.Step == 0)
-            {
-                lblNameOfStage.Text = "Stage: Yellow edges";
-            }
-            else if (stage.Step == 1)
-            {
-                lblNameOfStage.Text = "Stage: Yellow corners";
-            }
-            else if (stage.Step == 2)
-            {
-                lblNameOfStage.Text = "Stage: Middle layer edges";
-            }
 
             calculateSolve();
         }
+
+        private string GetFrontFaceName() => stage.SubStep switch
+        {
+            0 => "green",
+            1 => "orange",
+            2 => "blue",
+            3 => "red"
+        };
 
         private void btnFinish_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<CheckingMoves>(this);
