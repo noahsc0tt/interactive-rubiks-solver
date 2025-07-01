@@ -5,18 +5,16 @@ namespace Rubiks_Cube_Solver
 {
     internal static class FormNavigator
     {
-        internal static void Navigate<T> (Form currentForm) where T : Form
-        {
-            Form nextForm = (Form) Activator.CreateInstance(typeof(T));
-            nextForm.Show();
-            currentForm.Hide();
-        }
+        public static void Navigate<T>(Form currentForm) where T : Form =>
+            SwitchForms(currentForm, (Form)Activator.CreateInstance(typeof(T)));
         
-        internal static void Navigate<T> (Form currentForm, params object[] args) where T : Form
+        public static void Navigate<T>(Form currentForm, params object[] args) where T : Form =>
+            SwitchForms(currentForm, (Form)Activator.CreateInstance(typeof(T), args));
+
+        private static void SwitchForms(Form oldForm, Form newForm)
         {
-            Form nextForm = (Form) Activator.CreateInstance(typeof(T), args);
-            nextForm.Show();
-            currentForm.Hide();
+            newForm.Show();
+            oldForm.Close();
         }
     }
 }
