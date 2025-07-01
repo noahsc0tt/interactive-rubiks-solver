@@ -97,11 +97,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Timer\Before Solve.cs">
+    <Compile Include="Forms\Timer\BeforeSolve.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Timer\Before Solve.Designer.cs">
-      <DependentUpon>Before Solve.cs</DependentUpon>
+    <Compile Include="Forms\Timer\BeforeSolve.Designer.cs">
+      <DependentUpon>BeforeSolve.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Solver\CheckingMoves.cs">
       <SubType>Form</SubType>
@@ -110,11 +110,11 @@
       <DependentUpon>CheckingMoves.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DefaultFormSettings.cs" />
-    <Compile Include="Forms\Timer\During Solve.cs">
+    <Compile Include="Forms\Timer\DuringSolve.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Timer\During Solve.Designer.cs">
-      <DependentUpon>During Solve.cs</DependentUpon>
+    <Compile Include="Forms\Timer\DuringSolve.Designer.cs">
+      <DependentUpon>DuringSolve.cs</DependentUpon>
     </Compile>
     <Compile Include="Solver\CellToPieceConfig.cs" />
     <Compile Include="Solver\CubeNetCellLocation.cs" />
@@ -173,14 +173,14 @@
       <DependentUpon>TopLayerEdges.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\Scrambler.cs" />
-    <EmbeddedResource Include="Forms\Timer\Before Solve.resx">
-      <DependentUpon>Before Solve.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Timer\BeforeSolve.resx">
+      <DependentUpon>BeforeSolve.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Solver\CheckingMoves.resx">
       <DependentUpon>CheckingMoves.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Timer\During Solve.resx">
-      <DependentUpon>During Solve.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Timer\DuringSolve.resx">
+      <DependentUpon>DuringSolve.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

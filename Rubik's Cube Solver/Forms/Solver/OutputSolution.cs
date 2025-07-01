@@ -137,14 +137,11 @@ namespace Rubiks_Cube_Solver
             //outputting the necessary cube orientation to the user
             lblCubeOrientation.Text = "Hold your cube with the white centre piece on top and the " + frontFace + " centre piece facing you.";
 
-
-
             //calling the 'rotatePieceLocation' procedure the correct number of times 
             for (int i = 0; i < stage.SubStep-1; i++)
             {
                 rotatePieceLocation();
             }
-
 
             //updating the 'stage' label to show the user which stage of the solve they are on
             if (stage.Step == 0)
@@ -163,14 +160,10 @@ namespace Rubiks_Cube_Solver
             calculateSolve();
         }
 
-        private void btnFinish_Click(object sender, EventArgs e)
-        {
+        private void btnFinish_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<CheckingMoves>(this);
-        }
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            FormNavigator.Navigate<Menu>(this);
-        }
 
+        private void btnMenu_Click(object sender, EventArgs e) =>
+            FormNavigator.Navigate<Menu>(this);
     }
 }

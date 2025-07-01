@@ -11,19 +11,13 @@ namespace Rubiks_Cube_Solver
             this.ApplyDefaultFormSettings();
         }
 
-        private void btnSolver_Click(object sender, EventArgs e)
-        {
+        private void btnSolver_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<InputColours>(this, new Stage());
-        }
         
-        private void btnTimer_Click(object sender, EventArgs e)
-        {
+        private void btnTimer_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<BeforeSolve>(this, "N/A");
-        }
 
-        private void btnNotation_Click(object sender, EventArgs e)
-        {
+        private void btnNotation_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<NotationExplanation>(this);
-        }
     }
 }
