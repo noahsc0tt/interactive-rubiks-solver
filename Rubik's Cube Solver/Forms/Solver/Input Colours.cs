@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Windows.Forms;
@@ -10,14 +11,14 @@ namespace Rubiks_Cube_Solver
     internal partial class Input_Colours : Form
     {
         private readonly Stage stage;
-        private CubeNetCellLocation? selectedCell;
+        private CubeNetCellLocation selectedCellLocation;
+        private DataGridViewCell selectedCell;
         private readonly ImmutableDictionary<Face, FaceColour> faceColourDict;
 
         public Input_Colours(Stage currentStage)
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
-            btnFinish.Visible = false;
 
             stage = currentStage;
             faceColourDict = InitialiseFaceColourDict();
@@ -41,6 +42,7 @@ namespace Rubiks_Cube_Solver
         {
             PopulateCubeNet();
             lblInstructions.Text = GetInstructions();
+            btnFinish.Visible = false;
         }
 
         private void PopulateCubeFace(Face face)
@@ -78,12 +80,16 @@ namespace Rubiks_Cube_Solver
             face.ClearSelection();
 
             (int col, int row) cellCoords = (e.ColumnIndex, e.RowIndex);
-            if (cellCoords == (1,1)) //if a centre piece is clicked
+            
+            if (cellCoords == (1, 1)) // if a centre piece is clicked
                 MessageBox.Show("Centre colours cannot be changed.");
             else
             {
-                selectedCell = new CubeNetCellLocation(cellCoords, faceColourDict[face]);
-                face.Rows[cellCoords.row].Cells[cellCoords.col].Style.BackColor = stage.GetInputColour().ToColor();
+                selectedCell?.Style.BackColor = Color.Silver; // un-colouring the previous cell
+                //colouring the new cell
+                selectedCellLocation = new CubeNetCellLocation(cellCoords, faceColourDict[face]);
+                selectedCell = face.Rows[cellCoords.row].Cells[cellCoords.col];
+                selectedCell.Style.BackColor = stage.GetInputColour().ToColor();
                 btnFinish.Visible = true;
             }
         }
@@ -91,11 +97,11 @@ namespace Rubiks_Cube_Solver
         private void btnMenu_Click(object sender, EventArgs e) => FormNavigator.Navigate<Menu>(this);
 
         private void btnFinish_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<Output_Solution>(this, stage, selectedCell);
+            FormNavigator.Navigate<Output_Solution>(this, stage, selectedCellLocation);
             
         private void btnClear_Click(object sender, EventArgs e)
         {
-            selectedCell = null;
+            selectedCellLocation = null;
             btnFinish.Visible = false;
         }
     }
