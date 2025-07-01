@@ -19,7 +19,7 @@ namespace Rubiks_Cube_Solver
 
         private static void ValidateArg(int value, string paramName)
         {
-            if (value >= 0 && value <= 3)
+            if (value < 0 || value > 3)
                 throw new ArgumentOutOfRangeException(paramName, "Argument must be in the range 0-3");
         }
 

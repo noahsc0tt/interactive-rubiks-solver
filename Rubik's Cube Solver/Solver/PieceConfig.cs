@@ -65,7 +65,7 @@ namespace Rubiks_Cube_Solver
 
         public static void ValidateCoord(int coord, string paramName)
         {
-            if (coord <= 0 || coord >= 2)
+            if (coord < 0 || coord > 2)
                 throw new ArgumentOutOfRangeException(paramName, "Coordinate must be in the range 0-2");
         }
         public (int X, int Y, int Z) GetLocation() => (X, Y, Z);
