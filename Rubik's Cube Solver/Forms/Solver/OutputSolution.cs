@@ -101,7 +101,7 @@ namespace Rubiks_Cube_Solver
 
         private void calculateSolve()
         {
-            Boolean found = false;           
+            bool found = false;           
 
             if (!found)
 
@@ -116,25 +116,6 @@ namespace Rubiks_Cube_Solver
 
         private void OutputSolution_Load(object sender, EventArgs e)
         {
-            //calculating the necessary cube orientation based on the value of stage.subStep
-            string frontFace = string.Empty;           
-            if (stage.SubStep == 0)
-            {
-                frontFace = "green";
-            }
-            else if (stage.SubStep == 1)
-            {
-                frontFace = "orange";
-            }
-            else if (stage.SubStep == 2)
-            {
-                frontFace = "blue";
-            }
-            else if (stage.SubStep == 4)
-            {
-                frontFace = "red";
-            }
-
             //outputting the necessary cube orientation to the user
             lblCubeOrientation.Text = $"Hold your cube with the white centre piece on top and the {GetFrontFaceName()} centre piece facing you.";
 
@@ -146,7 +127,6 @@ namespace Rubiks_Cube_Solver
             {
                 rotatePieceLocation();
             }
-
 
             calculateSolve();
         }
