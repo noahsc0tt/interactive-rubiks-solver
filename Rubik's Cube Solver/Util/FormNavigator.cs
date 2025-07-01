@@ -9,7 +9,11 @@ namespace Rubiks_Cube_Solver
         {
             Form newForm = (Form)Activator.CreateInstance(typeof(T), args);
             newForm.Show();
-            currentForm.Close();
+
+            if (currentForm is Menu)
+                currentForm.Hide();
+            else
+                currentForm.Close();
         }
     }
 }
