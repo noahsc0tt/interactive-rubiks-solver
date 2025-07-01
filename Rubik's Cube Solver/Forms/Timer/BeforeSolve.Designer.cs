@@ -72,7 +72,7 @@
             // 
             this.lblScrambleHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblScrambleHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
-            this.lblScrambleHeader.Location = new System.Drawing.Point(440, 380);
+            this.lblScrambleHeader.Location = new System.Drawing.Point(440, 326);
             this.lblScrambleHeader.Name = "lblScrambleHeader";
             this.lblScrambleHeader.Size = new System.Drawing.Size(616, 97);
             this.lblScrambleHeader.TabIndex = 8;
@@ -83,7 +83,7 @@
             // 
             this.lblScramble.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblScramble.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F);
-            this.lblScramble.Location = new System.Drawing.Point(440, 477);
+            this.lblScramble.Location = new System.Drawing.Point(440, 423);
             this.lblScramble.Name = "lblScramble";
             this.lblScramble.Size = new System.Drawing.Size(616, 343);
             this.lblScramble.TabIndex = 6;
@@ -94,7 +94,7 @@
             this.lblStart.BackColor = System.Drawing.Color.Transparent;
             this.lblStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStart.ForeColor = System.Drawing.Color.Black;
-            this.lblStart.Location = new System.Drawing.Point(590, 892);
+            this.lblStart.Location = new System.Drawing.Point(405, 766);
             this.lblStart.Name = "lblStart";
             this.lblStart.Size = new System.Drawing.Size(681, 86);
             this.lblStart.TabIndex = 9;
@@ -114,7 +114,7 @@
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // Before_Solve
+            // BeforeSolve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -126,7 +126,7 @@
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblPreviousSolve);
             this.MinimumSize = new System.Drawing.Size(1468, 869);
-            this.Name = "Before_Solve";
+            this.Name = "BeforeSolve";
             this.Text = "Before_Solve";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BeforeSolve_Load);

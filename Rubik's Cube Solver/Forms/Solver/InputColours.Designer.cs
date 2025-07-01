@@ -112,7 +112,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblInstructions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInstructions.Location = new System.Drawing.Point(878, 31);
+            this.lblInstructions.Location = new System.Drawing.Point(862, 72);
             this.lblInstructions.Name = "lblInstructions";
             this.lblInstructions.Size = new System.Drawing.Size(355, 178);
             this.lblInstructions.TabIndex = 0;
@@ -145,7 +145,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.orangeFace.DefaultCellStyle = dataGridViewCellStyle1;
-            this.orangeFace.Location = new System.Drawing.Point(295, 267);
+            this.orangeFace.Location = new System.Drawing.Point(279, 308);
             this.orangeFace.Name = "orangeFace";
             this.orangeFace.RowHeadersVisible = false;
             this.orangeFace.RowTemplate.Height = 76;
@@ -290,7 +290,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.redFace.DefaultCellStyle = dataGridViewCellStyle2;
-            this.redFace.Location = new System.Drawing.Point(767, 267);
+            this.redFace.Location = new System.Drawing.Point(751, 308);
             this.redFace.Name = "redFace";
             this.redFace.RowHeadersVisible = false;
             this.redFace.RowTemplate.Height = 76;
@@ -435,7 +435,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.greenFace.DefaultCellStyle = dataGridViewCellStyle3;
-            this.greenFace.Location = new System.Drawing.Point(531, 267);
+            this.greenFace.Location = new System.Drawing.Point(515, 308);
             this.greenFace.Name = "greenFace";
             this.greenFace.RowHeadersVisible = false;
             this.greenFace.RowTemplate.Height = 76;
@@ -580,7 +580,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.yellowFace.DefaultCellStyle = dataGridViewCellStyle4;
-            this.yellowFace.Location = new System.Drawing.Point(531, 503);
+            this.yellowFace.Location = new System.Drawing.Point(515, 544);
             this.yellowFace.Name = "yellowFace";
             this.yellowFace.RowHeadersVisible = false;
             this.yellowFace.RowTemplate.Height = 76;
@@ -725,7 +725,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.whiteFace.DefaultCellStyle = dataGridViewCellStyle5;
-            this.whiteFace.Location = new System.Drawing.Point(531, 31);
+            this.whiteFace.Location = new System.Drawing.Point(515, 72);
             this.whiteFace.Name = "whiteFace";
             this.whiteFace.RowHeadersVisible = false;
             this.whiteFace.RowTemplate.Height = 76;
@@ -859,7 +859,7 @@
             // btnFinish
             // 
             this.btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.btnFinish.Location = new System.Drawing.Point(926, 622);
+            this.btnFinish.Location = new System.Drawing.Point(910, 663);
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.Size = new System.Drawing.Size(307, 111);
             this.btnFinish.TabIndex = 11;
@@ -1002,7 +1002,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.blueFace.DefaultCellStyle = dataGridViewCellStyle6;
-            this.blueFace.Location = new System.Drawing.Point(1003, 267);
+            this.blueFace.Location = new System.Drawing.Point(987, 308);
             this.blueFace.Name = "blueFace";
             this.blueFace.RowHeadersVisible = false;
             this.blueFace.RowTemplate.Height = 76;
@@ -1012,7 +1012,7 @@
             this.blueFace.TabIndex = 6;
             this.blueFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.HandleCellClick);
             // 
-            // Input_Colours
+            // InputColours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1028,7 +1028,7 @@
             this.Controls.Add(this.lblInstructions);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
             this.MinimumSize = new System.Drawing.Size(1468, 869);
-            this.Name = "Input_Colours";
+            this.Name = "InputColours";
             this.Text = "Input Colours";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Solver_Input_Colours_Load);
