@@ -62,11 +62,10 @@ namespace Rubiks_Cube_Solver
             _y = y;
             _z = z;
         }
-        private static bool IsCoordValid(int coord) => coord >= 0 && coord <= 2;
 
         public static void ValidateCoord(int coord, string paramName)
         {
-            if (!IsCoordValid(coord))
+            if (coord <= 0 || coord >= 2)
                 throw new ArgumentOutOfRangeException(paramName, "Coordinate must be in the range 0-2");
         }
         public (int X, int Y, int Z) GetLocation() => (X, Y, Z);

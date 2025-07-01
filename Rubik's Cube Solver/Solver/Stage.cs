@@ -16,11 +16,10 @@ namespace Rubiks_Cube_Solver
             Step = step;
             SubStep = subStep;
         }
-        private static bool IsArgValid(int arg) => arg >= 0 && arg <= 3;
 
         private static void ValidateArg(int value, string paramName)
         {
-            if (!IsArgValid(value))
+            if (value >= 0 && value <= 3)
                 throw new ArgumentOutOfRangeException(paramName, "Argument must be in the range 0-3");
         }
 
