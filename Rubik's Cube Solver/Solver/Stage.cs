@@ -68,8 +68,8 @@ namespace Rubiks_Cube_Solver
                 1 => FaceColour.Red,
                 2 => FaceColour.Blue,
                 3 => FaceColour.Orange
-            }
-            // step 3 does not have colours
+            },
+            _ => throw new InvalidOperationException("Last layer stages have no input")
         };
 
         public void Increment()
