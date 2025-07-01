@@ -4,11 +4,11 @@ using System.Windows.Forms;
 
 namespace Rubiks_Cube_Solver
 {
-    internal partial class Checking_Moves : Form
+    internal partial class CheckingMoves : Form
     {
         private Stage stage;
 
-        public Checking_Moves(Stage currentStage)
+        public CheckingMoves(Stage currentStage)
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
@@ -252,28 +252,28 @@ namespace Rubiks_Cube_Solver
             {
                 if (stage.SubStep == 1)
                 {
-                    FormNavigator.Navigate<Top_Layer_Edges>(this);
+                    FormNavigator.Navigate<TopLayerEdges>(this);
 
                 }
                 else if (stage.SubStep == 2)
                 {
-                    FormNavigator.Navigate<Top_Layer_Corners>(this);
+                    FormNavigator.Navigate<TopLayerCorners>(this);
 
                 }
                 else if (stage.SubStep == 3)
                 {
-                    FormNavigator.Navigate<Permuting_Corners>(this);
+                    FormNavigator.Navigate<PermutingCorners>(this);
 
                 }
                 else if (stage.SubStep == 4)
                 {
-                    FormNavigator.Navigate<Permuting_Edges>(this);
+                    FormNavigator.Navigate<PermutingEdges>(this);
                 }
             }
             else
             {
                 //opening the 'Input Colours' form
-                FormNavigator.Navigate<Input_Colours>(this);
+                FormNavigator.Navigate<InputColours>(this);
 
             }
             
@@ -287,46 +287,46 @@ namespace Rubiks_Cube_Solver
             {
                 stage = new Stage(1,1);
 
-                FormNavigator.Navigate<Input_Colours>(this);
+                FormNavigator.Navigate<InputColours>(this);
                 
             }
             if ((string)boxChooseStage.SelectedItem == "Yellow Corners")
             {
                 stage = new Stage(2,1);
 
-                FormNavigator.Navigate<Input_Colours>(this);
+                FormNavigator.Navigate<InputColours>(this);
                 
             }
             if ((string)boxChooseStage.SelectedItem == "Middle Layer Edges")
             {
                 stage = new Stage(3,1);
 
-                FormNavigator.Navigate<Input_Colours>(this);
+                FormNavigator.Navigate<InputColours>(this);
                 
             }
             if ((string)boxChooseStage.SelectedItem == "White Edges")
             {
                 stage = new Stage(4,1);
 
-                FormNavigator.Navigate<Top_Layer_Edges>(this);
+                FormNavigator.Navigate<TopLayerEdges>(this);
             }
             if ((string)boxChooseStage.SelectedItem == "White Corners")
             {
                 stage = new Stage(4,2);
 
-                FormNavigator.Navigate<Top_Layer_Corners>(this);
+                FormNavigator.Navigate<TopLayerCorners>(this);
             }
             if ((string)boxChooseStage.SelectedItem == "Corner Permutation")
             {
                 stage = new Stage(4,3);
 
-                FormNavigator.Navigate<Top_Layer_Corners>(this);
+                FormNavigator.Navigate<TopLayerCorners>(this);
             }
             if ((string)boxChooseStage.SelectedItem == "Edge Permutation")
             {
                 stage = new Stage(4,4);
 
-                FormNavigator.Navigate<Top_Layer_Edges>(this);
+                FormNavigator.Navigate<TopLayerEdges>(this);
             }
         }
 

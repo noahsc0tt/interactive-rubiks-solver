@@ -1,6 +1,6 @@
 ﻿namespace Rubiks_Cube_Solver
 {
-    partial class Before_Solve
+    partial class BeforeSolve
     {
         /// <summary>
         /// Required designer variable.
@@ -129,8 +129,8 @@
             this.Name = "Before_Solve";
             this.Text = "Before_Solve";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Before_Solve_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Before_Solve_KeyPress);
+            this.Load += new System.EventHandler(this.BeforeSolve_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BeforeSolve_KeyPress);
             this.ResumeLayout(false);
 
         }

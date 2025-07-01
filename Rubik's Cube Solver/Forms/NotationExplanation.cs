@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Rubiks_Cube_Solver
 {
-    public partial class Notation_Explanation : Form
+    public partial class NotationExplanation : Form
     {
-        public Notation_Explanation()
+        public NotationExplanation()
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();

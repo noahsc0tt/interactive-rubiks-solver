@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace Rubiks_Cube_Solver
 {
-    public partial class Permuting_Edges : Form
+    public partial class TopLayerCorners : Form
     {
-        public Permuting_Edges()
+        public TopLayerCorners()
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
@@ -18,7 +18,8 @@ namespace Rubiks_Cube_Solver
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
-            FormNavigator.Navigate<Checking_Moves>(this);
+            FormNavigator.Navigate<CheckingMoves>(this);
         }
+
     }
 }

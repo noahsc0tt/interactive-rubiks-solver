@@ -103,11 +103,11 @@
     <Compile Include="Forms\Timer\Before Solve.Designer.cs">
       <DependentUpon>Before Solve.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Solver\Checking Moves.cs">
+    <Compile Include="Forms\Solver\CheckingMoves.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Solver\Checking Moves.Designer.cs">
-      <DependentUpon>Checking Moves.cs</DependentUpon>
+    <Compile Include="Forms\Solver\CheckingMoves.Designer.cs">
+      <DependentUpon>CheckingMoves.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DefaultFormSettings.cs" />
     <Compile Include="Forms\Timer\During Solve.cs">
@@ -128,56 +128,56 @@
     <Compile Include="Forms\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Notation Explanation.cs">
+    <Compile Include="Forms\NotationExplanation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Notation Explanation.Designer.cs">
-      <DependentUpon>Notation Explanation.cs</DependentUpon>
+    <Compile Include="Forms\NotationExplanation.Designer.cs">
+      <DependentUpon>NotationExplanation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Solver\Output Solution.cs">
+    <Compile Include="Forms\Solver\OutputSolution.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Solver\Output Solution.Designer.cs">
-      <DependentUpon>Output Solution.cs</DependentUpon>
+    <Compile Include="Forms\Solver\OutputSolution.Designer.cs">
+      <DependentUpon>OutputSolution.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Solver\Permuting Corners.cs">
+    <Compile Include="Forms\Solver\PermutingCorners.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Solver\Permuting Corners.Designer.cs">
-      <DependentUpon>Permuting Corners.cs</DependentUpon>
+    <Compile Include="Forms\Solver\PermutingCorners.Designer.cs">
+      <DependentUpon>PermutingCorners.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Solver\Permuting Edges.cs">
+    <Compile Include="Forms\Solver\PermutingEdges.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Solver\Permuting Edges.Designer.cs">
-      <DependentUpon>Permuting Edges.cs</DependentUpon>
+    <Compile Include="Forms\Solver\PermutingEdges.Designer.cs">
+      <DependentUpon>PermutingEdges.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\Solver\Input Colours.cs">
+    <Compile Include="Forms\Solver\InputColours.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Solver\Input Colours.Designer.cs">
-      <DependentUpon>Input Colours.cs</DependentUpon>
+    <Compile Include="Forms\Solver\InputColours.Designer.cs">
+      <DependentUpon>InputColours.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Solver\Top Layer Corners.cs">
+    <Compile Include="Forms\Solver\TopLayerCorners.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Solver\Top Layer Corners.Designer.cs">
-      <DependentUpon>Top Layer Corners.cs</DependentUpon>
+    <Compile Include="Forms\Solver\TopLayerCorners.Designer.cs">
+      <DependentUpon>TopLayerCorners.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Solver\Top Layer Edges.cs">
+    <Compile Include="Forms\Solver\TopLayerEdges.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Solver\Top Layer Edges.Designer.cs">
-      <DependentUpon>Top Layer Edges.cs</DependentUpon>
+    <Compile Include="Forms\Solver\TopLayerEdges.Designer.cs">
+      <DependentUpon>TopLayerEdges.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\Scrambler.cs" />
     <EmbeddedResource Include="Forms\Timer\Before Solve.resx">
       <DependentUpon>Before Solve.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Solver\Checking Moves.resx">
-      <DependentUpon>Checking Moves.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Solver\CheckingMoves.resx">
+      <DependentUpon>CheckingMoves.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Timer\During Solve.resx">
       <DependentUpon>During Solve.cs</DependentUpon>
@@ -185,17 +185,17 @@
     <EmbeddedResource Include="Forms\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Notation Explanation.resx">
-      <DependentUpon>Notation Explanation.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\NotationExplanation.resx">
+      <DependentUpon>NotationExplanation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Solver\Output Solution.resx">
-      <DependentUpon>Output Solution.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Solver\OutputSolution.resx">
+      <DependentUpon>OutputSolution.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Solver\Permuting Corners.resx">
-      <DependentUpon>Permuting Corners.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Solver\PermutingCorners.resx">
+      <DependentUpon>PermutingCorners.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Solver\Permuting Edges.resx">
-      <DependentUpon>Permuting Edges.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Solver\PermutingEdges.resx">
+      <DependentUpon>PermutingEdges.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>
@@ -203,14 +203,14 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Rubiks_Cube_Solver.Properties</CustomToolNamespace>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Solver\Input Colours.resx">
-      <DependentUpon>Input Colours.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Solver\InputColours.resx">
+      <DependentUpon>InputColours.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Solver\Top Layer Corners.resx">
-      <DependentUpon>Top Layer Corners.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Solver\TopLayerCorners.resx">
+      <DependentUpon>TopLayerCorners.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Solver\Top Layer Edges.resx">
-      <DependentUpon>Top Layer Edges.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Solver\TopLayerEdges.resx">
+      <DependentUpon>TopLayerEdges.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />

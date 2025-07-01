@@ -1,6 +1,6 @@
 ﻿namespace Rubiks_Cube_Solver
 {
-    partial class Notation_Explanation
+    partial class NotationExplanation
     {
         /// <summary>
         /// Required designer variable.

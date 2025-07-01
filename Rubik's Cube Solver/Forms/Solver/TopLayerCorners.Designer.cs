@@ -1,6 +1,6 @@
 ﻿namespace Rubiks_Cube_Solver
 {
-    partial class Top_Layer_Corners
+    partial class TopLayerCorners
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Top_Layer_Corners));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TopLayerCorners));
             this.btnFinish = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();

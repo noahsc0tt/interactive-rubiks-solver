@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace Rubiks_Cube_Solver
 {
     using Face = DataGridView;
-    internal partial class Input_Colours : Form
+    internal partial class InputColours : Form
     {
         private static readonly (int, int) centrePieceCellCoords = (1, 1);
         private readonly Stage stage;
@@ -15,7 +15,7 @@ namespace Rubiks_Cube_Solver
         private DataGridViewCell selectedCell;
         private readonly ImmutableDictionary<Face, FaceColour> faceColourDict;
 
-        public Input_Colours(Stage currentStage)
+        public InputColours(Stage currentStage)
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
@@ -94,6 +94,6 @@ namespace Rubiks_Cube_Solver
             FormNavigator.Navigate<Menu>(this);
 
         private void btnFinish_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<Output_Solution>(this, stage, selectedCellLocation);
+            FormNavigator.Navigate<OutputSolution>(this, stage, selectedCellLocation);
     }
 }

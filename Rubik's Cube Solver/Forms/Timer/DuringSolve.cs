@@ -5,28 +5,28 @@ using System.Diagnostics;
 
 namespace Rubiks_Cube_Solver
 {
-    public partial class During_Solve : Form
+    public partial class DuringSolve : Form
     {
         Stopwatch solveTimer = new Stopwatch();
 
-        public During_Solve()
+        public DuringSolve()
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
         }
         
-        private void During_Solve_Load(object sender, EventArgs e)
+        private void DuringSolve_Load(object sender, EventArgs e)
         {
             solveTimer.Start();
         }
 
 
-        private void During_Solve_KeyPress(object sender, KeyPressEventArgs e)
+        private void DuringSolve_KeyPress(object sender, KeyPressEventArgs e)
         {            
             if (e.KeyChar == (char)Keys.Space)
             {
                 solveTimer.Stop();
-                FormNavigator.Navigate<Before_Solve>(this, lblTimer.Text);
+                FormNavigator.Navigate<BeforeSolve>(this, lblTimer.Text);
             }
         }
 

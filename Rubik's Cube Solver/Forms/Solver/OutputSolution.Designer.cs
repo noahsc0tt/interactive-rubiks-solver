@@ -1,6 +1,6 @@
 ﻿namespace Rubiks_Cube_Solver
 {
-    partial class Output_Solution
+    partial class OutputSolution
     {
         /// <summary>
         /// Required designer variable.
@@ -158,7 +158,7 @@
             this.Name = "Output_Solution";
             this.Text = "Output_Solution";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Output_Solution_Load);
+            this.Load += new System.EventHandler(this.OutputSolution_Load);
             this.ResumeLayout(false);
 
         }

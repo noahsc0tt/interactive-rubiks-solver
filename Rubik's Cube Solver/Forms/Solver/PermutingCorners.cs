@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Rubiks_Cube_Solver
 {
-    public partial class Permuting_Corners : Form
+    public partial class PermutingCorners : Form
     {
-        public Permuting_Corners()
+        public PermutingCorners()
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
@@ -25,7 +25,7 @@ namespace Rubiks_Cube_Solver
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
-            FormNavigator.Navigate<Checking_Moves>(this);
+            FormNavigator.Navigate<CheckingMoves>(this);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

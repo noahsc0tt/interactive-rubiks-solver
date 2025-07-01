@@ -1,6 +1,6 @@
 ﻿namespace Rubiks_Cube_Solver
 {
-    partial class Input_Colours
+    partial class InputColours
     {
         /// <summary>
         /// Required designer variable.

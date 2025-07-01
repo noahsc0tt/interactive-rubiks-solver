@@ -3,10 +3,10 @@ using System.Windows.Forms;
 
 namespace Rubiks_Cube_Solver
 {
-    public partial class Before_Solve : Form
+    public partial class BeforeSolve : Form
     {
         private String previousTime;
-        public Before_Solve(String previousTime)
+        public BeforeSolve(String previousTime)
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
@@ -14,18 +14,18 @@ namespace Rubiks_Cube_Solver
             this.previousTime = previousTime;
         }
 
-        private void Before_Solve_KeyPress(object sender, KeyPressEventArgs e)
+        private void BeforeSolve_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Space) // if the user presses the spacebar
             {
 
-                FormNavigator.Navigate<During_Solve>(this);
+                FormNavigator.Navigate<DuringSolve>(this);
 
             }
 
         }
 
-        private void Before_Solve_Load(object sender, EventArgs e)
+        private void BeforeSolve_Load(object sender, EventArgs e)
         {
             lblTime.Text = this.previousTime;
             lblScramble.Text = Scrambler.GetScramble();

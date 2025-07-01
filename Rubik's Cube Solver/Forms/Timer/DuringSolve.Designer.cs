@@ -1,6 +1,6 @@
 ﻿namespace Rubiks_Cube_Solver
 {
-    partial class During_Solve
+    partial class DuringSolve
     {
         /// <summary>
         /// Required designer variable.
@@ -79,8 +79,8 @@
             this.Name = "During_Solve";
             this.Text = "During_Solve";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.During_Solve_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.During_Solve_KeyPress);
+            this.Load += new System.EventHandler(this.DuringSolve_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DuringSolve_KeyPress);
             this.ResumeLayout(false);
 
         }

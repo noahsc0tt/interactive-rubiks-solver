@@ -4,12 +4,12 @@ using System.Windows.Forms;
 
 namespace Rubiks_Cube_Solver
 {
-    internal partial class Output_Solution : Form
+    internal partial class OutputSolution : Form
     {
         private readonly Stage stage;
         private PieceConfig pieceConfiguration;
 
-        public Output_Solution(Stage currentStage, CubeNetCellLocation cell)
+        public OutputSolution(Stage currentStage, CubeNetCellLocation cell)
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
@@ -114,7 +114,7 @@ namespace Rubiks_Cube_Solver
             }
         }
 
-        private void Output_Solution_Load(object sender, EventArgs e)
+        private void OutputSolution_Load(object sender, EventArgs e)
         {
             //calculating the necessary cube orientation based on the value of stage.subStep
             string frontFace = string.Empty;           
@@ -165,7 +165,7 @@ namespace Rubiks_Cube_Solver
 
         private void btnFinish_Click(object sender, EventArgs e)
         {
-            FormNavigator.Navigate<Checking_Moves>(this);
+            FormNavigator.Navigate<CheckingMoves>(this);
         }
         private void btnMenu_Click(object sender, EventArgs e)
         {
