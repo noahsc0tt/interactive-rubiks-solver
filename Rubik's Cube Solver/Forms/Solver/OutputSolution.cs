@@ -106,11 +106,9 @@ namespace Rubiks_Cube_Solver
             if (!found)
 
             {
-                MessageBox.Show("Invalid piece position. Enter the position of your piece correctly.");
                 //opening the 'Input Colours' form so the user can reenter their input
-                // commit: FormNavigator.Navigate<Input_Colours>(this, stage);
-                
-
+                FormNavigator.Navigate<InputColours>(this, stage);
+                MessageBox.Show("Invalid piece position. Enter the position of your piece correctly.");
             }
         }
 
