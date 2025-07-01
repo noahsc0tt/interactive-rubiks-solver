@@ -10,6 +10,7 @@ namespace Rubiks_Cube_Solver
 
     internal partial class Input_Colours : Form
     {
+        private static readonly (int, int) centrePieceCellCoords = (1, 1);
         private readonly Stage stage;
         private CubeNetCellLocation selectedCellLocation;
         private DataGridViewCell selectedCell;
@@ -81,7 +82,7 @@ namespace Rubiks_Cube_Solver
 
             (int col, int row) cellCoords = (e.ColumnIndex, e.RowIndex);
             
-            if (cellCoords == (1, 1)) // if a centre piece is clicked
+            if (cellCoords == centrePieceCellCoords) // if a centre piece is clicked
                 MessageBox.Show("Centre colours cannot be changed.");
             else
             {
