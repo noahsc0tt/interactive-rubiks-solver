@@ -113,10 +113,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblInstructions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInstructions.Location = new System.Drawing.Point(987, 31);
-            this.lblInstructions.MaximumSize = new System.Drawing.Size(246, 114);
+            this.lblInstructions.Location = new System.Drawing.Point(923, 31);
             this.lblInstructions.Name = "lblInstructions";
-            this.lblInstructions.Size = new System.Drawing.Size(246, 114);
+            this.lblInstructions.Size = new System.Drawing.Size(310, 178);
             this.lblInstructions.TabIndex = 0;
             this.lblInstructions.Text = "Click the white face of the white and blue edge.";
             this.lblInstructions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

@@ -14,8 +14,9 @@ namespace Rubiks_Cube_Solver
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
-            stage = currentStage;
+            btnFinish.Visible = false;
 
+            stage = currentStage;
             faceInfo =
             [
                 (orangeFace, Color.Orange),
@@ -74,6 +75,7 @@ namespace Rubiks_Cube_Solver
             {
                 selectedPiece = CellToPieceConfig.GetPieceConfig(new CubeNetCellLocation(cellCoords, colour));
                 face.Rows[cellCoords.row].Cells[cellCoords.col].Style.BackColor = stage.GetInputColour().ToColor();
+                btnFinish.Visible = true;
             }
         }
 
@@ -98,18 +100,13 @@ namespace Rubiks_Cube_Solver
 
         private void btnMenu_Click(object sender, EventArgs e) => FormNavigator.Navigate<Menu>(this);
 
-        private void btnFinish_Click(object sender, EventArgs e)
-        {
-            //checking if the user has inputted the position of the required piece
-            if (selectedPiece is not null) 
-                //moving on to the output solution form
-                FormNavigator.Navigate<Output_Solution>(this, stage, selectedPiece);
+        private void btnFinish_Click(object sender, EventArgs e) =>
+            FormNavigator.Navigate<Output_Solution>(this, stage, selectedPiece);
             
-            else
-                //error message telling the user to input the required information before moving on
-                MessageBox.Show(lblInstructions.Text);
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            selectedPiece = null;
+            btnFinish.Visible = false;
         }
-
-        private void btnClear_Click(object sender, EventArgs e) => selectedPiece = null;
     }
 }
