@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace Rubiks_Cube_Solver
@@ -12,7 +11,7 @@ namespace Rubiks_Cube_Solver
     {
         private readonly Stage stage;
         private CubeNetCellLocation? selectedCell;
-        private readonly ImmutableDictionary<DataGridView, FaceColour> faceColourDict;
+        private readonly ImmutableDictionary<Face, FaceColour> faceColourDict;
 
         public Input_Colours(Stage currentStage)
         {
@@ -21,15 +20,21 @@ namespace Rubiks_Cube_Solver
             btnFinish.Visible = false;
 
             stage = currentStage;
+            faceColourDict = InitialiseFaceColourDict();
+        }
 
+        private ImmutableDictionary<Face, FaceColour> InitialiseFaceColourDict()
+        {
             var dictBuilder = ImmutableDictionary.CreateBuilder<Face, FaceColour>();
+
             dictBuilder[orangeFace] = FaceColour.Orange;
             dictBuilder[redFace] = FaceColour.Red;
             dictBuilder[whiteFace] = FaceColour.White;
             dictBuilder[yellowFace] = FaceColour.Yellow;
             dictBuilder[blueFace] = FaceColour.Blue;
             dictBuilder[greenFace] = FaceColour.Green;
-            faceColourDict = dictBuilder.ToImmutable();
+
+            return dictBuilder.ToImmutable();
         }
 
         private void Solver_Input_Colours_Load(object sender, EventArgs e)
