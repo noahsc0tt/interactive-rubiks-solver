@@ -7,7 +7,6 @@ using System.Windows.Forms;
 namespace Rubiks_Cube_Solver
 {
     using Face = DataGridView;
-
     internal partial class Input_Colours : Form
     {
         private static readonly (int, int) centrePieceCellCoords = (1, 1);
@@ -67,11 +66,7 @@ namespace Rubiks_Cube_Solver
         private string GetInstructions() 
         {
             string requiredPiece = stage.GetRequiredPiece();
-            string requiredColour = stage.Step switch
-            {
-                0 or 1 => "yellow",
-                2 => requiredPiece.Split(' ')[0]
-            };
+            string requiredColour = stage.Step == 2 ? requiredPiece.Split(' ')[0] : "yellow";
             return $"Input the position of the {requiredColour} square on the {requiredPiece}";
         }
 
