@@ -113,11 +113,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblInstructions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInstructions.Location = new System.Drawing.Point(923, 31);
+            this.lblInstructions.Location = new System.Drawing.Point(878, 31);
             this.lblInstructions.Name = "lblInstructions";
-            this.lblInstructions.Size = new System.Drawing.Size(310, 178);
+            this.lblInstructions.Size = new System.Drawing.Size(355, 178);
             this.lblInstructions.TabIndex = 0;
-            this.lblInstructions.Text = "Click the white face of the white and blue edge.";
             this.lblInstructions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // orangeFace
@@ -155,7 +154,7 @@
             this.orangeFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.orangeFace.Size = new System.Drawing.Size(230, 230);
             this.orangeFace.TabIndex = 3;
-            this.orangeFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OrangeFace_CellClick);
+            this.orangeFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.HandleCellClick);
             // 
             // dataGridViewButtonColumn1
             // 
@@ -300,7 +299,7 @@
             this.redFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.redFace.Size = new System.Drawing.Size(230, 230);
             this.redFace.TabIndex = 4;
-            this.redFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RedFace_CellClick);
+            this.redFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.HandleCellClick);
             // 
             // dataGridViewButtonColumn4
             // 
@@ -445,7 +444,7 @@
             this.greenFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.greenFace.Size = new System.Drawing.Size(230, 230);
             this.greenFace.TabIndex = 5;
-            this.greenFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GreenFace_CellClick);
+            this.greenFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.HandleCellClick);
             // 
             // dataGridViewButtonColumn13
             // 
@@ -590,7 +589,7 @@
             this.yellowFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.yellowFace.Size = new System.Drawing.Size(230, 230);
             this.yellowFace.TabIndex = 7;
-            this.yellowFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.YellowFace_CellClick);
+            this.yellowFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.HandleCellClick);
             // 
             // dataGridViewButtonColumn31
             // 
@@ -735,7 +734,7 @@
             this.whiteFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.whiteFace.Size = new System.Drawing.Size(230, 230);
             this.whiteFace.TabIndex = 8;
-            this.whiteFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.WhiteFace_CellClick);
+            this.whiteFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.HandleCellClick);
             // 
             // dataGridViewButtonColumn40
             // 
@@ -860,10 +859,10 @@
             // 
             // btnFinish
             // 
-            this.btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinish.Location = new System.Drawing.Point(1234, 752);
+            this.btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.btnFinish.Location = new System.Drawing.Point(1003, 731);
             this.btnFinish.Name = "btnFinish";
-            this.btnFinish.Size = new System.Drawing.Size(109, 38);
+            this.btnFinish.Size = new System.Drawing.Size(307, 111);
             this.btnFinish.TabIndex = 11;
             this.btnFinish.Text = "Finish";
             this.btnFinish.UseVisualStyleBackColor = true;
@@ -1012,13 +1011,13 @@
             this.blueFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.blueFace.Size = new System.Drawing.Size(230, 230);
             this.blueFace.TabIndex = 6;
-            this.blueFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BlueFace_CellClick);
+            this.blueFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.HandleCellClick);
             // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.Silver;
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
-            this.btnClear.Location = new System.Drawing.Point(1036, 596);
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.btnClear.Location = new System.Drawing.Point(1003, 588);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(307, 137);
             this.btnClear.TabIndex = 12;

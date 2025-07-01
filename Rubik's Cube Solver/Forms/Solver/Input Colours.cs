@@ -1,14 +1,19 @@
 ﻿using System;
+using System.Collections.Immutable;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace Rubiks_Cube_Solver
 {
+    using Face = DataGridView;
+
+    using Entry = System.Collections.Generic.KeyValuePair<DataGridView, FaceColour>;
+
     internal partial class Input_Colours : Form
     {
         private readonly Stage stage;
         private CubeNetCellLocation? selectedCell;
-        private readonly (DataGridView, Color)[] faceInfo;
+        private readonly ImmutableDictionary<DataGridView, FaceColour> faceColourDict;
 
         public Input_Colours(Stage currentStage)
         {
@@ -17,18 +22,19 @@ namespace Rubiks_Cube_Solver
             btnFinish.Visible = false;
 
             stage = currentStage;
-            faceInfo =
-            [
-                (orangeFace, Color.Orange),
-                (redFace, Color.Red),
-                (whiteFace, Color.White),
-                (yellowFace, Color.Yellow),
-                (blueFace, Color.RoyalBlue),
-                (greenFace, Color.Green)
-            ];
+            faceColourDict = ImmutableDictionary.CreateRange
+            (
+                new Entry[] {
+                new Entry(orangeFace, FaceColour.Orange),
+                new Entry(redFace, FaceColour.Red),
+                new Entry(whiteFace, FaceColour.White),
+                new Entry(yellowFace, FaceColour.Yellow),
+                new Entry(blueFace, FaceColour.Blue),
+                new Entry(greenFace, FaceColour.Green)
+            });
         }
 
-        private void PopulateCubeFace(DataGridView face, Color colour)
+        private void PopulateCubeFace(Face face, Color colour)
         {
             // adding the cells to the face and colouring the centre cell
             for (int i = 0; i < 3; i++)
@@ -42,8 +48,8 @@ namespace Rubiks_Cube_Solver
         private void PopulateCubeNet()
         {
             //populating each face of the cube
-            foreach(var (face, centreColour) in faceInfo)
-                PopulateCubeFace(face, centreColour);
+            foreach(Entry entry in faceColourDict)
+                PopulateCubeFace(entry.Key, entry.Value.ToColor());
         }
 
         private void Solver_Input_Colours_Load(object sender, EventArgs e)
@@ -63,8 +69,11 @@ namespace Rubiks_Cube_Solver
             return $"Input the position of the {requiredColour} square on the {requiredPiece}";
         }
 
-        private void HandleCellClick(DataGridView face, DataGridViewCellEventArgs e, FaceColour colour)
+
+
+        private void HandleCellClick(object sender, DataGridViewCellEventArgs e)
         {
+            Face face = (Face)sender;
             face.ClearSelection();
 
 
@@ -73,30 +82,11 @@ namespace Rubiks_Cube_Solver
                 MessageBox.Show("Centre colours cannot be changed.");
             else
             {
-                selectedCell = new CubeNetCellLocation(cellCoords, colour);
+                selectedCell = new CubeNetCellLocation(cellCoords, faceColourDict[face]);
                 face.Rows[cellCoords.row].Cells[cellCoords.col].Style.BackColor = stage.GetInputColour().ToColor();
                 btnFinish.Visible = true;
             }
         }
-
-        private void WhiteFace_CellClick(object sender, DataGridViewCellEventArgs e) =>
-            HandleCellClick((DataGridView)sender, e, FaceColour.White);
-
-        private void OrangeFace_CellClick(object sender, DataGridViewCellEventArgs e) =>
-            HandleCellClick((DataGridView)sender, e, FaceColour.Orange);
-
-        private void GreenFace_CellClick(object sender, DataGridViewCellEventArgs e) =>
-            HandleCellClick((DataGridView)sender, e, FaceColour.Green);
-        
-        private void RedFace_CellClick(object sender, DataGridViewCellEventArgs e) =>
-            HandleCellClick((DataGridView)sender, e, FaceColour.Red);
-        
-        private void BlueFace_CellClick(object sender, DataGridViewCellEventArgs e) =>
-            HandleCellClick((DataGridView)sender, e, FaceColour.Blue);
-
-        private void YellowFace_CellClick(object sender, DataGridViewCellEventArgs e) =>
-            HandleCellClick((DataGridView)sender, e, FaceColour.Yellow);
-        
 
         private void btnMenu_Click(object sender, EventArgs e) => FormNavigator.Navigate<Menu>(this);
 
