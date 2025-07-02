@@ -120,6 +120,7 @@
     <Compile Include="Solver\CubeNetCellLocation.cs" />
     <Compile Include="Solver\FaceColour.cs" />
     <Compile Include="Solver\PieceConfig.cs" />
+    <Compile Include="Solver\RotatePiece.cs" />
     <Compile Include="Solver\Stage.cs" />
     <Compile Include="Util\FormNavigator.cs" />
     <Compile Include="Forms\Menu.cs">

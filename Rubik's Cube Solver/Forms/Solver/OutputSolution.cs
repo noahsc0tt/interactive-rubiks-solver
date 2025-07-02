@@ -18,31 +18,6 @@ namespace Rubiks_Cube_Solver
             piece = CellToPieceConfig.GetPieceConfig(cell);
         }
 
-        private void RotatePieceLocation()
-        {
-            (int x, int y, int z) = piece.Location.GetLocation();
-            PieceOrientation orientation = piece.Orientation;
-
-            //checking if the piece is an edge
-            if (x == 1 || y == 1 || z == 1)
-                (x, z) = y switch
-                {
-                    0 => z switch
-                    {
-                        0 => (2, 1),
-                        1 => (z, x),
-                        2 => (0, 1)
-                    },
-                    1 => (z == 0) ? (2, x) : (0, x),
-                    2 => (x == 1) ? (z == 2 ? 0 : 2, 1) : (z, x)
-                };
-            else //if the piece is a corner
-                (x, z) = (z == 2 ? 0 : 2, x);
-
-            piece = new PieceConfig((x, y, z), orientation);
-        }
-
-
         private void CalculateSolve()
         {
             bool found = false;           
@@ -65,9 +40,7 @@ namespace Rubiks_Cube_Solver
 
             //calling the 'rotatePieceLocation' procedure the correct number of times 
             for (int i = 0; i < stage.SubStep-1; i++)
-            {
-                RotatePieceLocation();
-            }
+                piece = RotatePiece.AntiClockwise(piece);
 
             CalculateSolve();
         }
