@@ -26,31 +26,17 @@ namespace Rubiks_Cube_Solver
             //checking if the piece is an edge
             if (x == 1 || y == 1 || z == 1)
             {
-                switch(y)
+                (x, z) = y switch
                 {
-                    case 0:
-                        if (z == 0)
-                            (x, z) = (2, 1);
-                        else if (z == 1)
-                            (z, x) = (x, z);
-                        else
-                            (x, z) = (0, 1);
-                        break;
-
-                    case 1:
-                        if (z == 0)
-                            (x, z) = (2, x);
-                        else
-                            (x, z) = (0, x);
-                        orientation = orientation.Flip();
-                        break;
-                    case 2:
-                        if (x == 1)
-                            (x,z) = (z == 2 ? 0 : 2, 1);
-                        else
-                            (z, x) = (x, z);
-                        break;
-                }
+                    0 => z switch
+                    {
+                        0 => (2, 1),
+                        1 => (z, x),
+                        2 => (0, 1)
+                    },
+                    1 => (z == 0) ? (2, x) : (0, x),
+                    2 => (x == 1) ? (z == 2 ? 0 : 2, 1) : (x, z) = (z, x)
+                };
             }
             else //if the piece is a corner
                 (x, z) = (z == 2 ? 0 : 2, x);
