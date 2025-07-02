@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lblCubeOrientation = new System.Windows.Forms.Label();
-            this.lblSequenceOfMoves = new System.Windows.Forms.Label();
+            this.lblSequence = new System.Windows.Forms.Label();
             this.btnFinish = new System.Windows.Forms.Button();
             this.lblNameOfStage = new System.Windows.Forms.Label();
             this.lblExplanation = new System.Windows.Forms.Label();
@@ -51,16 +51,16 @@
             this.lblCubeOrientation.Text = "Hold your cube with the white face on top and the green face facing you.";
             this.lblCubeOrientation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblSequenceOfMoves
+            // lblSequence
             // 
-            this.lblSequenceOfMoves.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSequenceOfMoves.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSequenceOfMoves.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F);
-            this.lblSequenceOfMoves.Location = new System.Drawing.Point(116, 407);
-            this.lblSequenceOfMoves.Name = "lblSequenceOfMoves";
-            this.lblSequenceOfMoves.Size = new System.Drawing.Size(598, 419);
-            this.lblSequenceOfMoves.TabIndex = 1;
-            this.lblSequenceOfMoves.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSequence.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSequence.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSequence.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F);
+            this.lblSequence.Location = new System.Drawing.Point(116, 407);
+            this.lblSequence.Name = "lblSequence";
+            this.lblSequence.Size = new System.Drawing.Size(598, 419);
+            this.lblSequence.TabIndex = 1;
+            this.lblSequence.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnFinish
             // 
@@ -141,7 +141,7 @@
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // Output_Solution
+            // OutputSolution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -152,10 +152,10 @@
             this.Controls.Add(this.lblExplanation);
             this.Controls.Add(this.lblNameOfStage);
             this.Controls.Add(this.btnFinish);
-            this.Controls.Add(this.lblSequenceOfMoves);
+            this.Controls.Add(this.lblSequence);
             this.Controls.Add(this.lblCubeOrientation);
             this.MinimumSize = new System.Drawing.Size(1468, 869);
-            this.Name = "Output_Solution";
+            this.Name = "OutputSolution";
             this.Text = "Output_Solution";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.OutputSolution_Load);
@@ -166,7 +166,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblCubeOrientation;
-        private System.Windows.Forms.Label lblSequenceOfMoves;
+        private System.Windows.Forms.Label lblSequence;
         private System.Windows.Forms.Button btnFinish;
         private System.Windows.Forms.Label lblNameOfStage;
         private System.Windows.Forms.Label lblExplanation;

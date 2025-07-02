@@ -18,31 +18,30 @@ namespace Rubiks_Cube_Solver
             piece = CellToPieceConfig.GetPieceConfig(cell);
         }
 
-        private void CalculateSolve()
-        {
-            bool found = false;           
-
-            if (!found)
-            {
-                //opening the 'Input Colours' form so the user can reenter their input
-                FormNavigator.Navigate<InputColours>(this, stage);
-                MessageBox.Show("Invalid piece position. Enter the position of your piece correctly.");
-            }
-        }
-
         private void OutputSolution_Load(object sender, EventArgs e)
         {
-            //outputting the necessary cube orientation to the user
-            lblCubeOrientation.Text = $"Hold your cube with the white centre piece on top and the {GetFrontFaceName()} centre piece facing you.";
-
-            //updating the 'stage' label to show the user which stage of the solve they are on
-            lblNameOfStage.Text = stage.GetName();
-
-            //calling the 'rotatePieceLocation' procedure the correct number of times 
+            // calling the 'rotatePieceLocation' procedure the correct number of times 
             for (int i = 0; i < stage.SubStep-1; i++)
                 piece = RotatePiece.AntiClockwise(piece);
 
-            CalculateSolve();
+            lblCubeOrientation.Text = $"Hold your cube with the white centre piece on top and the {GetFrontFaceName()} centre piece facing you.";
+            lblNameOfStage.Text = stage.GetName();
+
+            PieceSolution solution = GetSolution();
+            lblSequence.Text = solution.Sequence;
+            lblExplanation.Text = solution.Explanation;
+        }
+
+        private PieceSolution GetSolution()
+        {
+            try { return SolvePiece.GetSolution(stage, piece); }
+            catch // if there is no match for the piece that the user inputted
+            {
+                // opening the 'Input Colours' form so the user can re-enter their input
+                FormNavigator.Navigate<InputColours>(this, stage);
+                MessageBox.Show("Invalid piece position. Enter the position of your piece correctly.");
+                return null;
+            }
         }
 
         private string GetFrontFaceName() => stage.SubStep switch
