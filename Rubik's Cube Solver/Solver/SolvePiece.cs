@@ -33,10 +33,21 @@ namespace Rubiks_Cube_Solver
                 CreateEntry((2,1,2), PieceOrientation.Good, "R', U, R, F2", "Bring the edge to the top layer. Position it above the correct slot. Insert it"),
                 CreateEntry((2,1,2), PieceOrientation.Bad, "R2, F, R2", "Insert the edge into the correct slot"),
                 CreateEntry((2,2,1), PieceOrientation.Good, "U, F2", "Position the edge above the correct slot. Insert it"),
-                CreateEntry((2,2,1), PieceOrientation.Bad, "R', F, R", "Bring the edge next to the correct slot. Insert it"),
+                CreateEntry((2,2,1), PieceOrientation.Bad, "R', F, R", "Bring the edge next to the correct slot. Insert it")
             ]);
 
-        private static readonly Dict yellowCornersDict;
+        private static readonly Dict yellowCornersDict = ImmutableDictionary.CreateRange
+            ([
+                CreateCornerEntry((0,0,0), "L', U', L", "Bring the corner to the top layer. Position it above the correct slot. "),
+                CreateCornerEntry((0,0,2), "L, U, L', U", "Bring the corner to the top layer. Position it above the correct slot. "),
+                CreateCornerEntry((0,2,0), "U'", "Position the corner above the correct slot. "),
+                CreateCornerEntry((0,2,2), "U2", "Position the corner above the correct slot. "),
+                CreateCornerEntry((2,0,0), "", ""),
+                CreateCornerEntry((2,0,2), "R', U, R, U", "Bring the corner to the top layer. Position it above the correct slot. "),
+                CreateCornerEntry((2,2,0), "", ""),
+                CreateCornerEntry((2,2,2), "U", "Position the corner above the correct slot. ")
+
+            ]);
         private static readonly Dict middleLayerEdgesDict;
 
         private static Entry CreateCornerEntry((int, int, int) location, string sequence, string explanation) =>
