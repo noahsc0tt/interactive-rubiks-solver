@@ -18,7 +18,7 @@ namespace Rubiks_Cube_Solver
             piece = CellToPieceConfig.GetPieceConfig(cell);
         }
 
-        private void rotatePieceLocation()
+        private void RotatePieceLocation()
         {
             (int x, int y, int z) = piece.Location.GetLocation();
             PieceOrientation orientation = piece.Orientation;
@@ -26,63 +26,42 @@ namespace Rubiks_Cube_Solver
             //checking if the piece is an edge
             if (x == 1 || y == 1 || z == 1)
             {
-                if (y == 2) //checking if the edge is in the top layer of the cube
+                switch(y)
                 {
-                    if (x == 1)
-                    {
-                        if (z == 2)
-                        {
-                            x = 0;
-                            z = 1;
-                        }
-                        else
+                    case 0:
+                        if (z == 0)
                         {
                             x = 2;
                             z = 1;
                         }
-                    }
-                    else
-                    {
-                        int swap = x;
-                        x = z;
-                        z = swap;
-                    }
-                }
-                else if (y == 1) //checking if the edge is in the middle layer of the cube
-                {
-                    int swap = x;
+                        else if (z == 1)
+                            (z, x) = (x, z);
+                        else
+                        {
+                            x = 0;
+                            z = 1;
+                        }
+                        break;
 
-                    if (z == 0)
-                    {
-                        x = 2;
-                    }
-                    else
-                    {
-                        x = 0;
-                    }
-                    
-                    z = swap;
-
-                    orientation = orientation.Flip();
-                }
-                else //if the edge is in the bottom layer of the cube
-                {
-                    if (z == 0)
-                    {
-                        x = 2;
-                        z = 1;
-                    }
-                    else if (z == 1)
-                    {
-                        int swap = x;
-                        x = z;
-                        z = swap;
-                    }
-                    else
-                    {
-                        x = 0;
-                        z = 1;
-                    }
+                    case 1:
+                        if (z == 0)
+                            (x, z) = (2, x);
+                        else
+                            (x, z) = (0, x);
+                        orientation = orientation.Flip();
+                        break;
+                    case 2:
+                        if (x == 1)
+                        {
+                            if (z == 2)
+                                x = 0;
+                            else
+                                x = 2;
+                            z = 1;
+                        }
+                        else
+                            (z, x) = (x, z);
+                        break;
                 }
             }
             else //if the piece is a corner
@@ -90,13 +69,9 @@ namespace Rubiks_Cube_Solver
                 int swap = x;
 
                 if (z == 0)
-                {
                     x = 2;
-                }
                 else
-                {
                     x = 0;
-                }
                 z = swap;
             }
 
@@ -104,7 +79,7 @@ namespace Rubiks_Cube_Solver
         }
 
 
-        private void calculateSolve()
+        private void CalculateSolve()
         {
             bool found = false;           
 
@@ -127,10 +102,10 @@ namespace Rubiks_Cube_Solver
             //calling the 'rotatePieceLocation' procedure the correct number of times 
             for (int i = 0; i < stage.SubStep-1; i++)
             {
-                rotatePieceLocation();
+                RotatePieceLocation();
             }
 
-            calculateSolve();
+            CalculateSolve();
         }
 
         private string GetFrontFaceName() => stage.SubStep switch
