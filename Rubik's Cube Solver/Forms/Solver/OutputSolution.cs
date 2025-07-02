@@ -30,17 +30,11 @@ namespace Rubiks_Cube_Solver
                 {
                     case 0:
                         if (z == 0)
-                        {
-                            x = 2;
-                            z = 1;
-                        }
+                            (x, z) = (2, 1);
                         else if (z == 1)
                             (z, x) = (x, z);
                         else
-                        {
-                            x = 0;
-                            z = 1;
-                        }
+                            (x, z) = (0, 1);
                         break;
 
                     case 1:
@@ -52,28 +46,14 @@ namespace Rubiks_Cube_Solver
                         break;
                     case 2:
                         if (x == 1)
-                        {
-                            if (z == 2)
-                                x = 0;
-                            else
-                                x = 2;
-                            z = 1;
-                        }
+                            (x,z) = (z == 2 ? 0 : 2, 1);
                         else
                             (z, x) = (x, z);
                         break;
                 }
             }
             else //if the piece is a corner
-            {
-                int swap = x;
-
-                if (z == 0)
-                    x = 2;
-                else
-                    x = 0;
-                z = swap;
-            }
+                (x, z) = (z == 2 ? 0 : 2, x);
 
             piece = new PieceConfig((x, y, z), orientation);
         }
