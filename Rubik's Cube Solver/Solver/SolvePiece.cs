@@ -22,8 +22,8 @@ namespace Rubiks_Cube_Solver
 
         private static readonly string[] yellowCornersExplanations =
             [
-                "Bring the corner to the top layer. Position it above the correct slot.",
-                "Position the corner above the correct slot."
+                "Bring the corner to the top layer. Position it above the correct slot. ",
+                "Position the corner above the correct slot. "
             ];
 
         private static readonly string[] middleLayerEdgesExplanations =
@@ -63,14 +63,14 @@ namespace Rubiks_Cube_Solver
 
         private static readonly Dict yellowCornersDict = CreateCornerDict
             ([
-                ((0,0,0), "L', U', L", yellowCornersExplanations[0]),
-                ((0,0,2), "L, U, L', U", yellowCornersExplanations[0]),
-                ((0,2,0), "U'", yellowCornersExplanations[1]),
-                ((0,2,2), "U2", yellowCornersExplanations[1]),
+                ((0,0,0), "L', U', L. ", yellowCornersExplanations[0]),
+                ((0,0,2), "L, U, L', U. ", yellowCornersExplanations[0]),
+                ((0,2,0), "U'. ", yellowCornersExplanations[1]),
+                ((0,2,2), "U2. ", yellowCornersExplanations[1]),
                 ((2,0,0), "", ""),
-                ((2,0,2), "R', U, R, U", yellowCornersExplanations[0]),
+                ((2,0,2), "R', U, R, U. ", yellowCornersExplanations[0]),
                 ((2,2,0), "", ""),
-                ((2,2,2), "U", yellowCornersExplanations[1])
+                ((2,2,2), "U. ", yellowCornersExplanations[1])
             ]);
         private static readonly Dict middleLayerEdgesDict = CreateDict
             ([
@@ -110,8 +110,8 @@ namespace Rubiks_Cube_Solver
         private static Dict CreateCornerDict(((int, int, int) location, string sequence, string explanation)[] entries) =>
             CreateDict(entries.Select(entry =>
             (entry.location, PieceOrientation.Corner,
-                entry.sequence + ". Then repeat the moves (R, U, R', U) until the yellow square is pointing down.",
-                entry.explanation + " Cycle the corner until it is solved")).ToArray());
+                entry.sequence + "Repeat the moves (R, U, R', U) until the yellow square is pointing down.",
+                entry.explanation + "Cycle the corner until it is solved.")).ToArray());
 
         private static Dict CreateDict(((int, int, int) location, PieceOrientation orientation, string sequence, string explanation)[] entries) =>
             ImmutableDictionary.CreateRange(entries.Select(CreateEntry));
