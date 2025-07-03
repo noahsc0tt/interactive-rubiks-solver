@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 
@@ -32,79 +33,84 @@ namespace Rubiks_Cube_Solver
                 "Take the pair out of their slot. Match the edge up with the corner."
             ];
 
-        private static readonly Dict yellowEdgesDict = ImmutableDictionary.CreateRange
+        private static readonly Dict yellowEdgesDict = CreateDict
             ([
-                CreateEntry((0,0,1), PieceOrientation.Good, "L2, U', F2", yellowEdgesExplanations[0]),
-                CreateEntry((0,0,1), PieceOrientation.Bad, "L', F'", yellowEdgesExplanations[1]),
-                CreateEntry((0,1,0), PieceOrientation.Good, "F'", yellowEdgesExplanations[2]),
-                CreateEntry((0,1,0), PieceOrientation.Bad, "L', U', L, F2", yellowEdgesExplanations[0]),
-                CreateEntry((0,1,2), PieceOrientation.Good, "L, U', L', F2", yellowEdgesExplanations[0]),
-                CreateEntry((0,1,2), PieceOrientation.Bad, "L2, F', L2", yellowEdgesExplanations[1]),
-                CreateEntry((0,2,1), PieceOrientation.Good, "U', F2", yellowEdgesExplanations[3]),
-                CreateEntry((0,2,1), PieceOrientation.Bad, "L, F', L'", yellowEdgesExplanations[1]),
-                CreateEntry((1,0,0), PieceOrientation.Good, "Already Solved", "Already Solved."),
-                CreateEntry((1,0,0), PieceOrientation.Bad, "F2, U', R', F, R", yellowEdgesExplanations[4]),
-                CreateEntry((1,0,2), PieceOrientation.Good, "B2, U2, F2", yellowEdgesExplanations[0]),
-                CreateEntry((1,0,2), PieceOrientation.Bad, "B2, U, R', F, R", yellowEdgesExplanations[4]),
-                CreateEntry((1,2,0), PieceOrientation.Good, "F2", yellowEdgesExplanations[2]),
-                CreateEntry((1,2,0), PieceOrientation.Bad, "U', R', F, R", yellowEdgesExplanations[5]),
-                CreateEntry((1,2,2), PieceOrientation.Good, "U2, F2", yellowEdgesExplanations[3]),
-                CreateEntry((1,2,2), PieceOrientation.Bad, "U, R', F, R", yellowEdgesExplanations[5]),
-                CreateEntry((2,0,1), PieceOrientation.Good, "R2, U, F2", yellowEdgesExplanations[0]),
-                CreateEntry((2,0,1), PieceOrientation.Bad, "R, U, F2", yellowEdgesExplanations[1]),
-                CreateEntry((2,1,0), PieceOrientation.Good, "R, U, R', F2", yellowEdgesExplanations[0]),
-                CreateEntry((2,1,0), PieceOrientation.Bad, "F", yellowEdgesExplanations[2]),
-                CreateEntry((2,1,2), PieceOrientation.Good, "R', U, R, F2", yellowEdgesExplanations[0]),
-                CreateEntry((2,1,2), PieceOrientation.Bad, "R2, F, R2", yellowEdgesExplanations[2]),
-                CreateEntry((2,2,1), PieceOrientation.Good, "U, F2", yellowEdgesExplanations[3]),
-                CreateEntry((2,2,1), PieceOrientation.Bad, "R', F, R", yellowEdgesExplanations[1])
+                ((0,0,1), PieceOrientation.Good, "L2, U', F2", yellowEdgesExplanations[0]),
+                ((0,0,1), PieceOrientation.Bad, "L', F'", yellowEdgesExplanations[1]),
+                ((0,1,0), PieceOrientation.Good, "F'", yellowEdgesExplanations[2]),
+                ((0,1,0), PieceOrientation.Bad, "L', U', L, F2", yellowEdgesExplanations[0]),
+                ((0,1,2), PieceOrientation.Good, "L, U', L', F2", yellowEdgesExplanations[0]),
+                ((0,1,2), PieceOrientation.Bad, "L2, F', L2", yellowEdgesExplanations[1]),
+                ((0,2,1), PieceOrientation.Good, "U', F2", yellowEdgesExplanations[3]),
+                ((0,2,1), PieceOrientation.Bad, "L, F', L'", yellowEdgesExplanations[1]),
+                ((1,0,0), PieceOrientation.Good, "Already Solved", "Already Solved."),
+                ((1,0,0), PieceOrientation.Bad, "F2, U', R', F, R", yellowEdgesExplanations[4]),
+                ((1,0,2), PieceOrientation.Good, "B2, U2, F2", yellowEdgesExplanations[0]),
+                ((1,0,2), PieceOrientation.Bad, "B2, U, R', F, R", yellowEdgesExplanations[4]),
+                ((1,2,0), PieceOrientation.Good, "F2", yellowEdgesExplanations[2]),
+                ((1,2,0), PieceOrientation.Bad, "U', R', F, R", yellowEdgesExplanations[5]),
+                ((1,2,2), PieceOrientation.Good, "U2, F2", yellowEdgesExplanations[3]),
+                ((1,2,2), PieceOrientation.Bad, "U, R', F, R", yellowEdgesExplanations[5]),
+                ((2,0,1), PieceOrientation.Good, "R2, U, F2", yellowEdgesExplanations[0]),
+                ((2,0,1), PieceOrientation.Bad, "R, U, F2", yellowEdgesExplanations[1]),
+                ((2,1,0), PieceOrientation.Good, "R, U, R', F2", yellowEdgesExplanations[0]),
+                ((2,1,0), PieceOrientation.Bad, "F", yellowEdgesExplanations[2]),
+                ((2,1,2), PieceOrientation.Good, "R', U, R, F2", yellowEdgesExplanations[0]),
+                ((2,1,2), PieceOrientation.Bad, "R2, F, R2", yellowEdgesExplanations[2]),
+                ((2,2,1), PieceOrientation.Good, "U, F2", yellowEdgesExplanations[3]),
+                ((2,2,1), PieceOrientation.Bad, "R', F, R", yellowEdgesExplanations[1])
             ]);
 
-        private static readonly Dict yellowCornersDict = ImmutableDictionary.CreateRange
+        private static readonly Dict yellowCornersDict = CreateCornerDict
             ([
-                CreateCornerEntry((0,0,0), "L', U', L", yellowCornersExplanations[0]),
-                CreateCornerEntry((0,0,2), "L, U, L', U", yellowCornersExplanations[0]),
-                CreateCornerEntry((0,2,0), "U'", yellowCornersExplanations[1]),
-                CreateCornerEntry((0,2,2), "U2", yellowCornersExplanations[1]),
-                CreateCornerEntry((2,0,0), "", ""),
-                CreateCornerEntry((2,0,2), "R', U, R, U", yellowCornersExplanations[0]),
-                CreateCornerEntry((2,2,0), "", ""),
-                CreateCornerEntry((2,2,2), "U", yellowCornersExplanations[1])
+                ((0,0,0), "L', U', L", yellowCornersExplanations[0]),
+                ((0,0,2), "L, U, L', U", yellowCornersExplanations[0]),
+                ((0,2,0), "U'", yellowCornersExplanations[1]),
+                ((0,2,2), "U2", yellowCornersExplanations[1]),
+                ((2,0,0), "", ""),
+                ((2,0,2), "R', U, R, U", yellowCornersExplanations[0]),
+                ((2,2,0), "", ""),
+                ((2,2,2), "U", yellowCornersExplanations[1])
             ]);
-        private static readonly Dict middleLayerEdgesDict = ImmutableDictionary.CreateRange
+        private static readonly Dict middleLayerEdgesDict = CreateDict
             ([
-                CreateEntry((0,1,0), PieceOrientation.Good, "F, U', F', U', L', U, L, U2, R, U', R', U', F', U, F", middleLayerEdgesExplanations[0]),
-                CreateEntry((0,1,0), PieceOrientation.Bad, "F, U', F', U', L', U, L, U', F', U, F, U, R, U', R'", middleLayerEdgesExplanations[0]),
-                CreateEntry((0,1,2), PieceOrientation.Good, "B', U, B, U, L, U', L', U2, R, U', R', U', F', U, F", middleLayerEdgesExplanations[0]),
-                CreateEntry((0,1,2), PieceOrientation.Bad, "B', U, B, U, L, U', L', U', F', U, F, U, R, U', R'", middleLayerEdgesExplanations[0]),
-                CreateEntry((0,2,1), PieceOrientation.Good, "U, F', U, F, U, R, U', R'", middleLayerEdgesExplanations[1]),
-                CreateEntry((0,2,1), PieceOrientation.Bad, "R, U', R', U', F', U, F", middleLayerEdgesExplanations[1]),
-                CreateEntry((1,2,0), PieceOrientation.Good, "U2, F', U, F, U, R, U', R'", middleLayerEdgesExplanations[1]),
-                CreateEntry((1,2,0), PieceOrientation.Bad, "U, R, U', R', U', F', U, F", middleLayerEdgesExplanations[1]),
-                CreateEntry((1,2,2), PieceOrientation.Good, "F', U, F, U, R, U', R'", middleLayerEdgesExplanations[1]),
-                CreateEntry((1,2,2), PieceOrientation.Bad, "U', R, U', R', U', F', U, F", middleLayerEdgesExplanations[1]),
-                CreateEntry((2,1,0), PieceOrientation.Good, "Already solved.", "Already solved."),
-                CreateEntry((2,1,0), PieceOrientation.Bad, "R, U', R', U, F', U2, F, U2, F', U, F", middleLayerEdgesExplanations[2]),
-                CreateEntry((2,1,2), PieceOrientation.Good, "B, U', B', U', R', U, R, R, U', R', U', F', U, F", middleLayerEdgesExplanations[0]),
-                CreateEntry((2,1,2), PieceOrientation.Bad, "B, U', B', U', R', U, R, U, F', U, F, U, R, U', R'", middleLayerEdgesExplanations[0]),
-                CreateEntry((2,2,1), PieceOrientation.Good, "U', F', U, F, U, R, U', R'", middleLayerEdgesExplanations[1]),
-                CreateEntry((2,2,1), PieceOrientation.Bad, "U2, R, U', R', U', F', U, F", middleLayerEdgesExplanations[1]),
+                ((0,1,0), PieceOrientation.Good, "F, U', F', U', L', U, L, U2, R, U', R', U', F', U, F", middleLayerEdgesExplanations[0]),
+                ((0,1,0), PieceOrientation.Bad, "F, U', F', U', L', U, L, U', F', U, F, U, R, U', R'", middleLayerEdgesExplanations[0]),
+                ((0,1,2), PieceOrientation.Good, "B', U, B, U, L, U', L', U2, R, U', R', U', F', U, F", middleLayerEdgesExplanations[0]),
+                ((0,1,2), PieceOrientation.Bad, "B', U, B, U, L, U', L', U', F', U, F, U, R, U', R'", middleLayerEdgesExplanations[0]),
+                ((0,2,1), PieceOrientation.Good, "U, F', U, F, U, R, U', R'", middleLayerEdgesExplanations[1]),
+                ((0,2,1), PieceOrientation.Bad, "R, U', R', U', F', U, F", middleLayerEdgesExplanations[1]),
+                ((1,2,0), PieceOrientation.Good, "U2, F', U, F, U, R, U', R'", middleLayerEdgesExplanations[1]),
+                ((1,2,0), PieceOrientation.Bad, "U, R, U', R', U', F', U, F", middleLayerEdgesExplanations[1]),
+                ((1,2,2), PieceOrientation.Good, "F', U, F, U, R, U', R'", middleLayerEdgesExplanations[1]),
+                ((1,2,2), PieceOrientation.Bad, "U', R, U', R', U', F', U, F", middleLayerEdgesExplanations[1]),
+                ((2,1,0), PieceOrientation.Good, "Already solved.", "Already solved."),
+                ((2,1,0), PieceOrientation.Bad, "R, U', R', U, F', U2, F, U2, F', U, F", middleLayerEdgesExplanations[2]),
+                ((2,1,2), PieceOrientation.Good, "B, U', B', U', R', U, R, R, U', R', U', F', U, F", middleLayerEdgesExplanations[0]),
+                ((2,1,2), PieceOrientation.Bad, "B, U', B', U', R', U, R, U, F', U, F, U, R, U', R'", middleLayerEdgesExplanations[0]),
+                ((2,2,1), PieceOrientation.Good, "U', F', U, F, U, R, U', R'", middleLayerEdgesExplanations[1]),
+                ((2,2,1), PieceOrientation.Bad, "U2, R, U', R', U', F', U, F", middleLayerEdgesExplanations[1]),
             ]);
 
-        private static Entry CreateCornerEntry((int, int, int) location, string sequence, string explanation) =>
-            CreateEntry(location, PieceOrientation.Corner, 
-                sequence += ". Then repeat the moves (R, U, R', U) until the yellow square is pointing down.", 
-                explanation += " Cycle the corner until it is solved");
-
-        private static Entry CreateEntry((int, int, int) location, PieceOrientation orientation, string sequence, string explanation)
+        private static Entry CreateEntry(((int, int, int) location, PieceOrientation orientation, string sequence, string explanation) entry)
         {
-            if (explanation.EndsWith("slot.")) // entries in yellowEdgesDict
-                explanation += "Insert it."; 
-            else if (explanation.EndsWith("corner.")) // entries in middleLayerEdgesDict
-                explanation += " Insert the pair into the correct slot.";
+            //extract to addExplanationSuffix method
+            if (entry.explanation.EndsWith("slot.")) // entries in yellowEdgesDict
+                entry.explanation += "Insert it."; 
+            else if (entry.explanation.EndsWith("corner.")) // entries in middleLayerEdgesDict
+                entry.explanation += " Insert the pair into the correct slot.";
 
-            return new(new PieceConfig(location, orientation), new PieceSolution(sequence, explanation));
+            return new(new PieceConfig(entry.location, entry.orientation), new PieceSolution(entry.sequence, entry.explanation));
         }
+
+        private static Dict CreateCornerDict(((int, int, int) location, string sequence, string explanation)[] entries) =>
+            CreateDict(entries.Select(entry =>
+            (entry.location, PieceOrientation.Corner,
+                entry.sequence + ". Then repeat the moves (R, U, R', U) until the yellow square is pointing down.",
+                entry.explanation + " Cycle the corner until it is solved")).ToArray());
+
+        private static Dict CreateDict(((int, int, int) location, PieceOrientation orientation, string sequence, string explanation)[] entries) =>
+            ImmutableDictionary.CreateRange(entries.Select(CreateEntry));
 
         public static Dict GetStageDict(Stage stage) =>
             stage.Step switch
