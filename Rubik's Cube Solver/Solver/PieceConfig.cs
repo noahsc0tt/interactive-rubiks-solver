@@ -28,7 +28,7 @@ namespace Rubiks_Cube_Solver
             get => _x;
             set
             {
-                CoordValidator.Validate(value, nameof(X), 0, 2);
+                CoordValidator.ValidateCoord(value, nameof(X), 0, 2);
                 _x = value;
             }
         }
@@ -38,7 +38,7 @@ namespace Rubiks_Cube_Solver
             get => _y;
             set
             {
-                CoordValidator.Validate(value, nameof(Y), 0, 2);
+                CoordValidator.ValidateCoord(value, nameof(Y), 0, 2);
                 _y = value;
             }
         }
@@ -48,16 +48,14 @@ namespace Rubiks_Cube_Solver
             get => _z;
             set
             {
-                CoordValidator.Validate(value, nameof(Z), 0, 2);
+                CoordValidator.ValidateCoord(value, nameof(Z), 0, 2);
                 _z = value;
             }
         }
         public PieceLocation((int x, int y, int z) location) : this(location.x, location.y, location.z) { }
         public PieceLocation(int x, int y, int z)
         {
-            CoordValidator.Validate(x, nameof(x), 0, 2);
-            CoordValidator.Validate(y, nameof(y), 0, 2);
-            CoordValidator.Validate(z, nameof(z), 0, 2);
+            CoordValidator.ValidateCoords([(x, nameof(x)), (y, nameof(y)), (x, nameof(x))], 0, 2);
             _x = x;
             _y = y;
             _z = z;
