@@ -5,19 +5,19 @@ namespace Rubiks_Cube_Solver
 {
     internal static class CoordValidator
     {
-        private static bool IsCoordValid(int coord, int min, int max) =>
+        private static bool IsCoordValid(int min, int max, int coord) =>
             coord >= min && coord <= max;
 
-        public static void ValidateCoord(int coord, string coordName, int min, int max)
+        public static void ValidateCoord(int min, int max, int coord, string coordName)
         {
             if (!IsCoordValid(coord, min, max))
                 throw new ArgumentOutOfRangeException(coordName, $"Coordinate must be in the range {min}-{max}");
         }
 
-        public static void ValidateCoords((int value, string name)[] coords, int min, int max)
+        public static void ValidateCoords(int min, int max, params (int value, string name)[] coords)
         {
             foreach (var coord in coords)
-                ValidateCoord(coord.value, coord.name, min, max);
+                ValidateCoord(min, max, coord.value, coord.name);
         }
 
     }
