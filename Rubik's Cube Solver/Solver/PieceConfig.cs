@@ -19,46 +19,17 @@ namespace Rubiks_Cube_Solver
 
     internal class PieceLocation
     {
-        private int _x;
-        private int _y;
-        private int _z;
+        public int X { get; private set; }
+        public int Y { get; private set; }
+        public int Z { get; private set; }
 
-        public int X
-        {
-            get => _x;
-            set
-            {
-                CoordValidator.ValidateCoord(0, 2, value, nameof(X));
-                _x = value;
-            }
-        }
-
-        public int Y
-        {
-            get => _y;
-            set
-            {
-                CoordValidator.ValidateCoord(0, 2, value, nameof(Y));
-                _y = value;
-            }
-        }
-
-        public int Z
-        {
-            get => _z;
-            set
-            {
-                CoordValidator.ValidateCoord(0, 2, value, nameof(Z));
-                _z = value;
-            }
-        }
         public PieceLocation((int x, int y, int z) location) : this(location.x, location.y, location.z) { }
         public PieceLocation(int x, int y, int z)
         {
             CoordValidator.ValidateCoords(0, 2, (x, nameof(x)), (y, nameof(y)), (x, nameof(x)));
-            _x = x;
-            _y = y;
-            _z = z;
+            X = x;
+            Y = y;
+            Z = z;
         }
 
         public (int X, int Y, int Z) GetLocation() => (X, Y, Z);
