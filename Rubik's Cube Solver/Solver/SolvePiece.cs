@@ -92,14 +92,18 @@ namespace Rubiks_Cube_Solver
                 ((2,2,1), PieceOrientation.Bad, "U2, R, U', R', U', F', U, F", middleLayerEdgesExplanations[1]),
             ]);
 
+        private static string AddExplanationSuffix(string explanation)
+        {
+            if (explanation.EndsWith("slot.")) // entries in yellowEdgesDict
+                explanation += "Insert it.";
+            else if (explanation.EndsWith("corner.")) // entries in middleLayerEdgesDict
+                explanation += " Insert the pair into the correct slot.";
+            return explanation;
+        }
+
         private static Entry CreateEntry(((int, int, int) location, PieceOrientation orientation, string sequence, string explanation) entry)
         {
-            //extract to addExplanationSuffix method
-            if (entry.explanation.EndsWith("slot.")) // entries in yellowEdgesDict
-                entry.explanation += "Insert it."; 
-            else if (entry.explanation.EndsWith("corner.")) // entries in middleLayerEdgesDict
-                entry.explanation += " Insert the pair into the correct slot.";
-
+            entry.explanation = AddExplanationSuffix(entry.explanation);
             return new(new PieceConfig(entry.location, entry.orientation), new PieceSolution(entry.sequence, entry.explanation));
         }
 
