@@ -28,6 +28,12 @@ namespace Rubiks_Cube_Solver
             lblNameOfStage.Text = stage.GetName();
 
             PieceSolution solution = GetSolution();
+            if (stage.Step == 1)
+            {
+                solution.Sequence += "Repeat the moves (R, U, R', U) until the yellow square is pointing down.";
+                solution.Explanation += "Cycle the corner until it is solved.";
+            }
+            
             lblSequence.Text = solution.Sequence;
             lblExplanation.Text = solution.Explanation;
         }

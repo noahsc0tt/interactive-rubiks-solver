@@ -2,8 +2,8 @@
 {
     internal class PieceSolution
     {
-        public string Sequence { get; private set; }
-        public string Explanation { get; private set; }
+        public string Sequence { get; set; }
+        public string Explanation { get; set; }
 
         public PieceSolution(string sequence, string explanation) =>
             (Sequence, Explanation) = (sequence, explanation);

@@ -46,26 +46,25 @@ namespace Rubiks_Cube_Solver
                 CreateCornerEntry((2,0,2), "R', U, R, U", "Bring the corner to the top layer. Position it above the correct slot. "),
                 CreateCornerEntry((2,2,0), "", ""),
                 CreateCornerEntry((2,2,2), "U", "Position the corner above the correct slot. ")
-
             ]);
         private static readonly Dict middleLayerEdgesDict = ImmutableDictionary.CreateRange
             ([
-                CreateEntry((0,1,0), PieceOrientation.Good, "F, U', F', U', L', U, L, U2, R, U', R', U', F', U, F", "Take the edge out of the incorrect slot. Re-insert the corner. Match the edge up with the corresponding corner. Insert the pair into the correct slot"),
-                CreateEntry((0,1,0), PieceOrientation.Bad, "F, U', F', U', L', U, L, U', F', U, F, U, R, U', R'", "Take the edge out of the incorrect slot. Re-insert the corner. Match the edge up with the corresponding corner. Insert the pair into the correct slot"),
-                CreateEntry((0,1,2), PieceOrientation.Good, "B', U, B, U, L, U', L', U2, R, U', R', U', F', U, F", "Take the edge out of the incorrect slot. Re-insert the corner. Match the edge up with the corresponding corner. Insert the pair into the correct slot"),
-                CreateEntry((0,1,2), PieceOrientation.Bad, "B', U, B, U, L, U', L', U', F', U, F, U, R, U', R'", "Take the edge out of the incorrect slot. Re-insert the corner. Match the edge up with the corresponding corner. Insert the pair into the correct slot"),
-                CreateEntry((0,2,1), PieceOrientation.Good, "U, F', U, F, U, R, U', R'", "Match the edge up with the corresponding corner. Insert the pair into the correct slot"),
-                CreateEntry((0,2,1), PieceOrientation.Bad, "R, U', R', U', F', U, F", "Match the edge up with the corresponding corner. Insert the pair into the correct slot"),
-                CreateEntry((1,2,0), PieceOrientation.Good, "U2, F', U, F, U, R, U', R'", "Match the edge up with the corresponding corner. Insert the pair into the correct slot"),
-                CreateEntry((1,2,0), PieceOrientation.Bad, "U, R, U', R', U', F', U, F", "Match the edge up with the corresponding corner. Insert the pair into the correct slot"),
-                CreateEntry((1,2,2), PieceOrientation.Good, "F', U, F, U, R, U', R'", "Match the edge up with the corresponding corner. Insert the pair into the correct slot"),
-                CreateEntry((1,2,2), PieceOrientation.Bad, "U', R, U', R', U', F', U, F", "Match the edge up with the corresponding corner. Insert the pair into the correct slot"),
+                CreateEntry((0,1,0), PieceOrientation.Good, "F, U', F', U', L', U, L, U2, R, U', R', U', F', U, F", "Take the edge out of the incorrect slot. Re-insert the corner. Match the edge up with the corresponding corner. Insert the pair into the correct slot."),
+                CreateEntry((0,1,0), PieceOrientation.Bad, "F, U', F', U', L', U, L, U', F', U, F, U, R, U', R'", "Take the edge out of the incorrect slot. Re-insert the corner. Match the edge up with the corresponding corner. Insert the pair into the correct slot."),
+                CreateEntry((0,1,2), PieceOrientation.Good, "B', U, B, U, L, U', L', U2, R, U', R', U', F', U, F", "Take the edge out of the incorrect slot. Re-insert the corner. Match the edge up with the corresponding corner. Insert the pair into the correct slot."),
+                CreateEntry((0,1,2), PieceOrientation.Bad, "B', U, B, U, L, U', L', U', F', U, F, U, R, U', R'", "Take the edge out of the incorrect slot. Re-insert the corner. Match the edge up with the corresponding corner. Insert the pair into the correct slot."),
+                CreateEntry((0,2,1), PieceOrientation.Good, "U, F', U, F, U, R, U', R'", "Match the edge up with the corresponding corner. Insert the pair into the correct slot."),
+                CreateEntry((0,2,1), PieceOrientation.Bad, "R, U', R', U', F', U, F", "Match the edge up with the corresponding corner. Insert the pair into the correct slot."),
+                CreateEntry((1,2,0), PieceOrientation.Good, "U2, F', U, F, U, R, U', R'", "Match the edge up with the corresponding corner. Insert the pair into the correct slot."),
+                CreateEntry((1,2,0), PieceOrientation.Bad, "U, R, U', R', U', F', U, F", "Match the edge up with the corresponding corner. Insert the pair into the correct slot."),
+                CreateEntry((1,2,2), PieceOrientation.Good, "F', U, F, U, R, U', R'", "Match the edge up with the corresponding corner. Insert the pair into the correct slot."),
+                CreateEntry((1,2,2), PieceOrientation.Bad, "U', R, U', R', U', F', U, F", "Match the edge up with the corresponding corner. Insert the pair into the correct slot."),
                 CreateEntry((2,1,0), PieceOrientation.Good, "Already solved.", "Already solved."),
-                CreateEntry((2,1,0), PieceOrientation.Bad, "R, U', R', U, F', U2, F, U2, F', U, F", "Take the pair out of their slot. Match them up. Insert the pair into the correct slot."),
-                CreateEntry((2,1,2), PieceOrientation.Good, "B, U', B', U', R', U, R, R, U', R', U', F', U, F", "Take the edge out of the incorrect slot. Re-insert the corner. Match the edge up with the corresponding corner. Insert the pair into the correct slot"),
-                CreateEntry((2,1,2), PieceOrientation.Bad, "B, U', B', U', R', U, R, U, F', U, F, U, R, U', R'", "Take the edge out of the incorrect slot. Re-insert the corner. Match the edge up with the corresponding corner. Insert the pair into the correct slot"),
-                CreateEntry((2,2,1), PieceOrientation.Good, "U', F', U, F, U, R, U', R'", "Match the edge up with the corresponding corner. Insert the pair into the correct slot"),
-                CreateEntry((2,2,1), PieceOrientation.Bad, "U2, R, U', R', U', F', U, F", "Match the edge up with the corresponding corner. Insert the pair into the correct slot"),
+                CreateEntry((2,1,0), PieceOrientation.Bad, "R, U', R', U, F', U2, F, U2, F', U, F", "Take the pair out of their slot. Match them up. Insert the pair into the correct slot.."),
+                CreateEntry((2,1,2), PieceOrientation.Good, "B, U', B', U', R', U, R, R, U', R', U', F', U, F", "Take the edge out of the incorrect slot. Re-insert the corner. Match the edge up with the corresponding corner. Insert the pair into the correct slot."),
+                CreateEntry((2,1,2), PieceOrientation.Bad, "B, U', B', U', R', U, R, U, F', U, F, U, R, U', R'", "Take the edge out of the incorrect slot. Re-insert the corner. Match the edge up with the corresponding corner. Insert the pair into the correct slot."),
+                CreateEntry((2,2,1), PieceOrientation.Good, "U', F', U, F, U, R, U', R'", "Match the edge up with the corresponding corner. Insert the pair into the correct slot."),
+                CreateEntry((2,2,1), PieceOrientation.Bad, "U2, R, U', R', U', F', U, F", "Match the edge up with the corresponding corner. Insert the pair into the correct slot."),
             ]);
 
         private static Entry CreateCornerEntry((int, int, int) location, string sequence, string explanation) =>
