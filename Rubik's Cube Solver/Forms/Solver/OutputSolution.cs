@@ -20,28 +20,29 @@ namespace Rubiks_Cube_Solver
 
         private void OutputSolution_Load(object sender, EventArgs e)
         {
-            RotatePiece();
+            piece = RotatePiece(piece, stage);
             SetLabelText();
         }
 
-        private void RotatePiece()
+        private static PieceConfig RotatePiece(PieceConfig piece, Stage stage)
         {
-            // calling the 'rotatePieceLocation' procedure the correct number of times 
+            // calling the 'rotatePieceLocation' method the correct number of times 
             for (int i = 0; i < stage.SubStep-1; i++)
                 piece = PieceRotator.AntiClockwise(piece);
+            return piece;
         }
 
         private void SetLabelText()
         {
-            lblCubeOrientation.Text = $"Hold your cube with the white centre piece on top and the {GetFrontFaceName()} centre piece facing you.";
+            lblCubeOrientation.Text = $"Hold your cube with the white centre piece on top and the {GetFrontFaceName(stage)} centre piece facing you.";
             lblStageName.Text = stage.GetName();
 
-            PieceSolution solution = GetSolution();
+            PieceSolution solution = GetSolution(stage, piece);
             lblSequence.Text = solution.Sequence;
             lblExplanation.Text = solution.Explanation;
         }
 
-        private PieceSolution GetSolution()
+        private PieceSolution GetSolution(Stage stage, PieceConfig piece)
         {
             try { return SolvePiece.GetSolution(stage, piece); }
             catch // if there is no match for the piece that the user inputted
@@ -53,7 +54,7 @@ namespace Rubiks_Cube_Solver
             }
         }
 
-        private string GetFrontFaceName() => stage.SubStep switch
+        private string GetFrontFaceName(Stage stage) => stage.SubStep switch
         {
             0 => "green",
             1 => "orange",
@@ -61,8 +62,11 @@ namespace Rubiks_Cube_Solver
             3 => "red"
         };
 
-        private void btnFinish_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<CheckingMoves>(this);
+        private void btnFinish_Click(object sender, EventArgs e)
+        {
+            stage.Increment();
+            FormNavigator.Navigate<InputColours>(this, stage);
+        }
 
         private void btnMenu_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<Menu>(this);
