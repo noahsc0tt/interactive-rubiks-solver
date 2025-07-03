@@ -5,8 +5,11 @@ namespace Rubiks_Cube_Solver
 {
     internal static class CoordValidator
     {
-        private static bool IsCoordValid(int min, int max, int coord) =>
+        public static bool IsCoordValid(int min, int max, int coord) =>
             coord >= min && coord <= max;
+
+        public static bool AreCoordsValid(int min, int max, params int[] coords) =>
+            coords.All(coord => IsCoordValid(min, max, coord));
 
         public static void ValidateCoord(int min, int max, int coord, string coordName)
         {
