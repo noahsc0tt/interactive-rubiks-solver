@@ -31,7 +31,7 @@
             this.lblCubeOrientation = new System.Windows.Forms.Label();
             this.lblSequence = new System.Windows.Forms.Label();
             this.btnFinish = new System.Windows.Forms.Button();
-            this.lblNameOfStage = new System.Windows.Forms.Label();
+            this.lblStageName = new System.Windows.Forms.Label();
             this.lblExplanation = new System.Windows.Forms.Label();
             this.lblSequenceHeader = new System.Windows.Forms.Label();
             this.lblExplanationHeader = new System.Windows.Forms.Label();
@@ -76,18 +76,18 @@
             this.btnFinish.UseVisualStyleBackColor = true;
             this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
-            // lblNameOfStage
+            // lblStageName
             // 
-            this.lblNameOfStage.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblNameOfStage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblNameOfStage.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.lblNameOfStage.Location = new System.Drawing.Point(847, 34);
-            this.lblNameOfStage.MaximumSize = new System.Drawing.Size(589, 164);
-            this.lblNameOfStage.Name = "lblNameOfStage";
-            this.lblNameOfStage.Size = new System.Drawing.Size(542, 164);
-            this.lblNameOfStage.TabIndex = 3;
-            this.lblNameOfStage.Text = "Stage:";
-            this.lblNameOfStage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblStageName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblStageName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblStageName.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.lblStageName.Location = new System.Drawing.Point(847, 34);
+            this.lblStageName.MaximumSize = new System.Drawing.Size(589, 164);
+            this.lblStageName.Name = "lblStageName";
+            this.lblStageName.Size = new System.Drawing.Size(542, 164);
+            this.lblStageName.TabIndex = 3;
+            this.lblStageName.Text = "Stage:";
+            this.lblStageName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblExplanation
             // 
@@ -150,7 +150,7 @@
             this.Controls.Add(this.lblExplanationHeader);
             this.Controls.Add(this.lblSequenceHeader);
             this.Controls.Add(this.lblExplanation);
-            this.Controls.Add(this.lblNameOfStage);
+            this.Controls.Add(this.lblStageName);
             this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.lblSequence);
             this.Controls.Add(this.lblCubeOrientation);
@@ -168,7 +168,7 @@
         private System.Windows.Forms.Label lblCubeOrientation;
         private System.Windows.Forms.Label lblSequence;
         private System.Windows.Forms.Button btnFinish;
-        private System.Windows.Forms.Label lblNameOfStage;
+        private System.Windows.Forms.Label lblStageName;
         private System.Windows.Forms.Label lblExplanation;
         private System.Windows.Forms.Label lblSequenceHeader;
         private System.Windows.Forms.Label lblExplanationHeader;

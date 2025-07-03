@@ -68,7 +68,9 @@ namespace Rubiks_Cube_Solver
             ]);
 
         private static Entry CreateCornerEntry((int, int, int) location, string sequence, string explanation) =>
-            CreateEntry(location, PieceOrientation.Corner, sequence, explanation);
+            CreateEntry(location, PieceOrientation.Corner, 
+                sequence += "Repeat the moves (R, U, R', U) until the yellow square is pointing down.", 
+                explanation += "Cycle the corner until it is solved");
 
         private static Entry CreateEntry((int, int, int) location, PieceOrientation orientation, string sequence, string explanation) =>
             new (new PieceConfig(location, orientation), new PieceSolution(sequence, explanation));

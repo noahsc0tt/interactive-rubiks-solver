@@ -20,20 +20,23 @@ namespace Rubiks_Cube_Solver
 
         private void OutputSolution_Load(object sender, EventArgs e)
         {
+            RotatePiece();
+            SetLabelText();
+        }
+
+        private void RotatePiece()
+        {
             // calling the 'rotatePieceLocation' procedure the correct number of times 
             for (int i = 0; i < stage.SubStep-1; i++)
-                piece = RotatePiece.AntiClockwise(piece);
+                piece = PieceRotator.AntiClockwise(piece);
+        }
 
+        private void SetLabelText()
+        {
             lblCubeOrientation.Text = $"Hold your cube with the white centre piece on top and the {GetFrontFaceName()} centre piece facing you.";
-            lblNameOfStage.Text = stage.GetName();
+            lblStageName.Text = stage.GetName();
 
             PieceSolution solution = GetSolution();
-            if (stage.Step == 1)
-            {
-                solution.Sequence += "Repeat the moves (R, U, R', U) until the yellow square is pointing down.";
-                solution.Explanation += "Cycle the corner until it is solved.";
-            }
-            
             lblSequence.Text = solution.Sequence;
             lblExplanation.Text = solution.Explanation;
         }

@@ -1,6 +1,6 @@
 ﻿namespace Rubiks_Cube_Solver
 {
-    internal static class RotatePiece
+    internal static class PieceRotator
     {
         public static PieceConfig AntiClockwise(PieceConfig initialConfig)
         {
