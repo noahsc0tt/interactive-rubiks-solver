@@ -12,12 +12,12 @@ namespace Rubiks_Cube_Solver
 
         private static readonly string[] yellowEdgesExplanations =
             [
-                "Bring the edge to the top layer. Position it above the correct slot.",
-                "Bring the edge next to the correct slot.",
-                "Insert the edge into the correct slot.",
-                "Position the edge above the correct slot.",
-                "Bring the edge to the top layer. Move it across. Bring it next to the correct slot.",
-                "Move the edge across. Bring it next to the correct slot."
+                "Bring the edge to the top layer. Position it above the correct slot. Insert it.",
+                "Bring the edge next to the correct slot. Insert it.",
+                "Insert the edge into the correct slot. Insert it.",
+                "Position the edge above the correct slot. Insert it.",
+                "Bring the edge to the top layer. Move it across. Bring it next to the correct slot. Insert it.",
+                "Move the edge across. Bring it next to the correct slot. Insert it."
             ];
 
         private static readonly string[] yellowCornersExplanations =
@@ -28,17 +28,17 @@ namespace Rubiks_Cube_Solver
 
         private static readonly string[] middleLayerEdgesExplanations =
             [
-                "Take the edge out of the incorrect slot. Re-insert the corner. Match the edge up with the corresponding corner.",
-                "Match the edge up with the corresponding corner.",
-                "Take the pair out of their slot. Match the edge up with the corner."
+                "Take the edge out of the incorrect slot. Re-insert the corner. Match the edge up with the corresponding corner. Insert the pair into the correct slot.",
+                "Match the edge up with the corresponding corner. Insert the pair into the correct slot.",
+                "Take the pair out of their slot. Match the edge up with the corner. Insert the pair into the correct slot."
             ];
 
         private static readonly Dict yellowEdgesDict = CreateDict
             ([
                 ((0,0,1), PieceOrientation.Good, "L2, U', F2", yellowEdgesExplanations[0]),
                 ((0,0,1), PieceOrientation.Bad, "L', F'", yellowEdgesExplanations[1]),
-                ((0,1,0), PieceOrientation.Good, "F'", yellowEdgesExplanations[2]),
-                ((0,1,0), PieceOrientation.Bad, "L', U', L, F2", yellowEdgesExplanations[0]),
+                ((0,1,0), PieceOrientation.Good, "L', U', L, F2", yellowEdgesExplanations[0]),
+                ((0,1,0), PieceOrientation.Bad, "F'", yellowEdgesExplanations[2]),
                 ((0,1,2), PieceOrientation.Good, "L, U', L', F2", yellowEdgesExplanations[0]),
                 ((0,1,2), PieceOrientation.Bad, "L2, F', L2", yellowEdgesExplanations[1]),
                 ((0,2,1), PieceOrientation.Good, "U', F2", yellowEdgesExplanations[3]),
@@ -92,25 +92,13 @@ namespace Rubiks_Cube_Solver
                 ((2,2,1), PieceOrientation.Bad, "U2, R, U', R', U', F', U, F", middleLayerEdgesExplanations[1]),
             ]);
 
-        private static string AddExplanationSuffix(string explanation)
-        {
-            if (explanation.EndsWith("slot.")) // entries in yellowEdgesDict
-                explanation += " Insert it.";
-            else if (explanation.EndsWith("corner.")) // entries in middleLayerEdgesDict
-                explanation += " Insert the pair into the correct slot.";
-            return explanation;
-        }
-
-        private static Entry CreateEntry(((int, int, int) location, PieceOrientation orientation, string sequence, string explanation) entry)
-        {
-            entry.explanation = AddExplanationSuffix(entry.explanation);
-            return new(new PieceConfig(entry.location, entry.orientation), new PieceSolution(entry.sequence, entry.explanation));
-        }
+        private static Entry CreateEntry(((int, int, int) location, PieceOrientation orientation, string sequence, string explanation) entry) =>
+            new(new PieceConfig(entry.location, entry.orientation), new PieceSolution(entry.sequence, entry.explanation));
 
         private static Dict CreateCornerDict(((int, int, int) location, string sequence, string explanation)[] entries) =>
             CreateDict(entries.Select(entry =>
             (entry.location, PieceOrientation.Corner,
-                entry.sequence + "Repeat the moves (R, U, R', U) until the yellow square is pointing down.",
+                entry.sequence + "Repeat the moves (R, U, R', U') until the yellow square is pointing down.",
                 entry.explanation + "Cycle the corner until it is solved.")).ToArray());
 
         private static Dict CreateDict(((int, int, int) location, PieceOrientation orientation, string sequence, string explanation)[] entries) =>
