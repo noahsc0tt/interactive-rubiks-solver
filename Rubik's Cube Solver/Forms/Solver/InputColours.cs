@@ -28,12 +28,12 @@ namespace Rubiks_Cube_Solver
         {
             var dictBuilder = ImmutableDictionary.CreateBuilder<Face, FaceColour>();
 
-            dictBuilder[orangeFace] = FaceColour.Orange;
-            dictBuilder[redFace] = FaceColour.Red;
             dictBuilder[whiteFace] = FaceColour.White;
             dictBuilder[yellowFace] = FaceColour.Yellow;
-            dictBuilder[blueFace] = FaceColour.Blue;
             dictBuilder[greenFace] = FaceColour.Green;
+            dictBuilder[blueFace] = FaceColour.Blue;
+            dictBuilder[redFace] = FaceColour.Red;
+            dictBuilder[orangeFace] = FaceColour.Orange;
 
             return dictBuilder.ToImmutable();
         }

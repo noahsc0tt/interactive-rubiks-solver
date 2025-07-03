@@ -2,7 +2,7 @@
 {
     internal static class PieceRotator
     {
-        public static PieceConfig AntiClockwise(PieceConfig initialConfig)
+        public static PieceConfig YPrimeMove(PieceConfig initialConfig)
         {
             (int x, int y, int z) = initialConfig.Location.GetLocation();
             PieceOrientation orientation = initialConfig.Orientation;

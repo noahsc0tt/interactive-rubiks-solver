@@ -38,9 +38,9 @@ namespace Rubiks_Cube_Solver
             0 => $"yellow and {SubStep switch
             {
                 0 => "green",
-                1 => "red",
+                1 => "orange",
                 2 => "blue",
-                3 => "orange"
+                3 => "red"
             }} edge",
             1 => $"yellow, {GetColourPair()} corner",
             2 => $"{GetColourPair()} edge",
@@ -52,10 +52,10 @@ namespace Rubiks_Cube_Solver
         //helper method for GetRequiredPiece
         private string GetColourPair() => SubStep switch
         {
-            0 => "green and red",
-            1 => "red and blue",
-            2 => "blue and orange",
-            3 => "orange and green",
+            0 => "red and green",
+            1 => "green and orange",
+            2 => "orange and blue",
+            3 => "blue and red",
         };
 
         public FaceColour GetInputColour() => Step switch
