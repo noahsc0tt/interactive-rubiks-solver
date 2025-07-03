@@ -28,7 +28,7 @@ namespace Rubiks_Cube_Solver
             get => _x;
             set
             {
-                ValidateCoord(value, nameof(X));
+                CoordValidator.Validate(value, nameof(X), 0, 2);
                 _x = value;
             }
         }
@@ -38,7 +38,7 @@ namespace Rubiks_Cube_Solver
             get => _y;
             set
             {
-                ValidateCoord(value, nameof(Y));
+                CoordValidator.Validate(value, nameof(Y), 0, 2);
                 _y = value;
             }
         }
@@ -48,26 +48,21 @@ namespace Rubiks_Cube_Solver
             get => _z;
             set
             {
-                ValidateCoord(value, nameof(Z));
+                CoordValidator.Validate(value, nameof(Z), 0, 2);
                 _z = value;
             }
         }
         public PieceLocation((int x, int y, int z) location) : this(location.x, location.y, location.z) { }
         public PieceLocation(int x, int y, int z)
         {
-            ValidateCoord(x, nameof(x));
-            ValidateCoord(y, nameof(y));
-            ValidateCoord(z, nameof(z));
+            CoordValidator.Validate(x, nameof(x), 0, 2);
+            CoordValidator.Validate(y, nameof(y), 0, 2);
+            CoordValidator.Validate(z, nameof(z), 0, 2);
             _x = x;
             _y = y;
             _z = z;
         }
 
-        public static void ValidateCoord(int coord, string paramName)
-        {
-            if (coord < 0 || coord > 2)
-                throw new ArgumentOutOfRangeException(paramName, "Coordinate must be in the range 0-2");
-        }
         public (int X, int Y, int Z) GetLocation() => (X, Y, Z);
 
         public override bool Equals(object obj) =>

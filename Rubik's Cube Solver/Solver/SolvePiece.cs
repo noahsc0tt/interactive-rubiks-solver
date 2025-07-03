@@ -95,7 +95,7 @@ namespace Rubiks_Cube_Solver
         private static string AddExplanationSuffix(string explanation)
         {
             if (explanation.EndsWith("slot.")) // entries in yellowEdgesDict
-                explanation += "Insert it.";
+                explanation += " Insert it.";
             else if (explanation.EndsWith("corner.")) // entries in middleLayerEdgesDict
                 explanation += " Insert the pair into the correct slot.";
             return explanation;

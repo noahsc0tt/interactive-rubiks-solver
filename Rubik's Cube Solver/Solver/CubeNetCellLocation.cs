@@ -9,8 +9,8 @@
         public CubeNetCellLocation((int x, int y) coords, FaceColour face) : this(coords.x, coords.y, face) { }
         public CubeNetCellLocation(int x, int y, FaceColour face)
         {
-            PieceLocation.ValidateCoord(x, nameof(x));
-            PieceLocation.ValidateCoord(y, nameof(y));
+            CoordValidator.Validate(x, nameof(x), 0, 2);
+            CoordValidator.Validate(y, nameof(y), 0, 2);
             X = x;
             Y = y;
             Face = face;

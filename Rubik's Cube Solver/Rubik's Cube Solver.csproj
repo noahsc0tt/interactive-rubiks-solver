@@ -124,6 +124,7 @@
     <Compile Include="Solver\PieceRotator.cs" />
     <Compile Include="Solver\SolvePiece.cs" />
     <Compile Include="Solver\Stage.cs" />
+    <Compile Include="Util\CoordValidator.cs" />
     <Compile Include="Util\FormNavigator.cs" />
     <Compile Include="Forms\Menu.cs">
       <SubType>Form</SubType>
