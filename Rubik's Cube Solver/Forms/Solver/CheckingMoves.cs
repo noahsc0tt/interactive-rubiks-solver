@@ -33,182 +33,157 @@ namespace Rubiks_Cube_Solver
             Array.ForEach([whiteFace, yellowFace, greenFace, blueFace, redFace, orangeFace], PopulateCubeFace);
 
 
-        public void ColourYellowEdges()
+        public void ColourYellowEdges(int subStep)
         {
-            //colouring yellow edges
-            greenFace[1, 2].Style.BackColor = Color.Green;
-            yellowFace[1, 0].Style.BackColor = Color.Yellow;
-            orangeFace[1, 2].Style.BackColor = Color.Orange;
-            yellowFace[0, 1].Style.BackColor = Color.Yellow;
-            blueFace[1, 2].Style.BackColor = Color.Blue;
-            yellowFace[1, 2].Style.BackColor = Color.Yellow;
-            redFace[1, 2].Style.BackColor = Color.Red;
-            yellowFace[2, 1].Style.BackColor = Color.Yellow;
-        }
-        public void ColourYellowCorners()
-        {
-            //colouring yellow corners
-            greenFace[2, 2].Style.BackColor = Color.Green;
-            redFace[0, 2].Style.BackColor = Color.Red;
-            yellowFace[2, 0].Style.BackColor = Color.Yellow;
-            greenFace[0, 2].Style.BackColor = Color.Green;
-            orangeFace[2, 2].Style.BackColor = Color.Orange;
-            yellowFace[0, 0].Style.BackColor = Color.Yellow;
-            orangeFace[0, 2].Style.BackColor = Color.Orange;
-            blueFace[2, 2].Style.BackColor = Color.Blue;
-            yellowFace[0, 2].Style.BackColor = Color.Yellow;
-            blueFace[0, 2].Style.BackColor = Color.Blue;
-            redFace[2, 2].Style.BackColor = Color.Red;
-            yellowFace[2, 2].Style.BackColor = Color.Yellow;
+            if (subStep >= 0)
+            {
+                greenFace[1, 2].Style.BackColor = Color.Green;
+                yellowFace[1, 0].Style.BackColor = Color.Yellow;
+            }
+            if (subStep >= 1)
+            {
+                orangeFace[1, 2].Style.BackColor = Color.Orange;
+                yellowFace[0, 1].Style.BackColor = Color.Yellow;
+            }
+            if (subStep >= 2)
+            {
+                blueFace[1, 2].Style.BackColor = Color.Blue;
+                yellowFace[1, 2].Style.BackColor = Color.Yellow;
+            }
+            if (subStep == 3)
+            {
+                redFace[1, 2].Style.BackColor = Color.Red;
+                yellowFace[2, 1].Style.BackColor = Color.Yellow;
+            }
         }
 
-        public void ColourMiddleEdges()
+        public void ColourYellowCorners(int subStep)
         {
-            //colouring middle layer edges
-            greenFace[2, 1].Style.BackColor = Color.Green;
-            redFace[0, 1].Style.BackColor = Color.Red;
-            orangeFace[2, 1].Style.BackColor = Color.Orange;
-            greenFace[0, 1].Style.BackColor = Color.Green;
-            blueFace[2, 1].Style.BackColor = Color.Blue;
-            orangeFace[0, 1].Style.BackColor = Color.Orange;
-            redFace[2, 1].Style.BackColor = Color.Red;
-            blueFace[0, 1].Style.BackColor = Color.Blue;
+            if (subStep >= 0)
+            {
+                redFace[0, 2].Style.BackColor = Color.Red;
+                greenFace[2, 2].Style.BackColor = Color.Green;
+                yellowFace[2, 0].Style.BackColor = Color.Yellow;
+            }
+            if (subStep >= 1)
+            {
+                greenFace[0, 2].Style.BackColor = Color.Green;
+                orangeFace[2, 2].Style.BackColor = Color.Orange;
+                yellowFace[0, 0].Style.BackColor = Color.Yellow;
+            }
+            if (subStep >= 2)
+            {
+                orangeFace[0, 2].Style.BackColor = Color.Orange;
+                blueFace[2, 2].Style.BackColor = Color.Blue;
+                yellowFace[0, 2].Style.BackColor = Color.Yellow;
+            }
+            if (subStep == 3)
+            {
+                blueFace[0, 2].Style.BackColor = Color.Blue;
+                redFace[2, 2].Style.BackColor = Color.Red;
+                yellowFace[2, 2].Style.BackColor = Color.Yellow;
+            }
+        }
+
+        public void ColourMiddleLayerEdges(int subStep)
+        {
+            if (subStep >= 0)
+            {
+                redFace[0, 1].Style.BackColor = Color.Red;
+                greenFace[2, 1].Style.BackColor = Color.Green;
+            }
+            if (subStep >= 1)
+            {
+                greenFace[0, 1].Style.BackColor = Color.Green;
+                orangeFace[2, 1].Style.BackColor = Color.Orange;
+            }
+            if (subStep >= 2)
+            {
+                orangeFace[0, 1].Style.BackColor = Color.Orange;
+                blueFace[2, 1].Style.BackColor = Color.Blue;
+            }
+            if (subStep == 3)
+            {
+                blueFace[0, 1].Style.BackColor = Color.Blue;
+                redFace[2, 1].Style.BackColor = Color.Red;
+            }
+        }
+
+        private void ColourLastLayer(int subStep)
+        {
+            if (stage.SubStep >= 1) // white edges
+            {
+                whiteFace[0, 1].Style.BackColor = Color.White;
+                whiteFace[1, 0].Style.BackColor = Color.White;
+                whiteFace[2, 1].Style.BackColor = Color.White;
+                whiteFace[1, 2].Style.BackColor = Color.White;
+            }
+            if (stage.SubStep >= 2) // white corners
+            {
+                whiteFace[0, 0].Style.BackColor = Color.White;
+                whiteFace[2, 0].Style.BackColor = Color.White;
+                whiteFace[0, 2].Style.BackColor = Color.White;
+                whiteFace[2, 2].Style.BackColor = Color.White;
+            }
+            if (stage.SubStep >= 3) // permuting corners
+            {
+                greenFace[0, 0].Style.BackColor = Color.Green;
+                greenFace[2, 0].Style.BackColor = Color.Green;
+                orangeFace[0, 0].Style.BackColor = Color.Orange;
+                orangeFace[2, 0].Style.BackColor = Color.Orange;
+                blueFace[0, 0].Style.BackColor = Color.Blue;
+                blueFace[2, 0].Style.BackColor = Color.Blue;
+                redFace[0, 0].Style.BackColor = Color.Red;
+                redFace[2, 0].Style.BackColor = Color.Red;
+
+            }
+            if (stage.SubStep == 4) // permuting edges
+            {
+                greenFace[1, 0].Style.BackColor = Color.Green;
+                orangeFace[1, 0].Style.BackColor = Color.Orange;
+                blueFace[1, 0].Style.BackColor = Color.Blue;
+                redFace[1, 0].Style.BackColor = Color.Red;
+            }
         }
 
         private void ColourCubeNet()
         {
             PopulateCubeNet();
             
-            if (stage.Step == 1) //yellow edges
+            switch (stage.Step)
             {
-                if (stage.SubStep >= 1) //yellow and green edge
-                {
-                    greenFace[1, 2].Style.BackColor = Color.Green;
-                    yellowFace[1, 0].Style.BackColor = Color.Yellow;
-                }
-                if (stage.SubStep >= 2) //yellow and orange edge
-                {
-                    orangeFace[1, 2].Style.BackColor = Color.Orange;
-                    yellowFace[0, 1].Style.BackColor = Color.Yellow;
-                }
-                if (stage.SubStep >= 3) //yellow and blue edge
-                {
-                    blueFace[1, 2].Style.BackColor = Color.Blue;
-                    yellowFace[1, 2].Style.BackColor = Color.Yellow;
-                }
-                if (stage.SubStep == 4) //yellow and red edge
-                {
-                    redFace[1, 2].Style.BackColor = Color.Red;
-                    yellowFace[2, 1].Style.BackColor = Color.Yellow;
-                }
-            }
-            else if (stage.Step == 2) //yellow corners
-            {
-                ColourYellowEdges();
+                case 0:
+                    ColourYellowEdges(stage.SubStep); 
+                    break;
+                case 1:
+                    ColourYellowEdges(4);
+                    ColourYellowCorners(stage.SubStep);
+                    break;
+                case 2:
+                    ColourYellowEdges(4);
+                    ColourYellowCorners(4);
+                    ColourMiddleLayerEdges(stage.SubStep);
+                    break;
+                case 3:
+                    ColourYellowEdges(4);
+                    ColourYellowCorners(4);
+                    ColourMiddleLayerEdges(stage.SubStep);
+                    ColourLastLayer(stage.SubStep);
+                    break;
 
-                if (stage.SubStep >= 1) //yellow, green and red corner
-                {
-                    greenFace[2, 2].Style.BackColor = Color.Green;
-                    redFace[0, 2].Style.BackColor = Color.Red;
-                    yellowFace[2, 0].Style.BackColor = Color.Yellow;
-                }
-
-                if (stage.SubStep >= 2) //yellow orange and green corner
-                {
-                    greenFace[0, 2].Style.BackColor = Color.Green;
-                    orangeFace[2, 2].Style.BackColor = Color.Orange;
-                    yellowFace[0, 0].Style.BackColor = Color.Yellow;
-                }
-                if (stage.SubStep >= 3) //yellow blue and orange corner
-                {
-                    orangeFace[0, 2].Style.BackColor = Color.Orange;
-                    blueFace[2, 2].Style.BackColor = Color.Blue;
-                    yellowFace[0, 2].Style.BackColor = Color.Yellow;
-                }
-                if (stage.SubStep == 4) //yellow red and blue corner
-                {
-                    blueFace[0, 2].Style.BackColor = Color.Blue;
-                    redFace[2, 2].Style.BackColor = Color.Red;
-                    yellowFace[2, 2].Style.BackColor = Color.Yellow;
-                }
-            }
-            else if (stage.Step == 3) //middle layer edges
-            {
-                ColourYellowEdges();
-                ColourYellowCorners();
-
-                if (stage.SubStep >= 1) //green and red edge
-                {
-                    greenFace[2, 1].Style.BackColor = Color.Green;
-                    redFace[0, 1].Style.BackColor = Color.Red;
-                }
-                if (stage.SubStep >= 2) //orange and green edge
-                {
-                    orangeFace[2, 1].Style.BackColor = Color.Orange;
-                    greenFace[0, 1].Style.BackColor = Color.Green;
-                }
-                if (stage.SubStep >= 3) //blue and orange edge
-                {
-                    blueFace[2, 1].Style.BackColor = Color.Blue;
-                    orangeFace[0, 1].Style.BackColor = Color.Orange;
-                }
-                if (stage.SubStep == 4) //red and blue edge
-                {
-                    redFace[2, 1].Style.BackColor = Color.Red;
-                    blueFace[0, 1].Style.BackColor = Color.Blue;
-                }
-            }
-            else if (stage.Step == 4)
-            {
-                ColourYellowEdges();
-                ColourYellowCorners();
-                ColourMiddleEdges();
-
-                if (stage.SubStep >= 1) //top layer edges
-                {
-                    whiteFace[0, 1].Style.BackColor = Color.White;
-                    whiteFace[1, 0].Style.BackColor = Color.White;
-                    whiteFace[2, 1].Style.BackColor = Color.White;
-                    whiteFace[1, 2].Style.BackColor = Color.White;
-                }
-                if (stage.SubStep >= 2) //top layer corners
-                {
-                    whiteFace[0, 0].Style.BackColor = Color.White;
-                    whiteFace[2, 0].Style.BackColor = Color.White;
-                    whiteFace[0, 2].Style.BackColor = Color.White;
-                    whiteFace[2, 2].Style.BackColor = Color.White;
-                }
-                if (stage.SubStep >= 3) //permuting corners
-                {
-                    greenFace[0, 0].Style.BackColor = Color.Green;
-                    greenFace[2, 0].Style.BackColor = Color.Green;
-                    orangeFace[0, 0].Style.BackColor = Color.Orange;
-                    orangeFace[2, 0].Style.BackColor = Color.Orange;
-                    blueFace[0, 0].Style.BackColor = Color.Blue;
-                    blueFace[2, 0].Style.BackColor = Color.Blue;
-                    redFace[0, 0].Style.BackColor = Color.Red;
-                    redFace[2, 0].Style.BackColor = Color.Red;
-
-                }
-                if (stage.SubStep == 4) //permuting edges
-                {
-                    greenFace[1, 0].Style.BackColor = Color.Green;
-                    orangeFace[1, 0].Style.BackColor = Color.Orange;
-                    blueFace[1, 0].Style.BackColor = Color.Blue;
-                    redFace[1, 0].Style.BackColor = Color.Red;
-                }
-            }
+            };
         }
 
         private void Checking_Moves_Load(object sender, EventArgs e)
         {
+            ColourCubeNet();
+
             //changing the text of the 'Next Stage' button if the user has completed the solve
-            if (stage.Step == 4 && stage.SubStep == 4)
+            if (stage.GetStage() == (3,3))
             {
                 btnNextStage.Visible = false;
                 lblButtonInstructions.Text = "If your cube is fully solved, congratulations! Click the 'Menu' button to return to the menu.\r\n\r\nIf your cube is not solved, choose a stage to go back to in the 'Choose Stage' drop-down list.";
             }
-            ColourCubeNet();
         }
 
         private void btnMenu_Click(object sender, EventArgs e) =>
@@ -217,7 +192,7 @@ namespace Rubiks_Cube_Solver
         private void btnNextStage_Click(object sender, EventArgs e)
         {
             stage.Increment();
-            if (stage.Step == 4)
+            if (stage.Step == 3)
             {
                 switch (stage.SubStep)
                 {
