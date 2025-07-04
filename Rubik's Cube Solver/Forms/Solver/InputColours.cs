@@ -63,12 +63,8 @@ namespace Rubiks_Cube_Solver
                 PopulateCubeFace(entry.Key);
         }
 
-        private string GetInstructions() 
-        {
-            string requiredPiece = stage.GetRequiredPiece();
-            string requiredColour = stage.Step == 2 ? requiredPiece.Split(' ')[0] : "yellow";
-            return $"Input the position of the {requiredColour} square on the {requiredPiece}";
-        }
+        private string GetInstructions() =>
+            $"Input the position of the {stage.GetInputColour()} square on the {stage.GetRequiredPiece()}";
 
         private void HandleCellClick(object sender, DataGridViewCellEventArgs e)
         {
