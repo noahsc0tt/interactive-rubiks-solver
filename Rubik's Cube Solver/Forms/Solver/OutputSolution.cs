@@ -62,11 +62,8 @@ namespace Rubiks_Cube_Solver
             3 => "red"
         };
 
-        private void btnFinish_Click(object sender, EventArgs e)
-        {
-            stage.Increment();
-            FormNavigator.Navigate<InputColours>(this, stage);
-        }
+        private void btnFinish_Click(object sender, EventArgs e) =>
+            FormNavigator.Navigate<CheckingMoves>(this, stage);
 
         private void btnMenu_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<Menu>(this);

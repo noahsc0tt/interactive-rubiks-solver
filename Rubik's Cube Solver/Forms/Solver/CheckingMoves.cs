@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace Rubiks_Cube_Solver
 {
+    using Face = DataGridView;
+
     internal partial class CheckingMoves : Form
     {
         private Stage stage;
@@ -16,7 +20,20 @@ namespace Rubiks_Cube_Solver
             stage = currentStage;
         }
 
-        public void colourYellowEdges()
+        private void PopulateCubeFace(Face face)
+        {
+            // adding the cells to the face and colouring the centre cell
+            for (int i = 0; i < 3; i++)
+                face.Rows.Add("", "", "");
+            face[1, 1].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
+            face.ClearSelection(); //un-highlighting buttons
+        }
+
+        private void PopulateCubeNet() =>
+            Array.ForEach([whiteFace, yellowFace, greenFace, blueFace, redFace, orangeFace], PopulateCubeFace);
+
+
+        public void ColourYellowEdges()
         {
             //colouring yellow edges
             greenFace[1, 2].Style.BackColor = Color.Green;
@@ -28,7 +45,7 @@ namespace Rubiks_Cube_Solver
             redFace[1, 2].Style.BackColor = Color.Red;
             yellowFace[2, 1].Style.BackColor = Color.Yellow;
         }
-        public void colourYellowCorners()
+        public void ColourYellowCorners()
         {
             //colouring yellow corners
             greenFace[2, 2].Style.BackColor = Color.Green;
@@ -46,7 +63,8 @@ namespace Rubiks_Cube_Solver
 
             
         }
-        public void colourMiddleEdges()
+
+        public void ColourMiddleEdges()
         {
             //colouring middle layer edges
             greenFace[2, 1].Style.BackColor = Color.Green;
@@ -59,46 +77,11 @@ namespace Rubiks_Cube_Solver
             blueFace[0, 1].Style.BackColor = Color.Blue;
         }
 
-        private void populateDataGrids()
+        private void PopulateDataGrids()
         {
-            //populating the rubiks cube net and setting the colour of the centre pieces
+            //populating the cube net and setting the colour of the centre pieces
 
-            orangeFace.Rows.Add("", "", "");
-            orangeFace.Rows.Add("", "", "");
-            orangeFace.Rows.Add("", "", "");
-            orangeFace.ClearSelection(); //un-highlighting buttons
-            orangeFace[1, 1].Style.BackColor = Color.Orange;
-
-            redFace.Rows.Add("", "", "");
-            redFace.Rows.Add("", "", "");
-            redFace.Rows.Add("", "", "");
-            redFace.ClearSelection(); //un-highlighting buttons
-            redFace[1, 1].Style.BackColor = Color.Red;
-
-            whiteFace.Rows.Add("", "", "");
-            whiteFace.Rows.Add("", "", "");
-            whiteFace.Rows.Add("", "", "");
-            whiteFace.ClearSelection(); //un-highlighting buttons
-            whiteFace[1, 1].Style.BackColor = Color.White;
-
-            yellowFace.Rows.Add("", "", "");
-            yellowFace.Rows.Add("", "", "");
-            yellowFace.Rows.Add("", "", "");
-            yellowFace.ClearSelection(); //un-highlighting buttons
-            yellowFace[1, 1].Style.BackColor = Color.Yellow;
-
-            blueFace.Rows.Add("", "", "");
-            blueFace.Rows.Add("", "", "");
-            blueFace.Rows.Add("", "", "");
-            blueFace.ClearSelection(); //un-highlighting buttons
-            blueFace[1, 1].Style.BackColor = Color.Blue;
-
-            greenFace.Rows.Add("", "", "");
-            greenFace.Rows.Add("", "", "");
-            greenFace.Rows.Add("", "", "");
-            greenFace.ClearSelection(); //un-highlighting buttons
-            greenFace[1, 1].Style.BackColor = Color.Green;
-
+            PopulateCubeNet();
 
             //colouring the net based on the stage
 
@@ -127,7 +110,7 @@ namespace Rubiks_Cube_Solver
             }
             else if (stage.Step == 2) //yellow corners
             {
-                colourYellowEdges();
+                ColourYellowEdges();
 
                 if (stage.SubStep >= 1) //yellow, green and red corner
                 {
@@ -157,8 +140,8 @@ namespace Rubiks_Cube_Solver
             }
             else if (stage.Step == 3) //middle layer edges
             {
-                colourYellowEdges();
-                colourYellowCorners();
+                ColourYellowEdges();
+                ColourYellowCorners();
 
                 if (stage.SubStep >= 1) //green and red edge
                 {
@@ -183,9 +166,9 @@ namespace Rubiks_Cube_Solver
             }
             else if (stage.Step == 4)
             {
-                colourYellowEdges();
-                colourYellowCorners();
-                colourMiddleEdges();
+                ColourYellowEdges();
+                ColourYellowCorners();
+                ColourMiddleEdges();
 
                 if (stage.SubStep >= 1) //top layer edges
                 {
@@ -230,19 +213,15 @@ namespace Rubiks_Cube_Solver
             if (stage.Step == 4 && stage.SubStep == 4)
             {
                 btnNextStage.Visible = false;
-
                 lblButtonInstructions.Text = "If your cube is fully solved, congratulations! Click the 'Menu' button to return to the menu.\r\n\r\nIf your cube is not solved, choose a stage to go back to in the 'Choose Stage' drop-down list.";
             }
-
-            populateDataGrids();
+            PopulateDataGrids();
         }
 
 
 
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
+        private void btnMenu_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<Menu>(this);
-        }
 
         private void btnNextStage_Click(object sender, EventArgs e)
         {
@@ -328,47 +307,6 @@ namespace Rubiks_Cube_Solver
 
                 FormNavigator.Navigate<TopLayerEdges>(this);
             }
-        }
-
-
-        private void whiteFace_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            whiteFace.ClearSelection(); //un-highlighting a button after it is clicked
-
-        }
-
-        private void orangeFace_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            orangeFace.ClearSelection(); //un-highlighting a button after it is clicked
-
-        }
-
-        private void greenFace_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            greenFace.ClearSelection(); //un-highlighting a button after it is clicked
-
-        }
-
-        private void redFace_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            redFace.ClearSelection(); //un-highlighting a button after it is clicked
-
-        }
-
-        private void blueFace_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            blueFace.ClearSelection(); //un-highlighting a button after it is clicked
-
-        }
-
-        private void yellowFace_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            yellowFace.ClearSelection(); //un-highlighting a button after it is clicked
-        }
-
-        private void lblButtonInstructions_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

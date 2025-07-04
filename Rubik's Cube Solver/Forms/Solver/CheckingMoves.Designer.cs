@@ -183,6 +183,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.whiteFace.DefaultCellStyle = dataGridViewCellStyle1;
+            this.whiteFace.Enabled = false;
             this.whiteFace.Location = new System.Drawing.Point(434, 92);
             this.whiteFace.Name = "whiteFace";
             this.whiteFace.RowHeadersVisible = false;
@@ -191,8 +192,6 @@
             this.whiteFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.whiteFace.Size = new System.Drawing.Size(230, 230);
             this.whiteFace.TabIndex = 9;
-            this.whiteFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.whiteFace_CellClick);
-            // 
             // dataGridViewButtonColumn40
             // 
             this.dataGridViewButtonColumn40.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -328,6 +327,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.greenFace.DefaultCellStyle = dataGridViewCellStyle2;
+            this.greenFace.Enabled = false;
             this.greenFace.Location = new System.Drawing.Point(434, 328);
             this.greenFace.Name = "greenFace";
             this.greenFace.RowHeadersVisible = false;
@@ -336,7 +336,6 @@
             this.greenFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.greenFace.Size = new System.Drawing.Size(230, 230);
             this.greenFace.TabIndex = 10;
-            this.greenFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.greenFace_CellClick);
             // 
             // dataGridViewButtonColumn13
             // 
@@ -473,6 +472,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.orangeFace.DefaultCellStyle = dataGridViewCellStyle3;
+            this.orangeFace.Enabled = false;
             this.orangeFace.Location = new System.Drawing.Point(198, 328);
             this.orangeFace.Name = "orangeFace";
             this.orangeFace.RowHeadersVisible = false;
@@ -481,7 +481,6 @@
             this.orangeFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.orangeFace.Size = new System.Drawing.Size(230, 230);
             this.orangeFace.TabIndex = 11;
-            this.orangeFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orangeFace_CellClick);
             // 
             // dataGridViewButtonColumn1
             // 
@@ -618,6 +617,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.yellowFace.DefaultCellStyle = dataGridViewCellStyle4;
+            this.yellowFace.Enabled = false;
             this.yellowFace.Location = new System.Drawing.Point(434, 564);
             this.yellowFace.Name = "yellowFace";
             this.yellowFace.RowHeadersVisible = false;
@@ -626,7 +626,6 @@
             this.yellowFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.yellowFace.Size = new System.Drawing.Size(230, 230);
             this.yellowFace.TabIndex = 12;
-            this.yellowFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.yellowFace_CellClick);
             // 
             // dataGridViewButtonColumn31
             // 
@@ -763,6 +762,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.redFace.DefaultCellStyle = dataGridViewCellStyle5;
+            this.redFace.Enabled = false;
             this.redFace.Location = new System.Drawing.Point(670, 328);
             this.redFace.Name = "redFace";
             this.redFace.RowHeadersVisible = false;
@@ -771,7 +771,6 @@
             this.redFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.redFace.Size = new System.Drawing.Size(230, 230);
             this.redFace.TabIndex = 13;
-            this.redFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.redFace_CellClick);
             // 
             // dataGridViewButtonColumn4
             // 
@@ -921,6 +920,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.blueFace.DefaultCellStyle = dataGridViewCellStyle6;
+            this.blueFace.Enabled = false;
             this.blueFace.Location = new System.Drawing.Point(906, 328);
             this.blueFace.Name = "blueFace";
             this.blueFace.RowHeadersVisible = false;
@@ -929,7 +929,6 @@
             this.blueFace.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.blueFace.Size = new System.Drawing.Size(230, 230);
             this.blueFace.TabIndex = 16;
-            this.blueFace.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.blueFace_CellClick);
             // 
             // dataGridViewButtonColumn22
             // 
@@ -1050,9 +1049,8 @@
             this.lblButtonInstructions.Text = "If your cube matches this net, click \'Next Stage\'.\r\n\r\nIf it doesn\'t, choose a sta" +
     "ge to go back to in the \'Choose Stage\' drop-down list.";
             this.lblButtonInstructions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblButtonInstructions.Click += new System.EventHandler(this.lblButtonInstructions_Click);
             // 
-            // Checking_Moves
+            // CheckingMoves
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1069,7 +1067,7 @@
             this.Controls.Add(this.boxChooseStage);
             this.Controls.Add(this.btnNextStage);
             this.MinimumSize = new System.Drawing.Size(1468, 869);
-            this.Name = "Checking_Moves";
+            this.Name = "CheckingMoves";
             this.Text = "Checking_Moves";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Checking_Moves_Load);

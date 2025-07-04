@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Windows.Forms;
 
 namespace Rubiks_Cube_Solver
@@ -13,7 +11,6 @@ namespace Rubiks_Cube_Solver
         private readonly Stage stage;
         private CubeNetCellLocation selectedCellLocation;
         private DataGridViewCell selectedCell;
-        private readonly ImmutableDictionary<Face, FaceColour> faceColourDict;
 
         public InputColours(Stage currentStage)
         {
@@ -21,24 +18,9 @@ namespace Rubiks_Cube_Solver
             this.ApplyDefaultFormSettings();
 
             stage = currentStage;
-            faceColourDict = InitialiseFaceColourDict();
         }
 
-        private ImmutableDictionary<Face, FaceColour> InitialiseFaceColourDict()
-        {
-            var dictBuilder = ImmutableDictionary.CreateBuilder<Face, FaceColour>();
-
-            dictBuilder[whiteFace] = FaceColour.White;
-            dictBuilder[yellowFace] = FaceColour.Yellow;
-            dictBuilder[greenFace] = FaceColour.Green;
-            dictBuilder[blueFace] = FaceColour.Blue;
-            dictBuilder[redFace] = FaceColour.Red;
-            dictBuilder[orangeFace] = FaceColour.Orange;
-
-            return dictBuilder.ToImmutable();
-        }
-
-        private void Solver_Input_Colours_Load(object sender, EventArgs e)
+        private void InputColours_Load(object sender, EventArgs e)
         {
             PopulateCubeNet();
             lblInstructions.Text = GetInstructions();
@@ -49,22 +31,16 @@ namespace Rubiks_Cube_Solver
         {
             // adding the cells to the face and colouring the centre cell
             for (int i = 0; i < 3; i++)
-            {
                 face.Rows.Add("", "", "");
-            }
-            face[1, 1].Style.BackColor = faceColourDict[face].ToColor();
+            face[1, 1].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
             face.ClearSelection(); //un-highlighting buttons
         }
 
-        private void PopulateCubeNet()
-        {
-            //populating each face of the cube
-            foreach(KeyValuePair<Face, FaceColour> entry in faceColourDict)
-                PopulateCubeFace(entry.Key);
-        }
+        private void PopulateCubeNet() =>
+            Array.ForEach([whiteFace, yellowFace, greenFace, blueFace, redFace, orangeFace], PopulateCubeFace);
 
         private string GetInstructions() =>
-            $"Input the position of the {stage.GetInputColour()} square on the {stage.GetRequiredPiece()}";
+            $"Input the position of the {stage.GetInputColour().ToString().ToLower()} square on the {stage.GetRequiredPiece()}";
 
         private void HandleCellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -79,7 +55,7 @@ namespace Rubiks_Cube_Solver
             {
                 selectedCell?.Style.BackColor = Color.Silver; // un-colouring the previous cell
                 //colouring the new cell
-                selectedCellLocation = new CubeNetCellLocation(cellCoords, faceColourDict[face]);
+                selectedCellLocation = new CubeNetCellLocation(cellCoords, FaceColourExtension.FromFaceName(face.Name));
                 selectedCell = face.Rows[cellCoords.row].Cells[cellCoords.col];
                 selectedCell.Style.BackColor = stage.GetInputColour().ToColor();
                 btnFinish.Visible = true;

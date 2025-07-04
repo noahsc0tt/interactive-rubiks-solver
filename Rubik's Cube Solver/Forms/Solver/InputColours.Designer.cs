@@ -1031,7 +1031,7 @@
             this.Name = "InputColours";
             this.Text = "Input Colours";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Solver_Input_Colours_Load);
+            this.Load += new System.EventHandler(this.InputColours_Load);
             ((System.ComponentModel.ISupportInitialize)(this.orangeFace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.redFace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.greenFace)).EndInit();

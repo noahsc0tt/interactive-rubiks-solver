@@ -24,6 +24,9 @@ namespace Rubiks_Cube_Solver
         }
 
         public (int Step, int SubStep) GetStage() => (Step, SubStep);
+        
+        public string GetName() => 
+            Step == 3 ? GetStepName() : $"{GetStepName()} - {GetRequiredPiece()}";
 
         private string GetStepName() => Step switch
         {
@@ -46,8 +49,6 @@ namespace Rubiks_Cube_Solver
             2 => $"{GetColourPair()} edge",
             _ => throw new InvalidOperationException("The last layer steps do not have required pieces")
         };
-
-        public string GetName() => Step == 3 ? GetStepName() : $"{GetStepName()} - {GetRequiredPiece()}";
 
         //helper method for GetRequiredPiece
         private string GetColourPair() => SubStep switch
