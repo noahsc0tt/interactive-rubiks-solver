@@ -60,8 +60,6 @@ namespace Rubiks_Cube_Solver
             blueFace[0, 2].Style.BackColor = Color.Blue;
             redFace[2, 2].Style.BackColor = Color.Red;
             yellowFace[2, 2].Style.BackColor = Color.Yellow;
-
-            
         }
 
         public void ColourMiddleEdges()
@@ -77,14 +75,10 @@ namespace Rubiks_Cube_Solver
             blueFace[0, 1].Style.BackColor = Color.Blue;
         }
 
-        private void PopulateDataGrids()
+        private void ColourCubeNet()
         {
-            //populating the cube net and setting the colour of the centre pieces
-
             PopulateCubeNet();
-
-            //colouring the net based on the stage
-
+            
             if (stage.Step == 1) //yellow edges
             {
                 if (stage.SubStep >= 1) //yellow and green edge
@@ -206,7 +200,6 @@ namespace Rubiks_Cube_Solver
             }
         }
 
-
         private void Checking_Moves_Load(object sender, EventArgs e)
         {
             //changing the text of the 'Next Stage' button if the user has completed the solve
@@ -215,10 +208,8 @@ namespace Rubiks_Cube_Solver
                 btnNextStage.Visible = false;
                 lblButtonInstructions.Text = "If your cube is fully solved, congratulations! Click the 'Menu' button to return to the menu.\r\n\r\nIf your cube is not solved, choose a stage to go back to in the 'Choose Stage' drop-down list.";
             }
-            PopulateDataGrids();
+            ColourCubeNet();
         }
-
-
 
         private void btnMenu_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<Menu>(this);
@@ -226,87 +217,33 @@ namespace Rubiks_Cube_Solver
         private void btnNextStage_Click(object sender, EventArgs e)
         {
             stage.Increment();
-
             if (stage.Step == 4)
             {
-                if (stage.SubStep == 1)
+                switch (stage.SubStep)
                 {
-                    FormNavigator.Navigate<TopLayerEdges>(this);
-
-                }
-                else if (stage.SubStep == 2)
-                {
-                    FormNavigator.Navigate<TopLayerCorners>(this);
-
-                }
-                else if (stage.SubStep == 3)
-                {
-                    FormNavigator.Navigate<PermutingCorners>(this);
-
-                }
-                else if (stage.SubStep == 4)
-                {
-                    FormNavigator.Navigate<PermutingEdges>(this);
+                    case 0: FormNavigator.Navigate<TopLayerEdges>(this); break;
+                    case 1: FormNavigator.Navigate<TopLayerCorners>(this); break;
+                    case 2: FormNavigator.Navigate<PermutingCorners>(this); break;
+                    case 3: FormNavigator.Navigate<PermutingEdges>(this); break;
                 }
             }
             else
-            {
-                //opening the 'Input Colours' form
-                FormNavigator.Navigate<InputColours>(this);
-
-            }
-            
+                FormNavigator.Navigate<InputColours>(this, stage);
         }
 
         private void boxChooseStage_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            //setting the stage value and opening the correct form based on user input on the drop-down list
-
-            if ((string)boxChooseStage.SelectedItem == "Yellow Edges")
+            (int step, int subStep) = (string)boxChooseStage.SelectedItem switch
             {
-                stage = new Stage(1,1);
-
-                FormNavigator.Navigate<InputColours>(this);
-                
-            }
-            if ((string)boxChooseStage.SelectedItem == "Yellow Corners")
-            {
-                stage = new Stage(2,1);
-
-                FormNavigator.Navigate<InputColours>(this);
-                
-            }
-            if ((string)boxChooseStage.SelectedItem == "Middle Layer Edges")
-            {
-                stage = new Stage(3,1);
-
-                FormNavigator.Navigate<InputColours>(this);
-                
-            }
-            if ((string)boxChooseStage.SelectedItem == "White Edges")
-            {
-                stage = new Stage(4,1);
-
-                FormNavigator.Navigate<TopLayerEdges>(this);
-            }
-            if ((string)boxChooseStage.SelectedItem == "White Corners")
-            {
-                stage = new Stage(4,2);
-
-                FormNavigator.Navigate<TopLayerCorners>(this);
-            }
-            if ((string)boxChooseStage.SelectedItem == "Corner Permutation")
-            {
-                stage = new Stage(4,3);
-
-                FormNavigator.Navigate<TopLayerCorners>(this);
-            }
-            if ((string)boxChooseStage.SelectedItem == "Edge Permutation")
-            {
-                stage = new Stage(4,4);
-
-                FormNavigator.Navigate<TopLayerEdges>(this);
-            }
+                "Yellow Edges" => (0,0),
+                "Yellow Corners" => (1,0),
+                "Middle Layer Edges" => (2,0),
+                "White Edges" => (3,0),
+                "White Corners" => (3,1),
+                "Corner Permutation" => (3,2),
+                "Edge Permutation" => (3,3)
+            };
+            FormNavigator.Navigate<InputColours>(this, new Stage(step, subStep));
         }
     }
 }
