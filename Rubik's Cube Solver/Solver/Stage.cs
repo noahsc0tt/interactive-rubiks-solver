@@ -52,10 +52,10 @@ namespace Rubiks_Cube_Solver
         //helper method for GetRequiredPiece
         private string GetColourPair() => SubStep switch
         {
-            0 => "red and green",
-            1 => "green and orange",
-            2 => "orange and blue",
-            3 => "blue and red",
+            0 => "green and red",
+            1 => "orange and green",
+            2 => "blue and orange",
+            3 => "red and blue",
         };
 
         public FaceColour GetInputColour() => Step switch
@@ -64,9 +64,9 @@ namespace Rubiks_Cube_Solver
             2 => SubStep switch
             {
                 0 => FaceColour.Green,
-                1 => FaceColour.Red,
+                1 => FaceColour.Orange,
                 2 => FaceColour.Blue,
-                3 => FaceColour.Orange
+                3 => FaceColour.Red
             },
             _ => throw new InvalidOperationException("Last layer stages have no input")
         };
