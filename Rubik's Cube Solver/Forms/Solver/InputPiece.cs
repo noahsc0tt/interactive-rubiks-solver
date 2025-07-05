@@ -5,14 +5,14 @@ using System.Windows.Forms;
 namespace Rubiks_Cube_Solver
 {
     using Face = DataGridView;
-    internal partial class InputColours : Form
+    internal partial class InputPiece : Form
     {
         private static readonly (int, int) centrePieceCellCoords = (1, 1);
         private readonly Stage stage;
         private CubeNetCellLocation selectedCellLocation;
         private DataGridViewCell selectedCell;
 
-        public InputColours(Stage currentStage)
+        public InputPiece(Stage currentStage)
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();

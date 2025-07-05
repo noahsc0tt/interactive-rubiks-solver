@@ -18,6 +18,5 @@ namespace Rubiks_Cube_Solver
 
         private void btnFinish_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<CheckingMoves>(this, stage);
-
     }
 }

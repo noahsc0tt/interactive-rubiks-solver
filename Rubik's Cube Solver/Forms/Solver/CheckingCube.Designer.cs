@@ -1,6 +1,6 @@
 ﻿namespace Rubiks_Cube_Solver
 {
-    partial class CheckingMoves
+    partial class CheckingCube
     {
         /// <summary>
         /// Required designer variable.

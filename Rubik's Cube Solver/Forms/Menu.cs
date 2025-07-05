@@ -12,7 +12,7 @@ namespace Rubiks_Cube_Solver
         }
 
         private void btnSolver_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<InputColours>(this, new Stage());
+            FormNavigator.Navigate<InputPiece>(this, new Stage());
         
         private void btnTimer_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<BeforeSolve>(this, "N/A");
