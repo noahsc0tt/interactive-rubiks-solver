@@ -23,7 +23,7 @@ namespace Rubiks_Cube_Solver
                     nextMove = GetMove();
                     nextFace = nextMove[0];
                 }
-                while (nextFace == lastTwoFaces.Item1 || nextFace == lastTwoFaces.Item2); 
+                while (nextFace == lastTwoFaces.Item1 || nextFace == lastTwoFaces.Item2);
 
                 moves[i] = nextMove;
                 lastTwoFaces = (lastTwoFaces.Item2, nextFace);
@@ -31,8 +31,8 @@ namespace Rubiks_Cube_Solver
             return string.Join(", ", moves);
         }
 
-        private static string GetMove() => 
+        private static string GetMove() =>
             faces[random.Next(faces.Length)] + suffixes[random.Next(suffixes.Length)];
-        
+
     }
 }
