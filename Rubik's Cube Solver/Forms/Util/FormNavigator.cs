@@ -10,7 +10,7 @@ namespace Rubiks_Cube_Solver.Forms.Util
             Form newForm = (Form)Activator.CreateInstance(typeof(T), args);
             newForm.Show();
 
-            if (currentForm is Rubiks_Cube_Solver.Forms.Menu)
+            if (currentForm is Menu)
                 currentForm.Hide();
             else
                 currentForm.Close();
