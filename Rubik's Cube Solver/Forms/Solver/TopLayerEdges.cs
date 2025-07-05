@@ -5,6 +5,8 @@ namespace Rubiks_Cube_Solver
 {
     public partial class TopLayerEdges : Form
     {
+        private static readonly Stage stage = new(3, 0);
+
         public TopLayerEdges()
         {
             InitializeComponent();
@@ -15,7 +17,7 @@ namespace Rubiks_Cube_Solver
             FormNavigator.Navigate<Menu>(this);
 
         private void btnFinish_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<CheckingMoves>(this, new Stage(3,0));
+            FormNavigator.Navigate<CheckingMoves>(this, stage);
 
     }
 }

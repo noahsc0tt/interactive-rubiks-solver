@@ -5,6 +5,8 @@ namespace Rubiks_Cube_Solver
 {
     public partial class PermutingEdges : Form
     {
+        private static readonly Stage stage = new(3, 2);
+
         public PermutingEdges()
         {
             InitializeComponent();
@@ -15,6 +17,6 @@ namespace Rubiks_Cube_Solver
             FormNavigator.Navigate<Menu>(this);
 
         private void btnFinish_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<CheckingMoves>(this, new Stage(3,3));
+            FormNavigator.Navigate<CheckingMoves>(this, stage);
     }
 }
