@@ -219,7 +219,18 @@ namespace Rubiks_Cube_Solver
                 "Corner Permutation" => (3,2),
                 "Edge Permutation" => (3,3)
             };
-            FormNavigator.Navigate<InputColours>(this, new Stage(step, subStep));
+            if (step == 3)
+            {
+                switch (subStep)
+                {
+                    case 0: FormNavigator.Navigate<TopLayerEdges>(this); break;
+                    case 1: FormNavigator.Navigate<TopLayerCorners>(this); break;
+                    case 2: FormNavigator.Navigate<PermutingCorners>(this); break;
+                    case 3: FormNavigator.Navigate<PermutingEdges>(this); break;
+                }
+            }
+            else
+                FormNavigator.Navigate<InputColours>(this, new Stage(step, subStep));
         }
     }
 }
