@@ -56,7 +56,7 @@ namespace Rubiks_Cube_Solver
                 selectedCell?.Style.BackColor = Color.Silver; // un-colouring the previous cell
                 //colouring the new cell
                 selectedCellLocation = new CubeNetCellLocation(cellCoords, FaceColourExtension.FromFaceName(face.Name));
-                selectedCell = face.Rows[cellCoords.row].Cells[cellCoords.col];
+                selectedCell = face[cellCoords.col, cellCoords.row];
                 selectedCell.Style.BackColor = stage.GetInputColour().ToColor();
                 btnFinish.Visible = true;
             }

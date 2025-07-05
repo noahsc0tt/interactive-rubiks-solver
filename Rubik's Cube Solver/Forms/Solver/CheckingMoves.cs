@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -19,6 +17,17 @@ namespace Rubiks_Cube_Solver
 
             stage = currentStage;
         }
+        private void Checking_Moves_Load(object sender, EventArgs e)
+        {
+            ColourCubeNet();
+
+            //changing the text of the 'Next Stage' button if the user has completed the solve
+            if (stage.GetStage() == (3,3))
+            {
+                btnNextStage.Visible = false;
+                lblButtonInstructions.Text = "If your cube is fully solved, congratulations! Click the 'Menu' button to return to the menu.\r\n\r\nIf your cube is not solved, choose a stage to go back to in the 'Choose Stage' drop-down list.";
+            }
+        }
 
         private void PopulateCubeFace(Face face)
         {
@@ -33,79 +42,79 @@ namespace Rubiks_Cube_Solver
             Array.ForEach([whiteFace, yellowFace, greenFace, blueFace, redFace, orangeFace], PopulateCubeFace);
 
 
-        public void ColourYellowEdges(int subStep)
+        private void ColourYellowEdges(int subStep)
         {
             if (subStep >= 0)
             {
-                greenFace[1, 2].Style.BackColor = Color.Green;
-                yellowFace[1, 0].Style.BackColor = Color.Yellow;
+                ColourCell(greenFace, (1, 2), Color.Green);
+                ColourCell(yellowFace, (1, 0), Color.Yellow);
             }
             if (subStep >= 1)
             {
-                orangeFace[1, 2].Style.BackColor = Color.Orange;
-                yellowFace[0, 1].Style.BackColor = Color.Yellow;
+                ColourCell(orangeFace, (1, 2), Color.Orange);
+                ColourCell(yellowFace, (0, 1), Color.Yellow);
             }
             if (subStep >= 2)
             {
-                blueFace[1, 2].Style.BackColor = Color.Blue;
-                yellowFace[1, 2].Style.BackColor = Color.Yellow;
+                ColourCell(blueFace, (1, 2), Color.Blue);
+                ColourCell(yellowFace, (1, 2), Color.Yellow);
             }
             if (subStep == 3)
             {
-                redFace[1, 2].Style.BackColor = Color.Red;
-                yellowFace[2, 1].Style.BackColor = Color.Yellow;
+                ColourCell(redFace, (1, 2), Color.Red);
+                ColourCell(yellowFace, (2, 1), Color.Yellow);
             }
         }
 
-        public void ColourYellowCorners(int subStep)
+        private void ColourYellowCorners(int subStep)
         {
             if (subStep >= 0)
             {
-                redFace[0, 2].Style.BackColor = Color.Red;
-                greenFace[2, 2].Style.BackColor = Color.Green;
-                yellowFace[2, 0].Style.BackColor = Color.Yellow;
+                ColourCell(redFace, (0, 2), Color.Red);
+                ColourCell(greenFace, (2, 2), Color.Green);
+                ColourCell(yellowFace, (2, 0), Color.Yellow);
             }
             if (subStep >= 1)
             {
-                greenFace[0, 2].Style.BackColor = Color.Green;
-                orangeFace[2, 2].Style.BackColor = Color.Orange;
-                yellowFace[0, 0].Style.BackColor = Color.Yellow;
+                ColourCell(greenFace, (0, 2), Color.Green);
+                ColourCell(orangeFace, (2, 2), Color.Orange);
+                ColourCell(yellowFace, (0, 0), Color.Yellow);
             }
             if (subStep >= 2)
             {
-                orangeFace[0, 2].Style.BackColor = Color.Orange;
-                blueFace[2, 2].Style.BackColor = Color.Blue;
-                yellowFace[0, 2].Style.BackColor = Color.Yellow;
+                ColourCell(orangeFace, (0, 2), Color.Orange);
+                ColourCell(blueFace, (2, 2), Color.Blue);
+                ColourCell(yellowFace, (0, 2), Color.Yellow);
             }
             if (subStep == 3)
             {
-                blueFace[0, 2].Style.BackColor = Color.Blue;
-                redFace[2, 2].Style.BackColor = Color.Red;
-                yellowFace[2, 2].Style.BackColor = Color.Yellow;
+                ColourCell(blueFace, (0, 2), Color.Blue);
+                ColourCell(redFace, (2, 2), Color.Red);
+                ColourCell(yellowFace, (2, 2), Color.Yellow);
             }
         }
 
-        public void ColourMiddleLayerEdges(int subStep)
+        private void ColourMiddleLayerEdges(int subStep)
         {
             if (subStep >= 0)
             {
-                redFace[0, 1].Style.BackColor = Color.Red;
-                greenFace[2, 1].Style.BackColor = Color.Green;
+                ColourCell(redFace, (0, 1), Color.Red);
+                ColourCell(greenFace, (2, 1), Color.Green);
             }
             if (subStep >= 1)
             {
-                greenFace[0, 1].Style.BackColor = Color.Green;
-                orangeFace[2, 1].Style.BackColor = Color.Orange;
+                ColourCell(greenFace, (0, 1), Color.Green);
+                ColourCell(orangeFace, (2, 1), Color.Orange);
             }
             if (subStep >= 2)
             {
-                orangeFace[0, 1].Style.BackColor = Color.Orange;
-                blueFace[2, 1].Style.BackColor = Color.Blue;
+                ColourCell(orangeFace, (0, 1), Color.Orange);
+                ColourCell(blueFace, (2, 1), Color.Blue);
             }
             if (subStep == 3)
             {
-                blueFace[0, 1].Style.BackColor = Color.Blue;
-                redFace[2, 1].Style.BackColor = Color.Red;
+                ColourCell(blueFace, (0, 1), Color.Blue);
+                ColourCell(redFace, (2, 1), Color.Red);
             }
         }
 
@@ -113,36 +122,36 @@ namespace Rubiks_Cube_Solver
         {
             if (stage.SubStep >= 1) // white edges
             {
-                whiteFace[0, 1].Style.BackColor = Color.White;
-                whiteFace[1, 0].Style.BackColor = Color.White;
-                whiteFace[2, 1].Style.BackColor = Color.White;
-                whiteFace[1, 2].Style.BackColor = Color.White;
+                ColourCell(whiteFace, (0, 1), Color.White);
+                ColourCell(whiteFace, (1, 0), Color.White);
+                ColourCell(whiteFace, (2, 1), Color.White);
+                ColourCell(whiteFace, (1, 2), Color.White);
             }
             if (stage.SubStep >= 2) // white corners
             {
-                whiteFace[0, 0].Style.BackColor = Color.White;
-                whiteFace[2, 0].Style.BackColor = Color.White;
-                whiteFace[0, 2].Style.BackColor = Color.White;
-                whiteFace[2, 2].Style.BackColor = Color.White;
+                ColourCell(whiteFace, (0, 0), Color.White);
+                ColourCell(whiteFace, (2, 0), Color.White);
+                ColourCell(whiteFace, (0, 2), Color.White);
+                ColourCell(whiteFace, (2, 2), Color.White);
             }
             if (stage.SubStep >= 3) // permuting corners
             {
-                greenFace[0, 0].Style.BackColor = Color.Green;
-                greenFace[2, 0].Style.BackColor = Color.Green;
-                orangeFace[0, 0].Style.BackColor = Color.Orange;
-                orangeFace[2, 0].Style.BackColor = Color.Orange;
-                blueFace[0, 0].Style.BackColor = Color.Blue;
-                blueFace[2, 0].Style.BackColor = Color.Blue;
-                redFace[0, 0].Style.BackColor = Color.Red;
-                redFace[2, 0].Style.BackColor = Color.Red;
+                ColourCell(greenFace, (0, 0), Color.Green);
+                ColourCell(greenFace, (2, 0), Color.Green);
+                ColourCell(orangeFace, (0, 0), Color.Orange);
+                ColourCell(orangeFace, (2, 0), Color.Orange);
+                ColourCell(blueFace, (0, 0), Color.Blue);
+                ColourCell(blueFace, (2, 0), Color.Blue);
+                ColourCell(redFace, (0, 0), Color.Red);
+                ColourCell(redFace, (2, 0), Color.Red);
 
             }
             if (stage.SubStep == 4) // permuting edges
             {
-                greenFace[1, 0].Style.BackColor = Color.Green;
-                orangeFace[1, 0].Style.BackColor = Color.Orange;
-                blueFace[1, 0].Style.BackColor = Color.Blue;
-                redFace[1, 0].Style.BackColor = Color.Red;
+                ColourCell(greenFace, (1, 0), Color.Green);
+                ColourCell(orangeFace, (1, 0), Color.Orange);
+                ColourCell(blueFace, (1, 0), Color.Blue);
+                ColourCell(redFace, (1, 0), Color.Red);
             }
         }
 
@@ -174,17 +183,8 @@ namespace Rubiks_Cube_Solver
             };
         }
 
-        private void Checking_Moves_Load(object sender, EventArgs e)
-        {
-            ColourCubeNet();
-
-            //changing the text of the 'Next Stage' button if the user has completed the solve
-            if (stage.GetStage() == (3,3))
-            {
-                btnNextStage.Visible = false;
-                lblButtonInstructions.Text = "If your cube is fully solved, congratulations! Click the 'Menu' button to return to the menu.\r\n\r\nIf your cube is not solved, choose a stage to go back to in the 'Choose Stage' drop-down list.";
-            }
-        }
+        private void ColourCell(Face face, (int x, int y) location, Color colour) =>
+            face[location.x, location.y].Style.BackColor = colour;
 
         private void btnMenu_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<Menu>(this);
