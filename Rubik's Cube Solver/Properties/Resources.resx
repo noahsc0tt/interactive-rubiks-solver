@@ -118,26 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tle edited" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="white edges" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tle edited.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="oriented corner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\oriented corner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="edge piece" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="permuted corners" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="completed permuted corners" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\permuted corners.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="corner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="corner piece" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\corner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Notation 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Notation 2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Notation 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Notation 1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pll bar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pll bar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,16 +142,16 @@
   <data name="Notation 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Notation 3.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Notation 1 NEW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Notation 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Notation 1 NEW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="headlights" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\headlights.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="completed oll" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="completed white layer corners" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\completed oll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="centre" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="centre piece" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\centre.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

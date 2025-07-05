@@ -8,7 +8,7 @@ namespace Rubiks_Cube_Solver
 
     internal partial class CheckingCube : Form
     {
-        private Stage stage;
+        private readonly Stage stage;
         private const int maxSubStep = 3;
 
         public CheckingCube(Stage currentStage)
@@ -121,21 +121,21 @@ namespace Rubiks_Cube_Solver
 
         private void ColourLastLayer(int subStep)
         {
-            if (stage.SubStep >= 0) // white edges
+            if (subStep >= 0) // white edges
             {
                 ColourCell(whiteFace, (0, 1));
                 ColourCell(whiteFace, (1, 0));
                 ColourCell(whiteFace, (2, 1));
                 ColourCell(whiteFace, (1, 2));
             }
-            if (stage.SubStep >= 1) // white corners
+            if (subStep >= 1) // white corners
             {
                 ColourCell(whiteFace, (0, 0));
                 ColourCell(whiteFace, (2, 0));
                 ColourCell(whiteFace, (0, 2));
                 ColourCell(whiteFace, (2, 2));
             }
-            if (stage.SubStep >= 2) // permuting corners
+            if (subStep >= 2) // permuting corners
             {
                 ColourCell(greenFace, (0, 0));
                 ColourCell(greenFace, (2, 0));
@@ -147,7 +147,7 @@ namespace Rubiks_Cube_Solver
                 ColourCell(redFace, (2, 0));
 
             }
-            if (stage.SubStep == 3) // permuting edges
+            if (subStep == 3) // permuting edges
             {
                 ColourCell(greenFace, (1, 0));
                 ColourCell(orangeFace, (1, 0));

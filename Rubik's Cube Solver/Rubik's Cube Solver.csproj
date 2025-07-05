@@ -97,6 +97,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Timer\Forms\BeforeSolve.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,16 +149,16 @@
     <Compile Include="Solver\Forms\OutputSolution.Designer.cs">
       <DependentUpon>OutputSolution.cs</DependentUpon>
     </Compile>
-    <Compile Include="Solver\Forms\PermutingCorners.cs">
+    <Compile Include="Solver\Forms\Last Layer\PermutingCorners.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Solver\Forms\PermutingCorners.Designer.cs">
+    <Compile Include="Solver\Forms\Last Layer\PermutingCorners.Designer.cs">
       <DependentUpon>PermutingCorners.cs</DependentUpon>
     </Compile>
-    <Compile Include="Solver\Forms\PermutingEdges.cs">
+    <Compile Include="Solver\Forms\Last Layer\PermutingEdges.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Solver\Forms\PermutingEdges.Designer.cs">
+    <Compile Include="Solver\Forms\Last Layer\PermutingEdges.Designer.cs">
       <DependentUpon>PermutingEdges.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -164,16 +169,16 @@
     <Compile Include="Solver\Forms\InputPiece.Designer.cs">
       <DependentUpon>InputPiece.cs</DependentUpon>
     </Compile>
-    <Compile Include="Solver\Forms\WhiteCorners.cs">
+    <Compile Include="Solver\Forms\Last Layer\WhiteCorners.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Solver\Forms\WhiteCorners.Designer.cs">
+    <Compile Include="Solver\Forms\Last Layer\WhiteCorners.Designer.cs">
       <DependentUpon>WhiteCorners.cs</DependentUpon>
     </Compile>
-    <Compile Include="Solver\Forms\WhiteEdges.cs">
+    <Compile Include="Solver\Forms\Last Layer\WhiteEdges.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Solver\Forms\WhiteEdges.Designer.cs">
+    <Compile Include="Solver\Forms\Last Layer\WhiteEdges.Designer.cs">
       <DependentUpon>WhiteEdges.cs</DependentUpon>
     </Compile>
     <Compile Include="Timer\Util\Scrambler.cs" />
@@ -195,25 +200,25 @@
     <EmbeddedResource Include="Solver\Forms\OutputSolution.resx">
       <DependentUpon>OutputSolution.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Solver\Forms\PermutingCorners.resx">
+    <EmbeddedResource Include="Solver\Forms\Last Layer\PermutingCorners.resx">
       <DependentUpon>PermutingCorners.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Solver\Forms\PermutingEdges.resx">
+    <EmbeddedResource Include="Solver\Forms\Last Layer\PermutingEdges.resx">
       <DependentUpon>PermutingEdges.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Rubiks_Cube_Solver.Properties</CustomToolNamespace>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Solver\Forms\InputPiece.resx">
       <DependentUpon>InputPiece.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Solver\Forms\WhiteCorners.resx">
+    <EmbeddedResource Include="Solver\Forms\Last Layer\WhiteCorners.resx">
       <DependentUpon>WhiteCorners.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Solver\Forms\WhiteEdges.resx">
+    <EmbeddedResource Include="Solver\Forms\Last Layer\WhiteEdges.resx">
       <DependentUpon>WhiteEdges.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
@@ -222,11 +227,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -234,7 +234,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Notation 1.PNG" />
     <None Include="Resources\Notation 2.PNG" />
     <None Include="Resources\Notation 3.PNG" />
     <None Include="Resources\tle edited.png" />

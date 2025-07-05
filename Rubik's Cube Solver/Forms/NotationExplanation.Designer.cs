@@ -166,7 +166,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Image = global::Rubiks_Cube_Solver.Properties.Resources.edge;
+            this.pictureBox6.Image = global::Rubiks_Cube_Solver.Properties.Resources.edge_piece;
             this.pictureBox6.Location = new System.Drawing.Point(249, 480);
             this.pictureBox6.MaximumSize = new System.Drawing.Size(149, 137);
             this.pictureBox6.MinimumSize = new System.Drawing.Size(149, 137);
@@ -183,7 +183,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Image = global::Rubiks_Cube_Solver.Properties.Resources.centre;
+            this.pictureBox5.Image = global::Rubiks_Cube_Solver.Properties.Resources.centre_piece;
             this.pictureBox5.Location = new System.Drawing.Point(249, 688);
             this.pictureBox5.MaximumSize = new System.Drawing.Size(149, 137);
             this.pictureBox5.MinimumSize = new System.Drawing.Size(149, 137);
@@ -200,7 +200,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Image = global::Rubiks_Cube_Solver.Properties.Resources.corner;
+            this.pictureBox4.Image = global::Rubiks_Cube_Solver.Properties.Resources.corner_piece;
             this.pictureBox4.Location = new System.Drawing.Point(249, 277);
             this.pictureBox4.MaximumSize = new System.Drawing.Size(149, 137);
             this.pictureBox4.MinimumSize = new System.Drawing.Size(149, 137);
@@ -249,7 +249,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::Rubiks_Cube_Solver.Properties.Resources.Notation_1_NEW;
+            this.pictureBox1.Image = global::Rubiks_Cube_Solver.Properties.Resources.Notation_1;
             this.pictureBox1.Location = new System.Drawing.Point(668, 172);
             this.pictureBox1.MaximumSize = new System.Drawing.Size(765, 169);
             this.pictureBox1.MinimumSize = new System.Drawing.Size(765, 169);
