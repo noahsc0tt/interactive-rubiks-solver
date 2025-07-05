@@ -11,14 +11,10 @@ namespace Rubiks_Cube_Solver
             this.ApplyDefaultFormSettings();
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
+        private void btnMenu_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<Menu>(this);
-        }
 
-        private void btnFinish_Click(object sender, EventArgs e)
-        {
-            FormNavigator.Navigate<CheckingMoves>(this);
-        }
+        private void btnFinish_Click(object sender, EventArgs e) =>
+            FormNavigator.Navigate<CheckingMoves>(this, new Stage(3,3));
     }
 }

@@ -17,12 +17,16 @@ namespace Rubiks_Cube_Solver
             for (int i = 0; i < length; i++)
             {
                 string nextMove;
+                char nextFace;
                 do //making sure three consecutive moves are on different faces
+                {
                     nextMove = GetMove();
-                while (nextMove[0] == lastTwoFaces.Item1 || nextMove[0] == lastTwoFaces.Item2); 
+                    nextFace = nextMove[0];
+                }
+                while (nextFace == lastTwoFaces.Item1 || nextFace == lastTwoFaces.Item2); 
 
                 moves[i] = nextMove;
-                lastTwoFaces = (lastTwoFaces.Item2, nextMove[0]);
+                lastTwoFaces = (lastTwoFaces.Item2, nextFace);
             }
             return string.Join(", ", moves);
         }
