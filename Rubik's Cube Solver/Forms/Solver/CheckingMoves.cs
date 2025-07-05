@@ -121,21 +121,21 @@ namespace Rubiks_Cube_Solver
 
         private void ColourLastLayer(int subStep)
         {
-            if (stage.SubStep >= 1) // white edges
+            if (stage.SubStep >= 0) // white edges
             {
                 ColourCell(whiteFace, (0, 1));
                 ColourCell(whiteFace, (1, 0));
                 ColourCell(whiteFace, (2, 1));
                 ColourCell(whiteFace, (1, 2));
             }
-            if (stage.SubStep >= 2) // white corners
+            if (stage.SubStep >= 1) // white corners
             {
                 ColourCell(whiteFace, (0, 0));
                 ColourCell(whiteFace, (2, 0));
                 ColourCell(whiteFace, (0, 2));
                 ColourCell(whiteFace, (2, 2));
             }
-            if (stage.SubStep >= 3) // permuting corners
+            if (stage.SubStep >= 2) // permuting corners
             {
                 ColourCell(greenFace, (0, 0));
                 ColourCell(greenFace, (2, 0));
@@ -147,7 +147,7 @@ namespace Rubiks_Cube_Solver
                 ColourCell(redFace, (2, 0));
 
             }
-            if (stage.SubStep == 4) // permuting edges
+            if (stage.SubStep == 3) // permuting edges
             {
                 ColourCell(greenFace, (1, 0));
                 ColourCell(orangeFace, (1, 0));
@@ -177,7 +177,7 @@ namespace Rubiks_Cube_Solver
                 case 3:
                     ColourYellowEdges(maxSubStep);
                     ColourYellowCorners(maxSubStep);
-                    ColourMiddleLayerEdges(stage.SubStep);
+                    ColourMiddleLayerEdges(maxSubStep);
                     ColourLastLayer(stage.SubStep);
                     break;
 
@@ -220,7 +220,6 @@ namespace Rubiks_Cube_Solver
                 "Edge Permutation" => (3,3)
             };
             if (step == 3)
-            {
                 switch (subStep)
                 {
                     case 0: FormNavigator.Navigate<TopLayerEdges>(this); break;
@@ -228,7 +227,6 @@ namespace Rubiks_Cube_Solver
                     case 2: FormNavigator.Navigate<PermutingCorners>(this); break;
                     case 3: FormNavigator.Navigate<PermutingEdges>(this); break;
                 }
-            }
             else
                 FormNavigator.Navigate<InputColours>(this, new Stage(step, subStep));
         }
