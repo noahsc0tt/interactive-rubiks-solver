@@ -67,6 +67,6 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             FormNavigator.Navigate<CheckingCube>(this, stage);
 
         private void btnMenu_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<Rubiks_Cube_Solver.Forms.Menu>(this);
+            FormNavigator.Menu(this);
     }
 }

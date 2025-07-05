@@ -64,7 +64,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
         }
 
         private void btnMenu_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<Rubiks_Cube_Solver.Forms.Menu>(this);
+            FormNavigator.Menu(this);
 
         private void btnFinish_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<OutputSolution>(this, stage, selectedCellLocation);

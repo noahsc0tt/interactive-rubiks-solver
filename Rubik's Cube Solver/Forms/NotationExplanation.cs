@@ -13,6 +13,6 @@ namespace Rubiks_Cube_Solver.Forms
         }
 
         private void btnMenu_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<Menu>(this);
+            FormNavigator.Menu(this);
     }
 }

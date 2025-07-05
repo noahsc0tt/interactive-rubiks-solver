@@ -189,7 +189,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             face[location.x, location.y].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
 
         private void btnMenu_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<Rubiks_Cube_Solver.Forms.Menu>(this);
+            FormNavigator.Menu(this);
 
         private void btnNextStage_Click(object sender, EventArgs e)
         {
