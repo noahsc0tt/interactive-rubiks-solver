@@ -6,12 +6,12 @@ namespace Rubiks_Cube_Solver
 {
     using Face = DataGridView;
 
-    internal partial class CheckingMoves : Form
+    internal partial class CheckingCube : Form
     {
         private Stage stage;
         private const int maxSubStep = 3;
 
-        public CheckingMoves(Stage currentStage)
+        public CheckingCube(Stage currentStage)
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
@@ -197,14 +197,14 @@ namespace Rubiks_Cube_Solver
             {
                 switch (stage.SubStep)
                 {
-                    case 0: FormNavigator.Navigate<TopLayerEdges>(this); break;
-                    case 1: FormNavigator.Navigate<TopLayerCorners>(this); break;
+                    case 0: FormNavigator.Navigate<WhiteEdges>(this); break;
+                    case 1: FormNavigator.Navigate<WhiteCorners>(this); break;
                     case 2: FormNavigator.Navigate<PermutingCorners>(this); break;
                     case 3: FormNavigator.Navigate<PermutingEdges>(this); break;
                 }
             }
             else
-                FormNavigator.Navigate<InputColours>(this, stage);
+                FormNavigator.Navigate<InputPiece>(this, stage);
         }
 
         private void boxChooseStage_SelectionChangeCommitted(object sender, EventArgs e)
@@ -222,13 +222,13 @@ namespace Rubiks_Cube_Solver
             if (step == 3)
                 switch (subStep)
                 {
-                    case 0: FormNavigator.Navigate<TopLayerEdges>(this); break;
-                    case 1: FormNavigator.Navigate<TopLayerCorners>(this); break;
+                    case 0: FormNavigator.Navigate<WhiteEdges>(this); break;
+                    case 1: FormNavigator.Navigate<WhiteCorners>(this); break;
                     case 2: FormNavigator.Navigate<PermutingCorners>(this); break;
                     case 3: FormNavigator.Navigate<PermutingEdges>(this); break;
                 }
             else
-                FormNavigator.Navigate<InputColours>(this, new Stage(step, subStep));
+                FormNavigator.Navigate<InputPiece>(this, new Stage(step, subStep));
         }
     }
 }

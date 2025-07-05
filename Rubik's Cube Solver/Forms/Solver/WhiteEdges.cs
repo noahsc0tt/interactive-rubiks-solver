@@ -3,11 +3,11 @@ using System.Windows.Forms;
 
 namespace Rubiks_Cube_Solver
 {
-    public partial class TopLayerEdges : Form
+    public partial class WhiteEdges : Form
     {
         private static readonly Stage stage = new(3, 0);
 
-        public TopLayerEdges()
+        public WhiteEdges()
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
@@ -17,6 +17,6 @@ namespace Rubiks_Cube_Solver
             FormNavigator.Navigate<Menu>(this);
 
         private void btnFinish_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<CheckingMoves>(this, stage);
+            FormNavigator.Navigate<CheckingCube>(this, stage);
     }
 }

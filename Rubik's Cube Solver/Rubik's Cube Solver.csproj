@@ -103,11 +103,11 @@
     <Compile Include="Forms\Timer\BeforeSolve.Designer.cs">
       <DependentUpon>BeforeSolve.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Solver\CheckingMoves.cs">
+    <Compile Include="Forms\Solver\CheckingCube.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Solver\CheckingMoves.Designer.cs">
-      <DependentUpon>CheckingMoves.cs</DependentUpon>
+    <Compile Include="Forms\Solver\CheckingCube.Designer.cs">
+      <DependentUpon>CheckingCube.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DefaultFormSettings.cs" />
     <Compile Include="Forms\Timer\DuringSolve.cs">
@@ -158,30 +158,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\Solver\InputColours.cs">
+    <Compile Include="Forms\Solver\InputPiece.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Solver\InputColours.Designer.cs">
-      <DependentUpon>InputColours.cs</DependentUpon>
+    <Compile Include="Forms\Solver\InputPiece.Designer.cs">
+      <DependentUpon>InputPiece.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Solver\TopLayerCorners.cs">
+    <Compile Include="Forms\Solver\WhiteCorners.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Solver\TopLayerCorners.Designer.cs">
-      <DependentUpon>TopLayerCorners.cs</DependentUpon>
+    <Compile Include="Forms\Solver\WhiteCorners.Designer.cs">
+      <DependentUpon>WhiteCorners.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Solver\TopLayerEdges.cs">
+    <Compile Include="Forms\Solver\WhiteEdges.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Solver\TopLayerEdges.Designer.cs">
-      <DependentUpon>TopLayerEdges.cs</DependentUpon>
+    <Compile Include="Forms\Solver\WhiteEdges.Designer.cs">
+      <DependentUpon>WhiteEdges.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\Scrambler.cs" />
     <EmbeddedResource Include="Forms\Timer\BeforeSolve.resx">
       <DependentUpon>BeforeSolve.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Solver\CheckingMoves.resx">
-      <DependentUpon>CheckingMoves.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Solver\CheckingCube.resx">
+      <DependentUpon>CheckingCube.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Timer\DuringSolve.resx">
       <DependentUpon>DuringSolve.cs</DependentUpon>
@@ -207,14 +207,14 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <CustomToolNamespace>Rubiks_Cube_Solver.Properties</CustomToolNamespace>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Solver\InputColours.resx">
-      <DependentUpon>InputColours.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Solver\InputPiece.resx">
+      <DependentUpon>InputPiece.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Solver\TopLayerCorners.resx">
-      <DependentUpon>TopLayerCorners.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Solver\WhiteCorners.resx">
+      <DependentUpon>WhiteCorners.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Solver\TopLayerEdges.resx">
-      <DependentUpon>TopLayerEdges.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Solver\WhiteEdges.resx">
+      <DependentUpon>WhiteEdges.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
