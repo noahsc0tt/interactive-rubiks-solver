@@ -7,7 +7,7 @@ namespace Rubiks_Cube_Solver.Timer.Forms
 {
     public partial class DuringSolve : Form
     {
-        Stopwatch solveTimer = new Stopwatch();
+        private readonly Stopwatch solveTimer = new();
 
         public DuringSolve()
         {
@@ -15,11 +15,8 @@ namespace Rubiks_Cube_Solver.Timer.Forms
             this.ApplyDefaultFormSettings();
         }
         
-        private void DuringSolve_Load(object sender, EventArgs e)
-        {
+        private void DuringSolve_Load(object sender, EventArgs e) =>
             solveTimer.Start();
-        }
-
 
         private void DuringSolve_KeyPress(object sender, KeyPressEventArgs e)
         {            
