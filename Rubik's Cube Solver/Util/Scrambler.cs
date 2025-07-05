@@ -11,23 +11,20 @@ namespace Rubiks_Cube_Solver
 
         public static string GetScramble()
         {
-            string scramble = "";
+            string[] moves = new string[length];
             (char, char) lastTwoFaces = ('\0', '\0');
-            string nextMove;
 
             for (int i = 0; i < length; i++)
             {
+                string nextMove;
                 do //making sure three consecutive moves are on different faces
                     nextMove = GetMove();
                 while (nextMove[0] == lastTwoFaces.Item1 || nextMove[0] == lastTwoFaces.Item2); 
 
-                if (i > 0)
-                    scramble += ", ";
-                scramble += nextMove;
+                moves[i] = nextMove;
                 lastTwoFaces = (lastTwoFaces.Item2, nextMove[0]);
             }
-
-            return scramble;
+            return string.Join(", ", moves);
         }
 
         private static string GetMove() => 
