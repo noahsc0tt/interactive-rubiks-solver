@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Rubiks_Cube_Solver
+namespace Rubiks_Cube_Solver.Forms.Util
 {
     internal static class FormNavigator
     {
@@ -10,7 +10,7 @@ namespace Rubiks_Cube_Solver
             Form newForm = (Form)Activator.CreateInstance(typeof(T), args);
             newForm.Show();
 
-            if (currentForm is Menu)
+            if (currentForm is Rubiks_Cube_Solver.Forms.Menu)
                 currentForm.Hide();
             else
                 currentForm.Close();

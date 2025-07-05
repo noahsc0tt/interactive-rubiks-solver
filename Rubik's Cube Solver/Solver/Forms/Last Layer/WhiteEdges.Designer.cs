@@ -1,4 +1,4 @@
-﻿namespace Rubiks_Cube_Solver
+﻿namespace Rubiks_Cube_Solver.Solver.Forms.LastLayer
 {
     partial class WhiteEdges
     {
@@ -78,7 +78,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::Rubiks_Cube_Solver.Properties.Resources.tle_edited;
+            this.pictureBox1.Image = global::Rubiks_Cube_Solver.Properties.Resources.white_edges;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(343, 626);
             this.pictureBox1.Name = "pictureBox1";

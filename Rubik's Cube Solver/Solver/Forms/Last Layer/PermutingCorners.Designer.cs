@@ -1,4 +1,4 @@
-﻿namespace Rubiks_Cube_Solver
+﻿namespace Rubiks_Cube_Solver.Solver.Forms.LastLayer
 {
     partial class PermutingCorners
     {
@@ -103,7 +103,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::Rubiks_Cube_Solver.Properties.Resources.permuted_corners;
+            this.pictureBox2.Image = global::Rubiks_Cube_Solver.Properties.Resources.completed_permuted_corners;
             this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
             this.pictureBox2.Location = new System.Drawing.Point(843, 260);
             this.pictureBox2.Name = "pictureBox2";

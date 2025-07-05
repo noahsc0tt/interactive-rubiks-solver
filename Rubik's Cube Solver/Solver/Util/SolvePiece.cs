@@ -3,7 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 
-namespace Rubiks_Cube_Solver
+namespace Rubiks_Cube_Solver.Solver.Util
 {
     using Dict = ImmutableDictionary<PieceConfig, PieceSolution>;
     using Entry = KeyValuePair<PieceConfig, PieceSolution>;

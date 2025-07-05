@@ -1,4 +1,4 @@
-﻿namespace Rubiks_Cube_Solver
+﻿namespace Rubiks_Cube_Solver.Solver.Forms
 {
     partial class InputPiece
     {

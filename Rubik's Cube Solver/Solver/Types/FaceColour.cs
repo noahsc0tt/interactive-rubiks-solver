@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace Rubiks_Cube_Solver
+namespace Rubiks_Cube_Solver.Solver
 {
     internal enum FaceColour 
     {

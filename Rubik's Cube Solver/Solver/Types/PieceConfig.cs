@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Rubiks_Cube_Solver
+﻿namespace Rubiks_Cube_Solver.Solver
 {
     internal enum PieceOrientation
     {
@@ -26,7 +24,7 @@ namespace Rubiks_Cube_Solver
         public PieceLocation((int x, int y, int z) location) : this(location.x, location.y, location.z) { }
         public PieceLocation(int x, int y, int z)
         {
-            CoordValidator.ValidateCoords(0, 2, (x, nameof(x)), (y, nameof(y)), (x, nameof(x)));
+            Util.CoordValidator.ValidateCoords(0, 2, (x, nameof(x)), (y, nameof(y)), (x, nameof(x)));
             X = x;
             Y = y;
             Z = z;

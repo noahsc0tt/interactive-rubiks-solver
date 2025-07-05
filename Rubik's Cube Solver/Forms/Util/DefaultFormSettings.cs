@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
 
-namespace Rubiks_Cube_Solver
+namespace Rubiks_Cube_Solver.Forms.Util
 {
     // extension Form class
     internal static class DefaultFormSettings

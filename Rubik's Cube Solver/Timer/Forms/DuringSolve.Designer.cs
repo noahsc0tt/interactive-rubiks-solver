@@ -1,4 +1,4 @@
-﻿namespace Rubiks_Cube_Solver
+﻿namespace Rubiks_Cube_Solver.Timer.Forms
 {
     partial class DuringSolve
     {

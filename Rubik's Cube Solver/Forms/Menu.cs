@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using Rubiks_Cube_Solver.Forms.Util;
 
-namespace Rubiks_Cube_Solver
+namespace Rubiks_Cube_Solver.Forms
 {
     public partial class Menu : Form
     {
@@ -12,10 +13,10 @@ namespace Rubiks_Cube_Solver
         }
 
         private void btnSolver_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<InputPiece>(this, new Stage());
+            FormNavigator.Navigate<Solver.Forms.InputPiece>(this, new Solver.Stage());
         
         private void btnTimer_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<BeforeSolve>(this, "N/A");
+            FormNavigator.Navigate<Timer.Forms.BeforeSolve>(this, "N/A");
 
         private void btnNotation_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<NotationExplanation>(this);

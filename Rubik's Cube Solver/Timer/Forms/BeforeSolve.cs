@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using Rubiks_Cube_Solver.Forms.Util;
 
-namespace Rubiks_Cube_Solver
+namespace Rubiks_Cube_Solver.Timer.Forms
 {
     public partial class BeforeSolve : Form
     {
@@ -28,12 +29,12 @@ namespace Rubiks_Cube_Solver
         private void BeforeSolve_Load(object sender, EventArgs e)
         {
             lblTime.Text = this.previousTime;
-            lblScramble.Text = Scrambler.GetScramble();
+            lblScramble.Text = Util.Scrambler.GetScramble();
         }
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            FormNavigator.Navigate<Menu>(this);
+            FormNavigator.Navigate<Rubiks_Cube_Solver.Forms.Menu>(this);
         }
     }
 }

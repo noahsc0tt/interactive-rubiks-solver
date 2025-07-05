@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
+using Rubiks_Cube_Solver.Forms.Util;
 
-namespace Rubiks_Cube_Solver
+namespace Rubiks_Cube_Solver.Solver.Forms
 {
+    using LastLayer;
     using Face = DataGridView;
 
     internal partial class CheckingCube : Form
@@ -188,7 +189,7 @@ namespace Rubiks_Cube_Solver
             face[location.x, location.y].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
 
         private void btnMenu_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<Menu>(this);
+            FormNavigator.Navigate<Rubiks_Cube_Solver.Forms.Menu>(this);
 
         private void btnNextStage_Click(object sender, EventArgs e)
         {

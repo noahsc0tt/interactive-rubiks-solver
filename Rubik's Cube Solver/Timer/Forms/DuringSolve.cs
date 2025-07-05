@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Diagnostics;
+using Rubiks_Cube_Solver.Forms.Util;
 
-
-namespace Rubiks_Cube_Solver
+namespace Rubiks_Cube_Solver.Timer.Forms
 {
     public partial class DuringSolve : Form
     {

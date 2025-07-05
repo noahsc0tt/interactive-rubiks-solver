@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Rubiks_Cube_Solver
+namespace Rubiks_Cube_Solver.Solver.Util
 {
     internal static class CoordValidator
     {

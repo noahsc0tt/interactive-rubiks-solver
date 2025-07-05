@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
+using Rubiks_Cube_Solver.Forms.Util;
+using Rubiks_Cube_Solver.Solver.Util;
 
-
-namespace Rubiks_Cube_Solver
+namespace Rubiks_Cube_Solver.Solver.Forms
 {
     internal partial class OutputSolution : Form
     {
@@ -66,6 +67,6 @@ namespace Rubiks_Cube_Solver
             FormNavigator.Navigate<CheckingCube>(this, stage);
 
         private void btnMenu_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<Menu>(this);
+            FormNavigator.Navigate<Rubiks_Cube_Solver.Forms.Menu>(this);
     }
 }
