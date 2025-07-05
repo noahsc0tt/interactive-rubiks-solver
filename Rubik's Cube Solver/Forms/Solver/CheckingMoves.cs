@@ -47,23 +47,23 @@ namespace Rubiks_Cube_Solver
         {
             if (subStep >= 0)
             {
-                ColourCell(greenFace, (1, 2), Color.Green);
-                ColourCell(yellowFace, (1, 0), Color.Yellow);
+                ColourCell(greenFace, (1, 2));
+                ColourCell(yellowFace, (1, 0));
             }
             if (subStep >= 1)
             {
-                ColourCell(orangeFace, (1, 2), Color.Orange);
-                ColourCell(yellowFace, (0, 1), Color.Yellow);
+                ColourCell(orangeFace, (1, 2));
+                ColourCell(yellowFace, (0, 1));
             }
             if (subStep >= 2)
             {
-                ColourCell(blueFace, (1, 2), Color.Blue);
-                ColourCell(yellowFace, (1, 2), Color.Yellow);
+                ColourCell(blueFace, (1, 2));
+                ColourCell(yellowFace, (1, 2));
             }
             if (subStep == 3)
             {
-                ColourCell(redFace, (1, 2), Color.Red);
-                ColourCell(yellowFace, (2, 1), Color.Yellow);
+                ColourCell(redFace, (1, 2));
+                ColourCell(yellowFace, (2, 1));
             }
         }
 
@@ -71,27 +71,27 @@ namespace Rubiks_Cube_Solver
         {
             if (subStep >= 0)
             {
-                ColourCell(redFace, (0, 2), Color.Red);
-                ColourCell(greenFace, (2, 2), Color.Green);
-                ColourCell(yellowFace, (2, 0), Color.Yellow);
+                ColourCell(redFace, (0, 2));
+                ColourCell(greenFace, (2, 2));
+                ColourCell(yellowFace, (2, 0));
             }
             if (subStep >= 1)
             {
-                ColourCell(greenFace, (0, 2), Color.Green);
-                ColourCell(orangeFace, (2, 2), Color.Orange);
-                ColourCell(yellowFace, (0, 0), Color.Yellow);
+                ColourCell(greenFace, (0, 2));
+                ColourCell(orangeFace, (2, 2));
+                ColourCell(yellowFace, (0, 0));
             }
             if (subStep >= 2)
             {
-                ColourCell(orangeFace, (0, 2), Color.Orange);
-                ColourCell(blueFace, (2, 2), Color.Blue);
-                ColourCell(yellowFace, (0, 2), Color.Yellow);
+                ColourCell(orangeFace, (0, 2));
+                ColourCell(blueFace, (2, 2));
+                ColourCell(yellowFace, (0, 2));
             }
             if (subStep == 3)
             {
-                ColourCell(blueFace, (0, 2), Color.Blue);
-                ColourCell(redFace, (2, 2), Color.Red);
-                ColourCell(yellowFace, (2, 2), Color.Yellow);
+                ColourCell(blueFace, (0, 2));
+                ColourCell(redFace, (2, 2));
+                ColourCell(yellowFace, (2, 2));
             }
         }
 
@@ -99,23 +99,23 @@ namespace Rubiks_Cube_Solver
         {
             if (subStep >= 0)
             {
-                ColourCell(redFace, (0, 1), Color.Red);
-                ColourCell(greenFace, (2, 1), Color.Green);
+                ColourCell(redFace, (0, 1));
+                ColourCell(greenFace, (2, 1));
             }
             if (subStep >= 1)
             {
-                ColourCell(greenFace, (0, 1), Color.Green);
-                ColourCell(orangeFace, (2, 1), Color.Orange);
+                ColourCell(greenFace, (0, 1));
+                ColourCell(orangeFace, (2, 1));
             }
             if (subStep >= 2)
             {
-                ColourCell(orangeFace, (0, 1), Color.Orange);
-                ColourCell(blueFace, (2, 1), Color.Blue);
+                ColourCell(orangeFace, (0, 1));
+                ColourCell(blueFace, (2, 1));
             }
             if (subStep == 3)
             {
-                ColourCell(blueFace, (0, 1), Color.Blue);
-                ColourCell(redFace, (2, 1), Color.Red);
+                ColourCell(blueFace, (0, 1));
+                ColourCell(redFace, (2, 1));
             }
         }
 
@@ -123,36 +123,36 @@ namespace Rubiks_Cube_Solver
         {
             if (stage.SubStep >= 1) // white edges
             {
-                ColourCell(whiteFace, (0, 1), Color.White);
-                ColourCell(whiteFace, (1, 0), Color.White);
-                ColourCell(whiteFace, (2, 1), Color.White);
-                ColourCell(whiteFace, (1, 2), Color.White);
+                ColourCell(whiteFace, (0, 1));
+                ColourCell(whiteFace, (1, 0));
+                ColourCell(whiteFace, (2, 1));
+                ColourCell(whiteFace, (1, 2));
             }
             if (stage.SubStep >= 2) // white corners
             {
-                ColourCell(whiteFace, (0, 0), Color.White);
-                ColourCell(whiteFace, (2, 0), Color.White);
-                ColourCell(whiteFace, (0, 2), Color.White);
-                ColourCell(whiteFace, (2, 2), Color.White);
+                ColourCell(whiteFace, (0, 0));
+                ColourCell(whiteFace, (2, 0));
+                ColourCell(whiteFace, (0, 2));
+                ColourCell(whiteFace, (2, 2));
             }
             if (stage.SubStep >= 3) // permuting corners
             {
-                ColourCell(greenFace, (0, 0), Color.Green);
-                ColourCell(greenFace, (2, 0), Color.Green);
-                ColourCell(orangeFace, (0, 0), Color.Orange);
-                ColourCell(orangeFace, (2, 0), Color.Orange);
-                ColourCell(blueFace, (0, 0), Color.Blue);
-                ColourCell(blueFace, (2, 0), Color.Blue);
-                ColourCell(redFace, (0, 0), Color.Red);
-                ColourCell(redFace, (2, 0), Color.Red);
+                ColourCell(greenFace, (0, 0));
+                ColourCell(greenFace, (2, 0));
+                ColourCell(orangeFace, (0, 0));
+                ColourCell(orangeFace, (2, 0));
+                ColourCell(blueFace, (0, 0));
+                ColourCell(blueFace, (2, 0));
+                ColourCell(redFace, (0, 0));
+                ColourCell(redFace, (2, 0));
 
             }
             if (stage.SubStep == 4) // permuting edges
             {
-                ColourCell(greenFace, (1, 0), Color.Green);
-                ColourCell(orangeFace, (1, 0), Color.Orange);
-                ColourCell(blueFace, (1, 0), Color.Blue);
-                ColourCell(redFace, (1, 0), Color.Red);
+                ColourCell(greenFace, (1, 0));
+                ColourCell(orangeFace, (1, 0));
+                ColourCell(blueFace, (1, 0));
+                ColourCell(redFace, (1, 0));
             }
         }
 
@@ -184,8 +184,8 @@ namespace Rubiks_Cube_Solver
             };
         }
 
-        private void ColourCell(Face face, (int x, int y) location, Color colour) =>
-            face[location.x, location.y].Style.BackColor = colour;
+        private void ColourCell(Face face, (int x, int y) location) =>
+            face[location.x, location.y].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
 
         private void btnMenu_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<Menu>(this);
