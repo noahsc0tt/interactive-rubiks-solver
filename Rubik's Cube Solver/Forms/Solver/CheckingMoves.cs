@@ -9,6 +9,7 @@ namespace Rubiks_Cube_Solver
     internal partial class CheckingMoves : Form
     {
         private Stage stage;
+        private const int maxSubStep = 3;
 
         public CheckingMoves(Stage currentStage)
         {
@@ -165,17 +166,17 @@ namespace Rubiks_Cube_Solver
                     ColourYellowEdges(stage.SubStep); 
                     break;
                 case 1:
-                    ColourYellowEdges(4);
+                    ColourYellowEdges(maxSubStep);
                     ColourYellowCorners(stage.SubStep);
                     break;
                 case 2:
-                    ColourYellowEdges(4);
-                    ColourYellowCorners(4);
+                    ColourYellowEdges(maxSubStep);
+                    ColourYellowCorners(maxSubStep);
                     ColourMiddleLayerEdges(stage.SubStep);
                     break;
                 case 3:
-                    ColourYellowEdges(4);
-                    ColourYellowCorners(4);
+                    ColourYellowEdges(maxSubStep);
+                    ColourYellowCorners(maxSubStep);
                     ColourMiddleLayerEdges(stage.SubStep);
                     ColourLastLayer(stage.SubStep);
                     break;

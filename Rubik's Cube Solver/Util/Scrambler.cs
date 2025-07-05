@@ -7,7 +7,7 @@ namespace Rubiks_Cube_Solver
         private static readonly string[] faces = { "U", "D", "F", "B", "L", "R" };
         private static readonly string[] suffixes = { "", "'", "2" };
         private static readonly Random random = new Random();
-        private static readonly int length = 20;
+        private const int length = 20;
 
         public static string GetScramble()
         {
