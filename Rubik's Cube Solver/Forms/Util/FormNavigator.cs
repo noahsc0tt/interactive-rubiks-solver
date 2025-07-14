@@ -10,7 +10,8 @@ namespace Rubiks_Cube_Solver.Forms.Util
 
         public static void Navigate<T>(Form currentForm, params object[] args) where T : Form
         {
-            Form newForm = (Form)Activator.CreateInstance(typeof(T), args);
+            Form newForm = typeof(T) == typeof(Menu) ? Forms.Menu.Instance :
+                (Form)Activator.CreateInstance(typeof(T), args);
             newForm.Show();
 
             if (currentForm is Menu)

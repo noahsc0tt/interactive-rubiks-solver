@@ -10,7 +10,7 @@ namespace Rubiks_Cube_Solver
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.Menu());
+            Application.Run(Forms.Menu.Instance);
         }
     }
 }
