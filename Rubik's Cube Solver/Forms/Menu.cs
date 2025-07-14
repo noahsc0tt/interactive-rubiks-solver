@@ -6,8 +6,8 @@ namespace Rubiks_Cube_Solver.Forms
 {
     public partial class Menu : Form
     {
-        private static Menu? _instance;
-        public static Menu Instance => _instance ??= new Menu();
+        private static Menu _instance;
+        public static Menu Instance => _instance ??= new();
 
         public Menu()
         {
