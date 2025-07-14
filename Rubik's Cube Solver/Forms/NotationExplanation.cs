@@ -6,6 +6,9 @@ namespace Rubiks_Cube_Solver.Forms
 {
     public partial class NotationExplanation : Form
     {
+        private static NotationExplanation _instance;
+        public static NotationExplanation Instance => _instance ??= new();
+
         public NotationExplanation()
         {
             InitializeComponent();
