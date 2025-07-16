@@ -22,17 +22,9 @@ namespace Rubiks_Cube_Solver.Solver.Forms
 
         private void OutputSolution_Load(object sender, EventArgs e)
         {
-            piece = RotatePiece(piece, stage);
+            piece = PieceRotator.RotatePiece(piece, stage);
             solution = GetSolution(stage, piece);
             if (solution is not null) SetLabelText();
-        }
-
-        private static PieceConfig RotatePiece(PieceConfig piece, Stage stage)
-        {
-            // rotating the piece the correct number of times, so that it can be solved relative to its centre piece
-            for (int i = 0; i < stage.SubStep; i++)
-                piece = PieceRotator.YPrimeMove(piece);
-            return piece;
         }
 
         private void SetLabelText()
@@ -46,7 +38,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
         private PieceSolution GetSolution(Stage stage, PieceConfig piece)
         {
             try { return SolvePiece.GetSolution(stage, piece); }
-            catch // if there is no match for the piece that the user inputted
+            catch (Exception) // if there is no match for the piece that the user inputted
             {
                 // opening the 'Input Colours' form so the user can re-enter their input
                 MessageBox.Show("Invalid piece position. Enter the position of your piece correctly.");

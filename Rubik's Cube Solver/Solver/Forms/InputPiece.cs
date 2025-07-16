@@ -8,7 +8,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
     using Face = DataGridView;
     internal partial class InputPiece : Form
     {
-        public static readonly (int, int) centrePieceCellCoords = (1, 1);
+        public static readonly (int, int) CentrePieceCellCoords = (1, 1);
 
         private readonly Stage stage;
         private CubeNetCellLocation selectedCellLocation;
