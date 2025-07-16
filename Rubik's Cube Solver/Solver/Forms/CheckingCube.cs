@@ -10,7 +10,6 @@ namespace Rubiks_Cube_Solver.Solver.Forms
     internal partial class CheckingCube : Form
     {
         private readonly Stage stage;
-        private const int maxSubStep = 3;
 
         public CheckingCube(Stage currentStage)
         {
@@ -167,18 +166,18 @@ namespace Rubiks_Cube_Solver.Solver.Forms
                     ColourYellowEdges(stage.SubStep); 
                     break;
                 case 1:
-                    ColourYellowEdges(maxSubStep);
+                    ColourYellowEdges(Stage.MaxSubStep);
                     ColourYellowCorners(stage.SubStep);
                     break;
                 case 2:
-                    ColourYellowEdges(maxSubStep);
-                    ColourYellowCorners(maxSubStep);
+                    ColourYellowEdges(Stage.MaxSubStep);
+                    ColourYellowCorners(Stage.MaxSubStep);
                     ColourMiddleLayerEdges(stage.SubStep);
                     break;
                 case 3:
-                    ColourYellowEdges(maxSubStep);
-                    ColourYellowCorners(maxSubStep);
-                    ColourMiddleLayerEdges(maxSubStep);
+                    ColourYellowEdges(Stage.MaxSubStep);
+                    ColourYellowCorners(Stage.MaxSubStep);
+                    ColourMiddleLayerEdges(Stage.MaxSubStep);
                     ColourLastLayer(stage.SubStep);
                     break;
 

@@ -2,6 +2,9 @@
 {
     internal class CubeNetCellLocation
     {
+        public const int MinCoord = 0;
+        public const int MaxCoord = 2;
+
         public readonly int X;
         public readonly int Y;
         public readonly FaceColour Face;
@@ -9,7 +12,7 @@
         public CubeNetCellLocation((int x, int y) coords, FaceColour face) : this(coords.x, coords.y, face) { }
         public CubeNetCellLocation(int x, int y, FaceColour face)
         {
-            Util.CoordValidator.ValidateCoords(0, 2, (x, nameof(x)), (y, nameof(y)));
+            Util.CoordValidator.ValidateCoords(MinCoord, MaxCoord, (x, nameof(x)), (y, nameof(y)));
             X = x;
             Y = y;
             Face = face;

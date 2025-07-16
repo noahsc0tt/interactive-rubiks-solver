@@ -8,7 +8,8 @@ namespace Rubiks_Cube_Solver.Solver.Forms
     using Face = DataGridView;
     internal partial class InputPiece : Form
     {
-        private static readonly (int, int) centrePieceCellCoords = (1, 1);
+        public static readonly (int, int) centrePieceCellCoords = (1, 1);
+
         private readonly Stage stage;
         private CubeNetCellLocation selectedCellLocation;
         private DataGridViewCell selectedCell;
@@ -31,7 +32,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
         private void PopulateCubeFace(Face face)
         {
             // adding the cells to the face and colouring the centre cell
-            for (int i = 0; i < 3; i++)
+            for (int i = CubeNetCellLocation.MinCoord; i <= CubeNetCellLocation.MaxCoord; i++)
                 face.Rows.Add("", "", "");
             face[1, 1].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
             face.ClearSelection(); //un-highlighting buttons
