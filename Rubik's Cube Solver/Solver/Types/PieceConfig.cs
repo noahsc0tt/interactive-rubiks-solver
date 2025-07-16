@@ -20,8 +20,8 @@
         public int X { get; private set; }
         public int Y { get; private set; }
         public int Z { get; private set; }
-        public const int Min = 0;
-        public const int Max = 2;
+        public static const int Min = 0;
+        public static const int Max = 2;
 
         public PieceLocation((int x, int y, int z) location) : this(location.x, location.y, location.z) { }
         public PieceLocation(int x, int y, int z)

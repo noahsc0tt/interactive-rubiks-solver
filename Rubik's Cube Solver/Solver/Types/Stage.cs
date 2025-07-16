@@ -2,15 +2,23 @@
 
 namespace Rubiks_Cube_Solver.Solver
 {
+    internal enum StageStep 
+    {
+        YellowEdges,
+        YellowCorners,
+        MiddleLayerEdges,
+        LastLayer
+    }
+
     internal class Stage
     {
         public int Step { get; private set; }
         public int SubStep { get; private set; }
         
-        public const int MinStep = 0;
-        public const int MaxStep = 3;
-        public const int MinSubStep = 0;
-        public const int MaxSubStep = 3;
+        public static const int MinStep = 0;
+        public static const int MaxStep = 3;
+        public static const int MinSubStep = 0;
+        public static const int MaxSubStep = 3;
 
         public Stage() : this(MinStep, MinSubStep) { }
 
@@ -35,23 +43,23 @@ namespace Rubiks_Cube_Solver.Solver
 
         private string GetStepName() => Step switch
         {
-            0 => "Yellow Cross",
-            1 => "Yellow Corners",
-            2 => "Middle Layer Edges",
-            3 => "Last Layer"
+            StageStep.YellowEdges => "Yellow Cross",
+            StageStep.YellowCorners => "Yellow Corners",
+            StageStep.MiddleLayerEdges => "Middle Layer Edges",
+            StageStep.LastLayer => "Top Layer"
         };
 
         public string GetRequiredPiece() => Step switch
         {
-            0 => $"yellow and {SubStep switch
+            StageStep.YellowEdges => $"yellow and {SubStep switch
             {
                 0 => "green",
                 1 => "orange",
                 2 => "blue",
                 3 => "red"
             }} edge",
-            1 => $"yellow, {GetColourPair()} corner",
-            2 => $"{GetColourPair()} edge",
+            StageStep.YellowCorners => $"yellow, {GetColourPair()} corner",
+            StageStep.MiddleLayerEdges => $"{GetColourPair()} edge",
             _ => throw new InvalidOperationException($"The last layer stages (currently {Step}.{SubStep}) do not have required pieces")
         };
 
@@ -66,8 +74,8 @@ namespace Rubiks_Cube_Solver.Solver
 
         public FaceColour GetInputColour() => Step switch
         {
-            0 or 1 => FaceColour.Yellow,
-            2 => SubStep switch
+            StageStep.YellowEdges or StageStep.YellowCorners => FaceColour.Yellow,
+            StageStep.MiddleLayerEdges => SubStep switch
             {
                 0 => FaceColour.Green,
                 1 => FaceColour.Orange,

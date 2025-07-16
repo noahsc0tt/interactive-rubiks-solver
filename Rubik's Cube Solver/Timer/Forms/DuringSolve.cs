@@ -7,6 +7,7 @@ namespace Rubiks_Cube_Solver.Timer.Forms
 {
     public partial class DuringSolve : Form
     {
+        public static const string TimeFormat = "{0:mm\\:ss\\.ff}";
         private readonly Stopwatch solveTimer = new();
 
         public DuringSolve()
@@ -30,7 +31,7 @@ namespace Rubiks_Cube_Solver.Timer.Forms
         private void solveTimer_Tick(object sender, EventArgs e)
         {
             //outputting the time to the user
-            lblTimer.Text = string.Format("{0:mm\\:ss\\.ff}", solveTimer.Elapsed); 
+            lblTimer.Text = string.Format(TimeFormat, solveTimer.Elapsed); 
         }
 
     }

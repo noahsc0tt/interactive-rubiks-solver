@@ -162,19 +162,19 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             
             switch (stage.Step)
             {
-                case 0:
+                case StageStep.YellowEdges:
                     ColourYellowEdges(stage.SubStep); 
                     break;
-                case 1:
+                case StageStep.YellowCorners:
                     ColourYellowEdges(Stage.MaxSubStep);
                     ColourYellowCorners(stage.SubStep);
                     break;
-                case 2:
+                case StageStep.MiddleLayerEdges:
                     ColourYellowEdges(Stage.MaxSubStep);
                     ColourYellowCorners(Stage.MaxSubStep);
                     ColourMiddleLayerEdges(stage.SubStep);
                     break;
-                case 3:
+                case StageStep.LastLayer:
                     ColourYellowEdges(Stage.MaxSubStep);
                     ColourYellowCorners(Stage.MaxSubStep);
                     ColourMiddleLayerEdges(Stage.MaxSubStep);
@@ -193,7 +193,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
         private void btnNextStage_Click(object sender, EventArgs e)
         {
             stage.Increment();
-            if (stage.Step == 3)
+            if (stage.Step == StageStep.LastLayer)
             {
                 switch (stage.SubStep)
                 {
@@ -211,9 +211,9 @@ namespace Rubiks_Cube_Solver.Solver.Forms
         {
             (int step, int subStep) = (string)boxChooseStage.SelectedItem switch
             {
-                "Yellow Edges" => (0,0),
-                "Yellow Corners" => (1,0),
-                "Middle Layer Edges" => (2,0),
+                "Yellow Edges" => (StageStep.YellowEdges, Stage.MinSubStep),
+                "Yellow Corners" => (StageStep.YellowCorners, Stage.MinSubStep),
+                "Middle Layer Edges" => (StageStep.MiddleLayerEdges, Stage.MinSubStep),
                 "White Edges" => (3,0),
                 "White Corners" => (3,1),
                 "Corner Permutation" => (3,2),
