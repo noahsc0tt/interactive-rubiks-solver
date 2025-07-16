@@ -20,11 +20,13 @@
         public int X { get; private set; }
         public int Y { get; private set; }
         public int Z { get; private set; }
+        public const int Min = 0;
+        public const int Max = 2;
 
         public PieceLocation((int x, int y, int z) location) : this(location.x, location.y, location.z) { }
         public PieceLocation(int x, int y, int z)
         {
-            Util.CoordValidator.ValidateCoords(0, 2, (x, nameof(x)), (y, nameof(y)), (x, nameof(x)));
+            Util.CoordValidator.ValidateCoords(Min, Max, (x, nameof(x)), (y, nameof(y)), (z, nameof(z)));
             X = x;
             Y = y;
             Z = z;
