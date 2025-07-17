@@ -86,7 +86,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(677, 128);
             this.lblTitle.TabIndex = 13;
-            this.lblTitle.Text = "Orienting Corners";
+            this.lblTitle.Text = "White Corners";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
@@ -124,7 +124,7 @@
             this.label4.Text = resources.GetString("label4.Text");
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Top_Layer_Corners
+            // WhiteCorners
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -136,7 +136,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.btnFinish);
-            this.Name = "Top_Layer_Corners";
+            this.Name = "WhiteCorners";
             this.Text = "Top_Layer_Corners";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

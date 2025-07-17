@@ -72,7 +72,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(677, 128);
             this.lblTitle.TabIndex = 9;
-            this.lblTitle.Text = "Orienting Edges";
+            this.lblTitle.Text = "White Edges";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -110,7 +110,7 @@
             this.label2.Text = resources.GetString("label2.Text");
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // Top_Layer_Edges
+            // WhiteEdges
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,7 +121,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnMenu);
             this.Controls.Add(this.btnFinish);
-            this.Name = "Top_Layer_Edges";
+            this.Name = "WhiteEdges";
             this.Text = "Top_Layer_Edges";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

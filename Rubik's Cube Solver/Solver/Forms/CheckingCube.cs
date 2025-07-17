@@ -193,18 +193,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
         private void btnNextStage_Click(object sender, EventArgs e)
         {
             stage.Increment();
-            if (stage.Step == StageStep.LastLayer)
-            {
-                switch (stage.SubStep)
-                {
-                    case 0: FormNavigator.Navigate<WhiteEdges>(this); break;
-                    case 1: FormNavigator.Navigate<WhiteCorners>(this); break;
-                    case 2: FormNavigator.Navigate<PermutingCorners>(this); break;
-                    case 3: FormNavigator.Navigate<PermutingEdges>(this); break;
-                }
-            }
-            else
-                FormNavigator.Navigate<InputPiece>(this, stage);
+            Navigate(stage);
         }
 
         private void boxChooseStage_SelectionChangeCommitted(object sender, EventArgs e)
@@ -219,16 +208,23 @@ namespace Rubiks_Cube_Solver.Solver.Forms
                 "Corner Permutation" => (StageStep.LastLayer, 2),
                 "Edge Permutation" => (StageStep.LastLayer, 3)
             };
-            if (step == StageStep.LastLayer)
-                switch (subStep)
+            Navigate(new Stage(step, subStep));
+        }
+
+        private void Navigate(Stage stage)
+        {
+            if (stage.Step == StageStep.LastLayer)
+            {
+                switch (stage.SubStep)
                 {
                     case 0: FormNavigator.Navigate<WhiteEdges>(this); break;
                     case 1: FormNavigator.Navigate<WhiteCorners>(this); break;
                     case 2: FormNavigator.Navigate<PermutingCorners>(this); break;
                     case 3: FormNavigator.Navigate<PermutingEdges>(this); break;
                 }
+            }
             else
-                FormNavigator.Navigate<InputPiece>(this, new Stage(step, subStep));
+                FormNavigator.Navigate<InputPiece>(this, stage);
         }
     }
 }
