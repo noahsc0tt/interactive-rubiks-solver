@@ -6,8 +6,6 @@ namespace Rubiks_Cube_Solver.Solver.Forms.LastLayer
 {
     internal partial class WhiteCorners : Form
     {
-        public static readonly Stage Stage = new(StageStep.LastLayer, 1);
-
         public WhiteCorners()
         {
             InitializeComponent();
@@ -18,6 +16,6 @@ namespace Rubiks_Cube_Solver.Solver.Forms.LastLayer
             FormNavigator.Menu(this);
 
         private void btnFinish_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<CheckingCube>(this, Stage);
+            FormNavigator.Navigate<CheckingCube>(this, Stage.WhiteCorners);
     }
 }

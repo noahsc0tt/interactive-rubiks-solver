@@ -199,13 +199,13 @@ namespace Rubiks_Cube_Solver.Solver.Forms
         private void boxChooseStage_SelectionChangeCommitted(object sender, EventArgs e) =>
             Navigate((string)boxChooseStage.SelectedItem switch
             {
-                "Yellow Edges" => new Stage(StageStep.YellowEdges, Stage.MinSubStep),
-                "Yellow Corners" => new Stage(StageStep.YellowCorners, Stage.MinSubStep),
-                "Middle Layer Edges" => new Stage(StageStep.MiddleLayerEdges, Stage.MinSubStep),
-                "White Edges" => WhiteEdges.Stage,
-                "White Corners" => WhiteCorners.Stage,
-                "Corner Permutation" => PermutingCorners.Stage,
-                "Edge Permutation" => PermutingEdges.Stage
+                "Yellow Edges" => Stage.YellowEdges,
+                "Yellow Corners" => Stage.YellowCorners,
+                "Middle Layer Edges" => Stage.MiddleLayerEdges,
+                "White Edges" => Stage.WhiteEdges,
+                "White Corners" => Stage.WhiteCorners,
+                "Corner Permutation" => Stage.PermutingCorners,
+                "Edge Permutation" => Stage.PermutingEdges
             });
 
         private void Navigate(Stage stage)
