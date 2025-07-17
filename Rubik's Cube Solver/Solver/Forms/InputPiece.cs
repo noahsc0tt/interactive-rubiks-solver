@@ -29,18 +29,6 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             btnFinish.Visible = false;
         }
 
-        private void PopulateCubeFace(Face face)
-        {
-            // adding the cells to the face and colouring the centre cell
-            for (int i = CubeNetCellLocation.MinCoord; i <= CubeNetCellLocation.MaxCoord; i++)
-                face.Rows.Add("", "", "");
-            face[1, 1].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
-            face.ClearSelection(); //un-highlighting buttons
-        }
-
-        private void PopulateCubeNet() =>
-            Array.ForEach([whiteFace, yellowFace, greenFace, blueFace, redFace, orangeFace], PopulateCubeFace);
-
         private string GetInstructions() =>
             $"Input the position of the {StageInfo.GetInputColour(stage).ToString().ToLower()} square on the {StageInfo.GetRequiredPiece(stage)}";
 
