@@ -196,20 +196,17 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             Navigate(stage);
         }
 
-        private void boxChooseStage_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            (StageStep step, int subStep) = (string)boxChooseStage.SelectedItem switch
+        private void boxChooseStage_SelectionChangeCommitted(object sender, EventArgs e) =>
+            Navigate((string)boxChooseStage.SelectedItem switch
             {
-                "Yellow Edges" => (StageStep.YellowEdges, Stage.MinSubStep),
-                "Yellow Corners" => (StageStep.YellowCorners, Stage.MinSubStep),
-                "Middle Layer Edges" => (StageStep.MiddleLayerEdges, Stage.MinSubStep),
-                "White Edges" => StageInfo.GetStageTuple(WhiteEdges.Stage),
-                "White Corners" => StageInfo.GetStageTuple(WhiteCorners.Stage),
-                "Corner Permutation" => StageInfo.GetStageTuple(PermutingCorners.Stage),
-                "Edge Permutation" => StageInfo.GetStageTuple(PermutingEdges.Stage)
-            };
-            Navigate(new Stage(step, subStep));
-        }
+                "Yellow Edges" => new Stage(StageStep.YellowEdges, Stage.MinSubStep),
+                "Yellow Corners" => new Stage(StageStep.YellowCorners, Stage.MinSubStep),
+                "Middle Layer Edges" => new Stage(StageStep.MiddleLayerEdges, Stage.MinSubStep),
+                "White Edges" => WhiteEdges.Stage,
+                "White Corners" => WhiteCorners.Stage,
+                "Corner Permutation" => PermutingCorners.Stage,
+                "Edge Permutation" => PermutingEdges.Stage
+            });
 
         private void Navigate(Stage stage)
         {
