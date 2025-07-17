@@ -4,9 +4,9 @@ using Rubiks_Cube_Solver.Forms.Util;
 
 namespace Rubiks_Cube_Solver.Solver.Forms.LastLayer
 {
-    public partial class PermutingCorners : Form
+    internal partial class PermutingCorners : Form
     {
-        private static readonly Stage stage = new(StageStep.LastLayer, 2);
+        public static readonly Stage Stage = new(StageStep.LastLayer, 2);
 
         public PermutingCorners()
         {
@@ -18,6 +18,6 @@ namespace Rubiks_Cube_Solver.Solver.Forms.LastLayer
             FormNavigator.Menu(this);
 
         private void btnFinish_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<CheckingCube>(this, stage);
+            FormNavigator.Navigate<CheckingCube>(this, Stage);
     }
 }

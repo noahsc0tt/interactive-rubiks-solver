@@ -203,10 +203,10 @@ namespace Rubiks_Cube_Solver.Solver.Forms
                 "Yellow Edges" => (StageStep.YellowEdges, Stage.MinSubStep),
                 "Yellow Corners" => (StageStep.YellowCorners, Stage.MinSubStep),
                 "Middle Layer Edges" => (StageStep.MiddleLayerEdges, Stage.MinSubStep),
-                "White Edges" => (StageStep.LastLayer, 0),
-                "White Corners" => (StageStep.LastLayer, 1),
-                "Corner Permutation" => (StageStep.LastLayer, 2),
-                "Edge Permutation" => (StageStep.LastLayer, 3)
+                "White Edges" => StageInfo.GetStageTuple(WhiteEdges.Stage),
+                "White Corners" => StageInfo.GetStageTuple(WhiteCorners.Stage),
+                "Corner Permutation" => StageInfo.GetStageTuple(PermutingCorners.Stage),
+                "Edge Permutation" => StageInfo.GetStageTuple(PermutingEdges.Stage)
             };
             Navigate(new Stage(step, subStep));
         }
