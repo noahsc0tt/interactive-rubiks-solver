@@ -2,8 +2,8 @@
 {
     internal class CubeNetCellLocation
     {
-        public static const int MinCoord = 0;
-        public static const int MaxCoord = 2;
+        public const int MinCoord = 0;
+        public const int MaxCoord = 2;
 
         public readonly int X;
         public readonly int Y;

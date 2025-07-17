@@ -7,7 +7,7 @@ namespace Rubiks_Cube_Solver.Timer.Forms
 {
     public partial class DuringSolve : Form
     {
-        public static const string TimeFormat = "{0:mm\\:ss\\.ff}";
+        public const string TimeFormat = "{0:mm\\:ss\\.ff}";
         private readonly Stopwatch solveTimer = new();
 
         public DuringSolve()

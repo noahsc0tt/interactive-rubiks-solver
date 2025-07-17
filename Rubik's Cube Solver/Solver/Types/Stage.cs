@@ -12,19 +12,18 @@ namespace Rubiks_Cube_Solver.Solver
 
     internal class Stage
     {
-        public int Step { get; private set; }
+        public StageStep Step { get; private set; }
         public int SubStep { get; private set; }
         
-        public static const int MinStep = 0;
-        public static const int MaxStep = 3;
-        public static const int MinSubStep = 0;
-        public static const int MaxSubStep = 3;
+        public const StageStep MaxStep = StageStep.LastLayer;
+        public const int MinSubStep = 0;
+        public const int MaxSubStep = 3;
+        public static readonly (StageStep, int) MaxStage = (MaxStep, MaxSubStep);
+        
+        public Stage() : this(StageStep.YellowEdges, MinSubStep) { }
 
-        public Stage() : this(MinStep, MinSubStep) { }
-
-        public Stage(int step, int subStep)
+        public Stage(StageStep step, int subStep)
         {            
-            ValidateArg(step, nameof(step));
             ValidateArg(subStep, nameof(subStep));
             Step = step;
             SubStep = subStep;
@@ -32,14 +31,14 @@ namespace Rubiks_Cube_Solver.Solver
 
         private static void ValidateArg(int value, string paramName)
         {
-            if (value < MinStep || value > MaxStep)
-                throw new ArgumentOutOfRangeException(paramName, $"Argument must be in the range {MinStep}-{MaxStep}");
+            if (value < MinSubStep || value > MaxSubStep)
+                throw new ArgumentOutOfRangeException(paramName, $"{paramName} must be in the range {MinSubStep}-{MaxSubStep}");
         }
 
-        public (int Step, int SubStep) GetStage() => (Step, SubStep);
+        public (StageStep Step, int SubStep) GetStage() => (Step, SubStep);
         
         public string GetName() => 
-            Step == MaxStep ? GetStepName() : $"{GetStepName()} - {GetRequiredPiece()}";
+            Step == StageStep.LastLayer ? GetStepName() : $"{GetStepName()} - {GetRequiredPiece()}";
 
         private string GetStepName() => Step switch
         {
@@ -60,7 +59,7 @@ namespace Rubiks_Cube_Solver.Solver
             }} edge",
             StageStep.YellowCorners => $"yellow, {GetColourPair()} corner",
             StageStep.MiddleLayerEdges => $"{GetColourPair()} edge",
-            _ => throw new InvalidOperationException($"The last layer stages (currently {Step}.{SubStep}) do not have required pieces")
+            _ => throw new InvalidOperationException($"The last layer stages (currently {Step.ToString()}.{SubStep}) do not have required pieces")
         };
 
         //helper method for GetRequiredPiece
@@ -95,7 +94,7 @@ namespace Rubiks_Cube_Solver.Solver
                 SubStep = MinSubStep;
             }
             else
-                throw new InvalidOperationException($"Stage is already at maximum ({MaxStep},{MaxSubStep})");
+                throw new InvalidOperationException($"Stage is already at maximum: {MaxStage}");
         }
     }
 }

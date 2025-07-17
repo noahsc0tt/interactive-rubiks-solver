@@ -107,10 +107,10 @@ namespace Rubiks_Cube_Solver.Solver.Util
         public static Dict GetStageDict(Stage stage) =>
             stage.Step switch
             {
-                0 => yellowEdgesDict,
-                1 => yellowCornersDict,
-                2 => middleLayerEdgesDict,
-                _ => throw new InvalidOperationException("Last layer stages do not have PieceSolutions")
+                StageStep.YellowEdges => yellowEdgesDict,
+                StageStep.YellowCorners => yellowCornersDict,
+                StageStep.MiddleLayerEdges => middleLayerEdgesDict,
+                _ => throw new InvalidOperationException($"Last layer stages (currently {stage.Step.ToString()}.{stage.SubStep}) do not have PieceSolutions")
             };
 
         public static PieceSolution GetSolution(Stage stage, PieceConfig piece) =>

@@ -23,7 +23,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             ColourCubeNet();
 
             //changing the text of the 'Next Stage' button if the user has completed the solve
-            if (stage.GetStage() == (3,3))
+            if (stage.GetStage() == Stage.MaxStage)
             {
                 btnNextStage.Visible = false;
                 lblButtonInstructions.Text = "If your cube is fully solved, congratulations! Click the 'Menu' button to return to the menu.\r\n\r\nIf your cube is not solved, choose a stage to go back to in the 'Choose Stage' drop-down list.";
@@ -209,17 +209,17 @@ namespace Rubiks_Cube_Solver.Solver.Forms
 
         private void boxChooseStage_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            (int step, int subStep) = (string)boxChooseStage.SelectedItem switch
+            (StageStep step, int subStep) = (string)boxChooseStage.SelectedItem switch
             {
                 "Yellow Edges" => (StageStep.YellowEdges, Stage.MinSubStep),
                 "Yellow Corners" => (StageStep.YellowCorners, Stage.MinSubStep),
                 "Middle Layer Edges" => (StageStep.MiddleLayerEdges, Stage.MinSubStep),
-                "White Edges" => (3,0),
-                "White Corners" => (3,1),
-                "Corner Permutation" => (3,2),
-                "Edge Permutation" => (3,3)
+                "White Edges" => (StageStep.LastLayer, 0),
+                "White Corners" => (StageStep.LastLayer, 1),
+                "Corner Permutation" => (StageStep.LastLayer, 2),
+                "Edge Permutation" => (StageStep.LastLayer, 3)
             };
-            if (step == 3)
+            if (step == StageStep.LastLayer)
                 switch (subStep)
                 {
                     case 0: FormNavigator.Navigate<WhiteEdges>(this); break;

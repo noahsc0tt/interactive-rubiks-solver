@@ -23,7 +23,7 @@ namespace Rubiks_Cube_Solver.Solver
             "blueFace" => FaceColour.Blue,
             "redFace" => FaceColour.Red,
             "orangeFace" => FaceColour.Orange,
-            _ => throw new ArgumentException("Invalid face name")
+            _ => throw new ArgumentException($"Invalid face name: {faceName}")
         };
 
 
