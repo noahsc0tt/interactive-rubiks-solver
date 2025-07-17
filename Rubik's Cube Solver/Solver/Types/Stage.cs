@@ -24,65 +24,16 @@ namespace Rubiks_Cube_Solver.Solver
 
         public Stage(StageStep step, int subStep)
         {            
-            ValidateArg(subStep, nameof(subStep));
             Step = step;
+            ValidateSubStep(subStep);
             SubStep = subStep;
         }
 
-        private static void ValidateArg(int value, string paramName)
+        private static void ValidateSubStep(int subStep)
         {
-            if (value < MinSubStep || value > MaxSubStep)
-                throw new ArgumentOutOfRangeException(paramName, $"{paramName} must be in the range {MinSubStep}-{MaxSubStep}");
+            if (subStep < MinSubStep || subStep > MaxSubStep)
+                throw new ArgumentOutOfRangeException("subStep", $"subStep must be in the range {MinSubStep}-{MaxSubStep}");
         }
-
-        public (StageStep Step, int SubStep) GetStage() => (Step, SubStep);
-        
-        public string GetName() => 
-            Step == StageStep.LastLayer ? GetStepName() : $"{GetStepName()} - {GetRequiredPiece()}";
-
-        private string GetStepName() => Step switch
-        {
-            StageStep.YellowEdges => "Yellow Cross",
-            StageStep.YellowCorners => "Yellow Corners",
-            StageStep.MiddleLayerEdges => "Middle Layer Edges",
-            StageStep.LastLayer => "Top Layer"
-        };
-
-        public string GetRequiredPiece() => Step switch
-        {
-            StageStep.YellowEdges => $"yellow and {SubStep switch
-            {
-                0 => "green",
-                1 => "orange",
-                2 => "blue",
-                3 => "red"
-            }} edge",
-            StageStep.YellowCorners => $"yellow, {GetColourPair()} corner",
-            StageStep.MiddleLayerEdges => $"{GetColourPair()} edge",
-            _ => throw new InvalidOperationException($"The last layer stages (currently {Step.ToString()}.{SubStep}) do not have required pieces")
-        };
-
-        //helper method for GetRequiredPiece
-        private string GetColourPair() => SubStep switch
-        {
-            0 => "green and red",
-            1 => "orange and green",
-            2 => "blue and orange",
-            3 => "red and blue",
-        };
-
-        public FaceColour GetInputColour() => Step switch
-        {
-            StageStep.YellowEdges or StageStep.YellowCorners => FaceColour.Yellow,
-            StageStep.MiddleLayerEdges => SubStep switch
-            {
-                0 => FaceColour.Green,
-                1 => FaceColour.Orange,
-                2 => FaceColour.Blue,
-                3 => FaceColour.Red
-            },
-            _ => throw new InvalidOperationException("Last layer stages have no input")
-        };
 
         public void Increment()
         {
@@ -96,5 +47,58 @@ namespace Rubiks_Cube_Solver.Solver
             else
                 throw new InvalidOperationException($"Stage is already at maximum: {MaxStage}");
         }
+    }
+
+    internal static class StageInfo 
+    {
+        public static(StageStep Step, int SubStep) GetStageTuple(Stage stage) => (stage.Step, stage.SubStep);
+        
+        public static string GetName(Stage stage) => 
+            stage.Step == StageStep.LastLayer ? GetStepName(stage) : $"{GetStepName(stage)} - {GetRequiredPiece(stage)}";
+
+        private static string GetStepName(Stage stage) => stage.Step switch
+        {
+            StageStep.YellowEdges => "Yellow Cross",
+            StageStep.YellowCorners => "Yellow Corners",
+            StageStep.MiddleLayerEdges => "Middle Layer Edges",
+            StageStep.LastLayer => "Top Layer"
+        };
+
+        public static string GetRequiredPiece(Stage stage) => stage.Step switch
+        {
+            StageStep.YellowEdges => $"yellow and {stage.SubStep switch
+            {
+                0 => "green",
+                1 => "orange",
+                2 => "blue",
+                3 => "red"
+            }} edge",
+            StageStep.YellowCorners => $"yellow, {GetColourPair(stage.SubStep)} corner",
+            StageStep.MiddleLayerEdges => $"{GetColourPair(stage.SubStep)} edge",
+            _ => throw new InvalidOperationException($"The last layer stages (currently {Step.ToString()}.{SubStep}) do not have required pieces")
+        };
+
+        //helper method for GetRequiredPiece
+        private static string GetColourPair(int subStep) => subStep switch
+        {
+            0 => "green and red",
+            1 => "orange and green",
+            2 => "blue and orange",
+            3 => "red and blue",
+        };
+
+        public static FaceColour GetInputColour(Stage stage) => stage.Step switch
+        {
+            StageStep.YellowEdges or StageStep.YellowCorners => FaceColour.Yellow,
+            StageStep.MiddleLayerEdges => stage.SubStep switch
+            {
+                0 => FaceColour.Green,
+                1 => FaceColour.Orange,
+                2 => FaceColour.Blue,
+                3 => FaceColour.Red
+            },
+            _ => throw new InvalidOperationException("Last layer stages have no input")
+        };
+
     }
 }
