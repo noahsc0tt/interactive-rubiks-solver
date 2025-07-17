@@ -1,147 +1,29 @@
-# Visual Studio
-.vs/
-*.vcxproj.user
-*.vcxproj.filters
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
 # Build results
-[Bb]in/
-[Oo]bj/
-out/
+bin/
+obj/
 
-# Visual Studio Code settings (if used)
-.vscode/
+# User-specific files
+*.user
+*.suo
+*.rsuser
 
-# Rider IDE settings (if used)
-.idea/
+# VS and build system cache
+.vs/
+*.log
 
-# NuGet packages
+# NuGet
 *.nupkg
 *.snupkg
 packages/
-.nuget/
-project.lock.json
-project.fragment.lock.json
-artifacts/
+project.assets.json
 
-# ASP.NET Scaffolding
-ScaffoldingReadMe.txt
+# Auto-generated files
+*.dbmdl
+*.pdb
 
-# DotCover coverage files
-*.dotCover
-
-# ReSharper files
-_ReSharper*/
-*.DotSettings.user
-_ReSharper.*
-*.DotSettings
-
-# User-specific files
-*.rsuser
-*.suo
-*.user
-*.userprefs
-*.pidb
-*.booproj
-
-# MonoDevelop
-*.pidb
-*.userprefs
-
-# OS generated files
+# OS-generated files
 .DS_Store
 Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# Logs and databases
-*.log
-*.sql
-*.sqlite
-
-# Test results
-TestResults/
-*.trx
-*.coverage
-*.coveragexml
-*.vsmdi
-
-# IIS Express
-/.vs/Config/
-
-# JetBrains Rider local history
-.idea/.idea.*
 
 # Publish outputs
 publish/
-*.publish.xml
-
-# Resharper cache
-_ReSharper.Caches/
-
-# Dotnet watch
-dotnet-watch/
-
-# NuGet packages folder
-packages/
-
-# Visual Studio cache files
-*.cache
-*.cachefile
-
-# StyleCop cache
-StyleCopReport.xml
-
-# Dotnet tool manifest files
-*.config
-
-# Backup & temporary files
-*~
-~
-*.tmp
-*.temp
-*.bak
-*.backup
-*.orig
-*.old
-*.swp
-
-# Others
-*.dbmdl
-*.bak
-*.backup
-
-# NPM packages (if any frontend involved)
-node_modules/
-
-# Yarn
-.yarn/
-
-# Bower
-bower_components/
-
-# Others (for completeness)
-.vspscc
-*.vssscc
-*.pdb
-*.exe
-*.dll
-*.idb
-*.ipch
-*.tlog
-*.lastbuildstate
-*.vsix
-*.docstates
-
-# Code analysis cache
-*.cache
-
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
-
-# Windows shortcuts
-*.lnk
