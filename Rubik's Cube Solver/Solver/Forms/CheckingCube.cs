@@ -26,7 +26,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             if (StageInfo.GetStageTuple(stage) == Stage.MaxStage)
             {
                 btnNextStage.Visible = false;
-                lblButtonInstructions.Text = "If your cube is fully solved, congratulations! Click the 'Menu' button to return to the menu.\r\n\r\nIf your cube is not solved, choose a stage to go back to in the 'Choose Stage' drop-down list.";
+                lblButtonInstructions.Text = "If your cube is fully solved, congratulations!\r\n\r\nIf not, choose a stage to go back to using the drop-down list.";
             }
         }
 
