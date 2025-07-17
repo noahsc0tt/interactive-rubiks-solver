@@ -30,7 +30,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
         private void SetLabelText()
         {
             lblCubeOrientation.Text = $"Hold your cube with the white centre piece on top and the {GetFrontFaceName(stage)} centre piece facing you.";
-            lblStageName.Text = stage.GetName();
+            lblStageName.Text = StageInfo.GetName(stage);
             lblSequence.Text = solution.Sequence;
             lblExplanation.Text = solution.Explanation;
         }

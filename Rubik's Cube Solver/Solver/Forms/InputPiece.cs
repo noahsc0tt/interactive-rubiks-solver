@@ -42,7 +42,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             Array.ForEach([whiteFace, yellowFace, greenFace, blueFace, redFace, orangeFace], PopulateCubeFace);
 
         private string GetInstructions() =>
-            $"Input the position of the {stage.GetInputColour().ToString().ToLower()} square on the {stage.GetRequiredPiece()}";
+            $"Input the position of the {StageInfo.GetInputColour(stage).ToString().ToLower()} square on the {StageInfo.GetRequiredPiece(stage)}";
 
         private void HandleCellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -59,7 +59,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
                 //colouring the new cell
                 selectedCellLocation = new CubeNetCellLocation(cellCoords, FaceColourExtension.FromFaceName(face.Name));
                 selectedCell = face[cellCoords.col, cellCoords.row];
-                selectedCell.Style.BackColor = stage.GetInputColour().ToColor();
+                selectedCell.Style.BackColor = StageInfo.GetInputColour(stage).ToColor();
                 btnFinish.Visible = true;
             }
         }

@@ -23,7 +23,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             ColourCubeNet();
 
             //changing the text of the 'Next Stage' button if the user has completed the solve
-            if (stage.GetStage() == Stage.MaxStage)
+            if (StageInfo.GetStageTuple(stage) == Stage.MaxStage)
             {
                 btnNextStage.Visible = false;
                 lblButtonInstructions.Text = "If your cube is fully solved, congratulations! Click the 'Menu' button to return to the menu.\r\n\r\nIf your cube is not solved, choose a stage to go back to in the 'Choose Stage' drop-down list.";

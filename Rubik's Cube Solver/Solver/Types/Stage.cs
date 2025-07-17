@@ -64,19 +64,23 @@ namespace Rubiks_Cube_Solver.Solver
             StageStep.LastLayer => "Top Layer"
         };
 
-        public static string GetRequiredPiece(Stage stage) => stage.Step switch
+        public static string GetRequiredPiece(Stage stage)
         {
-            StageStep.YellowEdges => $"yellow and {stage.SubStep switch
+            (StageStep step, int subStep) = GetStageTuple(stage);
+            return step switch
             {
-                0 => "green",
-                1 => "orange",
-                2 => "blue",
-                3 => "red"
-            }} edge",
-            StageStep.YellowCorners => $"yellow, {GetColourPair(stage.SubStep)} corner",
-            StageStep.MiddleLayerEdges => $"{GetColourPair(stage.SubStep)} edge",
-            _ => throw new InvalidOperationException($"The last layer stages (currently {Step.ToString()}.{SubStep}) do not have required pieces")
-        };
+                StageStep.YellowEdges => $"yellow and {subStep switch
+                {
+                    0 => "green",
+                    1 => "orange",
+                    2 => "blue",
+                    3 => "red"
+                }} edge",
+                StageStep.YellowCorners => $"yellow, {GetColourPair(subStep)} corner",
+                StageStep.MiddleLayerEdges => $"{GetColourPair(subStep)} edge",
+                _ => throw new InvalidOperationException($"The last layer stages (currently {step}.{subStep}) do not have required pieces")
+            };
+        }
 
         //helper method for GetRequiredPiece
         private static string GetColourPair(int subStep) => subStep switch
