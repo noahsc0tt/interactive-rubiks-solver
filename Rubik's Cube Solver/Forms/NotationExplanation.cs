@@ -4,7 +4,7 @@ using Rubiks_Cube_Solver.Forms.Util;
 
 namespace Rubiks_Cube_Solver.Forms
 {
-    public partial class NotationExplanation : Form
+    internal partial class NotationExplanation : Form
     {
         private static NotationExplanation _instance;
         public static NotationExplanation Instance => _instance ??= new();

@@ -4,7 +4,7 @@ using Rubiks_Cube_Solver.Forms.Util;
 
 namespace Rubiks_Cube_Solver.Timer.Forms
 {
-    public partial class BeforeSolve : Form
+    internal partial class BeforeSolve : Form
     {
         private readonly string previousTime;
 

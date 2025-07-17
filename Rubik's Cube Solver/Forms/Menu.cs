@@ -4,7 +4,7 @@ using Rubiks_Cube_Solver.Forms.Util;
 
 namespace Rubiks_Cube_Solver.Forms
 {
-    public partial class Menu : Form
+    internal partial class Menu : Form
     {
         private static Menu _instance;
         public static Menu Instance => _instance ??= new();
