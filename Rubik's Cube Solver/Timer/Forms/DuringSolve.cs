@@ -28,11 +28,7 @@ namespace Rubiks_Cube_Solver.Timer.Forms
             }
         }
 
-        private void solveTimer_Tick(object sender, EventArgs e)
-        {
-            //outputting the time to the user
+        private void solveTimer_Tick(object sender, EventArgs e) =>
             lblTimer.Text = string.Format(TimeFormat, solveTimer.Elapsed); 
-        }
-
     }
 }

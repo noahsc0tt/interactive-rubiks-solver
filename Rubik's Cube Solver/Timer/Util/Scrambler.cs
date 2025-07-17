@@ -4,10 +4,10 @@ namespace Rubiks_Cube_Solver.Timer.Util
 {
     internal static class Scrambler
     {
+        private const int length = 20;
         private static readonly string[] faces = ["U", "D", "F", "B", "L", "R"];
         private static readonly string[] suffixes = [ "", "'", "2" ];
         private static readonly Random random = new();
-        private const int length = 20;
 
         public static string GetScramble()
         {

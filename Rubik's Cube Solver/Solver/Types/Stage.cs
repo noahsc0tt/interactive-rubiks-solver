@@ -12,13 +12,13 @@ namespace Rubiks_Cube_Solver.Solver
 
     internal class Stage
     {
-        public StageStep Step { get; private set; }
-        public int SubStep { get; private set; }
-        
         public const StageStep MaxStep = StageStep.LastLayer;
         public const int MinSubStep = 0;
         public const int MaxSubStep = 3;
         public static readonly (StageStep, int) MaxStage = (MaxStep, MaxSubStep);
+        public StageStep Step { get; private set; }
+        public int SubStep { get; private set; }
+        
         
         public Stage() : this(StageStep.YellowEdges, MinSubStep) { }
 

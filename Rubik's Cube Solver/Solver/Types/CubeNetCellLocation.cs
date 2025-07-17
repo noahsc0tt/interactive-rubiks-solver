@@ -4,7 +4,6 @@
     {
         public const int MinCoord = 0;
         public const int MaxCoord = 2;
-
         public readonly int X;
         public readonly int Y;
         public readonly FaceColour Face;
