@@ -28,7 +28,7 @@
 
             return new PieceConfig((x, y, z), orientation);
         }
-        private static PieceConfig RotatePiece(PieceConfig piece, Stage stage)
+        public static PieceConfig RotatePiece(PieceConfig piece, Stage stage)
         {
             // rotating the piece the correct number of times, so that it can be solved relative to its centre piece
             for (int i = 0; i < stage.SubStep; i++)

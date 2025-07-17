@@ -6,7 +6,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms.LastLayer
 {
     public partial class PermutingCorners : Form
     {
-        private static readonly Stage stage = new(3, 3);
+        private static readonly Stage stage = new(StageStep.LastLayer, 3);
 
         public PermutingCorners()
         {

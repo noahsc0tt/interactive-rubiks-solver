@@ -6,7 +6,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms.LastLayer
 {
     public partial class WhiteCorners : Form
     {
-        private static readonly Stage stage = new(3, 1);
+        private static readonly Stage stage = new(StageStep.LastLayer, 1);
 
         public WhiteCorners()
         {

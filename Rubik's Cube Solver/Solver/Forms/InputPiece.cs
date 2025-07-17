@@ -51,7 +51,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
 
             (int col, int row) cellCoords = (e.ColumnIndex, e.RowIndex);
             
-            if (cellCoords == centrePieceCellCoords) // if a centre piece is clicked
+            if (cellCoords == CentrePieceCellCoords) // if a centre piece is clicked
                 MessageBox.Show("Centre colours cannot be changed.");
             else
             {
