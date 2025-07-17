@@ -1,17 +1,17 @@
 using System.Windows.Forms;
 
-namespace Solver.Types
+namespace Rubiks_Cube_Solver.Solver
 {
     using Face = DataGridView;
     
     internal class CubeNetFaces
     {
-        public Face White { get; init; }
-        public Face Yellow { get; init; }
-        public Face Green { get; init; }
-        public Face Blue { get; init; }
-        public Face Red { get; init; }
-        public Face Orange { get; init; }
+        public Face White { get; }
+        public Face Yellow { get; }
+        public Face Green { get; }
+        public Face Blue { get; }
+        public Face Red { get; }
+        public Face Orange { get; }
 
         public CubeNetFaces(Face whiteFace, Face yellowFace, Face greenFace, Face blueFace, Face redFace, Face orangeFace)
         {

@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using Rubiks_Cube_Solver.Solver;
 
 namespace Rubiks_Cube_Solver.Forms.Util
 {

@@ -24,7 +24,8 @@ namespace Rubiks_Cube_Solver.Solver.Forms
 
         private void InputColours_Load(object sender, EventArgs e)
         {
-            PopulateCubeNet();
+            CubeNetColourer.PopulateCubeNet(new CubeNetFaces
+                (whiteFace, yellowFace, greenFace, blueFace, redFace, orangeFace));
             lblInstructions.Text = GetInstructions();
             btnFinish.Visible = false;
         }
