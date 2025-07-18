@@ -1,13 +1,19 @@
 using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace Rubiks_Cube_Solver.Forms.Util
 {
     using Face = DataGridView;
 
-    internal static class CubeNetColourer
+    internal class CubeNetColourer
     {
-        private static void PopulateCubeFace(Face face)
+        private readonly CubeNetFaces faces;
+
+        public CubeNetColourer(CubeNetFaces faces) =>
+            this.faces = faces;
+
+        private void PopulateCubeFace(Face face)
         {
             // adding the cells to the face and colouring the centre cell
             for (int i = CubeNetCellLocation.MinCoord; i <= CubeNetCellLocation.MaxCoord; i++)
@@ -16,151 +22,180 @@ namespace Rubiks_Cube_Solver.Forms.Util
             face.ClearSelection(); //un-highlighting buttons
         }
 
-        public static void PopulateCubeNet(CubeNetFaces faces) =>
+        public void PopulateCubeNet() =>
             Array.ForEach(faces.GetFaces(), PopulateCubeFace);
 
-        private static void ColourYellowEdges(int subStep, CubeNetFaces faces)
+        private List<(Face, (int x, int y))> GetYellowEdges(int subStep)
         {
+            List<(Face, (int x, int y))> cells = new();
             if (subStep >= 0)
-            {
-                ColourCell(faces.Green, (1, 2));
-                ColourCell(faces.Yellow, (1, 0));
-            }
+                cells.AddRange
+                ([
+                    (faces.Green, (1, 2)),
+                    (faces.Yellow, (1, 0))
+                ])
             if (subStep >= 1)
-            {
-                ColourCell(faces.Orange, (1, 2));
-                ColourCell(faces.Yellow, (0, 1));
-            }
+                cells.AddRange
+                ([
+                    (faces.Orange, (1, 2)),
+                    (faces.Yellow, (0, 1))
+                ])
             if (subStep >= 2)
-            {
-                ColourCell(faces.Blue, (1, 2));
-                ColourCell(faces.Yellow, (1, 2));
-            }
+                cells.AddRange
+                ([
+                    (faces.Blue, (1, 2)),
+                    (faces.Yellow, (1, 2))
+                ])
             if (subStep == 3)
-            {
-                ColourCell(faces.Red, (1, 2));
-                ColourCell(faces.Yellow, (2, 1));
-            }
+                cells.AddRange
+                ([
+                    (faces.Red, (1, 2)),
+                    (faces.Yellow, (2, 1))
+                ])
+            return cells;
         }
 
-        private static void ColourYellowCorners(int subStep, CubeNetFaces faces)
+        private List<(Face, (int x, int y))> GetYellowCorners(int subStep)
         {
+            List<(Face, (int x, int y))> cells = new();
             if (subStep >= 0)
-            {
-                ColourCell(faces.Red, (0, 2));
-                ColourCell(faces.Green, (2, 2));
-                ColourCell(faces.Yellow, (2, 0));
-            }
+                cells.AddRange
+                ([
+                    (faces.Red, (0, 2)),
+                    (faces.Green, (2, 2)),
+                    (faces.Yellow, (2, 0))
+                ])
             if (subStep >= 1)
-            {
-                ColourCell(faces.Green, (0, 2));
-                ColourCell(faces.Orange, (2, 2));
-                ColourCell(faces.Yellow, (0, 0));
-            }
+                cells.AddRange
+                ([
+                    (faces.Green, (0, 2)),
+                    (faces.Orange, (2, 2)),
+                    (faces.Yellow, (0, 0))
+                ])
             if (subStep >= 2)
-            {
-                ColourCell(faces.Orange, (0, 2));
-                ColourCell(faces.Blue, (2, 2));
-                ColourCell(faces.Yellow, (0, 2));
-            }
+                cells.AddRange
+                ([
+                    (faces.Orange, (0, 2)),
+                    (faces.Blue, (2, 2)),
+                    (faces.Yellow, (0, 2))
+                ])
             if (subStep == 3)
-            {
-                ColourCell(faces.Blue, (0, 2));
-                ColourCell(faces.Red, (2, 2));
-                ColourCell(faces.Yellow, (2, 2));
-            }
+                cells.AddRange
+                ([
+                    (faces.Blue, (0, 2)),
+                    (faces.Red, (2, 2)),
+                    (faces.Yellow, (2, 2))
+                ])
+            return cells;
         }
 
-        private static void ColourMiddleLayerEdges(int subStep, CubeNetFaces faces)
+        private List<(Face, (int x, int y))> GetMiddleLayerEdges(int subStep)
         {
+            List<(Face, (int x, int y))> cells = new();
             if (subStep >= 0)
             {
-                ColourCell(faces.Red, (0, 1));
-                ColourCell(faces.Green, (2, 1));
-            }
+                cells.AddRange
+                ([
+                    (faces.Red, (0, 1)),
+                    (faces.Green, (2, 1))
+                ])
             if (subStep >= 1)
-            {
-                ColourCell(faces.Green, (0, 1));
-                ColourCell(faces.Orange, (2, 1));
-            }
+                cells.AddRange
+                ([
+                    (faces.Green, (0, 1)),
+                    (faces.Orange, (2, 1))
+                ])
             if (subStep >= 2)
-            {
-                ColourCell(faces.Orange, (0, 1));
-                ColourCell(faces.Blue, (2, 1));
-            }
+                cells.AddRange
+                ([
+                    (faces.Orange, (0, 1)),
+                    (faces.Blue, (2, 1))
+                ])
             if (subStep == 3)
-            {
-                ColourCell(faces.Blue, (0, 1));
-                ColourCell(faces.Red, (2, 1));
-            }
+                cells.AddRange
+                ([
+                    (faces.Blue, (0, 1)),
+                    (faces.Red, (2, 1))
+                ])
+            return cells;
         }
 
-        private static void ColourLastLayer(int subStep, CubeNetFaces faces)
+        private List<(Face, (int x, int y))> GetLastLayerPieces(int subStep)
         {
+            List<(Face, (int x, int y))> cells = new();
             if (subStep >= 0) // white edges
-            {
-                ColourCell(faces.White, (0, 1));
-                ColourCell(faces.White, (1, 0));
-                ColourCell(faces.White, (2, 1));
-                ColourCell(faces.White, (1, 2));
-            }
+                cells.AddRange
+                ([
+                    (faces.White, (0, 1)),
+                    (faces.White, (1, 0)),
+                    (faces.White, (2, 1)),
+                    (faces.White, (1, 2))
+                ])
             if (subStep >= 1) // white corners
-            {
-                ColourCell(faces.White, (0, 0));
-                ColourCell(faces.White, (2, 0));
-                ColourCell(faces.White, (0, 2));
-                ColourCell(faces.White, (2, 2));
-            }
+                cells.AddRange
+                ([
+                    (faces.White, (0, 0)),
+                    (faces.White, (2, 0)),
+                    (faces.White, (0, 2)),
+                    (faces.White, (2, 2))
+                ])
             if (subStep >= 2) // permuting corners
-            {
-                ColourCell(faces.Green, (0, 0));
-                ColourCell(faces.Green, (2, 0));
-                ColourCell(faces.Orange, (0, 0));
-                ColourCell(faces.Orange, (2, 0));
-                ColourCell(faces.Blue, (0, 0));
-                ColourCell(faces.Blue, (2, 0));
-                ColourCell(faces.Red, (0, 0));
-                ColourCell(faces.Red, (2, 0));
-
-            }
+                cells.AddRange
+                ([
+                    (faces.Green, (0, 0)),
+                    (faces.Green, (2, 0)),
+                    (faces.Orange, (0, 0)),
+                    (faces.Orange, (2, 0)),
+                    (faces.Blue, (0, 0)),
+                    (faces.Blue, (2, 0)),
+                    (faces.Red, (0, 0)),
+                    (faces.Red, (2, 0))
+                ])  
             if (subStep == 3) // permuting edges
-            {
-                ColourCell(faces.Green, (1, 0));
-                ColourCell(faces.Orange, (1, 0));
-                ColourCell(faces.Blue, (1, 0));
-                ColourCell(faces.Red, (1, 0));
-            }
+                cells.AddRange
+                ([
+                    (faces.Green, (1, 0)),
+                    (faces.Orange, (1, 0)),
+                    (faces.Blue, (1, 0)),
+                    (faces.Red, (1, 0))
+                ])
+            return cells;
         }
 
-        public static void ColourCubeNet(Stage stage, CubeNetFaces faces)
+        public void ColourCubeNet(Stage stage)
         {
-            PopulateCubeNet(faces);
+            PopulateCubeNet();
+
+            List<(Face, (int x, int y))> cells = new();
 
             switch (stage.Step)
             {
                 case StageStep.YellowEdges:
-                    ColourYellowEdges(stage.SubStep, faces);
+                    cells.AddRange(GetYellowEdges(stage.SubStep));
                     break;
                 case StageStep.YellowCorners:
-                    ColourYellowEdges(Stage.MaxSubStep, faces);
-                    ColourYellowCorners(stage.SubStep, faces);
+                    cells.AddRange(GetYellowEdges(Stage.MaxSubStep));
+                    cells.AddRange(GetYellowCorners(stage.SubStep));
                     break;
                 case StageStep.MiddleLayerEdges:
-                    ColourYellowEdges(Stage.MaxSubStep, faces);
-                    ColourYellowCorners(Stage.MaxSubStep, faces);
-                    ColourMiddleLayerEdges(stage.SubStep, faces);
+                    cells.AddRange(GetYellowEdges(Stage.MaxSubStep));
+                    cells.AddRange(GetYellowCorners(Stage.MaxSubStep));
+                    cells.AddRange(GetMiddleLayerEdges(stage.SubStep));
                     break;
                 case StageStep.LastLayer:
-                    ColourYellowEdges(Stage.MaxSubStep, faces);
-                    ColourYellowCorners(Stage.MaxSubStep, faces);
-                    ColourMiddleLayerEdges(Stage.MaxSubStep, faces);
-                    ColourLastLayer(stage.SubStep, faces);
+                    cells.AddRange(GetYellowEdges(Stage.MaxSubStep));
+                    cells.AddRange(GetYellowCorners(Stage.MaxSubStep));
+                    cells.AddRange(GetMiddleLayerEdges(Stage.MaxSubStep));
+                    cells.AddRange(GetLastLayerPieces(stage.SubStep));
                     break;
-
-            };
+            }
+            ColourCells(cells);
         }
 
-        private static void ColourCell(Face face, (int x, int y) location) =>
-            face[location.x, location.y].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
+        private static void ColourCell((Face face, (int x, int y) coords) cell) =>
+            cell.face[cell.coords.x, cell.coords.y].Style.BackColor = FaceColourExtension.FromFaceName(cell.face.Name).ToColor();
+
+        private static void ColourCells(List<(Face face, (int x, int y) coords)> cells) =>
+            cells.ForEach(ColourCell);
     }
 }
