@@ -18,6 +18,22 @@ namespace Rubiks_Cube_Solver.Forms.Util
         public static void Menu(Form currentForm) =>
             Navigate<Menu>(currentForm);
 
+        public static void NavigateFromCheckingCube(CheckingCube currentForm, Stage stage)
+        {
+            if (stage.Step == StageStep.LastLayer)
+            {
+                switch (stage.SubStep)
+                {
+                    case 0: Navigate<WhiteEdges>(currentForm); break;
+                    case 1: Navigate<WhiteCorners>(currentForm); break;
+                    case 2: Navigate<PermutingCorners>(currentForm); break;
+                    case 3: Navigate<PermutingEdges>(currentForm); break;
+                }
+            }
+            else
+                Navigate<InputPiece>(currentForm, stage);
+        }
+
         public static void Navigate<T>(Form currentForm, params object[] args) where T : Form
         {
             Form newForm = singletons.TryGetValue(typeof(T), out Form singleton) ? singleton :
