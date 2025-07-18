@@ -105,6 +105,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Solver\Types\CubeNet.cs" />
+    <Compile Include="Solver\Util\StageInfo.cs" />
     <Compile Include="Timer\Forms\BeforeSolve.cs">
       <SubType>Form</SubType>
     </Compile>
