@@ -8,6 +8,7 @@ namespace Rubiks_Cube_Solver.Forms.Util
 
     internal class CubeNetColourer(CubeNet faces)
     {
+        private const int maxNumPieces = 4;
         private readonly CubeNet faces = faces;
 
         private void PopulateCubeFace(Face face)
@@ -23,27 +24,28 @@ namespace Rubiks_Cube_Solver.Forms.Util
         public void PopulateCubeNet() =>
             Array.ForEach(faces.GetFaces(), PopulateCubeFace);
 
-        private void ColourYellowEdges(int subStep)
+        private void ColourYellowEdges(Stage stage)
         {
-            if (subStep >= 0)
+            int numPieces = GetNumPiecesToColour(stage, StageStep.YellowEdges);
+            if (numPieces >= 1)
                 ColourCells
                 ([
                     (faces.Green, (1, 2)),
                     (faces.Yellow, (1, 0))
                 ]);
-            if (subStep >= 1)
+            if (numPieces >= 2)
                 ColourCells
                 ([
                     (faces.Orange, (1, 2)),
                     (faces.Yellow, (0, 1))
                 ]);
-            if (subStep >= 2)
+            if (numPieces >= 3)
                 ColourCells
                 ([
                     (faces.Blue, (1, 2)),
                     (faces.Yellow, (1, 2))
                 ]);
-            if (subStep == 3)
+            if (numPieces == 4)
                 ColourCells
                 ([
                     (faces.Red, (1, 2)),
@@ -51,30 +53,31 @@ namespace Rubiks_Cube_Solver.Forms.Util
                 ]);
         }
 
-        private void ColourYellowCorners(int subStep)
+        private void ColourYellowCorners(Stage stage)
         {
-            if (subStep >= 0)
+            int numPieces = GetNumPiecesToColour(stage, StageStep.YellowCorners);
+            if (numPieces >= 1)
                 ColourCells
                 ([
                     (faces.Red, (0, 2)),
                     (faces.Green, (2, 2)),
                     (faces.Yellow, (2, 0))
                 ]);
-            if (subStep >= 1)
+            if (numPieces >= 2)
                 ColourCells
                 ([
                     (faces.Green, (0, 2)),
                     (faces.Orange, (2, 2)),
                     (faces.Yellow, (0, 0))
                 ]);
-            if (subStep >= 2)
+            if (numPieces >= 3)
                 ColourCells
                 ([
                     (faces.Orange, (0, 2)),
                     (faces.Blue, (2, 2)),
                     (faces.Yellow, (0, 2))
                 ]);
-            if (subStep == 3)
+            if (numPieces == 4)
                 ColourCells
                 ([
                     (faces.Blue, (0, 2)),
@@ -83,27 +86,28 @@ namespace Rubiks_Cube_Solver.Forms.Util
                 ]);
         }
 
-        private void ColourMiddleLayerEdges(int subStep)
+        private void ColourMiddleLayerEdges(Stage stage)
         {
-            if (subStep >= 0)
+            int numPieces = GetNumPiecesToColour(stage, StageStep.MiddleLayerEdges);
+            if (numPieces >= 1)
                 ColourCells
                 ([
                     (faces.Red, (0, 1)),
                     (faces.Green, (2, 1))
                 ]);
-            if (subStep >= 1)
+            if (numPieces >= 2)
                 ColourCells
                 ([
                     (faces.Green, (0, 1)),
                     (faces.Orange, (2, 1))
                 ]);
-            if (subStep >= 2)
+            if (numPieces >= 3)
                 ColourCells
                 ([
                     (faces.Orange, (0, 1)),
                     (faces.Blue, (2, 1))
                 ]);
-            if (subStep == 3)
+            if (numPieces == 4)
                 ColourCells
                 ([
                     (faces.Blue, (0, 1)),
@@ -111,9 +115,10 @@ namespace Rubiks_Cube_Solver.Forms.Util
                 ]);
         }
 
-        private void ColourLastLayerPieces(int subStep)
+        private void ColourLastLayerPieces(Stage stage)
         {
-            if (subStep >= 0) // white edges
+            int numPieces = GetNumPiecesToColour(stage, StageStep.LastLayer);
+            if (numPieces >= 1) // white edges
                 ColourCells
                 ([
                     (faces.White, (0, 1)),
@@ -121,7 +126,7 @@ namespace Rubiks_Cube_Solver.Forms.Util
                     (faces.White, (2, 1)),
                     (faces.White, (1, 2))
                 ]);
-            if (subStep >= 1) // white corners
+            if (numPieces >= 2) // white corners
                 ColourCells
                 ([
                     (faces.White, (0, 0)),
@@ -129,7 +134,7 @@ namespace Rubiks_Cube_Solver.Forms.Util
                     (faces.White, (0, 2)),
                     (faces.White, (2, 2))
                 ]);
-            if (subStep >= 2) // permuting corners
+            if (numPieces >= 3) // permuting corners
                 ColourCells
                 ([
                     (faces.Green, (0, 0)),
@@ -141,7 +146,7 @@ namespace Rubiks_Cube_Solver.Forms.Util
                     (faces.Red, (0, 0)),
                     (faces.Red, (2, 0))
                 ]);
-            if (subStep == 3) // permuting edges
+            if (numPieces == 4) // permuting edges
                 ColourCells
                 ([
                     (faces.Green, (1, 0)),
@@ -151,31 +156,20 @@ namespace Rubiks_Cube_Solver.Forms.Util
                 ]);
         }
 
+        private int GetNumPiecesToColour(Stage stage, StageStep colourStep)
+        {
+            if (stage.Step < colourStep) return 0;
+            return colourStep == stage.Step ? stage.SubStep-1 : maxNumPieces;
+        }
+
         public void ColourCubeNet(Stage stage)
         {
             PopulateCubeNet();
 
-            switch (stage.Step)
-            {
-                case StageStep.YellowEdges:
-                    ColourYellowEdges(stage.SubStep);
-                    break;
-                case StageStep.YellowCorners:
-                    ColourYellowEdges(Stage.MaxSubStep);
-                    ColourYellowCorners(stage.SubStep);
-                    break;
-                case StageStep.MiddleLayerEdges:
-                    ColourYellowEdges(Stage.MaxSubStep);
-                    ColourYellowCorners(Stage.MaxSubStep);
-                    ColourMiddleLayerEdges(stage.SubStep);
-                    break;
-                case StageStep.LastLayer:
-                    ColourYellowEdges(Stage.MaxSubStep);
-                    ColourYellowCorners(Stage.MaxSubStep);
-                    ColourMiddleLayerEdges(Stage.MaxSubStep);
-                    ColourLastLayerPieces(stage.SubStep);
-                    break;
-            }
+            ColourYellowEdges(stage);
+            ColourYellowCorners(stage);
+            ColourMiddleLayerEdges(stage);
+            ColourLastLayerPieces(stage);
         }
 
         private static void ColourCell((Face face, (int x, int y) coords) cell) =>
