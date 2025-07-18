@@ -2,7 +2,7 @@
 {
     internal static class PieceRotator
     {
-        public static PieceConfig YPrimeMove(PieceConfig initialConfig)
+        private static PieceConfiguration YPrimeMove(PieceConfiguration initialConfig)
         {
             (int x, int y, int z) = initialConfig.Location.GetLocation();
             PieceOrientation orientation = initialConfig.Orientation;
@@ -26,9 +26,9 @@
             else //if the piece is a corner
                 (x, z) = (z == 2 ? 0 : 2, x);
 
-            return new PieceConfig((x, y, z), orientation);
+            return new PieceConfiguration((x, y, z), orientation);
         }
-        public static PieceConfig RotatePiece(PieceConfig piece, Stage stage)
+        public static PieceConfiguration RotatePiece(PieceConfiguration piece, Stage stage)
         {
             // rotating the piece the correct number of times, so that it can be solved relative to its centre piece
             for (int i = 0; i < stage.SubStep; i++)

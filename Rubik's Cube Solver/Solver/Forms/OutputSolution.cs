@@ -8,7 +8,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
     internal partial class OutputSolution : Form
     {
         private readonly Stage stage;
-        private PieceConfig piece;
+        private PieceConfiguration piece;
         private PieceSolution solution;
 
         public OutputSolution(Stage currentStage, CubeNetCellLocation cell)
@@ -35,7 +35,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             lblExplanation.Text = solution.Explanation;
         }
 
-        private PieceSolution GetSolution(Stage stage, PieceConfig piece)
+        private PieceSolution GetSolution(Stage stage, PieceConfiguration piece)
         {
             try { return SolvePiece.GetSolution(stage, piece); }
             catch (ArgumentException) // if there is no match for the piece that the user inputted
