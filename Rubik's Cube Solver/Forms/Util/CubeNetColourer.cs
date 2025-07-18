@@ -9,8 +9,6 @@ namespace Rubiks_Cube_Solver.Forms.Util
     internal class CubeNetColourer(CubeNet faces)
     {
         private const int maxNumPieces = 4;
-        private readonly CubeNet faces = faces;
-
         private void PopulateCubeFace(Face face)
         {
             // adding the cells to the face and colouring the centre cell
