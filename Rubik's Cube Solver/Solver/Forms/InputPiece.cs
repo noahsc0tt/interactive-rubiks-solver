@@ -8,8 +8,6 @@ namespace Rubiks_Cube_Solver.Solver.Forms
     using Face = DataGridView;
     internal partial class InputPiece : Form
     {
-        public static readonly (int, int) CentrePieceCellCoords = (1, 1);
-
         private readonly Stage stage;
         private CubeNetCellLocation selectedCellLocation;
         private DataGridViewCell selectedCell;
@@ -24,7 +22,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
 
         private void InputColours_Load(object sender, EventArgs e)
         {
-            new CubeNetColourer(new CubeNetFaces
+            new CubeNetColourer(new CubeNet
             (
                 whiteFace, yellowFace, greenFace, blueFace, redFace, orangeFace
             )).PopulateCubeNet();
@@ -42,7 +40,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
 
             (int col, int row) cellCoords = (e.ColumnIndex, e.RowIndex);
             
-            if (cellCoords == CentrePieceCellCoords) // if a centre piece is clicked
+            if (cellCoords == CubeNet.CentrePieceCellCoords) // if a centre piece is clicked
                 MessageBox.Show("Centre colours cannot be changed.");
             else
             {

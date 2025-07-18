@@ -104,7 +104,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Solver\Types\CubeNetFaces.cs" />
+    <Compile Include="Solver\Types\CubeNet.cs" />
     <Compile Include="Timer\Forms\BeforeSolve.cs">
       <SubType>Form</SubType>
     </Compile>

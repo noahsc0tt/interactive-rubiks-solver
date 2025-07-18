@@ -6,16 +6,17 @@ namespace Rubiks_Cube_Solver.Forms.Util
 {
     using Face = DataGridView;
 
-    internal class CubeNetColourer(CubeNetFaces faces)
+    internal class CubeNetColourer(CubeNet faces)
     {
-        private readonly CubeNetFaces faces = faces;
+        private readonly CubeNet faces = faces;
 
         private void PopulateCubeFace(Face face)
         {
             // adding the cells to the face and colouring the centre cell
             for (int i = CubeNetCellLocation.MinCoord; i <= CubeNetCellLocation.MaxCoord; i++)
                 face.Rows.Add("", "", "");
-            face[1, 1].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
+            (int x, int y) centreCoords = CubeNet.CentrePieceCellCoords;
+            face[centreCoords.x, centreCoords.y].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
             face.ClearSelection(); //un-highlighting buttons
         }
 
