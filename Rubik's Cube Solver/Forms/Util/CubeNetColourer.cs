@@ -33,25 +33,25 @@ namespace Rubiks_Cube_Solver.Forms.Util
                 ([
                     (faces.Green, (1, 2)),
                     (faces.Yellow, (1, 0))
-                ])
+                ]);
             if (subStep >= 1)
                 ColourCells
                 ([
                     (faces.Orange, (1, 2)),
                     (faces.Yellow, (0, 1))
-                ])
+                ]);
             if (subStep >= 2)
                 ColourCells
                 ([
                     (faces.Blue, (1, 2)),
                     (faces.Yellow, (1, 2))
-                ])
+                ]);
             if (subStep == 3)
                 ColourCells
                 ([
                     (faces.Red, (1, 2)),
                     (faces.Yellow, (2, 1))
-                ])
+                ]);
         }
 
         private void ColourYellowCorners(int subStep)
@@ -62,28 +62,28 @@ namespace Rubiks_Cube_Solver.Forms.Util
                     (faces.Red, (0, 2)),
                     (faces.Green, (2, 2)),
                     (faces.Yellow, (2, 0))
-                ])
+                ]);
             if (subStep >= 1)
                 ColourCells
                 ([
                     (faces.Green, (0, 2)),
                     (faces.Orange, (2, 2)),
                     (faces.Yellow, (0, 0))
-                ])
+                ]);
             if (subStep >= 2)
                 ColourCells
                 ([
                     (faces.Orange, (0, 2)),
                     (faces.Blue, (2, 2)),
                     (faces.Yellow, (0, 2))
-                ])
+                ]);
             if (subStep == 3)
                 ColourCells
                 ([
                     (faces.Blue, (0, 2)),
                     (faces.Red, (2, 2)),
                     (faces.Yellow, (2, 2))
-                ])
+                ]);
         }
 
         private void ColourMiddleLayerEdges(int subStep)
@@ -93,25 +93,25 @@ namespace Rubiks_Cube_Solver.Forms.Util
                 ([
                     (faces.Red, (0, 1)),
                     (faces.Green, (2, 1))
-                ])
+                ]);
             if (subStep >= 1)
                 ColourCells
                 ([
                     (faces.Green, (0, 1)),
                     (faces.Orange, (2, 1))
-                ])
+                ]);
             if (subStep >= 2)
                 ColourCells
                 ([
                     (faces.Orange, (0, 1)),
                     (faces.Blue, (2, 1))
-                ])
+                ]);
             if (subStep == 3)
                 ColourCells
                 ([
                     (faces.Blue, (0, 1)),
                     (faces.Red, (2, 1))
-                ])
+                ]);
         }
 
         private void ColourLastLayerPieces(int subStep)
@@ -123,7 +123,7 @@ namespace Rubiks_Cube_Solver.Forms.Util
                     (faces.White, (1, 0)),
                     (faces.White, (2, 1)),
                     (faces.White, (1, 2))
-                ])
+                ]);
             if (subStep >= 1) // white corners
                 ColourCells
                 ([
@@ -131,7 +131,7 @@ namespace Rubiks_Cube_Solver.Forms.Util
                     (faces.White, (2, 0)),
                     (faces.White, (0, 2)),
                     (faces.White, (2, 2))
-                ])
+                ]);
             if (subStep >= 2) // permuting corners
                 ColourCells
                 ([
@@ -143,7 +143,7 @@ namespace Rubiks_Cube_Solver.Forms.Util
                     (faces.Blue, (2, 0)),
                     (faces.Red, (0, 0)),
                     (faces.Red, (2, 0))
-                ])  
+                ]);
             if (subStep == 3) // permuting edges
                 ColourCells
                 ([
@@ -151,7 +151,7 @@ namespace Rubiks_Cube_Solver.Forms.Util
                     (faces.Orange, (1, 0)),
                     (faces.Blue, (1, 0)),
                     (faces.Red, (1, 0))
-                ])
+                ]);
         }
 
         public void ColourCubeNet(Stage stage)
