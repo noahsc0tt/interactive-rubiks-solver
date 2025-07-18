@@ -10,6 +10,7 @@ namespace Rubiks_Cube_Solver
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.Run(Forms.Menu.Instance);
         }
     }

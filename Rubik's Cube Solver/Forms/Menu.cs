@@ -4,6 +4,7 @@ using Rubiks_Cube_Solver.Forms.Util;
 
 namespace Rubiks_Cube_Solver.Forms
 {
+    // singleton menu form for navigation
     internal partial class Menu : Form
     {
         private static Menu _instance;

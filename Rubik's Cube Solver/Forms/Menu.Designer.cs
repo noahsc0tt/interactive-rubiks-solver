@@ -28,60 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSolver = new System.Windows.Forms.Button();
-            this.btnTimer = new System.Windows.Forms.Button();
-            this.btnNotation = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            btnSolver = new System.Windows.Forms.Button();
+            btnTimer = new System.Windows.Forms.Button();
+            btnNotation = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // btnSolver
             // 
-            this.btnSolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
-            this.btnSolver.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSolver.Location = new System.Drawing.Point(71, 70);
-            this.btnSolver.Name = "btnSolver";
-            this.btnSolver.Size = new System.Drawing.Size(1329, 353);
-            this.btnSolver.TabIndex = 0;
-            this.btnSolver.TabStop = false;
-            this.btnSolver.Text = "Rubik\'s Cube Solver";
-            this.btnSolver.UseVisualStyleBackColor = true;
-            this.btnSolver.Click += new System.EventHandler(this.btnSolver_Click);
+            btnSolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
+            btnSolver.ForeColor = System.Drawing.SystemColors.ControlText;
+            btnSolver.Location = new System.Drawing.Point(49, 75);
+            btnSolver.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSolver.Name = "btnSolver";
+            btnSolver.Size = new System.Drawing.Size(1372, 331);
+            btnSolver.TabIndex = 0;
+            btnSolver.TabStop = false;
+            btnSolver.Text = "Rubik's Cube Solver";
+            btnSolver.UseVisualStyleBackColor = true;
+            btnSolver.Click += btnSolver_Click;
             // 
             // btnTimer
             // 
-            this.btnTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
-            this.btnTimer.Location = new System.Drawing.Point(71, 548);
-            this.btnTimer.Name = "btnTimer";
-            this.btnTimer.Size = new System.Drawing.Size(568, 250);
-            this.btnTimer.TabIndex = 1;
-            this.btnTimer.TabStop = false;
-            this.btnTimer.Text = "Timer";
-            this.btnTimer.UseVisualStyleBackColor = true;
-            this.btnTimer.Click += new System.EventHandler(this.btnTimer_Click);
+            btnTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
+            btnTimer.Location = new System.Drawing.Point(50, 560);
+            btnTimer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnTimer.Name = "btnTimer";
+            btnTimer.Size = new System.Drawing.Size(624, 244);
+            btnTimer.TabIndex = 1;
+            btnTimer.TabStop = false;
+            btnTimer.Text = "Timer";
+            btnTimer.UseVisualStyleBackColor = true;
+            btnTimer.Click += btnTimer_Click;
             // 
             // btnNotation
             // 
-            this.btnNotation.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
-            this.btnNotation.Location = new System.Drawing.Point(832, 548);
-            this.btnNotation.Name = "btnNotation";
-            this.btnNotation.Size = new System.Drawing.Size(568, 250);
-            this.btnNotation.TabIndex = 2;
-            this.btnNotation.TabStop = false;
-            this.btnNotation.Text = "Notation Explanation";
-            this.btnNotation.UseVisualStyleBackColor = true;
-            this.btnNotation.Click += new System.EventHandler(this.btnNotation_Click);
+            btnNotation.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
+            btnNotation.Location = new System.Drawing.Point(797, 560);
+            btnNotation.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnNotation.Name = "btnNotation";
+            btnNotation.Size = new System.Drawing.Size(624, 244);
+            btnNotation.TabIndex = 2;
+            btnNotation.TabStop = false;
+            btnNotation.Text = "Notation Explanation";
+            btnNotation.UseVisualStyleBackColor = true;
+            btnNotation.Click += btnNotation_Click;
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1474, 900);
-            this.Controls.Add(this.btnNotation);
-            this.Controls.Add(this.btnTimer);
-            this.Controls.Add(this.btnSolver);
-            this.Name = "Menu";
-            this.Text = "Menu";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1474, 900);
+            Controls.Add(btnNotation);
+            Controls.Add(btnTimer);
+            Controls.Add(btnSolver);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "Menu";
+            Text = "Menu";
+            WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ResumeLayout(false);
 
         }
 
