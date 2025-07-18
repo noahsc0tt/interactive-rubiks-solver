@@ -1,18 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
     <LangVersion>preview</LangVersion>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{162A806C-F4B8-407F-8347-18E04735E492}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Rubiks_Cube_Solver</RootNamespace>
     <AssemblyName>Rubik%27s Cube Solver</AssemblyName>
-    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>E:\</PublishUrl>
     <Install>true</Install>
@@ -29,228 +21,23 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <ManifestCertificateThumbprint>257A9BA438FA272A63BD5831D53174FAB5347E06</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Rubik%27s Cube Solver_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <StartupObject>Rubiks_Cube_Solver.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestCertificateThumbprint>257A9BA438FA272A63BD5831D53174FAB5347E06</ManifestCertificateThumbprint>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestKeyFile>Rubik%27s Cube Solver_TemporaryKey.pfx</ManifestKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>false</SignManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Rubiks_Cube_Solver.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Core" />
-    <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Numerics.Vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Forms\Util\CubeNetColourer.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Solver\Types\CubeNet.cs" />
-    <Compile Include="Solver\Types\PieceOrientation.cs" />
-    <Compile Include="Solver\Util\StageInfo.cs" />
-    <Compile Include="Timer\Forms\BeforeSolve.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Timer\Forms\BeforeSolve.Designer.cs">
-      <DependentUpon>BeforeSolve.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Solver\Forms\CheckingCube.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Solver\Forms\CheckingCube.Designer.cs">
-      <DependentUpon>CheckingCube.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Util\DefaultFormSettings.cs" />
-    <Compile Include="Timer\Forms\DuringSolve.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Timer\Forms\DuringSolve.Designer.cs">
-      <DependentUpon>DuringSolve.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Solver\Types\CellToPieceConfig.cs" />
-    <Compile Include="Solver\Types\CubeNetCellLocation.cs" />
-    <Compile Include="Solver\Types\FaceColour.cs" />
-    <Compile Include="Solver\Types\PieceLocation.cs" />
-    <Compile Include="Solver\Types\PieceSolution.cs" />
-    <Compile Include="Solver\Util\PieceRotator.cs" />
-    <Compile Include="Solver\Util\SolvePiece.cs" />
-    <Compile Include="Solver\Types\Stage.cs" />
-    <Compile Include="Solver\Util\CoordValidator.cs" />
-    <Compile Include="Forms\Util\FormNavigator.cs" />
-    <Compile Include="Forms\Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\NotationExplanation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\NotationExplanation.Designer.cs">
-      <DependentUpon>NotationExplanation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Solver\Forms\OutputSolution.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Solver\Forms\OutputSolution.Designer.cs">
-      <DependentUpon>OutputSolution.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Solver\Forms\Last Layer\PermutingCorners.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Solver\Forms\Last Layer\PermutingCorners.Designer.cs">
-      <DependentUpon>PermutingCorners.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Solver\Forms\Last Layer\PermutingEdges.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Solver\Forms\Last Layer\PermutingEdges.Designer.cs">
-      <DependentUpon>PermutingEdges.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Solver\Forms\InputPiece.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Solver\Forms\InputPiece.Designer.cs">
-      <DependentUpon>InputPiece.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Solver\Forms\Last Layer\WhiteCorners.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Solver\Forms\Last Layer\WhiteCorners.Designer.cs">
-      <DependentUpon>WhiteCorners.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Solver\Forms\Last Layer\WhiteEdges.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Solver\Forms\Last Layer\WhiteEdges.Designer.cs">
-      <DependentUpon>WhiteEdges.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Timer\Util\Scrambler.cs" />
-    <EmbeddedResource Include="Timer\Forms\BeforeSolve.resx">
-      <DependentUpon>BeforeSolve.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Solver\Forms\CheckingCube.resx">
-      <DependentUpon>CheckingCube.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Timer\Forms\DuringSolve.resx">
-      <DependentUpon>DuringSolve.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NotationExplanation.resx">
-      <DependentUpon>NotationExplanation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Solver\Forms\OutputSolution.resx">
-      <DependentUpon>OutputSolution.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Solver\Forms\Last Layer\PermutingCorners.resx">
-      <DependentUpon>PermutingCorners.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Solver\Forms\Last Layer\PermutingEdges.resx">
-      <DependentUpon>PermutingEdges.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <SubType>Designer</SubType>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <CustomToolNamespace>Rubiks_Cube_Solver.Properties</CustomToolNamespace>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Solver\Forms\InputPiece.resx">
-      <DependentUpon>InputPiece.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Solver\Forms\Last Layer\WhiteCorners.resx">
-      <DependentUpon>WhiteCorners.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Solver\Forms\Last Layer\WhiteEdges.resx">
-      <DependentUpon>WhiteEdges.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="app.config" />
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Notation 2.PNG" />
-    <None Include="Resources\Notation 3.PNG" />
-    <None Include="Resources\tle edited.png" />
-    <None Include="Resources\oriented corner.png" />
-    <None Include="Resources\completed oll.png" />
-    <None Include="Resources\headlights.png" />
-    <None Include="Resources\permuted corners.png" />
-    <None Include="Resources\pll bar.png" />
-    <None Include="Resources\Notation 1 NEW.png" />
-    <None Include="Resources\corner.png" />
-    <None Include="Resources\edge.png" />
-    <None Include="Resources\centre.png" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Collections.Immutable" Version="9.0.7" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -264,6 +51,4 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
