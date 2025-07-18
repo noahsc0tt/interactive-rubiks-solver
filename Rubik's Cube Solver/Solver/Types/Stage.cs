@@ -108,8 +108,10 @@ namespace Rubiks_Cube_Solver.Solver
                 2 => FaceColour.Blue,
                 3 => FaceColour.Red
             },
-            _ => throw new InvalidOperationException("Last layer stages have no input")
+            _ => throw new InvalidOperationException($"The last layer stages (currently {stage.Step}.{stage.SubStep}) do not have input colours")
         };
 
+        public static string GetInstructions(Stage stage) =>
+            $"Input the position of the {GetInputColour(stage).ToString().ToLower()} square on the {GetRequiredPiece(stage)}";
     }
 }

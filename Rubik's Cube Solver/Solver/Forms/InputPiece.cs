@@ -26,12 +26,9 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             (
                 whiteFace, yellowFace, greenFace, blueFace, redFace, orangeFace
             )).PopulateCubeNet();
-            lblInstructions.Text = GetInstructions();
+            lblInstructions.Text = StageInfo.GetInstructions(stage);
             btnFinish.Visible = false;
         }
-
-        private string GetInstructions() =>
-            $"Input the position of the {StageInfo.GetInputColour(stage).ToString().ToLower()} square on the {StageInfo.GetRequiredPiece(stage)}";
 
         private void HandleCellClick(object sender, DataGridViewCellEventArgs e)
         {
