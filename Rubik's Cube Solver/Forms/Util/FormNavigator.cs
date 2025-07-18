@@ -12,6 +12,8 @@ namespace Rubiks_Cube_Solver.Forms.Util
 
     internal static class FormNavigator
     {
+        private static bool Navigating = false;
+
         private static readonly ImmutableDictionary<Type, Form> singletons = ImmutableDictionary.CreateRange
             ([
                 new SingletonEntry(typeof(Menu), Forms.Menu.Instance),
@@ -39,10 +41,13 @@ namespace Rubiks_Cube_Solver.Forms.Util
 
         public static void Navigate<T>(Form currentForm, params object[] args) where T : Form
         {
+            Navigating = true;
             Form newForm = singletons.TryGetValue(typeof(T), out Form singleton) ? singleton :
                 (Form)Activator.CreateInstance(typeof(T), args);
 
+            ExitOnUserClose(newForm);
             SwitchForms(currentForm, newForm);
+            Navigating = false;
         }
 
         private static void SwitchForms(Form currentForm, Form newForm)
@@ -54,5 +59,12 @@ namespace Rubiks_Cube_Solver.Forms.Util
             else
                 currentForm.Close();
         }
+
+        private static void ExitOnUserClose(Form form) =>
+            form.FormClosing += (s, e) =>
+            {
+                if (!Navigating && e.CloseReason == CloseReason.UserClosing)
+                    Application.Exit();
+            };
     }
 }
