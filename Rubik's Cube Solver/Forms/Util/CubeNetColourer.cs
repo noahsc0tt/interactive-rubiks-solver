@@ -1,18 +1,14 @@
 using System;
 using System.Windows.Forms;
-using System.Collections.Generic;
 using Rubiks_Cube_Solver.Solver;
 
 namespace Rubiks_Cube_Solver.Forms.Util
 {
     using Face = DataGridView;
 
-    internal class CubeNetColourer
+    internal class CubeNetColourer(CubeNetFaces faces)
     {
-        private readonly CubeNetFaces faces;
-
-        public CubeNetColourer(CubeNetFaces faces) =>
-            this.faces = faces;
+        private readonly CubeNetFaces faces = faces;
 
         private void PopulateCubeFace(Face face)
         {
