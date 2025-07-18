@@ -14,8 +14,8 @@ namespace Rubiks_Cube_Solver.Forms.Util
             // adding the cells to the face and colouring the centre cell
             for (int i = CubeNetCellLocation.MinCoord; i <= CubeNetCellLocation.MaxCoord; i++)
                 face.Rows.Add("", "", "");
-            (int x, int y) centreCoords = CubeNet.CentrePieceCellCoords;
-            face[centreCoords.x, centreCoords.y].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
+            (int x, int y) = CubeNet.CentrePieceCellCoords;
+            face[x, y].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
             face.ClearSelection(); //un-highlighting buttons
         }
 
