@@ -5,8 +5,8 @@ using System.Collections.Immutable;
 
 namespace Rubiks_Cube_Solver.Solver.Util
 {
-    using Dict = ImmutableDictionary<PieceConfiguration, PieceSolution>;
-    using Entry = KeyValuePair<PieceConfiguration, PieceSolution>;
+    using Dict = ImmutableDictionary<PieceLocation, PieceSolution>;
+    using Entry = KeyValuePair<PieceLocation, PieceSolution>;
     internal static class SolvePiece
     {
 
@@ -93,7 +93,7 @@ namespace Rubiks_Cube_Solver.Solver.Util
             ]);
 
         private static Entry CreateEntry(((int, int, int) location, PieceOrientation orientation, string sequence, string explanation) entry) =>
-            new(new PieceConfiguration(entry.location, entry.orientation), new PieceSolution(entry.sequence, entry.explanation));
+            new(new PieceLocation(entry.location, entry.orientation), new PieceSolution(entry.sequence, entry.explanation));
 
         private static Dict CreateCornerDict(((int, int, int) location, string sequence, string explanation)[] entries) =>
             CreateDict(entries.Select(entry =>
@@ -113,8 +113,8 @@ namespace Rubiks_Cube_Solver.Solver.Util
                 _ => throw new InvalidOperationException($"Last layer stages (currently {stage.Step.ToString()}.{stage.SubStep}) do not have PieceSolutions")
             };
 
-        public static PieceSolution GetSolution(Stage stage, PieceConfiguration piece) =>
+        public static PieceSolution GetSolution(Stage stage, PieceLocation piece) =>
             GetStageDict(stage).TryGetValue(piece, out PieceSolution solution) ? solution :
-                throw new ArgumentException($"No solution found for piece {piece.Location.ToString()}, {piece.Orientation.ToString()}");
+                throw new ArgumentException($"No solution found for piece {piece.Coords.ToString()}, {piece.Orientation.ToString()}");
     }
 }

@@ -129,7 +129,7 @@
     <Compile Include="Solver\Types\CellToPieceConfig.cs" />
     <Compile Include="Solver\Types\CubeNetCellLocation.cs" />
     <Compile Include="Solver\Types\FaceColour.cs" />
-    <Compile Include="Solver\Types\PieceConfiguration.cs" />
+    <Compile Include="Solver\Types\PieceLocation.cs" />
     <Compile Include="Solver\Types\PieceSolution.cs" />
     <Compile Include="Solver\Util\PieceRotator.cs" />
     <Compile Include="Solver\Util\SolvePiece.cs" />

@@ -3,8 +3,8 @@ using System.Linq;
 
 namespace Rubiks_Cube_Solver.Solver
 {
-    using Entry = System.Collections.Generic.KeyValuePair<(int, int), PieceConfiguration>;
-    using Dict = ImmutableDictionary<(int, int), PieceConfiguration>;
+    using Entry = System.Collections.Generic.KeyValuePair<(int, int), PieceLocation>;
+    using Dict = ImmutableDictionary<(int, int), PieceLocation>;
 
     internal static class CellToPieceConfig
     {
@@ -92,10 +92,10 @@ namespace Rubiks_Cube_Solver.Solver
             ImmutableDictionary.CreateRange
             (
                 cubeFaceCellCoords.Zip(pieceConfigs, (coord, config) => 
-                    new Entry(coord, new PieceConfiguration(config.location, config.orientation)))
+                    new Entry(coord, new PieceLocation(config.location, config.orientation)))
             );
 
-        public static PieceConfiguration GetPieceConfig(CubeNetCellLocation cellLocation) =>
+        public static PieceLocation GetPieceConfig(CubeNetCellLocation cellLocation) =>
             GetFaceDict(cellLocation.Face)[(cellLocation.X, cellLocation.Y)];
     }
 }
