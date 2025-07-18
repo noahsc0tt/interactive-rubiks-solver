@@ -23,7 +23,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             new CubeNetColourer(new CubeNetFaces
             (
                 whiteFace, yellowFace, greenFace, blueFace, redFace, orangeFace
-            )).PopulateCubeNet();
+            )).ColourCubeNet(stage);
             //changing the text of the 'Next Stage' button if the user has completed the solve
             if (StageInfo.GetStageTuple(stage) == Stage.MaxStage)
             {
