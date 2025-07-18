@@ -42,7 +42,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
         }
 
         private void boxChooseStage_SelectionChangeCommitted(object sender, EventArgs e) =>
-            FormNavigator.NavigateFromCheckingCubeNavigate(this, (string)boxChooseStage.SelectedItem switch
+            FormNavigator.NavigateFromCheckingCube(this, (string)boxChooseStage.SelectedItem switch
             {
                 "Yellow Edges" => Stage.YellowEdges,
                 "Yellow Corners" => Stage.YellowCorners,
