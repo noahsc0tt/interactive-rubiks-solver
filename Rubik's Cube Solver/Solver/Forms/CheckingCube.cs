@@ -5,9 +5,6 @@ using Rubiks_Cube_Solver.Solver.Util;
 
 namespace Rubiks_Cube_Solver.Solver.Forms
 {
-    using LastLayer;
-    using Face = DataGridView;
-
     internal partial class CheckingCube : Form
     {
         private readonly Stage stage;
@@ -19,7 +16,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
 
             stage = currentStage;
         }
-        private void Checking_Moves_Load(object sender, EventArgs e)
+        private void CheckingCube_Load(object sender, EventArgs e)
         {
             new CubeNetColourer(new CubeNet
             (

@@ -1070,7 +1070,7 @@
             this.Name = "CheckingMoves";
             this.Text = "Checking_Moves";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Checking_Moves_Load);
+            this.Load += new System.EventHandler(this.CheckingCube_Load);
             ((System.ComponentModel.ISupportInitialize)(this.whiteFace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.greenFace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orangeFace)).EndInit();

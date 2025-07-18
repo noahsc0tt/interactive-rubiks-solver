@@ -20,7 +20,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             stage = currentStage;
         }
 
-        private void InputColours_Load(object sender, EventArgs e)
+        private void InputPiece_Load(object sender, EventArgs e)
         {
             new CubeNetColourer(new CubeNet
             (
