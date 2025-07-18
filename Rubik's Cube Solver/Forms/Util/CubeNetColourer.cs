@@ -181,7 +181,10 @@ namespace Rubiks_Cube_Solver.Forms.Util
         }
 
         private static void ColourCell((Face face, (int x, int y) coords) cell) =>
-            cell.face[cell.coords.x, cell.coords.y].Style.BackColor = FaceColourExtension.FromFaceName(cell.face.Name).ToColor();
+            ColourCell(cell.face, cell.coords);
+
+        private static void ColourCell(Face face, (int x, int y) coords) =>
+            face[coords.x, coords.y].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
 
         private static void ColourCells((Face face, (int x, int y) coords)[] cells) =>
             Array.ForEach(cells, ColourCell);
