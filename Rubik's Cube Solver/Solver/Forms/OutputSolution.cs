@@ -42,7 +42,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             {
                 // opening the 'Input Colours' form so the user can re-enter their input
                 MessageBox.Show("Invalid piece position. Enter the position of your piece correctly.");
-                FormNavigator.Navigate<InputPiece>(this, stage);
+                BeginInvoke(() => FormNavigator.Navigate<InputPiece>(this, stage));
                 return null;
             }
         }
