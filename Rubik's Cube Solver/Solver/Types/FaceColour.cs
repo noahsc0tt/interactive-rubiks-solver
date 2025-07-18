@@ -15,6 +15,7 @@ namespace Rubiks_Cube_Solver.Solver
 
     internal static class FaceColourExtension
     {
+        public static readonly Color DefaultCellColour = Color.Silver;
         public static FaceColour FromFaceName(string faceName) => faceName switch
         {
             "whiteFace" => FaceColour.White,
@@ -25,8 +26,6 @@ namespace Rubiks_Cube_Solver.Solver
             "orangeFace" => FaceColour.Orange,
             _ => throw new ArgumentException($"Invalid face name: {faceName}")
         };
-
-
         
         public static Color ToColor(this FaceColour colour) => colour switch
         {

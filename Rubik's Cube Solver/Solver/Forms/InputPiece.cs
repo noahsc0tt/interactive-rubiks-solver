@@ -37,11 +37,11 @@ namespace Rubiks_Cube_Solver.Solver.Forms
 
             (int col, int row) cellCoords = (e.ColumnIndex, e.RowIndex);
             
-            if (cellCoords == CubeNet.CentrePieceCellCoords) // if a centre piece is clicked
+            if (cellCoords == CubeNet.CentrePieceCellCoords)
                 MessageBox.Show("Centre colours cannot be changed.");
             else
             {
-                selectedCell?.Style.BackColor = Color.Silver; // un-colouring the previous cell
+                selectedCell?.Style.BackColor = FaceColourExtension.DefaultCellColour; // un-colouring the previous cell
                 //colouring the new cell
                 selectedCellLocation = new CubeNetCellLocation(cellCoords, FaceColourExtension.FromFaceName(face.Name));
                 selectedCell = face[cellCoords.col, cellCoords.row];
