@@ -19,8 +19,8 @@ namespace Rubiks_Cube_Solver.Solver.Util
 
         public static void ValidateCoords(int min, int max, params (int value, string name)[] coords)
         {
-            foreach (var coord in coords)
-                ValidateCoord(min, max, coord.value, coord.name);
+            foreach (var (value, name) in coords)
+                ValidateCoord(min, max, value, name);
         }
 
     }

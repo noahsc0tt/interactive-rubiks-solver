@@ -154,7 +154,7 @@ namespace Rubiks_Cube_Solver.Forms.Util
                 ]);
         }
 
-        private int GetNumPiecesToColour(Stage stage, StageStep colourStep)
+        private static int GetNumPiecesToColour(Stage stage, StageStep colourStep)
         {
             if (stage.Step < colourStep) return 0;
             return colourStep == stage.Step ? stage.SubStep+1 : maxNumPieces;

@@ -96,10 +96,10 @@ namespace Rubiks_Cube_Solver.Solver.Util
             new(new PieceLocation(entry.location, entry.orientation), new PieceSolution(entry.sequence, entry.explanation));
 
         private static Dict CreateCornerDict(((int, int, int) location, string sequence, string explanation)[] entries) =>
-            CreateDict(entries.Select(entry =>
+            CreateDict([.. entries.Select(entry =>
             (entry.location, PieceOrientation.Corner,
                 entry.sequence + "Repeat the moves (R, U, R', U') until the yellow square is pointing down.",
-                entry.explanation + "Cycle the corner until it is solved.")).ToArray());
+                entry.explanation + "Cycle the corner until it is solved."))]);
 
         private static Dict CreateDict(((int, int, int) location, PieceOrientation orientation, string sequence, string explanation)[] entries) =>
             ImmutableDictionary.CreateRange(entries.Select(CreateEntry));
@@ -110,11 +110,11 @@ namespace Rubiks_Cube_Solver.Solver.Util
                 StageStep.YellowEdges => yellowEdgesDict,
                 StageStep.YellowCorners => yellowCornersDict,
                 StageStep.MiddleLayerEdges => middleLayerEdgesDict,
-                _ => throw new InvalidOperationException($"Last layer stages (currently {stage.Step.ToString()}.{stage.SubStep}) do not have PieceSolutions")
+                _ => throw new InvalidOperationException($"Last layer stages (currently {stage.Step}.{stage.SubStep}) do not have PieceSolutions")
             };
 
         public static PieceSolution GetSolution(Stage stage, PieceLocation piece) =>
             GetStageDict(stage).TryGetValue(piece, out PieceSolution solution) ? solution :
-                throw new ArgumentException($"No solution found for piece {piece.Coords.ToString()}, {piece.Orientation.ToString()}");
+                throw new ArgumentException($"No solution found for piece {piece.Coords}, {piece.Orientation}");
     }
 }
