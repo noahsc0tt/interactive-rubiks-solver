@@ -33,11 +33,8 @@ namespace Rubiks_Cube_Solver.Solver.Forms
         private void btnMenu_Click(object sender, EventArgs e) =>
             FormNavigator.Menu(this);
 
-        private void btnNextStage_Click(object sender, EventArgs e)
-        {
-            stage.Increment();
-            FormNavigator.NavigateFromCheckingCube(this,stage);
-        }
+        private void btnNextStage_Click(object sender, EventArgs e) =>
+            FormNavigator.NavigateFromCheckingCube(this, Stage.Increment(stage));
 
         private void boxChooseStage_SelectionChangeCommitted(object sender, EventArgs e) =>
             FormNavigator.NavigateFromCheckingCube(this, (string)boxChooseStage.SelectedItem switch

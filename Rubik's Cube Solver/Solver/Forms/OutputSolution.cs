@@ -9,7 +9,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
     {
         private readonly Stage stage;
         private PieceLocation piece;
-        private PieceSolution solution;
+        private PieceSolution? solution;
 
         public OutputSolution(Stage currentStage, CubeNetCellLocation cell)
         {
@@ -31,11 +31,11 @@ namespace Rubiks_Cube_Solver.Solver.Forms
         {
             lblCubeOrientation.Text = $"Hold your cube with the white centre piece on top and the {GetFrontFaceName(stage)} centre piece facing you.";
             lblStageName.Text = StageInfo.GetName(stage);
-            lblSequence.Text = solution.Sequence;
-            lblExplanation.Text = solution.Explanation;
+            lblSequence.Text = solution?.Sequence;
+            lblExplanation.Text = solution?.Explanation;
         }
 
-        private PieceSolution GetSolution(Stage stage, PieceLocation piece)
+        private PieceSolution? GetSolution(Stage stage, PieceLocation piece)
         {
             try { return SolvePiece.GetSolution(stage, piece); }
             catch (ArgumentException) // if there is no match for the piece that the user inputted
@@ -47,7 +47,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             }
         }
 
-        private string GetFrontFaceName(Stage stage) => stage.SubStep switch
+        private static string GetFrontFaceName(Stage stage) => stage.SubStep switch
         {
             0 => "green",
             1 => "orange",

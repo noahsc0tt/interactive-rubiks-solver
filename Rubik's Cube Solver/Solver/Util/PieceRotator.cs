@@ -2,10 +2,10 @@
 {
     internal static class PieceRotator
     {
-        private static PieceLocation YPrimeMove(PieceLocation initialConfig)
+        private static PieceLocation YPrimeMove(PieceLocation initialLocation)
         {
-            (int x, int y, int z) = initialConfig.Coords.GetLocation();
-            PieceOrientation orientation = initialConfig.Orientation;
+            (int x, int y, int z) = initialLocation.Coords.GetLocation();
+            PieceOrientation orientation = initialLocation.Orientation;
 
             //checking if the piece is an edge
             if (x == 1 || y == 1 || z == 1)
@@ -32,7 +32,7 @@
         {
             // rotating the piece the correct number of times, so that it can be solved relative to its centre piece
             for (int i = 0; i < stage.SubStep; i++)
-                piece = PieceRotator.YPrimeMove(piece);
+                piece = YPrimeMove(piece);
             return piece;
         }
     }

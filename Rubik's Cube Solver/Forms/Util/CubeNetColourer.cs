@@ -12,7 +12,7 @@ namespace Rubiks_Cube_Solver.Forms.Util
         private void PopulateCubeFace(Face face)
         {
             // adding the cells to the face and colouring the centre cell
-            for (int i = CubeNetCellLocation.MinCoord; i <= CubeNetCellLocation.MaxCoord; i++)
+            for (int i = CubeNetCellLocation.MinCoordValue; i <= CubeNetCellLocation.MaxCoordValue; i++)
                 face.Rows.Add("", "", "");
             (int x, int y) = CubeNet.CentrePieceCellCoords;
             face[x, y].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();

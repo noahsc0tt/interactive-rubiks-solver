@@ -6,4 +6,5 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "No 2025 machines run on an earlier OS than Windows 6.1")]
+[assembly: SuppressMessage("Style", "IDE0130:Namespace does not match folder structure", Justification = "The Solver.Types directory is for organisation only, the namespace is just Rubiks_Cube_Solver.Solver", Scope = "namespace", Target = "~N:Rubiks_Cube_Solver.Solver")]
 
