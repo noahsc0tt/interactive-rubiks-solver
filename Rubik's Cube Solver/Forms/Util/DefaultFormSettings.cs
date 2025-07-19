@@ -11,12 +11,10 @@ namespace Rubiks_Cube_Solver.Forms.Util
 
         public static void ApplyDefaultFormSettings(this Form form)
         {
-            #pragma warning disable CA1416 // Validate platform compatibility
             form.MaximumSize = new Size(MaxWidth, MaxHeight);
             form.Size = form.MaximumSize;
             form.WindowState = FormWindowState.Maximized;
             form.KeyPreview = true;
-            #pragma warning restore CA1416 // Validate platform compatibility
         }
     }
 }
