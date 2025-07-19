@@ -17,10 +17,5 @@ namespace Rubiks_Cube_Solver.Forms
 
         private void btnMenu_Click(object sender, EventArgs e) =>
             FormNavigator.Menu(this);
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

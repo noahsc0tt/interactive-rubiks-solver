@@ -1,4 +1,6 @@
-﻿namespace Rubiks_Cube_Solver.Solver
+﻿using System;
+
+namespace Rubiks_Cube_Solver.Solver
 {
     internal enum PieceOrientation
     {
@@ -11,7 +13,8 @@
         {
             PieceOrientation.Good => PieceOrientation.Bad,
             PieceOrientation.Bad => PieceOrientation.Good,
-            PieceOrientation.Corner => PieceOrientation.Corner
+            PieceOrientation.Corner => PieceOrientation.Corner,
+            _ => throw new ArgumentException($"Invalid orientation: {original}")
         };
     }
 }

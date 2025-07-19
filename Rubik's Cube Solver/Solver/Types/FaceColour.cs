@@ -34,7 +34,8 @@ namespace Rubiks_Cube_Solver.Solver
             FaceColour.Green => Color.Green,
             FaceColour.Blue => Color.RoyalBlue,
             FaceColour.Red => Color.Red,
-            FaceColour.Orange => Color.Orange
+            FaceColour.Orange => Color.Orange,
+            _ => throw new ArgumentException($"Invalid face colour: {colour}")
         };
     }
 }

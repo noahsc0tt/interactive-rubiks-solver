@@ -14,7 +14,8 @@ namespace Rubiks_Cube_Solver.Solver.Util
             StageStep.YellowEdges => "Yellow Cross",
             StageStep.YellowCorners => "Yellow Corners",
             StageStep.MiddleLayerEdges => "Middle Layer Edges",
-            StageStep.LastLayer => "Top Layer"
+            StageStep.LastLayer => "Top Layer",
+            _ => throw new ArgumentException($"Invalid stage step: {stage.Step}")
         };
 
         public static string GetRequiredPiece(Stage stage)

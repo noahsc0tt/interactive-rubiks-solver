@@ -1,10 +1,11 @@
-﻿using System.Collections.Immutable;
+﻿using System;
+using System.Collections.Immutable;
 using System.Linq;
 
 namespace Rubiks_Cube_Solver.Solver.Util
 {
-    using Entry = System.Collections.Generic.KeyValuePair<(int, int), PieceLocation>;
     using Dict = ImmutableDictionary<(int, int), PieceLocation>;
+    using Entry = System.Collections.Generic.KeyValuePair<(int, int), PieceLocation>;
 
     internal static class CellToPieceConfig
     {
@@ -85,7 +86,8 @@ namespace Rubiks_Cube_Solver.Solver.Util
             FaceColour.Green => greenDict,
             FaceColour.Blue => blueDict,
             FaceColour.Red => redDict,
-            FaceColour.Orange => orangeDict
+            FaceColour.Orange => orangeDict,
+            _ => throw new ArgumentException($"Invalid face colour: {colour}")
         };
 
         private static Dict CreateFaceDict(((int, int, int) location, PieceOrientation orientation)[] pieceConfigs) =>
