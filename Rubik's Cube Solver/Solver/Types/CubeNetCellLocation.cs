@@ -1,31 +1,20 @@
 ﻿namespace Rubiks_Cube_Solver.Solver
 {
-    internal class CubeNetCellLocation
+    internal readonly record struct CubeNetCellLocation
     {
-        public const int MinCoord = 0;
-        public const int MaxCoord = 2;
-        public readonly int X;
-        public readonly int Y;
-        public readonly FaceColour Face;
+        public const int MinCoordValue = 0;
+        public const int MaxCoordValue = 2;
+        public int X { get; }
+        public int Y { get; }
+        public FaceColour Face { get; }
 
-        public CubeNetCellLocation((int x, int y) coords, FaceColour face) : this(coords.x, coords.y, face) { }
-        public CubeNetCellLocation(int x, int y, FaceColour face)
+        public CubeNetCellLocation((int x, int y) coords, FaceColour face)
         {
-            Util.CoordValidator.ValidateCoords(MinCoord, MaxCoord, (x, nameof(x)), (y, nameof(y)));
+            (int x, int y) = coords;
+            Util.CoordValidator.ValidateCoords(MinCoordValue, MaxCoordValue, (x, nameof(x)), (y, nameof(y)));
             X = x;
             Y = y;
             Face = face;
         }
-
-        public (int X, int Y, FaceColour Face) GetLocation() => (X, Y, Face);
-        public (int X, int Y) GetCoords() => (X, Y);
-
-        public override bool Equals(object obj) =>
-            (obj is CubeNetCellLocation other) && X == other.X && Y == other.Y && Face.Equals(other.Face);
-
-        public override int GetHashCode() =>
-            // using hash of ValueTuple
-            (X, Y, Face).GetHashCode();
     }
-
 }
