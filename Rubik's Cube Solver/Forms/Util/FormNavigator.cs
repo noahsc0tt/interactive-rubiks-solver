@@ -4,7 +4,6 @@ using System.Collections.Immutable;
 using System.Windows.Forms;
 using Rubiks_Cube_Solver.Solver;
 using Rubiks_Cube_Solver.Solver.Forms;
-using Rubiks_Cube_Solver.Solver.Forms.LastLayer;
 
 namespace Rubiks_Cube_Solver.Forms.Util
 {

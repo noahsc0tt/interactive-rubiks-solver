@@ -6,5 +6,8 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "No 2025 machines run on an earlier OS than Windows 6.1")]
-[assembly: SuppressMessage("Style", "IDE0130:Namespace does not match folder structure", Justification = "The Solver.Types directory is for organisation only, the namespace is just Rubiks_Cube_Solver.Solver", Scope = "namespace", Target = "~N:Rubiks_Cube_Solver.Solver")]
+[assembly: SuppressMessage("Style", "IDE0130:Namespace does not match folder structure", Justification = "The Solver.Types and Solver.Forms.LastLayer directories are for organisation only", Scope = "namespace", Target = "~N:Rubiks_Cube_Solver.Solver")]
+[assembly: SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "'object sender' and 'EventArgs e' are unused parameters but need to be present for winform signitures", Scope = "namespace", Target = "~N:Rubiks_Cube_Solver.Forms")]
+[assembly: SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "'object sender' and 'EventArgs e' are unused parameters but need to be present for winform signitures", Scope = "namespace", Target = "~N:Rubiks_Cube_Solver.Solver.Forms")]
+[assembly: SuppressMessage("Style", "IDE0060:Remove unused parameter", Justification = "'object sender' and 'EventArgs e' are unused parameters but need to be present for winform signitures", Scope = "namespace", Target = "~N:Rubiks_Cube_Solver.Timer.Forms")]
 

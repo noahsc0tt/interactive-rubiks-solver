@@ -1,4 +1,4 @@
-﻿namespace Rubiks_Cube_Solver.Solver.Forms.LastLayer
+﻿namespace Rubiks_Cube_Solver.Solver.Forms
 {
     partial class WhiteCorners
     {
