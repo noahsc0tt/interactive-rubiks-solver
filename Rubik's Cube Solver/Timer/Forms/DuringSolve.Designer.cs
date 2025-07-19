@@ -28,60 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.lblStop = new System.Windows.Forms.Label();
-            this.lblTimer = new System.Windows.Forms.Label();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            lblStop = new System.Windows.Forms.Label();
+            lblTimer = new System.Windows.Forms.Label();
+            timer = new System.Windows.Forms.Timer(components);
+            SuspendLayout();
             // 
             // lblStop
             // 
-            this.lblStop.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblStop.BackColor = System.Drawing.Color.Transparent;
-            this.lblStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStop.ForeColor = System.Drawing.Color.Black;
-            this.lblStop.Location = new System.Drawing.Point(290, 656);
-            this.lblStop.Name = "lblStop";
-            this.lblStop.Size = new System.Drawing.Size(700, 229);
-            this.lblStop.TabIndex = 11;
-            this.lblStop.Text = "Click Space To Stop Timer";
-            this.lblStop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblStop.Anchor = System.Windows.Forms.AnchorStyles.None;
+            lblStop.BackColor = System.Drawing.Color.Transparent;
+            lblStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblStop.ForeColor = System.Drawing.Color.Black;
+            lblStop.Location = new System.Drawing.Point(290, 656);
+            lblStop.Name = "lblStop";
+            lblStop.Size = new System.Drawing.Size(700, 229);
+            lblStop.TabIndex = 11;
+            lblStop.Text = "Click Space To Stop Timer";
+            lblStop.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTimer
             // 
-            this.lblTimer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 150F);
-            this.lblTimer.Location = new System.Drawing.Point(149, 133);
-            this.lblTimer.MinimumSize = new System.Drawing.Size(984, 464);
-            this.lblTimer.Name = "lblTimer";
-            this.lblTimer.Size = new System.Drawing.Size(984, 464);
-            this.lblTimer.TabIndex = 10;
-            this.lblTimer.Text = "00:00.00";
-            this.lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblTimer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            lblTimer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 150F);
+            lblTimer.Location = new System.Drawing.Point(149, 133);
+            lblTimer.MinimumSize = new System.Drawing.Size(984, 464);
+            lblTimer.Name = "lblTimer";
+            lblTimer.Size = new System.Drawing.Size(984, 464);
+            lblTimer.TabIndex = 10;
+            lblTimer.Text = "00:00.00";
+            lblTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer
             // 
-            this.timer.Enabled = true;
-            this.timer.Interval = 10;
-            this.timer.Tick += new System.EventHandler(this.solveTimer_Tick);
+            timer.Enabled = true;
+            timer.Interval = 10;
+            timer.Tick += solveTimer_Tick;
             // 
-            // During_Solve
+            // DuringSolve
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(23F, 46F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 900);
-            this.Controls.Add(this.lblStop);
-            this.Controls.Add(this.lblTimer);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
-            this.MinimumSize = new System.Drawing.Size(1278, 869);
-            this.Name = "During_Solve";
-            this.Text = "During_Solve";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.DuringSolve_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DuringSolve_KeyPress);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(23F, 46F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1284, 900);
+            Controls.Add(lblStop);
+            Controls.Add(lblTimer);
+            Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
+            MinimumSize = new System.Drawing.Size(1278, 869);
+            Name = "DuringSolve";
+            Text = "During_Solve";
+            WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            Load += DuringSolve_Load;
+            KeyPress += DuringSolve_KeyPress;
+            ResumeLayout(false);
 
         }
 

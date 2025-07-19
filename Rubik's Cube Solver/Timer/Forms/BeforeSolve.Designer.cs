@@ -28,110 +28,113 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblPreviousSolve = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.lblScrambleHeader = new System.Windows.Forms.Label();
-            this.lblScramble = new System.Windows.Forms.Label();
-            this.lblStart = new System.Windows.Forms.Label();
-            this.btnMenu = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            lblPreviousSolve = new System.Windows.Forms.Label();
+            lblTime = new System.Windows.Forms.Label();
+            lblScrambleHeader = new System.Windows.Forms.Label();
+            lblScramble = new System.Windows.Forms.Label();
+            lblStart = new System.Windows.Forms.Label();
+            btnMenu = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // lblPreviousSolve
             // 
-            this.lblPreviousSolve.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPreviousSolve.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblPreviousSolve.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
-            this.lblPreviousSolve.Location = new System.Drawing.Point(440, 69);
-            this.lblPreviousSolve.MaximumSize = new System.Drawing.Size(616, 79);
-            this.lblPreviousSolve.MinimumSize = new System.Drawing.Size(616, 79);
-            this.lblPreviousSolve.Name = "lblPreviousSolve";
-            this.lblPreviousSolve.Size = new System.Drawing.Size(616, 79);
-            this.lblPreviousSolve.TabIndex = 0;
-            this.lblPreviousSolve.Text = "Previous Solve:";
-            this.lblPreviousSolve.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblPreviousSolve.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblPreviousSolve.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            lblPreviousSolve.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            lblPreviousSolve.Location = new System.Drawing.Point(370, 44);
+            lblPreviousSolve.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblPreviousSolve.MaximumSize = new System.Drawing.Size(718, 91);
+            lblPreviousSolve.MinimumSize = new System.Drawing.Size(718, 91);
+            lblPreviousSolve.Name = "lblPreviousSolve";
+            lblPreviousSolve.Size = new System.Drawing.Size(718, 91);
+            lblPreviousSolve.TabIndex = 0;
+            lblPreviousSolve.Text = "Previous Solve:";
+            lblPreviousSolve.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTime
             // 
-            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F);
-            this.lblTime.Location = new System.Drawing.Point(440, 148);
-            this.lblTime.MaximumSize = new System.Drawing.Size(616, 148);
-            this.lblTime.MinimumSize = new System.Drawing.Size(616, 148);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(616, 148);
-            this.lblTime.TabIndex = 1;
-            this.lblTime.Text = "00:00.00";
-            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblTime.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F);
+            lblTime.Location = new System.Drawing.Point(370, 135);
+            lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblTime.MaximumSize = new System.Drawing.Size(718, 170);
+            lblTime.MinimumSize = new System.Drawing.Size(718, 170);
+            lblTime.Name = "lblTime";
+            lblTime.Size = new System.Drawing.Size(718, 170);
+            lblTime.TabIndex = 1;
+            lblTime.Text = "00:00.00";
+            lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblScrambleHeader
             // 
-            this.lblScrambleHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblScrambleHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
-            this.lblScrambleHeader.Location = new System.Drawing.Point(440, 326);
-            this.lblScrambleHeader.Name = "lblScrambleHeader";
-            this.lblScrambleHeader.Size = new System.Drawing.Size(616, 97);
-            this.lblScrambleHeader.TabIndex = 8;
-            this.lblScrambleHeader.Text = "Scramble:";
-            this.lblScrambleHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblScrambleHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            lblScrambleHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            lblScrambleHeader.Location = new System.Drawing.Point(370, 340);
+            lblScrambleHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblScrambleHeader.Name = "lblScrambleHeader";
+            lblScrambleHeader.Size = new System.Drawing.Size(718, 91);
+            lblScrambleHeader.TabIndex = 8;
+            lblScrambleHeader.Text = "Scramble:";
+            lblScrambleHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblScramble
             // 
-            this.lblScramble.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblScramble.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F);
-            this.lblScramble.Location = new System.Drawing.Point(440, 423);
-            this.lblScramble.Name = "lblScramble";
-            this.lblScramble.Size = new System.Drawing.Size(616, 343);
-            this.lblScramble.TabIndex = 6;
-            this.lblScramble.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblScramble.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            lblScramble.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            lblScramble.Location = new System.Drawing.Point(370, 431);
+            lblScramble.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblScramble.Name = "lblScramble";
+            lblScramble.Size = new System.Drawing.Size(718, 321);
+            lblScramble.TabIndex = 6;
+            lblScramble.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblStart
             // 
-            this.lblStart.BackColor = System.Drawing.Color.Transparent;
-            this.lblStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStart.ForeColor = System.Drawing.Color.Black;
-            this.lblStart.Location = new System.Drawing.Point(405, 766);
-            this.lblStart.Name = "lblStart";
-            this.lblStart.Size = new System.Drawing.Size(681, 86);
-            this.lblStart.TabIndex = 9;
-            this.lblStart.Text = "Click Space To Start Timer";
-            this.lblStart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblStart.BackColor = System.Drawing.Color.Transparent;
+            lblStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblStart.ForeColor = System.Drawing.Color.Black;
+            lblStart.Location = new System.Drawing.Point(329, 752);
+            lblStart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblStart.Name = "lblStart";
+            lblStart.Size = new System.Drawing.Size(794, 99);
+            lblStart.TabIndex = 9;
+            lblStart.Text = "Click Space To Start Timer";
+            lblStart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnMenu
             // 
-            this.btnMenu.BackColor = System.Drawing.Color.LightCyan;
-            this.btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenu.Location = new System.Drawing.Point(99, 69);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(226, 86);
-            this.btnMenu.TabIndex = 19;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Text = "Menu";
-            this.btnMenu.UseVisualStyleBackColor = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            btnMenu.BackColor = System.Drawing.Color.LightCyan;
+            btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            btnMenu.Location = new System.Drawing.Point(51, 44);
+            btnMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnMenu.Name = "btnMenu";
+            btnMenu.Size = new System.Drawing.Size(264, 99);
+            btnMenu.TabIndex = 19;
+            btnMenu.TabStop = false;
+            btnMenu.Text = "Menu";
+            btnMenu.UseVisualStyleBackColor = false;
+            btnMenu.Click += btnMenu_Click;
             // 
             // BeforeSolve
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1474, 900);
-            this.Controls.Add(this.btnMenu);
-            this.Controls.Add(this.lblStart);
-            this.Controls.Add(this.lblScrambleHeader);
-            this.Controls.Add(this.lblScramble);
-            this.Controls.Add(this.lblTime);
-            this.Controls.Add(this.lblPreviousSolve);
-            this.MinimumSize = new System.Drawing.Size(1468, 869);
-            this.Name = "BeforeSolve";
-            this.Text = "Before_Solve";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.BeforeSolve_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BeforeSolve_KeyPress);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1474, 900);
+            Controls.Add(btnMenu);
+            Controls.Add(lblStart);
+            Controls.Add(lblScrambleHeader);
+            Controls.Add(lblScramble);
+            Controls.Add(lblTime);
+            Controls.Add(lblPreviousSolve);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MinimumSize = new System.Drawing.Size(1468, 869);
+            Name = "BeforeSolve";
+            Text = "Before_Solve";
+            WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            Load += BeforeSolve_Load;
+            KeyPress += BeforeSolve_KeyPress;
+            ResumeLayout(false);
 
         }
 

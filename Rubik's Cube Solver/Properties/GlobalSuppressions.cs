@@ -5,4 +5,5 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
+[assembly: SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "No 2025 machines run on an earlier OS than Windows 6.1")]
+
