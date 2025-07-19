@@ -37,7 +37,7 @@
             // 
             btnSolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
             btnSolver.ForeColor = System.Drawing.SystemColors.ControlText;
-            btnSolver.Location = new System.Drawing.Point(49, 75);
+            btnSolver.Location = new System.Drawing.Point(49, 48);
             btnSolver.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnSolver.Name = "btnSolver";
             btnSolver.Size = new System.Drawing.Size(1372, 331);
@@ -50,10 +50,10 @@
             // btnTimer
             // 
             btnTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
-            btnTimer.Location = new System.Drawing.Point(50, 560);
+            btnTimer.Location = new System.Drawing.Point(49, 455);
             btnTimer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnTimer.Name = "btnTimer";
-            btnTimer.Size = new System.Drawing.Size(624, 244);
+            btnTimer.Size = new System.Drawing.Size(624, 331);
             btnTimer.TabIndex = 1;
             btnTimer.TabStop = false;
             btnTimer.Text = "Timer";
@@ -63,10 +63,10 @@
             // btnNotation
             // 
             btnNotation.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
-            btnNotation.Location = new System.Drawing.Point(797, 560);
+            btnNotation.Location = new System.Drawing.Point(796, 455);
             btnNotation.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnNotation.Name = "btnNotation";
-            btnNotation.Size = new System.Drawing.Size(624, 244);
+            btnNotation.Size = new System.Drawing.Size(624, 331);
             btnNotation.TabIndex = 2;
             btnNotation.TabStop = false;
             btnNotation.Text = "Notation Explanation";
@@ -77,6 +77,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoSize = true;
             ClientSize = new System.Drawing.Size(1474, 900);
             Controls.Add(btnNotation);
             Controls.Add(btnTimer);
