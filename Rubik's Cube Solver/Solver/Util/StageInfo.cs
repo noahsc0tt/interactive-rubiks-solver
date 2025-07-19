@@ -44,6 +44,14 @@ namespace Rubiks_Cube_Solver.Solver.Util
             3 => "red and blue",
         };
 
+        public static string GetFrontFaceName(Stage stage) => stage.SubStep switch
+        {
+            0 => "green",
+            1 => "orange",
+            2 => "blue",
+            3 => "red"
+        };
+
         public static FaceColour GetInputColour(Stage stage) => stage.Step switch
         {
             StageStep.YellowEdges or StageStep.YellowCorners => FaceColour.Yellow,

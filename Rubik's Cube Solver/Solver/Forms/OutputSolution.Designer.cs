@@ -161,7 +161,6 @@
             Name = "OutputSolution";
             Text = "Output_Solution";
             WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            Load += OutputSolution_Load;
             ResumeLayout(false);
 
         }

@@ -8,8 +8,8 @@ namespace Rubiks_Cube_Solver.Solver.Forms
     internal partial class OutputSolution : Form
     {
         private readonly Stage stage;
-        private PieceLocation piece;
-        private PieceSolution? solution;
+        private readonly PieceLocation piece;
+        private readonly PieceSolution? solution;
 
         public OutputSolution(Stage currentStage, CubeNetCellLocation cell)
         {
@@ -17,19 +17,14 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             this.ApplyDefaultFormSettings();
 
             stage = currentStage;
-            piece = CellToPieceConfig.GetPieceConfig(cell);
-        }
-
-        private void OutputSolution_Load(object sender, EventArgs e)
-        {
-            piece = PieceRotator.RotatePiece(piece, stage);
+            piece = PieceRotator.RotatePiece(CellToPieceConfig.GetPieceConfig(cell), stage);
             solution = GetSolution(stage, piece);
             if (solution is not null) SetLabelText();
         }
 
         private void SetLabelText()
         {
-            lblCubeOrientation.Text = $"Hold your cube with the white centre piece on top and the {GetFrontFaceName(stage)} centre piece facing you.";
+            lblCubeOrientation.Text = $"Hold your cube with the white centre piece on top and the {StageInfo.GetFrontFaceName(stage)} centre piece facing you.";
             lblStageName.Text = StageInfo.GetName(stage);
             lblSequence.Text = solution?.Sequence;
             lblExplanation.Text = solution?.Explanation;
@@ -46,14 +41,6 @@ namespace Rubiks_Cube_Solver.Solver.Forms
                 return null;
             }
         }
-
-        private static string GetFrontFaceName(Stage stage) => stage.SubStep switch
-        {
-            0 => "green",
-            1 => "orange",
-            2 => "blue",
-            3 => "red"
-        };
 
         private void btnFinish_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<CheckingCube>(this, stage);
