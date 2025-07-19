@@ -28,10 +28,10 @@ namespace Rubiks_Cube_Solver.Forms.Util
             {
                 switch (stage.SubStep)
                 {
-                    case 0: Navigate<WhiteEdges>(currentForm); break;
-                    case 1: Navigate<WhiteCorners>(currentForm); break;
-                    case 2: Navigate<PermutingCorners>(currentForm); break;
-                    case 3: Navigate<PermutingEdges>(currentForm); break;
+                    case Stage.WhiteEdgesSubStep: Navigate<WhiteEdges>(currentForm); break;
+                    case Stage.WhiteCornersSubStep: Navigate<WhiteCorners>(currentForm); break;
+                    case Stage.PermutingCornersSubStep: Navigate<PermutingCorners>(currentForm); break;
+                    case Stage.PermutingEdgesSubStep: Navigate<PermutingEdges>(currentForm); break;
                 }
             }
             else

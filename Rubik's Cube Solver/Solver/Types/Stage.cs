@@ -15,14 +15,18 @@ namespace Rubiks_Cube_Solver.Solver
         public const StageStep MaxStep = StageStep.LastLayer;
         public const int MinSubStep = 0;
         public const int MaxSubStep = 3;
+        public const int WhiteEdgesSubStep = 0;
+        public const int WhiteCornersSubStep = 1;
+        public const int PermutingCornersSubStep = 2;
+        public const int PermutingEdgesSubStep = 3;
         public static readonly (StageStep, int) MaxStage = (MaxStep, MaxSubStep);
         public static readonly Stage YellowEdges = new(StageStep.YellowEdges, MinSubStep);
         public static readonly Stage YellowCorners = new(StageStep.YellowCorners, MinSubStep);
         public static readonly Stage MiddleLayerEdges = new(StageStep.MiddleLayerEdges, MinSubStep);
-        public static readonly Stage WhiteEdges = new(StageStep.LastLayer, 0);
-        public static readonly Stage WhiteCorners = new(StageStep.LastLayer, 1);
-        public static readonly Stage PermutingCorners = new(StageStep.LastLayer, 2);
-        public static readonly Stage PermutingEdges = new(StageStep.LastLayer, 3);
+        public static readonly Stage WhiteEdges = new(StageStep.LastLayer, WhiteEdgesSubStep);
+        public static readonly Stage WhiteCorners = new(StageStep.LastLayer, WhiteCornersSubStep);
+        public static readonly Stage PermutingCorners = new(StageStep.LastLayer, PermutingCornersSubStep);
+        public static readonly Stage PermutingEdges = new(StageStep.LastLayer, PermutingEdgesSubStep);
         public StageStep Step { get; init; }
         public int SubStep { get; init; }
         
