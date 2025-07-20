@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
-using Rubiks_Cube_Solver.Forms.Util;
 
 namespace Rubiks_Cube_Solver.Forms
 {
+    using Util;
+
     internal partial class NotationExplanation : Form
     {
         private static NotationExplanation _instance;

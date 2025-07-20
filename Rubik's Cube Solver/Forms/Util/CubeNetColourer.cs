@@ -1,9 +1,9 @@
 using System;
 using System.Windows.Forms;
-using Rubiks_Cube_Solver.Solver;
 
 namespace Rubiks_Cube_Solver.Forms.Util
 {
+    using Solver;
     using Face = DataGridView;
 
     internal class CubeNetColourer(CubeNet faces)

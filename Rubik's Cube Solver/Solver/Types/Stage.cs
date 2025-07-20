@@ -44,7 +44,7 @@ namespace Rubiks_Cube_Solver.Solver
         private static void ValidateSubStep(int subStep)
         {
             if (subStep < MinSubStep || subStep > MaxSubStep)
-                throw new ArgumentOutOfRangeException(nameof(subStep), subStep, );
+                throw new ArgumentOutOfRangeException(nameof(subStep), subStep, SubStepOutOfRangeExceptionMessage);
         }
 
         public static Stage Increment(Stage stage)

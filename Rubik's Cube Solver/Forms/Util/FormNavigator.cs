@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Windows.Forms;
-using Rubiks_Cube_Solver.Solver;
-using Rubiks_Cube_Solver.Solver.Forms;
 
 namespace Rubiks_Cube_Solver.Forms.Util
 {
+    using Solver;
+    using Solver.Forms;
     using SingletonEntry = KeyValuePair<Type, Form>;
 
     internal static class FormNavigator

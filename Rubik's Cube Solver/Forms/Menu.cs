@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
-using Rubiks_Cube_Solver.Forms.Util;
 
 namespace Rubiks_Cube_Solver.Forms
 {
+    using Util;
+
     // singleton menu form for navigation
     internal partial class Menu : Form
     {
