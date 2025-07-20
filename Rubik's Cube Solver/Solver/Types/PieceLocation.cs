@@ -1,9 +1,11 @@
 ﻿namespace Rubiks_Cube_Solver.Solver
 {
+    using Util;
     internal readonly record struct PieceCoords
     {
-        public const int MinCoord = 0;
-        public const int MaxCoord = 2;
+        public const int Min = 0;
+        public const int Max = 2;
+        public readonly static string CoordinateOutOfRangeExceptionMessage = CoordValidator.GetOutOfRangeExceptionMessage(Min, Max);
         public int X { get; }
         public int Y { get; }
         public int Z { get; }
@@ -11,7 +13,7 @@
         public PieceCoords((int x, int y, int z) location) : this(location.x, location.y, location.z) { }
         public PieceCoords(int x, int y, int z)
         {
-            Util.CoordValidator.ValidateCoords(MinCoord, MaxCoord, (x, nameof(x)), (y, nameof(y)), (z, nameof(z)));
+            CoordValidator.ValidateCoords(Min, Max, (x, nameof(x)), (y, nameof(y)), (z, nameof(z)));
             X = x;
             Y = y;
             Z = z;

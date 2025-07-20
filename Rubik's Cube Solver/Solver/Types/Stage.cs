@@ -15,6 +15,7 @@ namespace Rubiks_Cube_Solver.Solver
         public const StageStep MaxStep = StageStep.LastLayer;
         public const int MinSubStep = 0;
         public const int MaxSubStep = 3;
+        public readonly static string SubStepOutOfRangeExceptionMessage = $"SubStep must be in the range {MinSubStep}-{MaxSubStep}";
         public const int WhiteEdgesSubStep = 0;
         public const int WhiteCornersSubStep = 1;
         public const int PermutingCornersSubStep = 2;
@@ -43,7 +44,7 @@ namespace Rubiks_Cube_Solver.Solver
         private static void ValidateSubStep(int subStep)
         {
             if (subStep < MinSubStep || subStep > MaxSubStep)
-                throw new ArgumentOutOfRangeException(nameof(subStep), subStep, $"{nameof(subStep)} must be in the range {MinSubStep}-{MaxSubStep}");
+                throw new ArgumentOutOfRangeException(nameof(subStep), subStep, );
         }
 
         public static Stage Increment(Stage stage)

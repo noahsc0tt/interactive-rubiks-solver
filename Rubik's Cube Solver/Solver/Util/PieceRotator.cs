@@ -20,11 +20,11 @@ namespace Rubiks_Cube_Solver.Solver.Util
                         0 => (2, 1),
                         1 => (z, x),
                         2 => (0, 1),
-                        _ => throw new ArgumentOutOfRangeException($"Coordinate should be in range {PieceCoords.MinCoord}-{PieceCoords.MaxCoord}", nameof(z))
+                        _ => throw new ArgumentOutOfRangeException(PieceCoords.CoordinateOutOfRangeExceptionMessage, nameof(z))
                     },
                     1 => (z == 0) ? (2, x) : (0, x),
                     2 => (x == 1) ? (z == 2 ? 0 : 2, 1) : (z, x),
-                    _ => throw new ArgumentOutOfRangeException($"Coordinate should be in range {PieceCoords.MinCoord}-{PieceCoords.MaxCoord}", nameof(y))
+                    _ => throw new ArgumentOutOfRangeException(PieceCoords.CoordinateOutOfRangeExceptionMessage, nameof(y))
                 };
             }
             else //if the piece is a corner
