@@ -20,7 +20,7 @@ namespace RubiksCubeSolver.Solver
         public const int WhiteCornersSubStep = 1;
         public const int PermutingCornersSubStep = 2;
         public const int PermutingEdgesSubStep = 3;
-        public static readonly (StageStep, int) MaxStage = (MaxStep, MaxSubStep);
+        public static readonly Stage MaxStage = new(MaxStep, MaxSubStep);
         public static readonly Stage YellowEdges = new(StageStep.YellowEdges, MinSubStep);
         public static readonly Stage YellowCorners = new(StageStep.YellowCorners, MinSubStep);
         public static readonly Stage MiddleLayerEdges = new(StageStep.MiddleLayerEdges, MinSubStep);
@@ -55,7 +55,7 @@ namespace RubiksCubeSolver.Solver
             else if (step < MaxStep)
                 return new Stage(++step, MinSubStep);
             else
-                throw new InvalidOperationException($"Stage is already at maximum: {MaxStage}");
+                throw new InvalidOperationException($"Stage is already at maximum: {MaxStage.GetTuple()}");
         }
 
         public (StageStep step, int subStep) GetTuple() =>

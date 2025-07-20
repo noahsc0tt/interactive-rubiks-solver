@@ -22,7 +22,7 @@ namespace RubiksCubeSolver.Solver.Forms
                 whiteFace, yellowFace, greenFace, blueFace, redFace, orangeFace
             )).ColourCubeNet(stage);
             //changing the text of the 'Next Stage' button if the user has completed the solve
-            if (stage.GetTuple() == Stage.MaxStage)
+            if (stage.GetTuple() == Stage.MaxStage.GetTuple())
             {
                 nextStageButton.Visible = false;
                 instructionsLabel.Text = "If your cube is fully solved, congratulations!\r\n\r\nIf not, choose a stage to go back to using the drop-down list.";
