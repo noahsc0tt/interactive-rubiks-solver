@@ -110,7 +110,7 @@ namespace RubiksCubeSolver.Solver.Util
                 StageStep.YellowEdges => yellowEdgesDict,
                 StageStep.YellowCorners => yellowCornersDict,
                 StageStep.MiddleLayerEdges => middleLayerEdgesDict,
-                _ => throw new InvalidOperationException($"Last layer stages (currently {stage.Step}.{stage.SubStep}) do not have PieceSolutions")
+                _ => throw new InvalidOperationException($"Last layer stages (currently {StageInfo.GetName(stage)}) do not have PieceSolutions")
             };
 
         public static PieceSolution GetSolution(Stage stage, PieceLocation piece) =>

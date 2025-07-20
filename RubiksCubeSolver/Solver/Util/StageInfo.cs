@@ -43,7 +43,7 @@ namespace RubiksCubeSolver.Solver.Util
                 }} edge",
                 StageStep.YellowCorners => $"yellow, {GetColourPair(stage)} corner",
                 StageStep.MiddleLayerEdges => $"{GetColourPair(stage)} edge",
-                _ => throw new InvalidOperationException($"The last layer stages (currently {step}.{subStep}) do not have required pieces")
+                _ => throw new InvalidOperationException($"The last layer stages (currently {GetName(stage)}) do not have required pieces")
             };
         }
 
@@ -67,7 +67,7 @@ namespace RubiksCubeSolver.Solver.Util
         {
             (StageStep step, int subStep) = stage.GetTuple();
             if (step == StageStep.LastLayer)
-                throw new InvalidOperationException($"The last layer stages (currently {step}.{subStep}) do not have front faces");
+                throw new InvalidOperationException($"The last layer stages (currently {GetName(stage)}) do not have front faces");
             return subStep switch
             {
                 0 => "green",
@@ -89,14 +89,14 @@ namespace RubiksCubeSolver.Solver.Util
                 3 => FaceColour.Red,
                 _ => throw new ArgumentOutOfRangeException(nameof(stage), stage.SubStep, Stage.SubStepOutOfRangeExceptionMessage)
             },
-            _ => throw new InvalidOperationException($"The last layer stages (currently {stage.Step}.{stage.SubStep}) do not have input colours")
+            _ => throw new InvalidOperationException($"The last layer stages (currently {GetName(stage)}) do not have input colours")
         };
 
         public static string GetInstructions(Stage stage)
         {
             (StageStep step, int subStep) = stage.GetTuple();
             if (step == StageStep.LastLayer)
-                throw new InvalidOperationException($"The last layer stages (currently {step}.{subStep}) do not have instructions");
+                throw new InvalidOperationException($"The last layer stages (currently {GetName(stage)}) do not have instructions");
             return $"Input the position of the {GetInputColour(stage).ToString().ToLower()} square on the {GetRequiredPiece(stage)}";
         }
     }
