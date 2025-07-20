@@ -45,7 +45,8 @@ namespace Rubiks_Cube_Solver.Forms.Util
                 (Form)Activator.CreateInstance(typeof(T), args);
 
             ExitOnUserClose(newForm);
-            SwitchForms(currentForm, newForm);
+            if (!newForm.IsDisposed) // to account for outputsolution navigating back to inputpiece if the input was invalid
+                SwitchForms(currentForm, newForm);
             navigating = false;
         }
 
