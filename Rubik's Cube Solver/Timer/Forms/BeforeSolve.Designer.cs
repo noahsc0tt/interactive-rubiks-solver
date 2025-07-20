@@ -28,109 +28,109 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblPreviousSolve = new System.Windows.Forms.Label();
-            lblTime = new System.Windows.Forms.Label();
-            lblScrambleHeader = new System.Windows.Forms.Label();
-            lblScramble = new System.Windows.Forms.Label();
-            lblStart = new System.Windows.Forms.Label();
-            btnMenu = new System.Windows.Forms.Button();
+            previousSolveHeaderLabel = new System.Windows.Forms.Label();
+            previousTimeLabel = new System.Windows.Forms.Label();
+            scrambleHeaderLabel = new System.Windows.Forms.Label();
+            scrambleLabel = new System.Windows.Forms.Label();
+            startLabel = new System.Windows.Forms.Label();
+            menuButton = new System.Windows.Forms.Button();
             SuspendLayout();
             // 
-            // lblPreviousSolve
+            // previousSolveHeaderLabel
             // 
-            lblPreviousSolve.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            lblPreviousSolve.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            lblPreviousSolve.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            lblPreviousSolve.Location = new System.Drawing.Point(370, 44);
-            lblPreviousSolve.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lblPreviousSolve.MaximumSize = new System.Drawing.Size(718, 91);
-            lblPreviousSolve.MinimumSize = new System.Drawing.Size(718, 91);
-            lblPreviousSolve.Name = "lblPreviousSolve";
-            lblPreviousSolve.Size = new System.Drawing.Size(718, 91);
-            lblPreviousSolve.TabIndex = 0;
-            lblPreviousSolve.Text = "Previous Solve:";
-            lblPreviousSolve.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            previousSolveHeaderLabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            previousSolveHeaderLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            previousSolveHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            previousSolveHeaderLabel.Location = new System.Drawing.Point(370, 44);
+            previousSolveHeaderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            previousSolveHeaderLabel.MaximumSize = new System.Drawing.Size(718, 91);
+            previousSolveHeaderLabel.MinimumSize = new System.Drawing.Size(718, 91);
+            previousSolveHeaderLabel.Name = "previousSolveHeaderLabel";
+            previousSolveHeaderLabel.Size = new System.Drawing.Size(718, 91);
+            previousSolveHeaderLabel.TabIndex = 0;
+            previousSolveHeaderLabel.Text = "Previous Solve:";
+            previousSolveHeaderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblTime
+            // previousTimeLabel
             // 
-            lblTime.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            lblTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F);
-            lblTime.Location = new System.Drawing.Point(370, 135);
-            lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lblTime.MaximumSize = new System.Drawing.Size(718, 170);
-            lblTime.MinimumSize = new System.Drawing.Size(718, 170);
-            lblTime.Name = "lblTime";
-            lblTime.Size = new System.Drawing.Size(718, 170);
-            lblTime.TabIndex = 1;
-            lblTime.Text = "00:00.00";
-            lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            previousTimeLabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            previousTimeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            previousTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F);
+            previousTimeLabel.Location = new System.Drawing.Point(370, 135);
+            previousTimeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            previousTimeLabel.MaximumSize = new System.Drawing.Size(718, 170);
+            previousTimeLabel.MinimumSize = new System.Drawing.Size(718, 170);
+            previousTimeLabel.Name = "previousTimeLabel";
+            previousTimeLabel.Size = new System.Drawing.Size(718, 170);
+            previousTimeLabel.TabIndex = 1;
+            previousTimeLabel.Text = "00:00.00";
+            previousTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblScrambleHeader
+            // scrambleHeaderLabel
             // 
-            lblScrambleHeader.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            lblScrambleHeader.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            lblScrambleHeader.Location = new System.Drawing.Point(370, 340);
-            lblScrambleHeader.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lblScrambleHeader.Name = "lblScrambleHeader";
-            lblScrambleHeader.Size = new System.Drawing.Size(718, 91);
-            lblScrambleHeader.TabIndex = 8;
-            lblScrambleHeader.Text = "Scramble:";
-            lblScrambleHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            scrambleHeaderLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            scrambleHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            scrambleHeaderLabel.Location = new System.Drawing.Point(370, 340);
+            scrambleHeaderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            scrambleHeaderLabel.Name = "scrambleHeaderLabel";
+            scrambleHeaderLabel.Size = new System.Drawing.Size(718, 91);
+            scrambleHeaderLabel.TabIndex = 8;
+            scrambleHeaderLabel.Text = "Scramble:";
+            scrambleHeaderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblScramble
+            // scrambleLabel
             // 
-            lblScramble.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            lblScramble.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            lblScramble.Location = new System.Drawing.Point(370, 431);
-            lblScramble.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lblScramble.Name = "lblScramble";
-            lblScramble.Size = new System.Drawing.Size(718, 321);
-            lblScramble.TabIndex = 6;
-            lblScramble.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            scrambleLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            scrambleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            scrambleLabel.Location = new System.Drawing.Point(370, 431);
+            scrambleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            scrambleLabel.Name = "scrambleLabel";
+            scrambleLabel.Size = new System.Drawing.Size(718, 321);
+            scrambleLabel.TabIndex = 6;
+            scrambleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblStart
+            // startLabel
             // 
-            lblStart.BackColor = System.Drawing.Color.Transparent;
-            lblStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            lblStart.ForeColor = System.Drawing.Color.Black;
-            lblStart.Location = new System.Drawing.Point(329, 752);
-            lblStart.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lblStart.Name = "lblStart";
-            lblStart.Size = new System.Drawing.Size(794, 99);
-            lblStart.TabIndex = 9;
-            lblStart.Text = "Click Space To Start Timer";
-            lblStart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            startLabel.BackColor = System.Drawing.Color.Transparent;
+            startLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            startLabel.ForeColor = System.Drawing.Color.Black;
+            startLabel.Location = new System.Drawing.Point(329, 752);
+            startLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            startLabel.Name = "startLabel";
+            startLabel.Size = new System.Drawing.Size(794, 99);
+            startLabel.TabIndex = 9;
+            startLabel.Text = "Click Space To Start Timer";
+            startLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnMenu
+            // menuButton
             // 
-            btnMenu.BackColor = System.Drawing.Color.LightCyan;
-            btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            btnMenu.Location = new System.Drawing.Point(51, 44);
-            btnMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            btnMenu.Name = "btnMenu";
-            btnMenu.Size = new System.Drawing.Size(264, 99);
-            btnMenu.TabIndex = 19;
-            btnMenu.TabStop = false;
-            btnMenu.Text = "Menu";
-            btnMenu.UseVisualStyleBackColor = false;
-            btnMenu.Click += btnMenu_Click;
+            menuButton.BackColor = System.Drawing.Color.LightCyan;
+            menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            menuButton.Location = new System.Drawing.Point(51, 44);
+            menuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            menuButton.Name = "menuButton";
+            menuButton.Size = new System.Drawing.Size(264, 99);
+            menuButton.TabIndex = 19;
+            menuButton.TabStop = false;
+            menuButton.Text = "Menu";
+            menuButton.UseVisualStyleBackColor = false;
+            menuButton.Click += MenuButton_Click;
             // 
             // BeforeSolve
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1474, 900);
-            Controls.Add(btnMenu);
-            Controls.Add(lblStart);
-            Controls.Add(lblScrambleHeader);
-            Controls.Add(lblScramble);
-            Controls.Add(lblTime);
-            Controls.Add(lblPreviousSolve);
+            Controls.Add(menuButton);
+            Controls.Add(startLabel);
+            Controls.Add(scrambleHeaderLabel);
+            Controls.Add(scrambleLabel);
+            Controls.Add(previousTimeLabel);
+            Controls.Add(previousSolveHeaderLabel);
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             MinimumSize = new System.Drawing.Size(1468, 869);
             Name = "BeforeSolve";
-            Text = "Before_Solve";
+            Text = "Before Solve";
             WindowState = System.Windows.Forms.FormWindowState.Maximized;
             Load += BeforeSolve_Load;
             KeyPress += BeforeSolve_KeyPress;
@@ -140,11 +140,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblPreviousSolve;
-        private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Label lblScrambleHeader;
-        private System.Windows.Forms.Label lblScramble;
-        private System.Windows.Forms.Label lblStart;
-        private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Label previousSolveHeaderLabel;
+        private System.Windows.Forms.Label previousTimeLabel;
+        private System.Windows.Forms.Label scrambleHeaderLabel;
+        private System.Windows.Forms.Label scrambleLabel;
+        private System.Windows.Forms.Label startLabel;
+        private System.Windows.Forms.Button menuButton;
     }
 }

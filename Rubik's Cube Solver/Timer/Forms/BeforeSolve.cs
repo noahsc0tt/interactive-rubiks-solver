@@ -16,19 +16,19 @@ namespace Rubiks_Cube_Solver.Timer.Forms
             this.previousTime = previousTime;
         }
 
+        private void BeforeSolve_Load(object sender, EventArgs e)
+        {
+            previousTimeLabel.Text = previousTime;
+            scrambleLabel.Text = Util.Scrambler.GetScramble();
+        }
+
         private void BeforeSolve_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Space) // if the user presses the spacebar
                 FormNavigator.Navigate<DuringSolve>(this);
         }
 
-        private void BeforeSolve_Load(object sender, EventArgs e)
-        {
-            lblTime.Text = previousTime;
-            lblScramble.Text = Util.Scrambler.GetScramble();
-        }
-
-        private void btnMenu_Click(object sender, EventArgs e) =>
+        private void MenuButton_Click(object sender, EventArgs e) =>
             FormNavigator.Menu(this);
     }
 }

@@ -24,11 +24,11 @@ namespace Rubiks_Cube_Solver.Timer.Forms
             if (e.KeyChar == (char)Keys.Space)
             {
                 solveTimer.Stop();
-                FormNavigator.Navigate<BeforeSolve>(this, lblTimer.Text);
+                FormNavigator.Navigate<BeforeSolve>(this, timeLabel.Text);
             }
         }
 
-        private void solveTimer_Tick(object sender, EventArgs e) =>
-            lblTimer.Text = string.Format(TimeFormat, solveTimer.Elapsed); 
+        private void Timer_Tick(object sender, EventArgs e) =>
+            timeLabel.Text = string.Format(TimeFormat, solveTimer.Elapsed); 
     }
 }
