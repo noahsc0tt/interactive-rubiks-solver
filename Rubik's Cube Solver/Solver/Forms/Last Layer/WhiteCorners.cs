@@ -12,10 +12,10 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             this.ApplyDefaultFormSettings();
         }
 
-        private void btnMenu_Click(object sender, EventArgs e) =>
+        private void MenuButton_Click(object sender, EventArgs e) =>
             FormNavigator.Menu(this);
 
-        private void btnFinish_Click(object sender, EventArgs e) =>
+        private void FinishButton_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<CheckingCube>(this, Stage.WhiteCorners);
     }
 }

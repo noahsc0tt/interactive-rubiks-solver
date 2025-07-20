@@ -34,7 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            lblInstructions = new System.Windows.Forms.Label();
+            instructionsLabel = new System.Windows.Forms.Label();
             orangeFace = new System.Windows.Forms.DataGridView();
             dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -85,8 +85,8 @@
             dataGridViewButtonColumn46 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn47 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn48 = new System.Windows.Forms.DataGridViewButtonColumn();
-            btnMenu = new System.Windows.Forms.Button();
-            btnFinish = new System.Windows.Forms.Button();
+            menuButton = new System.Windows.Forms.Button();
+            finishButton = new System.Windows.Forms.Button();
             dataGridViewButtonColumn30 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn29 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn28 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -105,16 +105,16 @@
             ((System.ComponentModel.ISupportInitialize)blueFace).BeginInit();
             SuspendLayout();
             // 
-            // lblInstructions
+            // instructionsLabel
             // 
-            lblInstructions.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            lblInstructions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            lblInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            lblInstructions.Location = new System.Drawing.Point(862, 72);
-            lblInstructions.Name = "lblInstructions";
-            lblInstructions.Size = new System.Drawing.Size(355, 178);
-            lblInstructions.TabIndex = 0;
-            lblInstructions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            instructionsLabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            instructionsLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            instructionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            instructionsLabel.Location = new System.Drawing.Point(862, 72);
+            instructionsLabel.Name = "instructionsLabel";
+            instructionsLabel.Size = new System.Drawing.Size(355, 178);
+            instructionsLabel.TabIndex = 0;
+            instructionsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // orangeFace
             // 
@@ -801,29 +801,29 @@
             dataGridViewButtonColumn48.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             dataGridViewButtonColumn48.Width = 76;
             // 
-            // btnMenu
+            // menuButton
             // 
-            btnMenu.BackColor = System.Drawing.Color.LightCyan;
-            btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            btnMenu.Location = new System.Drawing.Point(55, 31);
-            btnMenu.Name = "btnMenu";
-            btnMenu.Size = new System.Drawing.Size(226, 86);
-            btnMenu.TabIndex = 10;
-            btnMenu.TabStop = false;
-            btnMenu.Text = "Menu";
-            btnMenu.UseVisualStyleBackColor = false;
-            btnMenu.Click += btnMenu_Click;
+            menuButton.BackColor = System.Drawing.Color.LightCyan;
+            menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            menuButton.Location = new System.Drawing.Point(55, 31);
+            menuButton.Name = "menuButton";
+            menuButton.Size = new System.Drawing.Size(226, 86);
+            menuButton.TabIndex = 10;
+            menuButton.TabStop = false;
+            menuButton.Text = "Menu";
+            menuButton.UseVisualStyleBackColor = false;
+            menuButton.Click += MenuButton_Click;
             // 
-            // btnFinish
+            // finishButton
             // 
-            btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            btnFinish.Location = new System.Drawing.Point(910, 663);
-            btnFinish.Name = "btnFinish";
-            btnFinish.Size = new System.Drawing.Size(307, 111);
-            btnFinish.TabIndex = 11;
-            btnFinish.Text = "Finish";
-            btnFinish.UseVisualStyleBackColor = true;
-            btnFinish.Click += btnFinish_Click;
+            finishButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            finishButton.Location = new System.Drawing.Point(910, 663);
+            finishButton.Name = "finishButton";
+            finishButton.Size = new System.Drawing.Size(307, 111);
+            finishButton.TabIndex = 11;
+            finishButton.Text = "Finish";
+            finishButton.UseVisualStyleBackColor = true;
+            finishButton.Click += FinishButton_Click;
             // 
             // dataGridViewButtonColumn30
             // 
@@ -967,19 +967,19 @@
             AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1474, 900);
-            Controls.Add(btnFinish);
-            Controls.Add(btnMenu);
+            Controls.Add(finishButton);
+            Controls.Add(menuButton);
             Controls.Add(whiteFace);
             Controls.Add(yellowFace);
             Controls.Add(blueFace);
             Controls.Add(greenFace);
             Controls.Add(redFace);
             Controls.Add(orangeFace);
-            Controls.Add(lblInstructions);
+            Controls.Add(instructionsLabel);
             Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
             MinimumSize = new System.Drawing.Size(1468, 869);
             Name = "InputPiece";
-            Text = "Input Colours";
+            Text = "Input Piece";
             WindowState = System.Windows.Forms.FormWindowState.Maximized;
             Load += InputPiece_Load;
             ((System.ComponentModel.ISupportInitialize)orangeFace).EndInit();
@@ -994,7 +994,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblInstructions;
+        private System.Windows.Forms.Label instructionsLabel;
         private System.Windows.Forms.DataGridView orangeFace;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
@@ -1045,8 +1045,8 @@
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn46;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn47;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn48;
-        private System.Windows.Forms.Button btnMenu;
-        private System.Windows.Forms.Button btnFinish;
+        private System.Windows.Forms.Button menuButton;
+        private System.Windows.Forms.Button finishButton;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn30;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn29;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn28;

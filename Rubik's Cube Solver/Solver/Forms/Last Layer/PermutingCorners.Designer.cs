@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PermutingCorners));
-            btnFinish = new System.Windows.Forms.Button();
-            btnMenu = new System.Windows.Forms.Button();
+            finishButton = new System.Windows.Forms.Button();
+            menuButton = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
-            lblTitle = new System.Windows.Forms.Label();
+            titleLabel = new System.Windows.Forms.Label();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             label4 = new System.Windows.Forms.Label();
@@ -41,34 +41,34 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // btnFinish
+            // finishButton
             // 
-            btnFinish.Anchor = System.Windows.Forms.AnchorStyles.None;
-            btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            btnFinish.Location = new System.Drawing.Point(1215, 685);
-            btnFinish.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            btnFinish.MinimumSize = new System.Drawing.Size(133, 52);
-            btnFinish.Name = "btnFinish";
-            btnFinish.Size = new System.Drawing.Size(188, 103);
-            btnFinish.TabIndex = 3;
-            btnFinish.TabStop = false;
-            btnFinish.Text = "Finish";
-            btnFinish.UseVisualStyleBackColor = true;
-            btnFinish.Click += btnFinish_Click;
+            finishButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            finishButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            finishButton.Location = new System.Drawing.Point(1215, 685);
+            finishButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            finishButton.MinimumSize = new System.Drawing.Size(133, 52);
+            finishButton.Name = "finishButton";
+            finishButton.Size = new System.Drawing.Size(188, 103);
+            finishButton.TabIndex = 3;
+            finishButton.TabStop = false;
+            finishButton.Text = "Finish";
+            finishButton.UseVisualStyleBackColor = true;
+            finishButton.Click += FinishButton_Click;
             // 
-            // btnMenu
+            // menuButton
             // 
-            btnMenu.BackColor = System.Drawing.Color.LightCyan;
-            btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            btnMenu.Location = new System.Drawing.Point(14, 14);
-            btnMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            btnMenu.Name = "btnMenu";
-            btnMenu.Size = new System.Drawing.Size(264, 99);
-            btnMenu.TabIndex = 8;
-            btnMenu.TabStop = false;
-            btnMenu.Text = "Menu";
-            btnMenu.UseVisualStyleBackColor = false;
-            btnMenu.Click += btnMenu_Click;
+            menuButton.BackColor = System.Drawing.Color.LightCyan;
+            menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            menuButton.Location = new System.Drawing.Point(14, 14);
+            menuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            menuButton.Name = "menuButton";
+            menuButton.Size = new System.Drawing.Size(264, 99);
+            menuButton.TabIndex = 8;
+            menuButton.TabStop = false;
+            menuButton.Text = "Menu";
+            menuButton.UseVisualStyleBackColor = false;
+            menuButton.Click += MenuButton_Click;
             // 
             // label1
             // 
@@ -92,16 +92,16 @@
             label3.Text = "The aim of this stage is to have the all the corners solved.\r\n\r\nRead this page carefully before making any moves on your cube.";
             label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblTitle
+            // titleLabel
             // 
-            lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            lblTitle.Location = new System.Drawing.Point(384, 1);
-            lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new System.Drawing.Size(790, 148);
-            lblTitle.TabIndex = 19;
-            lblTitle.Text = "Permuting Corners";
-            lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            titleLabel.Location = new System.Drawing.Point(384, 1);
+            titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            titleLabel.Name = "titleLabel";
+            titleLabel.Size = new System.Drawing.Size(790, 148);
+            titleLabel.TabIndex = 19;
+            titleLabel.Text = "Permuting Corners";
+            titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
             // 
@@ -151,12 +151,12 @@
             Controls.Add(label1);
             Controls.Add(label3);
             Controls.Add(pictureBox1);
-            Controls.Add(lblTitle);
-            Controls.Add(btnMenu);
-            Controls.Add(btnFinish);
+            Controls.Add(titleLabel);
+            Controls.Add(menuButton);
+            Controls.Add(finishButton);
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Name = "PermutingCorners";
-            Text = "Permuting_Corners";
+            Text = "Permuting Corners";
             WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -166,13 +166,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnFinish;
-        private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Button finishButton;
+        private System.Windows.Forms.Button menuButton;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label label4;
     }
 }

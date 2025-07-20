@@ -26,8 +26,8 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             (
                 whiteFace, yellowFace, greenFace, blueFace, redFace, orangeFace
             )).PopulateCubeNet();
-            lblInstructions.Text = StageInfo.GetInstructions(stage);
-            btnFinish.Visible = false;
+            instructionsLabel.Text = StageInfo.GetInstructions(stage);
+            finishButton.Visible = false;
         }
 
         private void HandleCellClick(object sender, DataGridViewCellEventArgs e)
@@ -46,14 +46,14 @@ namespace Rubiks_Cube_Solver.Solver.Forms
                 selectedCellLocation = new CubeNetCellLocation(cellCoords, FaceColourExtension.FromFaceName(face.Name));
                 selectedCell = face[cellCoords.col, cellCoords.row];
                 selectedCell.Style.BackColor = StageInfo.GetInputColour(stage).ToColor();
-                btnFinish.Visible = true;
+                finishButton.Visible = true;
             }
         }
 
-        private void btnMenu_Click(object sender, EventArgs e) =>
+        private void MenuButton_Click(object sender, EventArgs e) =>
             FormNavigator.Menu(this);
 
-        private void btnFinish_Click(object sender, EventArgs e) =>
+        private void FinishButton_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<OutputSolution>(this, stage, selectedCellLocation);
     }
 }

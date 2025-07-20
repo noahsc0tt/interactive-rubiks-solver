@@ -34,9 +34,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            btnNextStage = new System.Windows.Forms.Button();
-            boxChooseStage = new System.Windows.Forms.ComboBox();
-            lblCubeLayout = new System.Windows.Forms.Label();
+            nextStageButton = new System.Windows.Forms.Button();
+            chooseStageComboBox = new System.Windows.Forms.ComboBox();
+            cubeLayoutLabel = new System.Windows.Forms.Label();
             whiteFace = new System.Windows.Forms.DataGridView();
             dataGridViewButtonColumn40 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn41 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -87,7 +87,7 @@
             dataGridViewButtonColumn10 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn11 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn12 = new System.Windows.Forms.DataGridViewButtonColumn();
-            btnMenu = new System.Windows.Forms.Button();
+            menuButton = new System.Windows.Forms.Button();
             blueFace = new System.Windows.Forms.DataGridView();
             dataGridViewButtonColumn22 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn23 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -98,7 +98,7 @@
             dataGridViewButtonColumn28 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn29 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn30 = new System.Windows.Forms.DataGridViewButtonColumn();
-            lblButtonInstructions = new System.Windows.Forms.Label();
+            instructionsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)whiteFace).BeginInit();
             ((System.ComponentModel.ISupportInitialize)greenFace).BeginInit();
             ((System.ComponentModel.ISupportInitialize)orangeFace).BeginInit();
@@ -107,50 +107,50 @@
             ((System.ComponentModel.ISupportInitialize)blueFace).BeginInit();
             SuspendLayout();
             // 
-            // btnNextStage
+            // nextStageButton
             // 
-            btnNextStage.Anchor = System.Windows.Forms.AnchorStyles.None;
-            btnNextStage.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            btnNextStage.Location = new System.Drawing.Point(896, 581);
-            btnNextStage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            btnNextStage.MaximumSize = new System.Drawing.Size(321, 120);
-            btnNextStage.MinimumSize = new System.Drawing.Size(321, 120);
-            btnNextStage.Name = "btnNextStage";
-            btnNextStage.Size = new System.Drawing.Size(321, 120);
-            btnNextStage.TabIndex = 0;
-            btnNextStage.TabStop = false;
-            btnNextStage.Text = "Next Stage";
-            btnNextStage.UseVisualStyleBackColor = true;
-            btnNextStage.Click += btnNextStage_Click;
+            nextStageButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            nextStageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
+            nextStageButton.Location = new System.Drawing.Point(896, 581);
+            nextStageButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            nextStageButton.MaximumSize = new System.Drawing.Size(321, 120);
+            nextStageButton.MinimumSize = new System.Drawing.Size(321, 120);
+            nextStageButton.Name = "nextStageButton";
+            nextStageButton.Size = new System.Drawing.Size(321, 120);
+            nextStageButton.TabIndex = 0;
+            nextStageButton.TabStop = false;
+            nextStageButton.Text = "Next Stage";
+            nextStageButton.UseVisualStyleBackColor = true;
+            nextStageButton.Click += NextStageButton_Click;
             // 
-            // boxChooseStage
+            // chooseStageComboBox
             // 
-            boxChooseStage.Anchor = System.Windows.Forms.AnchorStyles.None;
-            boxChooseStage.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            boxChooseStage.FormattingEnabled = true;
-            boxChooseStage.Items.AddRange(new object[] { "Yellow Edges", "Yellow Corners", "Middle Layer Edges", "White Edges", "White Corners", "Corner Permutation", "Edge Permutation" });
-            boxChooseStage.Location = new System.Drawing.Point(896, 707);
-            boxChooseStage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            boxChooseStage.MaximumSize = new System.Drawing.Size(320, 0);
-            boxChooseStage.MinimumSize = new System.Drawing.Size(320, 0);
-            boxChooseStage.Name = "boxChooseStage";
-            boxChooseStage.Size = new System.Drawing.Size(320, 39);
-            boxChooseStage.TabIndex = 1;
-            boxChooseStage.TabStop = false;
-            boxChooseStage.Text = "     Choose Stage:";
-            boxChooseStage.SelectionChangeCommitted += boxChooseStage_SelectionChangeCommitted;
+            chooseStageComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            chooseStageComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            chooseStageComboBox.FormattingEnabled = true;
+            chooseStageComboBox.Items.AddRange(new object[] { "Yellow Edges", "Yellow Corners", "Middle Layer Edges", "White Edges", "White Corners", "Corner Permutation", "Edge Permutation" });
+            chooseStageComboBox.Location = new System.Drawing.Point(896, 707);
+            chooseStageComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            chooseStageComboBox.MaximumSize = new System.Drawing.Size(320, 0);
+            chooseStageComboBox.MinimumSize = new System.Drawing.Size(320, 0);
+            chooseStageComboBox.Name = "chooseStageComboBox";
+            chooseStageComboBox.Size = new System.Drawing.Size(320, 39);
+            chooseStageComboBox.TabIndex = 1;
+            chooseStageComboBox.TabStop = false;
+            chooseStageComboBox.Text = "     Choose Stage:";
+            chooseStageComboBox.SelectionChangeCommitted += ChooseStageComboBox_SelectionChangeCommitted;
             // 
-            // lblCubeLayout
+            // cubeLayoutLabel
             // 
-            lblCubeLayout.Anchor = System.Windows.Forms.AnchorStyles.None;
-            lblCubeLayout.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            lblCubeLayout.Location = new System.Drawing.Point(59, 200);
-            lblCubeLayout.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lblCubeLayout.Name = "lblCubeLayout";
-            lblCubeLayout.Size = new System.Drawing.Size(264, 95);
-            lblCubeLayout.TabIndex = 2;
-            lblCubeLayout.Text = "Expected Cube Layout:";
-            lblCubeLayout.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            cubeLayoutLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            cubeLayoutLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            cubeLayoutLabel.Location = new System.Drawing.Point(59, 200);
+            cubeLayoutLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            cubeLayoutLabel.Name = "cubeLayoutLabel";
+            cubeLayoutLabel.Size = new System.Drawing.Size(264, 95);
+            cubeLayoutLabel.TabIndex = 2;
+            cubeLayoutLabel.Text = "Expected Cube Layout:";
+            cubeLayoutLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // whiteFace
             // 
@@ -837,19 +837,19 @@
             dataGridViewButtonColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             dataGridViewButtonColumn12.Width = 76;
             // 
-            // btnMenu
+            // menuButton
             // 
-            btnMenu.BackColor = System.Drawing.Color.LightCyan;
-            btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            btnMenu.Location = new System.Drawing.Point(59, 65);
-            btnMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            btnMenu.Name = "btnMenu";
-            btnMenu.Size = new System.Drawing.Size(264, 99);
-            btnMenu.TabIndex = 15;
-            btnMenu.TabStop = false;
-            btnMenu.Text = "Menu";
-            btnMenu.UseVisualStyleBackColor = false;
-            btnMenu.Click += btnMenu_Click;
+            menuButton.BackColor = System.Drawing.Color.LightCyan;
+            menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            menuButton.Location = new System.Drawing.Point(59, 65);
+            menuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            menuButton.Name = "menuButton";
+            menuButton.Size = new System.Drawing.Size(264, 99);
+            menuButton.TabIndex = 15;
+            menuButton.TabStop = false;
+            menuButton.Text = "Menu";
+            menuButton.UseVisualStyleBackColor = false;
+            menuButton.Click += MenuButton_Click;
             // 
             // blueFace
             // 
@@ -988,38 +988,38 @@
             dataGridViewButtonColumn30.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             dataGridViewButtonColumn30.Width = 76;
             // 
-            // lblButtonInstructions
+            // instructionsLabel
             // 
-            lblButtonInstructions.Anchor = System.Windows.Forms.AnchorStyles.None;
-            lblButtonInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            lblButtonInstructions.Location = new System.Drawing.Point(816, 65);
-            lblButtonInstructions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lblButtonInstructions.Name = "lblButtonInstructions";
-            lblButtonInstructions.Size = new System.Drawing.Size(602, 207);
-            lblButtonInstructions.TabIndex = 17;
-            lblButtonInstructions.Text = "If your cube matches this net, click 'Next Stage'.\r\n\r\nIf not, choose a stage to go back to using the drop-down list.\r\n";
-            lblButtonInstructions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            instructionsLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            instructionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            instructionsLabel.Location = new System.Drawing.Point(816, 65);
+            instructionsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            instructionsLabel.Name = "instructionsLabel";
+            instructionsLabel.Size = new System.Drawing.Size(602, 207);
+            instructionsLabel.TabIndex = 17;
+            instructionsLabel.Text = "If your cube matches this net, click 'Next Stage'.\r\n\r\nIf not, choose a stage to go back to using the drop-down list.\r\n";
+            instructionsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CheckingCube
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1474, 900);
-            Controls.Add(lblButtonInstructions);
+            Controls.Add(instructionsLabel);
             Controls.Add(blueFace);
-            Controls.Add(btnMenu);
+            Controls.Add(menuButton);
             Controls.Add(redFace);
             Controls.Add(yellowFace);
             Controls.Add(orangeFace);
             Controls.Add(greenFace);
             Controls.Add(whiteFace);
-            Controls.Add(lblCubeLayout);
-            Controls.Add(boxChooseStage);
-            Controls.Add(btnNextStage);
+            Controls.Add(cubeLayoutLabel);
+            Controls.Add(chooseStageComboBox);
+            Controls.Add(nextStageButton);
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             MinimumSize = new System.Drawing.Size(1468, 869);
             Name = "CheckingCube";
-            Text = "Checking_Moves";
+            Text = "Checking Cube";
             WindowState = System.Windows.Forms.FormWindowState.Maximized;
             Load += CheckingCube_Load;
             ((System.ComponentModel.ISupportInitialize)whiteFace).EndInit();
@@ -1034,9 +1034,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnNextStage;
-        private System.Windows.Forms.ComboBox boxChooseStage;
-        private System.Windows.Forms.Label lblCubeLayout;
+        private System.Windows.Forms.Button nextStageButton;
+        private System.Windows.Forms.ComboBox chooseStageComboBox;
+        private System.Windows.Forms.Label cubeLayoutLabel;
         private System.Windows.Forms.DataGridView whiteFace;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn40;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn41;
@@ -1087,7 +1087,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn10;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn11;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn12;
-        private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Button menuButton;
         private System.Windows.Forms.DataGridView blueFace;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn22;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn23;
@@ -1098,6 +1098,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn28;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn29;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn30;
-        private System.Windows.Forms.Label lblButtonInstructions;
+        private System.Windows.Forms.Label instructionsLabel;
     }
 }

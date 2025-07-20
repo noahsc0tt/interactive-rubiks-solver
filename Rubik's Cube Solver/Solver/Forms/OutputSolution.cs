@@ -24,10 +24,10 @@ namespace Rubiks_Cube_Solver.Solver.Forms
 
         private void SetLabelText()
         {
-            lblCubeOrientation.Text = $"Hold your cube with the white centre piece on top and the {StageInfo.GetFrontFaceName(stage)} centre piece facing you.";
-            lblStageName.Text = StageInfo.GetName(stage);
-            lblSequence.Text = solution?.Sequence;
-            lblExplanation.Text = solution?.Explanation;
+            cubeOrientationLabel.Text = $"Hold your cube with the white centre piece on top and the {StageInfo.GetFrontFaceName(stage)} centre piece facing you.";
+            stageNameLabel.Text = StageInfo.GetName(stage);
+            sequenceLabel.Text = solution?.Sequence;
+            explanationLabel.Text = solution?.Explanation;
         }
 
         private PieceSolution? GetSolution(Stage stage, PieceLocation piece)
@@ -42,10 +42,10 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             }
         }
 
-        private void btnFinish_Click(object sender, EventArgs e) =>
+        private void FinishButton_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<CheckingCube>(this, stage);
 
-        private void btnMenu_Click(object sender, EventArgs e) =>
+        private void MenuButton_Click(object sender, EventArgs e) =>
             FormNavigator.Menu(this);
     }
 }

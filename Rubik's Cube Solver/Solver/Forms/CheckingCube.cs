@@ -25,19 +25,19 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             //changing the text of the 'Next Stage' button if the user has completed the solve
             if (StageInfo.GetStageTuple(stage) == Stage.MaxStage)
             {
-                btnNextStage.Visible = false;
-                lblButtonInstructions.Text = "If your cube is fully solved, congratulations!\r\n\r\nIf not, choose a stage to go back to using the drop-down list.";
+                nextStageButton.Visible = false;
+                instructionsLabel.Text = "If your cube is fully solved, congratulations!\r\n\r\nIf not, choose a stage to go back to using the drop-down list.";
             }
         }
 
-        private void btnMenu_Click(object sender, EventArgs e) =>
+        private void MenuButton_Click(object sender, EventArgs e) =>
             FormNavigator.Menu(this);
 
-        private void btnNextStage_Click(object sender, EventArgs e) =>
+        private void NextStageButton_Click(object sender, EventArgs e) =>
             FormNavigator.NavigateFromCheckingCube(this, Stage.Increment(stage));
 
-        private void boxChooseStage_SelectionChangeCommitted(object sender, EventArgs e) =>
-            FormNavigator.NavigateFromCheckingCube(this, (string)boxChooseStage.SelectedItem switch
+        private void ChooseStageComboBox_SelectionChangeCommitted(object sender, EventArgs e) =>
+            FormNavigator.NavigateFromCheckingCube(this, (string)chooseStageComboBox.SelectedItem switch
             {
                 "Yellow Edges" => Stage.YellowEdges,
                 "Yellow Corners" => Stage.YellowCorners,
