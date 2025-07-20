@@ -15,7 +15,7 @@ namespace Rubiks_Cube_Solver.Forms
             this.ApplyDefaultFormSettings();
         }
 
-        private void btnMenu_Click(object sender, EventArgs e) =>
+        private void MenuButton_Click(object sender, EventArgs e) =>
             FormNavigator.Menu(this);
     }
 }

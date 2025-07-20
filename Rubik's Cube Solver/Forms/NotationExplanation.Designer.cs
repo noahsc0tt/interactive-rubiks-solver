@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnMenu = new System.Windows.Forms.Button();
+            menuButton = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -51,19 +51,19 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // btnMenu
+            // menuButton
             // 
-            btnMenu.BackColor = System.Drawing.Color.LightCyan;
-            btnMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            btnMenu.Location = new System.Drawing.Point(31, 31);
-            btnMenu.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            btnMenu.Name = "btnMenu";
-            btnMenu.Size = new System.Drawing.Size(215, 85);
-            btnMenu.TabIndex = 8;
-            btnMenu.TabStop = false;
-            btnMenu.Text = "Menu";
-            btnMenu.UseVisualStyleBackColor = false;
-            btnMenu.Click += btnMenu_Click;
+            menuButton.BackColor = System.Drawing.Color.LightCyan;
+            menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            menuButton.Location = new System.Drawing.Point(31, 31);
+            menuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            menuButton.Name = "menuButton";
+            menuButton.Size = new System.Drawing.Size(215, 85);
+            menuButton.TabIndex = 8;
+            menuButton.TabStop = false;
+            menuButton.Text = "Menu";
+            menuButton.UseVisualStyleBackColor = false;
+            menuButton.Click += MenuButton_Click;
             // 
             // label1
             // 
@@ -254,11 +254,11 @@
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
-            Controls.Add(btnMenu);
+            Controls.Add(menuButton);
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             MinimumSize = new System.Drawing.Size(1468, 869);
             Name = "NotationExplanation";
-            Text = "Notation_Explanation";
+            Text = "Notation Explanation";
             WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -272,7 +272,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnMenu;
+        private System.Windows.Forms.Button menuButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;

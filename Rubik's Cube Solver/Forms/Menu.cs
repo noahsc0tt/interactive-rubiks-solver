@@ -16,13 +16,13 @@ namespace Rubiks_Cube_Solver.Forms
             this.ApplyDefaultFormSettings();
         }
 
-        private void btnSolver_Click(object sender, EventArgs e) =>
+        private void SolverButton_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<Solver.Forms.InputPiece>(this, new Solver.Stage());
         
-        private void btnTimer_Click(object sender, EventArgs e) =>
+        private void TimerButton_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<Timer.Forms.BeforeSolve>(this, "N/A");
 
-        private void btnNotation_Click(object sender, EventArgs e) =>
+        private void NotationButton_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<NotationExplanation>(this);
     }
 }

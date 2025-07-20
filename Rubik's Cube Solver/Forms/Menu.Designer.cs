@@ -28,50 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnSolver = new System.Windows.Forms.Button();
-            btnTimer = new System.Windows.Forms.Button();
-            btnNotation = new System.Windows.Forms.Button();
+            solverButton = new System.Windows.Forms.Button();
+            timerButton = new System.Windows.Forms.Button();
+            notationButton = new System.Windows.Forms.Button();
             SuspendLayout();
             // 
-            // btnSolver
+            // solverButton
             // 
-            btnSolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
-            btnSolver.ForeColor = System.Drawing.SystemColors.ControlText;
-            btnSolver.Location = new System.Drawing.Point(49, 48);
-            btnSolver.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            btnSolver.Name = "btnSolver";
-            btnSolver.Size = new System.Drawing.Size(1372, 331);
-            btnSolver.TabIndex = 0;
-            btnSolver.TabStop = false;
-            btnSolver.Text = "Rubik's Cube Solver";
-            btnSolver.UseVisualStyleBackColor = true;
-            btnSolver.Click += btnSolver_Click;
+            solverButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
+            solverButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            solverButton.Location = new System.Drawing.Point(49, 48);
+            solverButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            solverButton.Name = "solverButton";
+            solverButton.Size = new System.Drawing.Size(1372, 331);
+            solverButton.TabIndex = 0;
+            solverButton.TabStop = false;
+            solverButton.Text = "Rubik's Cube Solver";
+            solverButton.UseVisualStyleBackColor = true;
+            solverButton.Click += SolverButton_Click;
             // 
-            // btnTimer
+            // timerButton
             // 
-            btnTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
-            btnTimer.Location = new System.Drawing.Point(49, 455);
-            btnTimer.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            btnTimer.Name = "btnTimer";
-            btnTimer.Size = new System.Drawing.Size(624, 331);
-            btnTimer.TabIndex = 1;
-            btnTimer.TabStop = false;
-            btnTimer.Text = "Timer";
-            btnTimer.UseVisualStyleBackColor = true;
-            btnTimer.Click += btnTimer_Click;
+            timerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
+            timerButton.Location = new System.Drawing.Point(49, 455);
+            timerButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            timerButton.Name = "timerButton";
+            timerButton.Size = new System.Drawing.Size(624, 331);
+            timerButton.TabIndex = 1;
+            timerButton.TabStop = false;
+            timerButton.Text = "Timer";
+            timerButton.UseVisualStyleBackColor = true;
+            timerButton.Click += TimerButton_Click;
             // 
-            // btnNotation
+            // notationButton
             // 
-            btnNotation.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
-            btnNotation.Location = new System.Drawing.Point(796, 455);
-            btnNotation.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            btnNotation.Name = "btnNotation";
-            btnNotation.Size = new System.Drawing.Size(624, 331);
-            btnNotation.TabIndex = 2;
-            btnNotation.TabStop = false;
-            btnNotation.Text = "Notation Explanation";
-            btnNotation.UseVisualStyleBackColor = true;
-            btnNotation.Click += btnNotation_Click;
+            notationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
+            notationButton.Location = new System.Drawing.Point(796, 455);
+            notationButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            notationButton.Name = "notationButton";
+            notationButton.Size = new System.Drawing.Size(624, 331);
+            notationButton.TabIndex = 2;
+            notationButton.TabStop = false;
+            notationButton.Text = "Notation Explanation";
+            notationButton.UseVisualStyleBackColor = true;
+            notationButton.Click += NotationButton_Click;
             // 
             // Menu
             // 
@@ -79,9 +79,9 @@
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new System.Drawing.Size(1474, 900);
-            Controls.Add(btnNotation);
-            Controls.Add(btnTimer);
-            Controls.Add(btnSolver);
+            Controls.Add(notationButton);
+            Controls.Add(timerButton);
+            Controls.Add(solverButton);
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Name = "Menu";
             Text = "Menu";
@@ -92,9 +92,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSolver;
-        private System.Windows.Forms.Button btnTimer;
-        private System.Windows.Forms.Button btnNotation;
+        private System.Windows.Forms.Button solverButton;
+        private System.Windows.Forms.Button timerButton;
+        private System.Windows.Forms.Button notationButton;
     }
 }
 
