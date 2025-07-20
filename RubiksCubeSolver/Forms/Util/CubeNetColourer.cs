@@ -4,6 +4,7 @@ using System.Windows.Forms;
 namespace RubiksCubeSolver.Forms.Util
 {
     using Solver;
+    using Solver.Util;
     using Face = DataGridView;
 
     internal class CubeNetColourer(CubeNet faces)
@@ -115,8 +116,9 @@ namespace RubiksCubeSolver.Forms.Util
 
         private void ColourLastLayerPieces(Stage stage)
         {
-            int numPieces = GetNumPiecesToColour(stage, StageStep.LastLayer);
-            if (numPieces >= 1) // white edges
+            (StageStep step, int subStep) = stage.GetTuple();
+            if (step != StageStep.LastLayer) return;
+            if (subStep >= Stage.WhiteEdgesSubStep)
                 ColourCells
                 ([
                     (faces.White, (0, 1)),
@@ -124,7 +126,7 @@ namespace RubiksCubeSolver.Forms.Util
                     (faces.White, (2, 1)),
                     (faces.White, (1, 2))
                 ]);
-            if (numPieces >= 2) // white corners
+            if (subStep >= Stage.WhiteCornersSubStep)
                 ColourCells
                 ([
                     (faces.White, (0, 0)),
@@ -132,7 +134,7 @@ namespace RubiksCubeSolver.Forms.Util
                     (faces.White, (0, 2)),
                     (faces.White, (2, 2))
                 ]);
-            if (numPieces >= 3) // permuting corners
+            if (subStep >= Stage.PermutingCornersSubStep)
                 ColourCells
                 ([
                     (faces.Green, (0, 0)),
@@ -144,7 +146,7 @@ namespace RubiksCubeSolver.Forms.Util
                     (faces.Red, (0, 0)),
                     (faces.Red, (2, 0))
                 ]);
-            if (numPieces == 4) // permuting edges
+            if (subStep == Stage.PermutingEdgesSubStep)
                 ColourCells
                 ([
                     (faces.Green, (1, 0)),
@@ -156,6 +158,8 @@ namespace RubiksCubeSolver.Forms.Util
 
         private static int GetNumPiecesToColour(Stage stage, StageStep colourStep)
         {
+            if (stage.Step == StageStep.LastLayer)
+                throw new InvalidOperationException($"Last Layer stages (currently {StageInfo.GetName(stage)}) do not have set numPiece values");
             if (stage.Step < colourStep) return 0;
             return colourStep == stage.Step ? stage.SubStep+1 : maxNumPieces;
         }
