@@ -85,7 +85,7 @@
             dataGridViewButtonColumn46 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn47 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn48 = new System.Windows.Forms.DataGridViewButtonColumn();
-            menuButton = new System.Windows.Forms.Button();
+            menuButton = new Rubiks_Cube_Solver.Forms.MenuButton(this);
             finishButton = new System.Windows.Forms.Button();
             dataGridViewButtonColumn30 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn29 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -803,16 +803,9 @@
             // 
             // menuButton
             // 
-            menuButton.BackColor = System.Drawing.Color.LightCyan;
-            menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             menuButton.Location = new System.Drawing.Point(55, 31);
-            menuButton.Name = "menuButton";
             menuButton.Size = new System.Drawing.Size(226, 86);
             menuButton.TabIndex = 10;
-            menuButton.TabStop = false;
-            menuButton.Text = "Menu";
-            menuButton.UseVisualStyleBackColor = false;
-            menuButton.Click += MenuButton_Click;
             // 
             // finishButton
             // 

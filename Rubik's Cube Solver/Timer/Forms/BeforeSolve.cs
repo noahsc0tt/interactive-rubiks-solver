@@ -27,8 +27,5 @@ namespace Rubiks_Cube_Solver.Timer.Forms
             if (e.KeyChar == (char)Keys.Space) // if the user presses the spacebar
                 FormNavigator.Navigate<DuringSolve>(this);
         }
-
-        private void MenuButton_Click(object sender, EventArgs e) =>
-            FormNavigator.Menu(this);
     }
 }

@@ -12,9 +12,6 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             this.ApplyDefaultFormSettings();
         }
 
-        private void MenuButton_Click(object sender, EventArgs e) =>
-            FormNavigator.Menu(this);
-
         private void FinishButton_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<CheckingCube>(this, Stage.PermutingCorners);
     }

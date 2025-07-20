@@ -29,9 +29,6 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             }
         }
 
-        private void MenuButton_Click(object sender, EventArgs e) =>
-            FormNavigator.Menu(this);
-
         private void NextStageButton_Click(object sender, EventArgs e) =>
             FormNavigator.NavigateFromCheckingCube(this, Stage.Increment(stage));
 

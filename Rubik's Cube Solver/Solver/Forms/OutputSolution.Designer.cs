@@ -35,7 +35,7 @@
             explanationLabel = new System.Windows.Forms.Label();
             sequenceHeaderLabel = new System.Windows.Forms.Label();
             explanationHeaderLabel = new System.Windows.Forms.Label();
-            menuButton = new System.Windows.Forms.Button();
+            menuButton = new Rubiks_Cube_Solver.Forms.MenuButton(this);
             SuspendLayout();
             // 
             // cubeOrientationLabel
@@ -132,17 +132,9 @@
             // 
             // menuButton
             // 
-            menuButton.BackColor = System.Drawing.Color.LightCyan;
-            menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             menuButton.Location = new System.Drawing.Point(1760, 42);
-            menuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            menuButton.Name = "menuButton";
             menuButton.Size = new System.Drawing.Size(264, 99);
             menuButton.TabIndex = 7;
-            menuButton.TabStop = false;
-            menuButton.Text = "Menu";
-            menuButton.UseVisualStyleBackColor = false;
-            menuButton.Click += MenuButton_Click;
             // 
             // OutputSolution
             // 
