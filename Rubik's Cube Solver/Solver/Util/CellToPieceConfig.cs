@@ -97,7 +97,11 @@ namespace Rubiks_Cube_Solver.Solver.Util
                     new Entry(coord, new PieceLocation(config.location, config.orientation)))
             );
 
-        public static PieceLocation GetPieceConfig(CubeNetCellLocation cellLocation) =>
-            GetFaceDict(cellLocation.Face)[(cellLocation.X, cellLocation.Y)];
+        public static PieceLocation GetPieceConfig(CubeNetCellLocation cellLocation)
+        {
+            if (!GetFaceDict(cellLocation.Face).TryGetValue((cellLocation.X, cellLocation.Y), out var pieceLocation))
+                throw new ArgumentException($"No corresponding piece location found for ({cellLocation.X}, {cellLocation.Y}) on face {cellLocation.Face}", nameof(cellLocation));
+            return pieceLocation;
+        }
     }
 }
