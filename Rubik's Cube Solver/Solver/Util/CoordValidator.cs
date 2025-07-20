@@ -14,7 +14,7 @@ namespace Rubiks_Cube_Solver.Solver.Util
         public static void ValidateCoord(int min, int max, int coord, string coordName)
         {
             if (!IsCoordValid(min, max, coord))
-                throw new ArgumentOutOfRangeException(coordName, $"Coordinate must be in the range {min}-{max}");
+                throw new ArgumentOutOfRangeException(coordName, coord, $"Coordinate must be in the range {min}-{max}");
         }
 
         public static void ValidateCoords(int min, int max, params (int value, string name)[] coords)

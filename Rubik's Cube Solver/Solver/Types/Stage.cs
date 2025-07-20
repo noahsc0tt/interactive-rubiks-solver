@@ -43,7 +43,7 @@ namespace Rubiks_Cube_Solver.Solver
         private static void ValidateSubStep(int subStep)
         {
             if (subStep < MinSubStep || subStep > MaxSubStep)
-                throw new ArgumentOutOfRangeException(nameof(subStep), $"{nameof(subStep)} must be in the range {MinSubStep}-{MaxSubStep}");
+                throw new ArgumentOutOfRangeException(nameof(subStep), subStep, $"{nameof(subStep)} must be in the range {MinSubStep}-{MaxSubStep}");
         }
 
         public static Stage Increment(Stage stage)
@@ -56,5 +56,8 @@ namespace Rubiks_Cube_Solver.Solver
             else
                 throw new InvalidOperationException($"Stage is already at maximum: {MaxStage}");
         }
+
+        public (StageStep step, int subStep) GetTuple() =>
+            (Step, SubStep);
     }
 }

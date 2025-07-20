@@ -23,7 +23,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
                 whiteFace, yellowFace, greenFace, blueFace, redFace, orangeFace
             )).ColourCubeNet(stage);
             //changing the text of the 'Next Stage' button if the user has completed the solve
-            if (StageInfo.GetStageTuple(stage) == Stage.MaxStage)
+            if (stage.GetTuple() == Stage.MaxStage)
             {
                 nextStageButton.Visible = false;
                 instructionsLabel.Text = "If your cube is fully solved, congratulations!\r\n\r\nIf not, choose a stage to go back to using the drop-down list.";
@@ -37,7 +37,7 @@ namespace Rubiks_Cube_Solver.Solver.Forms
             FormNavigator.NavigateFromCheckingCube(this, Stage.Increment(stage));
 
         private void ChooseStageComboBox_SelectionChangeCommitted(object sender, EventArgs e) =>
-            FormNavigator.NavigateFromCheckingCube(this, (string)chooseStageComboBox.SelectedItem switch
+            FormNavigator.NavigateFromCheckingCube(this, (string)((ComboBox)sender).SelectedItem switch
             {
                 "Yellow Edges" => Stage.YellowEdges,
                 "Yellow Corners" => Stage.YellowCorners,
@@ -45,7 +45,8 @@ namespace Rubiks_Cube_Solver.Solver.Forms
                 "White Edges" => Stage.WhiteEdges,
                 "White Corners" => Stage.WhiteCorners,
                 "Corner Permutation" => Stage.PermutingCorners,
-                "Edge Permutation" => Stage.PermutingEdges
+                "Edge Permutation" => Stage.PermutingEdges,
+                _ => throw new ArgumentException($"Unrecognised selection: {((ComboBox)sender).SelectedItem}", nameof(sender))
             });
     }
 }

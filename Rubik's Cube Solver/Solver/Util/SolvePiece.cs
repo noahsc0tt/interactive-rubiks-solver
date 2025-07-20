@@ -115,6 +115,6 @@ namespace Rubiks_Cube_Solver.Solver.Util
 
         public static PieceSolution GetSolution(Stage stage, PieceLocation piece) =>
             GetStageDict(stage).TryGetValue(piece, out PieceSolution solution) ? solution :
-                throw new ArgumentException($"No solution found for piece {piece.Coords}, {piece.Orientation}");
+                throw new ArgumentException($"No solution found for piece ({piece.Coords.GetLocation}, {piece.Orientation}) at stage {stage.Step}.{stage.SubStep}", nameof(piece));
     }
 }

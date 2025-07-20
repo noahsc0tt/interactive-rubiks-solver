@@ -1,4 +1,6 @@
-﻿namespace Rubiks_Cube_Solver.Solver.Util
+﻿using System;
+
+namespace Rubiks_Cube_Solver.Solver.Util
 {
     internal static class PieceRotator
     {
@@ -17,10 +19,12 @@
                     {
                         0 => (2, 1),
                         1 => (z, x),
-                        2 => (0, 1)
+                        2 => (0, 1),
+                        _ => throw new ArgumentOutOfRangeException($"Coordinate should be in range {PieceCoords.MinCoord}-{PieceCoords.MaxCoord}", nameof(z))
                     },
                     1 => (z == 0) ? (2, x) : (0, x),
                     2 => (x == 1) ? (z == 2 ? 0 : 2, 1) : (z, x),
+                    _ => throw new ArgumentOutOfRangeException($"Coordinate should be in range {PieceCoords.MinCoord}-{PieceCoords.MaxCoord}", nameof(y))
                 };
             }
             else //if the piece is a corner

@@ -87,7 +87,7 @@ namespace Rubiks_Cube_Solver.Solver.Util
             FaceColour.Blue => blueDict,
             FaceColour.Red => redDict,
             FaceColour.Orange => orangeDict,
-            _ => throw new ArgumentException($"Invalid face colour: {colour}")
+            _ => throw new ArgumentException($"Invalid face colour: {colour}", nameof(colour))
         };
 
         private static Dict CreateFaceDict(((int, int, int) location, PieceOrientation orientation)[] pieceConfigs) =>

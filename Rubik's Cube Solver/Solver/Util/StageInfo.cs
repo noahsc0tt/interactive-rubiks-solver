@@ -13,7 +13,7 @@ namespace Rubiks_Cube_Solver.Solver.Util
             StageStep.YellowCorners => "Yellow Corners",
             StageStep.MiddleLayerEdges => "Middle Layer Edges",
             StageStep.LastLayer => "Last Layer",
-            _ => throw new ArgumentException($"Invalid stage step: {step}")
+            _ => throw new ArgumentException($"Invalid stage step: {step}", nameof(step))
         };
 
         private static string GetSubStepName(Stage stage) => 
@@ -24,7 +24,7 @@ namespace Rubiks_Cube_Solver.Solver.Util
                     Stage.WhiteCornersSubStep => "White Corners",
                     Stage.PermutingCornersSubStep => "Permuting Corners",
                     Stage.PermutingEdgesSubStep => "Permuting Edges",
-                    _ => throw new ArgumentOutOfRangeException($"Invalid {nameof(stage.SubStep)} value. Should be in range {Stage.MinSubStep}-{Stage.MaxSubStep}")
+                    _ => throw new ArgumentOutOfRangeException(nameof(stage), stage.SubStep, $"{nameof(stage.SubStep)} should be in range {Stage.MinSubStep}-{Stage.MaxSubStep}")
                 }
                 : GetRequiredPiece(stage);
 
@@ -39,7 +39,7 @@ namespace Rubiks_Cube_Solver.Solver.Util
                     1 => "orange",
                     2 => "blue",
                     3 => "red",
-                    _ => throw new ArgumentOutOfRangeException($"Invalid {nameof(subStep)} value. Should be in range {Stage.MinSubStep}-{Stage.MaxSubStep}")
+                    _ => throw new ArgumentOutOfRangeException(nameof(stage), stage.SubStep, $"{nameof(stage.SubStep)} should be in range {Stage.MinSubStep}-{Stage.MaxSubStep}")
                 }} edge",
                 StageStep.YellowCorners => $"yellow, {GetColourPair(stage)} corner",
                 StageStep.MiddleLayerEdges => $"{GetColourPair(stage)} edge",
@@ -59,7 +59,7 @@ namespace Rubiks_Cube_Solver.Solver.Util
                 1 => "orange and green",
                 2 => "blue and orange",
                 3 => "red and blue",
-                _ => throw new ArgumentOutOfRangeException($"Invalid {nameof(subStep)} value. Should be in range {Stage.MinSubStep}-{Stage.MaxSubStep}")
+                _ => throw new ArgumentOutOfRangeException(nameof(stage), stage.SubStep, $"{nameof(stage.SubStep)} should be in range {Stage.MinSubStep}-{Stage.MaxSubStep}")
             };
         }
 
@@ -74,7 +74,7 @@ namespace Rubiks_Cube_Solver.Solver.Util
                 1 => "orange",
                 2 => "blue",
                 3 => "red",
-                _ => throw new ArgumentOutOfRangeException($"Invalid {nameof(subStep)} value. Should be in range {Stage.MinSubStep}-{Stage.MaxSubStep}")
+                _ => throw new ArgumentOutOfRangeException(nameof(stage), stage.SubStep, $"{nameof(stage.SubStep)} should be in range {Stage.MinSubStep}-{Stage.MaxSubStep}")
             };
         }
 
@@ -87,7 +87,7 @@ namespace Rubiks_Cube_Solver.Solver.Util
                 1 => FaceColour.Orange,
                 2 => FaceColour.Blue,
                 3 => FaceColour.Red,
-                _ => throw new ArgumentOutOfRangeException($"Invalid {nameof(stage.SubStep)} value. Should be in range {Stage.MinSubStep}-{Stage.MaxSubStep}")
+                _ => throw new ArgumentOutOfRangeException(nameof(stage), stage.SubStep, $"{nameof(stage.SubStep)} should be in range {Stage.MinSubStep}-{Stage.MaxSubStep}")
             },
             _ => throw new InvalidOperationException($"The last layer stages (currently {stage.Step}.{stage.SubStep}) do not have input colours")
         };

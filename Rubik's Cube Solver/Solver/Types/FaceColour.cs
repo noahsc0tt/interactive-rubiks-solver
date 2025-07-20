@@ -24,7 +24,7 @@ namespace Rubiks_Cube_Solver.Solver
             "blueFace" => FaceColour.Blue,
             "redFace" => FaceColour.Red,
             "orangeFace" => FaceColour.Orange,
-            _ => throw new ArgumentException($"Invalid face name: {faceName}")
+            _ => throw new ArgumentException($"Invalid face name: {faceName}", nameof(faceName))
         };
         
         public static Color ToColor(this FaceColour colour) => colour switch
@@ -35,7 +35,7 @@ namespace Rubiks_Cube_Solver.Solver
             FaceColour.Blue => Color.RoyalBlue,
             FaceColour.Red => Color.Red,
             FaceColour.Orange => Color.Orange,
-            _ => throw new ArgumentException($"Invalid face colour: {colour}")
+            _ => throw new ArgumentException($"Invalid face colour: {colour}", nameof(colour))
         };
     }
 }
