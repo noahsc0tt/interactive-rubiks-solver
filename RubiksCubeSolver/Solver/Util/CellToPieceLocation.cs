@@ -7,7 +7,7 @@ namespace RubiksCubeSolver.Solver.Util
     using Dict = ImmutableDictionary<(int, int), PieceLocation>;
     using Entry = System.Collections.Generic.KeyValuePair<(int, int), PieceLocation>;
 
-    internal static class CellToPieceConfig
+    internal static class CellToPieceLocation
     {
         private static readonly (int, int)[] cubeFaceCellCoords =
             [(0, 0), (1, 0), (2, 0), (0, 1), (2, 1), (0, 2), (1, 2), (2, 2)];
@@ -99,8 +99,8 @@ namespace RubiksCubeSolver.Solver.Util
 
         public static PieceLocation GetPieceConfig(CubeNetCellLocation cellLocation)
         {
-            if (!GetFaceDict(cellLocation.Face).TryGetValue((cellLocation.X, cellLocation.Y), out var pieceLocation))
-                throw new ArgumentException($"No corresponding piece location found for ({cellLocation.X}, {cellLocation.Y}) on face {cellLocation.Face}", nameof(cellLocation));
+            if (!GetFaceDict(cellLocation.Face).TryGetValue(cellLocation.GetCoords(), out var pieceLocation))
+                throw new ArgumentException($"No corresponding piece location found for {cellLocation.GetCoords()} on face {cellLocation.Face}", nameof(cellLocation));
             return pieceLocation;
         }
     }

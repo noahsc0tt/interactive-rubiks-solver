@@ -19,5 +19,8 @@
             Y = y;
             Face = face;
         }
+
+        public (int x, int y) GetCoords() =>
+            (X, Y);
     }
 }

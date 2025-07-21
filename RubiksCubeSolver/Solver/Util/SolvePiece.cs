@@ -6,7 +6,10 @@ using System.Collections.Immutable;
 namespace RubiksCubeSolver.Solver.Util
 {
     using Dict = ImmutableDictionary<PieceLocation, PieceSolution>;
-    using Entry = KeyValuePair<PieceLocation, PieceSolution>;
+
+    /// <summary>
+    /// Provides lookup and retrieval methods for Rubik's Cube piece solutions.
+    /// </summary>
     internal static class SolvePiece
     {
 
@@ -61,7 +64,7 @@ namespace RubiksCubeSolver.Solver.Util
                 ((2,2,1), PieceOrientation.Bad, "R', F, R", yellowEdgesExplanations[1])
             ]);
 
-        private static readonly Dict yellowCornersDict = CreateCornerDict
+        private static readonly Dict yellowCornersDict = CreateYellowCornersDict
             ([
                 ((0,0,0), "L', U', L. ", yellowCornersExplanations[0]),
                 ((0,0,2), "L, U, L', U. ", yellowCornersExplanations[0]),
@@ -72,6 +75,7 @@ namespace RubiksCubeSolver.Solver.Util
                 ((2,2,0), "", ""),
                 ((2,2,2), "U. ", yellowCornersExplanations[1])
             ]);
+
         private static readonly Dict middleLayerEdgesDict = CreateDict
             ([
                 ((0,1,0), PieceOrientation.Good, "F, U', F', U', L', U, L, U2, R, U', R', U', F', U, F", middleLayerEdgesExplanations[0]),
@@ -92,10 +96,10 @@ namespace RubiksCubeSolver.Solver.Util
                 ((2,2,1), PieceOrientation.Bad, "U2, R, U', R', U', F', U, F", middleLayerEdgesExplanations[1]),
             ]);
 
-        private static Entry CreateEntry(((int, int, int) location, PieceOrientation orientation, string sequence, string explanation) entry) =>
+        private static KeyValuePair<PieceLocation, PieceSolution> CreateEntry(((int, int, int) location, PieceOrientation orientation, string sequence, string explanation) entry) =>
             new(new PieceLocation(entry.location, entry.orientation), new PieceSolution(entry.sequence, entry.explanation));
 
-        private static Dict CreateCornerDict(((int, int, int) location, string sequence, string explanation)[] entries) =>
+        private static Dict CreateYellowCornersDict(((int, int, int) location, string sequence, string explanation)[] entries) =>
             CreateDict([.. entries.Select(entry =>
             (entry.location, PieceOrientation.Corner,
                 entry.sequence + "Repeat the moves (R, U, R', U') until the yellow square is pointing down.",
@@ -115,6 +119,6 @@ namespace RubiksCubeSolver.Solver.Util
 
         public static PieceSolution GetSolution(Stage stage, PieceLocation piece) =>
             GetStageDict(stage).TryGetValue(piece, out PieceSolution solution) ? solution :
-                throw new ArgumentException($"No solution found for piece ({piece.Coords.GetLocation}, {piece.Orientation}) at stage {stage.Step}.{stage.SubStep}", nameof(piece));
+                throw new ArgumentException($"No solution found for piece {piece.Coords.GetLocation()}, {piece.Orientation} at stage {stage.Step}.{stage.SubStep}", nameof(piece));
     }
 }

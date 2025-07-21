@@ -21,7 +21,7 @@ namespace RubiksCubeSolver.Solver.Forms
         }
         private void CheckingCube_Load(object sender, EventArgs e)
         {
-            new CubeNetColourer(new CubeNet
+            new CubeNetColourer(new CubeNetFaces
             (
                 whiteFace, yellowFace, greenFace, blueFace, redFace, orangeFace
             )).ColourCubeNet(stage);

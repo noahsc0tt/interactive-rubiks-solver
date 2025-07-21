@@ -25,7 +25,7 @@ namespace RubiksCubeSolver.Solver.Forms
 
         private void InputPiece_Load(object sender, EventArgs e)
         {
-            new CubeNetColourer(new CubeNet
+            new CubeNetColourer(new CubeNetFaces
             (
                 whiteFace, yellowFace, greenFace, blueFace, redFace, orangeFace
             )).PopulateCubeNet();
@@ -40,7 +40,7 @@ namespace RubiksCubeSolver.Solver.Forms
 
             (int col, int row) cellCoords = (e.ColumnIndex, e.RowIndex);
             
-            if (cellCoords == CubeNet.CentrePieceCellCoords)
+            if (cellCoords == CubeNetFaces.CentrePieceCellCoords)
                 MessageBox.Show("Centre colours cannot be changed.");
             else
             {

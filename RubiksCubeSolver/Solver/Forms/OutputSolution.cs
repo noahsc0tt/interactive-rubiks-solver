@@ -21,7 +21,7 @@ namespace RubiksCubeSolver.Solver.Forms
             this.ApplyDefaultFormSettings();
 
             stage = currentStage;
-            piece = PieceRotator.RotatePiece(CellToPieceConfig.GetPieceConfig(cell), stage);
+            piece = PieceRotator.RotatePiece(CellToPieceLocation.GetPieceConfig(cell), stage);
             solution = GetSolution(stage, piece);
             if (solution is not null) SetLabelText();
         }
