@@ -28,3 +28,4 @@ Thumbs.db
 # Publish outputs
 publish/
 Properties/PublishProfiles/
+RubiksCubeSolver/Properties/PublishProfiles/
