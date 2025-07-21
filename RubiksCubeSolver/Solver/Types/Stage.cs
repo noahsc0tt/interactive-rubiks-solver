@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 
 namespace RubiksCubeSolver.Solver
 {
@@ -10,6 +10,9 @@ namespace RubiksCubeSolver.Solver
         LastLayer
     }
 
+    /// <summary>
+    /// Represents a stage in the Rubik's Cube solving process, made up of a step and substep.
+    /// </summary>
     internal record Stage
     {
         public const StageStep MaxStep = StageStep.LastLayer;
@@ -20,6 +23,7 @@ namespace RubiksCubeSolver.Solver
         public const int WhiteCornersSubStep = 1;
         public const int PermutingCornersSubStep = 2;
         public const int PermutingEdgesSubStep = 3;
+        public static readonly Stage MinStage = new(StageStep.YellowEdges, MinSubStep);
         public static readonly Stage MaxStage = new(MaxStep, MaxSubStep);
         public static readonly Stage YellowEdges = new(StageStep.YellowEdges, MinSubStep);
         public static readonly Stage YellowCorners = new(StageStep.YellowCorners, MinSubStep);
@@ -31,9 +35,6 @@ namespace RubiksCubeSolver.Solver
         public StageStep Step { get; init; }
         public int SubStep { get; init; }
         
-        // first stage as a default
-        public Stage() : this(StageStep.YellowEdges, MinSubStep) { }
-
         public Stage(StageStep step, int subStep)
         {            
             Step = step;
@@ -51,8 +52,10 @@ namespace RubiksCubeSolver.Solver
         {
             (StageStep step, int subStep) = (stage.Step, stage.SubStep);
             if (subStep < MaxSubStep)
+                // move to the next substep within the current step
                 return stage with { SubStep = ++subStep };
             else if (step < MaxStep)
+                // move to the start of the next step
                 return new Stage(++step, MinSubStep);
             else
                 throw new InvalidOperationException($"Stage is already at maximum: {MaxStage.GetTuple()}");

@@ -20,7 +20,7 @@ namespace RubiksCubeSolver.Forms
         }
 
         private void SolverButton_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<Solver.Forms.InputPiece>(this, new Solver.Stage());
+            FormNavigator.Navigate<Solver.Forms.InputPiece>(this, Solver.Stage.MinStage);
         
         private void TimerButton_Click(object sender, EventArgs e) =>
             FormNavigator.Navigate<Timer.Forms.BeforeSolve>(this, "N/A");
