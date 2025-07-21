@@ -12,6 +12,7 @@ namespace RubiksCubeSolver.Forms
     {
         public MenuButton()
         {
+            // note, Name and Text may be overwritten by the designer if you drag and drop from toolbox
             BackColor = Color.LightCyan;
             Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4, 3, 4, 3);
