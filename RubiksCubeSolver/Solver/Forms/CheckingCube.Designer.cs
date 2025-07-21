@@ -87,7 +87,6 @@
             dataGridViewButtonColumn10 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn11 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn12 = new System.Windows.Forms.DataGridViewButtonColumn();
-            menuButton = new RubiksCubeSolver.Forms.MenuButton(this);
             blueFace = new System.Windows.Forms.DataGridView();
             dataGridViewButtonColumn22 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn23 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -99,6 +98,7 @@
             dataGridViewButtonColumn29 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn30 = new System.Windows.Forms.DataGridViewButtonColumn();
             instructionsLabel = new System.Windows.Forms.Label();
+            menuButton = new RubiksCubeSolver.Forms.MenuButton();
             ((System.ComponentModel.ISupportInitialize)whiteFace).BeginInit();
             ((System.ComponentModel.ISupportInitialize)greenFace).BeginInit();
             ((System.ComponentModel.ISupportInitialize)orangeFace).BeginInit();
@@ -837,12 +837,6 @@
             dataGridViewButtonColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             dataGridViewButtonColumn12.Width = 76;
             // 
-            // menuButton
-            // 
-            menuButton.Location = new System.Drawing.Point(59, 65);
-            menuButton.Size = new System.Drawing.Size(264, 99);
-            menuButton.TabIndex = 15;
-            // 
             // blueFace
             // 
             blueFace.AllowUserToAddRows = false;
@@ -992,14 +986,27 @@
             instructionsLabel.Text = "If your cube matches this net, click 'Next Stage'.\r\n\r\nIf not, choose a stage to go back to using the drop-down list.\r\n";
             instructionsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // menuButton
+            // 
+            menuButton.BackColor = System.Drawing.Color.LightCyan;
+            menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            menuButton.Location = new System.Drawing.Point(59, 65);
+            menuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            menuButton.Name = "menuButton";
+            menuButton.Size = new System.Drawing.Size(264, 99);
+            menuButton.TabIndex = 27;
+            menuButton.TabStop = false;
+            menuButton.Text = "Menu";
+            menuButton.UseVisualStyleBackColor = false;
+            // 
             // CheckingCube
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1474, 900);
+            Controls.Add(menuButton);
             Controls.Add(instructionsLabel);
             Controls.Add(blueFace);
-            Controls.Add(menuButton);
             Controls.Add(redFace);
             Controls.Add(yellowFace);
             Controls.Add(orangeFace);
@@ -1079,7 +1086,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn10;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn11;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn12;
-        private System.Windows.Forms.Button menuButton;
         private System.Windows.Forms.DataGridView blueFace;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn22;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn23;
@@ -1091,5 +1097,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn29;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn30;
         private System.Windows.Forms.Label instructionsLabel;
+        private RubiksCubeSolver.Forms.MenuButton menuButton;
     }
 }

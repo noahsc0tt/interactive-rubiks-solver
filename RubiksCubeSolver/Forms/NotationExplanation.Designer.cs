@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuButton = new RubiksCubeSolver.Forms.MenuButton(this);
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             pictureBox3 = new System.Windows.Forms.PictureBox();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
+            menuButton = new MenuButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -50,12 +50,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // menuButton
-            // 
-            menuButton.Location = new System.Drawing.Point(31, 31);
-            menuButton.Size = new System.Drawing.Size(215, 85);
-            menuButton.TabIndex = 8;
             // 
             // label1
             // 
@@ -225,6 +219,19 @@
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
             // 
+            // menuButton
+            // 
+            menuButton.BackColor = System.Drawing.Color.LightCyan;
+            menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            menuButton.Location = new System.Drawing.Point(31, 31);
+            menuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            menuButton.Name = "menuButton";
+            menuButton.Size = new System.Drawing.Size(215, 85);
+            menuButton.TabIndex = 23;
+            menuButton.TabStop = false;
+            menuButton.Text = "Menu";
+            menuButton.UseVisualStyleBackColor = false;
+            // 
             // NotationExplanation
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -232,6 +239,7 @@
             AutoSize = true;
             BackColor = System.Drawing.SystemColors.Control;
             ClientSize = new System.Drawing.Size(1474, 900);
+            Controls.Add(menuButton);
             Controls.Add(label8);
             Controls.Add(pictureBox6);
             Controls.Add(label7);
@@ -246,7 +254,6 @@
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             Controls.Add(label1);
-            Controls.Add(menuButton);
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             MinimumSize = new System.Drawing.Size(1468, 869);
             Name = "NotationExplanation";
@@ -263,8 +270,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button menuButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
@@ -279,5 +284,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private MenuButton menuButton;
     }
 }

@@ -7021,7 +7021,8 @@
   <data name="label4.Text" xml:space="preserve">
     <value>1. Hold your cube with the white face facing upwards (it does not matter which face is facing you).
 
-2. If your cube does not have a pair of headlights, perform this sequence of moves: R U R' U' R' F R2 U' R' U' R U R' F'
+2. If your cube does not have a pair of headlights (an example of orange headlights is shown below (left)), perform this sequence of moves: 
+    R U R' U' R' F R2 U' R' U' R U R' F'
 
 3. Locate a pair of headlights and perform U moves until the headlights are on the left face.
 

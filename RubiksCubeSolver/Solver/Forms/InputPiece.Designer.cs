@@ -85,7 +85,6 @@
             dataGridViewButtonColumn46 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn47 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn48 = new System.Windows.Forms.DataGridViewButtonColumn();
-            menuButton = new RubiksCubeSolver.Forms.MenuButton(this);
             finishButton = new System.Windows.Forms.Button();
             dataGridViewButtonColumn30 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn29 = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -97,6 +96,7 @@
             dataGridViewButtonColumn23 = new System.Windows.Forms.DataGridViewButtonColumn();
             dataGridViewButtonColumn22 = new System.Windows.Forms.DataGridViewButtonColumn();
             blueFace = new System.Windows.Forms.DataGridView();
+            menuButton = new RubiksCubeSolver.Forms.MenuButton();
             ((System.ComponentModel.ISupportInitialize)orangeFace).BeginInit();
             ((System.ComponentModel.ISupportInitialize)redFace).BeginInit();
             ((System.ComponentModel.ISupportInitialize)greenFace).BeginInit();
@@ -801,12 +801,6 @@
             dataGridViewButtonColumn48.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             dataGridViewButtonColumn48.Width = 76;
             // 
-            // menuButton
-            // 
-            menuButton.Location = new System.Drawing.Point(55, 31);
-            menuButton.Size = new System.Drawing.Size(226, 86);
-            menuButton.TabIndex = 10;
-            // 
             // finishButton
             // 
             finishButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
@@ -955,13 +949,26 @@
             blueFace.TabIndex = 6;
             blueFace.CellClick += HandleCellClick;
             // 
+            // menuButton
+            // 
+            menuButton.BackColor = System.Drawing.Color.LightCyan;
+            menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            menuButton.Location = new System.Drawing.Point(43, 72);
+            menuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            menuButton.Name = "menuButton";
+            menuButton.Size = new System.Drawing.Size(264, 99);
+            menuButton.TabIndex = 27;
+            menuButton.TabStop = false;
+            menuButton.Text = "Menu";
+            menuButton.UseVisualStyleBackColor = false;
+            // 
             // InputPiece
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1474, 900);
-            Controls.Add(finishButton);
             Controls.Add(menuButton);
+            Controls.Add(finishButton);
             Controls.Add(whiteFace);
             Controls.Add(yellowFace);
             Controls.Add(blueFace);
@@ -1038,7 +1045,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn46;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn47;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn48;
-        private System.Windows.Forms.Button menuButton;
         private System.Windows.Forms.Button finishButton;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn30;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn29;
@@ -1050,5 +1056,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn23;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn22;
         private System.Windows.Forms.DataGridView blueFace;
+        private RubiksCubeSolver.Forms.MenuButton menuButton;
     }
 }

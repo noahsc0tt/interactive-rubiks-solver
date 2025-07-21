@@ -1,8 +1,6 @@
 ﻿using RubiksCubeSolver.Forms.Util;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace RubiksCubeSolver.Forms
@@ -10,15 +8,12 @@ namespace RubiksCubeSolver.Forms
     /// <summary>
     /// Custom button for returning to the main menu from any form in the RubiksCubeSolver application.
     /// </summary>
-    internal class MenuButton : Button
+    public class MenuButton : Button
     {
-        // stores the parent form to allow navigation in MenuButton_Click
-        private readonly Form form;
-        public MenuButton(Form form)
+        public MenuButton()
         {
-            this.form = form;
-            BackColor = System.Drawing.Color.LightCyan;
-            Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BackColor = Color.LightCyan;
+            Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4, 3, 4, 3);
             Name = "menuButton";
             TabStop = false;
@@ -28,7 +23,6 @@ namespace RubiksCubeSolver.Forms
         }
 
         private void MenuButton_Click(object sender, EventArgs e) =>
-            FormNavigator.Menu(form);
-
+            FormNavigator.Menu(FindForm());
     }
 }

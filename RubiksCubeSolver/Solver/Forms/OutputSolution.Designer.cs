@@ -35,7 +35,7 @@
             explanationLabel = new System.Windows.Forms.Label();
             sequenceHeaderLabel = new System.Windows.Forms.Label();
             explanationHeaderLabel = new System.Windows.Forms.Label();
-            menuButton = new RubiksCubeSolver.Forms.MenuButton(this);
+            menuButton = new RubiksCubeSolver.Forms.MenuButton();
             SuspendLayout();
             // 
             // cubeOrientationLabel

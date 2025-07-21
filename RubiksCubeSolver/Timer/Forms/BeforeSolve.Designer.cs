@@ -33,7 +33,7 @@
             scrambleHeaderLabel = new System.Windows.Forms.Label();
             scrambleLabel = new System.Windows.Forms.Label();
             startLabel = new System.Windows.Forms.Label();
-            menuButton = new RubiksCubeSolver.Forms.MenuButton(this);
+            menuButton = new RubiksCubeSolver.Forms.MenuButton();
             SuspendLayout();
             // 
             // previousSolveHeaderLabel
@@ -104,9 +104,16 @@
             // 
             // menuButton
             // 
-            menuButton.Location = new System.Drawing.Point(51, 44);
-            menuButton.Size = new System.Drawing.Size(264, 99);
-            menuButton.TabIndex = 19;
+            menuButton.BackColor = System.Drawing.Color.LightCyan;
+            menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            menuButton.Location = new System.Drawing.Point(34, 44);
+            menuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            menuButton.Name = "menuButton";
+            menuButton.Size = new System.Drawing.Size(264, 91);
+            menuButton.TabIndex = 27;
+            menuButton.TabStop = false;
+            menuButton.Text = "Menu";
+            menuButton.UseVisualStyleBackColor = false;
             // 
             // BeforeSolve
             // 
@@ -137,6 +144,6 @@
         private System.Windows.Forms.Label scrambleHeaderLabel;
         private System.Windows.Forms.Label scrambleLabel;
         private System.Windows.Forms.Label startLabel;
-        private System.Windows.Forms.Button menuButton;
+        private RubiksCubeSolver.Forms.MenuButton menuButton;
     }
 }

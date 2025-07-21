@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PermutingCorners));
             finishButton = new System.Windows.Forms.Button();
-            menuButton = new RubiksCubeSolver.Forms.MenuButton(this);
             label1 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             titleLabel = new System.Windows.Forms.Label();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             label4 = new System.Windows.Forms.Label();
+            menuButton = new RubiksCubeSolver.Forms.MenuButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -55,12 +55,6 @@
             finishButton.Text = "Finish";
             finishButton.UseVisualStyleBackColor = true;
             finishButton.Click += FinishButton_Click;
-            // 
-            // menuButton
-            // 
-            menuButton.Location = new System.Drawing.Point(14, 14);
-            menuButton.Size = new System.Drawing.Size(264, 99);
-            menuButton.TabIndex = 8;
             // 
             // label1
             // 
@@ -100,7 +94,7 @@
             pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pictureBox2.Image = Properties.Resources.completed_permuted_corners;
             pictureBox2.InitialImage = (System.Drawing.Image)resources.GetObject("pictureBox2.InitialImage");
-            pictureBox2.Location = new System.Drawing.Point(846, 538);
+            pictureBox2.Location = new System.Drawing.Point(837, 538);
             pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new System.Drawing.Size(259, 250);
@@ -113,7 +107,7 @@
             pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pictureBox1.Image = Properties.Resources.headlights;
             pictureBox1.InitialImage = (System.Drawing.Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new System.Drawing.Point(373, 538);
+            pictureBox1.Location = new System.Drawing.Point(364, 538);
             pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(270, 250);
@@ -125,26 +119,39 @@
             // 
             label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label4.Location = new System.Drawing.Point(67, 244);
+            label4.Location = new System.Drawing.Point(64, 244);
             label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(1336, 256);
+            label4.Size = new System.Drawing.Size(1345, 256);
             label4.TabIndex = 25;
             label4.Text = resources.GetString("label4.Text");
             label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // menuButton
+            // 
+            menuButton.BackColor = System.Drawing.Color.LightCyan;
+            menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            menuButton.Location = new System.Drawing.Point(64, 30);
+            menuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            menuButton.Name = "menuButton";
+            menuButton.Size = new System.Drawing.Size(264, 99);
+            menuButton.TabIndex = 26;
+            menuButton.TabStop = false;
+            menuButton.Text = "Menu";
+            menuButton.UseVisualStyleBackColor = false;
             // 
             // PermutingCorners
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1474, 900);
+            Controls.Add(menuButton);
             Controls.Add(label4);
             Controls.Add(pictureBox2);
             Controls.Add(label1);
             Controls.Add(label3);
             Controls.Add(pictureBox1);
             Controls.Add(titleLabel);
-            Controls.Add(menuButton);
             Controls.Add(finishButton);
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Name = "PermutingCorners";
@@ -159,12 +166,12 @@
         #endregion
 
         private System.Windows.Forms.Button finishButton;
-        private System.Windows.Forms.Button menuButton;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label label4;
+        private RubiksCubeSolver.Forms.MenuButton menuButton;
     }
 }

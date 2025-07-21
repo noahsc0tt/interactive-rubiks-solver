@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WhiteEdges));
             finishButton = new System.Windows.Forms.Button();
-            menuButton = new RubiksCubeSolver.Forms.MenuButton(this);
             titleLabel = new System.Windows.Forms.Label();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             label3 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
+            menuButton = new RubiksCubeSolver.Forms.MenuButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -52,12 +52,6 @@
             finishButton.Text = "Finish";
             finishButton.UseVisualStyleBackColor = true;
             finishButton.Click += FinishButton_Click;
-            // 
-            // menuButton
-            // 
-            menuButton.Location = new System.Drawing.Point(14, 14);
-            menuButton.Size = new System.Drawing.Size(264, 99);
-            menuButton.TabIndex = 8;
             // 
             // titleLabel
             // 
@@ -108,16 +102,29 @@
             label2.Text = resources.GetString("label2.Text");
             label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // menuButton
+            // 
+            menuButton.BackColor = System.Drawing.Color.LightCyan;
+            menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            menuButton.Location = new System.Drawing.Point(63, 18);
+            menuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            menuButton.Name = "menuButton";
+            menuButton.Size = new System.Drawing.Size(264, 99);
+            menuButton.TabIndex = 15;
+            menuButton.TabStop = false;
+            menuButton.Text = "Menu";
+            menuButton.UseVisualStyleBackColor = false;
+            // 
             // WhiteEdges
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1474, 900);
+            Controls.Add(menuButton);
             Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(pictureBox1);
             Controls.Add(titleLabel);
-            Controls.Add(menuButton);
             Controls.Add(finishButton);
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Name = "WhiteEdges";
@@ -131,10 +138,10 @@
         #endregion
 
         private System.Windows.Forms.Button finishButton;
-        private System.Windows.Forms.Button menuButton;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private RubiksCubeSolver.Forms.MenuButton menuButton;
     }
 }
