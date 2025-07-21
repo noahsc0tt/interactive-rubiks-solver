@@ -4,7 +4,10 @@ namespace RubiksCubeSolver.Solver
 {
     using Face = DataGridView;
     
-    internal record CubeNet(Face White, Face Yellow, Face Green, Face Blue, Face Red, Face Orange)
+    /// <summary>
+    /// Stores the DataGridView faces of a UI Rubik's Cube net.
+    /// </summary>
+    internal record CubeNetFaces(Face White, Face Yellow, Face Green, Face Blue, Face Red, Face Orange)
     {
         public static readonly (int x, int y) CentrePieceCellCoords = (1, 1);
       

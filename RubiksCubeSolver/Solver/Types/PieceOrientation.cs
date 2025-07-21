@@ -2,6 +2,9 @@
 
 namespace RubiksCubeSolver.Solver
 {
+    /// <summary>
+    /// Defines possible orientations for a Rubik's Cube piece and provides an extension method to flip it.
+    /// </summary>
     internal enum PieceOrientation
     {
         Good, Bad, Corner

@@ -1,6 +1,10 @@
 ﻿namespace RubiksCubeSolver.Solver
 {
     using Util;
+
+    /// <summary>
+    /// Represents the three-dimensional coordinates of a Rubik's Cube piece.
+    /// </summary>
     internal readonly record struct PieceCoords
     {
         public const int Min = 0;
@@ -22,6 +26,9 @@
         public (int X, int Y, int Z) GetLocation() => (X, Y, Z);
     }
 
+    /// <summary>
+    /// Represents the three-dimensional location of a Rubik's Cube piece.
+    /// </summary>
     internal readonly record struct PieceLocation(PieceCoords Coords, PieceOrientation Orientation)
     {
         public PieceLocation((int, int, int) location, PieceOrientation orientation) :

@@ -3,6 +3,9 @@ using System.Drawing;
 
 namespace RubiksCubeSolver.Solver
 {
+    /// <summary>
+    /// Defines the colors of Rubik's Cube faces and provides extension methods for conversion and mapping.
+    /// </summary>
     internal enum FaceColour 
     {
         White,
