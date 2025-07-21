@@ -80,7 +80,7 @@
             Text = "During Solve";
             WindowState = System.Windows.Forms.FormWindowState.Maximized;
             Load += DuringSolve_Load;
-            KeyPress += DuringSolve_KeyPress;
+            KeyDown += DuringSolve_KeyDown;
             ResumeLayout(false);
 
         }

@@ -9,6 +9,7 @@ namespace RubiksCubeSolver.Solver.Util
 
     /// <summary>
     /// Provides lookup and retrieval methods for Rubik's Cube piece solutions.
+    /// The solutions are not optimal, but represent the most intuitive and educational way of solving a piece.
     /// </summary>
     internal static class SolvePiece
     {

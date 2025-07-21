@@ -4,6 +4,9 @@ using RubiksCubeSolver.Forms.Util;
 
 namespace RubiksCubeSolver.Timer.Forms
 {
+    /// <summary>
+    /// Displays the previous solve time and a new scramble. Starts the timer when the user presses the spacebar.
+    /// </summary>
     internal partial class BeforeSolve : Form
     {
         private readonly string previousTime;
@@ -22,9 +25,9 @@ namespace RubiksCubeSolver.Timer.Forms
             scrambleLabel.Text = Util.Scrambler.GetScramble();
         }
 
-        private void BeforeSolve_KeyPress(object sender, KeyPressEventArgs e)
+        private void BeforeSolve_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Space) // if the user presses the spacebar
+            if (e.KeyCode == Keys.Space) // if the user presses the spacebar
                 FormNavigator.Navigate<DuringSolve>(this);
         }
     }

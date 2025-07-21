@@ -125,7 +125,7 @@
             Text = "Before Solve";
             WindowState = System.Windows.Forms.FormWindowState.Maximized;
             Load += BeforeSolve_Load;
-            KeyPress += BeforeSolve_KeyPress;
+            KeyDown += BeforeSolve_KeyDown;
             ResumeLayout(false);
 
         }

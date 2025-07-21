@@ -2,6 +2,9 @@
 
 namespace RubiksCubeSolver.Timer.Util
 {
+    /// <summary>
+    /// Generates random Rubik's Cube scrambles.
+    /// </summary>
     internal static class Scrambler
     {
         private const int length = 20;
@@ -12,27 +15,26 @@ namespace RubiksCubeSolver.Timer.Util
         public static string GetScramble()
         {
             string[] moves = new string[length];
-            (char, char) lastTwoFaces = ('\0', '\0');
+            char secondToLastFace = default, lastFace = default;
 
             for (int i = 0; i < length; i++)
             {
                 string nextMove;
                 char nextFace;
-                do //making sure three consecutive moves are on different faces
-                {
+                do // making sure three consecutive moves are on different faces
+                {  // avoids redundant sequences such as U, U' or U, D, U'
                     nextMove = GetMove();
                     nextFace = nextMove[0];
                 }
-                while (nextFace == lastTwoFaces.Item1 || nextFace == lastTwoFaces.Item2);
+                while (nextFace == secondToLastFace || nextFace == lastFace);
 
                 moves[i] = nextMove;
-                lastTwoFaces = (lastTwoFaces.Item2, nextFace);
+                (secondToLastFace, lastFace) = (lastFace, nextFace);
             }
             return string.Join(", ", moves);
         }
 
         private static string GetMove() =>
             faces[random.Next(faces.Length)] + suffixes[random.Next(suffixes.Length)];
-
     }
 }
