@@ -7,8 +7,12 @@ using System.Windows.Forms;
 
 namespace RubiksCubeSolver.Forms
 {
+    /// <summary>
+    /// Custom button for returning to the main menu from any form in the RubiksCubeSolver application.
+    /// </summary>
     internal class MenuButton : Button
     {
+        // stores the parent form to allow navigation in MenuButton_Click
         private readonly Form form;
         public MenuButton(Form form)
         {

@@ -5,18 +5,18 @@ namespace RubiksCubeSolver.Forms
 {
     using Util;
 
+    /// <summary>
+    /// Singleton form displaying explanations and visual aids for Rubik's Cube notation and terminology.
+    /// </summary>
     internal partial class NotationExplanation : Form
     {
         private static NotationExplanation _instance;
         public static NotationExplanation Instance => _instance ??= new();
 
-        public NotationExplanation()
+        private NotationExplanation()
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
         }
-
-        private void MenuButton_Click(object sender, EventArgs e) =>
-            FormNavigator.Menu(this);
     }
 }

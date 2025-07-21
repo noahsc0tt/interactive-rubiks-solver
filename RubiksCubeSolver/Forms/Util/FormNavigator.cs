@@ -57,7 +57,7 @@ namespace RubiksCubeSolver.Forms.Util
             catch (Exception e) // if Activator.CreateInstance fails
             {
                 navigating = false;
-                string argsString = args.Length > 0 ? $" with args {string.Join(", ", args.Select(a => a?.ToString() ?? "null"))}" : "";
+                string argsString = args.Length > 0 ? $" with args {string.Join(", ", args.Select(arg => arg?.ToString() ?? "null"))}" : "";
                 throw new InvalidOperationException
                     ($"Failed to create form of type {typeof(T).Name}{argsString}.", e);
             }

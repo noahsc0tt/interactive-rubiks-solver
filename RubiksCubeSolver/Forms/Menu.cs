@@ -5,7 +5,9 @@ namespace RubiksCubeSolver.Forms
 {
     using Util;
 
-    // singleton menu form for navigation
+    /// <summary>
+    /// Singleton menu form for navigation.
+    /// </summary>
     internal partial class Menu : Form
     {
         private static Menu _instance;
