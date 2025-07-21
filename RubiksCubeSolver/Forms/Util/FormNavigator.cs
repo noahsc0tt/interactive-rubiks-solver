@@ -2,23 +2,19 @@
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace RubiksCubeSolver.Forms.Util
 {
     using Solver;
     using Solver.Forms;
-    using System.Linq;
     using SingletonEntry = KeyValuePair<Type, Form>;
 
     /// <summary>
     /// Provides static methods for navigating between forms in the RubiksCubeSolver application.
-    /// Manages singleton forms, transitions, and application exit logic to ensure consistent UI flow.
     /// </summary>
     internal static class FormNavigator
     {
-        // indicates whether a navigation operation is currently in progress to avoid running Application.Exit() when a form is closed
-        private static bool navigating = false;
-
         // stores singleton instances of forms that should not be recreated on navigation.
         private static readonly ImmutableDictionary<Type, Form> singletons = ImmutableDictionary.CreateRange
             ([
@@ -47,7 +43,6 @@ namespace RubiksCubeSolver.Forms.Util
 
         public static void Navigate<T>(Form currentForm, params object[] args) where T : Form
         {
-            navigating = true;
             Form newForm;
             try
             {
@@ -56,16 +51,19 @@ namespace RubiksCubeSolver.Forms.Util
             }
             catch (Exception e) // if Activator.CreateInstance fails
             {
-                navigating = false;
                 string argsString = args.Length > 0 ? $" with args {string.Join(", ", args.Select(arg => arg?.ToString() ?? "null"))}" : "";
                 throw new InvalidOperationException
                     ($"Failed to create form of type {typeof(T).Name}{argsString}.", e);
             }
-
+            
             ExitOnUserClose(newForm);
-            if (!newForm.IsDisposed) // to allow OutputSolution to immediately navigate back to InputPiece if the piece was invalid
+
+            // Avoid ObjectDisposedException if newForm closed itself in its constructor
+            // e.g. when OutputSolution navigates back to InputPiece if a solution cannot be found
+            if (newForm.IsDisposed)
+                currentForm.Close();
+            else
                 SwitchForms(currentForm, newForm);
-            navigating = false;
         }
 
         private static void SwitchForms(Form currentForm, Form newForm)
@@ -79,13 +77,17 @@ namespace RubiksCubeSolver.Forms.Util
         }
 
         /// <summary>
-        /// Attaches an event handler to exit the application when the user closes a form, unless a navigation operation is in progress.
+        /// Attaches an event handler to exit the application when the user closes a form
         /// </summary>
         private static void ExitOnUserClose(Form form) =>
             form.FormClosing += (s, e) =>
             {
-                if (!navigating && e.CloseReason == CloseReason.UserClosing)
+                // only exit when the last remaining form is being closed by the user (avoids exiting during navigation)
+                if (VisibleForms() == 1 && e.CloseReason == CloseReason.UserClosing)
                     Application.Exit();
             };
+
+        private static int VisibleForms() =>
+            Application.OpenForms.Cast<Form>().Count(form => form.Visible);
     }
 }
