@@ -6,6 +6,9 @@ namespace RubiksCubeSolver.Solver.Forms
 {
     using Util;
     using Face = DataGridView;
+    /// <summary>
+    /// Form for user input of a Rubik's Cube piece's position.
+    /// </summary>
     internal partial class InputPiece : Form
     {
         private readonly Stage stage;
@@ -33,7 +36,7 @@ namespace RubiksCubeSolver.Solver.Forms
         private void HandleCellClick(object sender, DataGridViewCellEventArgs e)
         {
             Face face = (Face)sender;
-            face.ClearSelection();
+            face.ClearSelection(); // un-highlighting the cell button
 
             (int col, int row) cellCoords = (e.ColumnIndex, e.RowIndex);
             
@@ -43,7 +46,7 @@ namespace RubiksCubeSolver.Solver.Forms
             {
                 selectedCell?.Style.BackColor = FaceColourExtension.DefaultCellColour; // un-colouring the previous cell
                 //colouring the new cell
-                selectedCellLocation = new CubeNetCellLocation(cellCoords, FaceColourExtension.FromFaceName(face.Name));
+                selectedCellLocation = new CubeNetCellLocation(FaceColourExtension.FromFaceName(face.Name), cellCoords);
                 selectedCell = face[cellCoords.col, cellCoords.row];
                 selectedCell.Style.BackColor = StageInfo.GetInputColour(stage).ToColor();
                 finishButton.Visible = true;

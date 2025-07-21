@@ -6,6 +6,9 @@ namespace RubiksCubeSolver.Solver.Forms
 {
     using Util;
 
+    /// <summary>
+    /// Form for displaying the solution sequence and explanation for a specific Rubik's Cube piece.
+    /// </summary>
     internal partial class OutputSolution : Form
     {
         private readonly Stage stage;

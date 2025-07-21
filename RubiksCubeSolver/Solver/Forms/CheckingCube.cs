@@ -4,9 +4,13 @@ using RubiksCubeSolver.Forms.Util;
 
 namespace RubiksCubeSolver.Solver.Forms
 {
+    /// <summary>
+    /// Form for verifying if the user has completed the stage correctly.
+    /// </summary>
     internal partial class CheckingCube : Form
     {
         private readonly Stage stage;
+        private const string instructionsLabelCompletedText = "If your cube is fully solved, congratulations!\r\n\r\nIf not, choose a stage to go back to using the drop-down list.";
 
         public CheckingCube(Stage currentStage)
         {
@@ -21,11 +25,12 @@ namespace RubiksCubeSolver.Solver.Forms
             (
                 whiteFace, yellowFace, greenFace, blueFace, redFace, orangeFace
             )).ColourCubeNet(stage);
-            //changing the text of the 'Next Stage' button if the user has completed the solve
+
+            //changing the instructions and hiding the 'Next Stage' button if the user has completed the whole cube
             if (stage.GetTuple() == Stage.MaxStage.GetTuple())
             {
                 nextStageButton.Visible = false;
-                instructionsLabel.Text = "If your cube is fully solved, congratulations!\r\n\r\nIf not, choose a stage to go back to using the drop-down list.";
+                instructionsLabel.Text = instructionsLabelCompletedText;
             }
         }
 
