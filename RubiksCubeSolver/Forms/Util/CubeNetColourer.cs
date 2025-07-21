@@ -6,22 +6,27 @@ namespace RubiksCubeSolver.Forms.Util
     using Solver;
     using Solver.Util;
     using Face = DataGridView;
-
-    internal class CubeNetColourer(CubeNet faces)
+    
+    /// <summary>
+    /// Handles coloring and populating the Rubik's Cube net UI.
+    /// </summary>
+    internal class CubeNetColourer(CubeNet net)
     {
-        private const int maxNumPieces = 4;
+        private const int maxNumPiecesToColour = 4;
+
         private void PopulateCubeFace(Face face)
         {
-            // adding the cells to the face and colouring the centre cell
+            // adding each cell (3x3) to the face
             for (int i = CubeNetCellLocation.MinCoordValue; i <= CubeNetCellLocation.MaxCoordValue; i++)
                 face.Rows.Add("", "", "");
+            // colouring the centre cell
             (int x, int y) = CubeNet.CentrePieceCellCoords;
             face[x, y].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
-            face.ClearSelection(); //un-highlighting buttons
+            face.ClearSelection(); //un-highlighting cell buttons
         }
 
         public void PopulateCubeNet() =>
-            Array.ForEach(faces.GetFaces(), PopulateCubeFace);
+            Array.ForEach(net.GetFaces(), PopulateCubeFace);
 
         private void ColourYellowEdges(Stage stage)
         {
@@ -29,26 +34,26 @@ namespace RubiksCubeSolver.Forms.Util
             if (numPieces >= 1)
                 ColourCells
                 ([
-                    (faces.Green, (1, 2)),
-                    (faces.Yellow, (1, 0))
+                    (net.Green, (1, 2)),
+                    (net.Yellow, (1, 0))
                 ]);
             if (numPieces >= 2)
                 ColourCells
                 ([
-                    (faces.Orange, (1, 2)),
-                    (faces.Yellow, (0, 1))
+                    (net.Orange, (1, 2)),
+                    (net.Yellow, (0, 1))
                 ]);
             if (numPieces >= 3)
                 ColourCells
                 ([
-                    (faces.Blue, (1, 2)),
-                    (faces.Yellow, (1, 2))
+                    (net.Blue, (1, 2)),
+                    (net.Yellow, (1, 2))
                 ]);
             if (numPieces == 4)
                 ColourCells
                 ([
-                    (faces.Red, (1, 2)),
-                    (faces.Yellow, (2, 1))
+                    (net.Red, (1, 2)),
+                    (net.Yellow, (2, 1))
                 ]);
         }
 
@@ -58,30 +63,30 @@ namespace RubiksCubeSolver.Forms.Util
             if (numPieces >= 1)
                 ColourCells
                 ([
-                    (faces.Red, (0, 2)),
-                    (faces.Green, (2, 2)),
-                    (faces.Yellow, (2, 0))
+                    (net.Red, (0, 2)),
+                    (net.Green, (2, 2)),
+                    (net.Yellow, (2, 0))
                 ]);
             if (numPieces >= 2)
                 ColourCells
                 ([
-                    (faces.Green, (0, 2)),
-                    (faces.Orange, (2, 2)),
-                    (faces.Yellow, (0, 0))
+                    (net.Green, (0, 2)),
+                    (net.Orange, (2, 2)),
+                    (net.Yellow, (0, 0))
                 ]);
             if (numPieces >= 3)
                 ColourCells
                 ([
-                    (faces.Orange, (0, 2)),
-                    (faces.Blue, (2, 2)),
-                    (faces.Yellow, (0, 2))
+                    (net.Orange, (0, 2)),
+                    (net.Blue, (2, 2)),
+                    (net.Yellow, (0, 2))
                 ]);
             if (numPieces == 4)
                 ColourCells
                 ([
-                    (faces.Blue, (0, 2)),
-                    (faces.Red, (2, 2)),
-                    (faces.Yellow, (2, 2))
+                    (net.Blue, (0, 2)),
+                    (net.Red, (2, 2)),
+                    (net.Yellow, (2, 2))
                 ]);
         }
 
@@ -91,26 +96,26 @@ namespace RubiksCubeSolver.Forms.Util
             if (numPieces >= 1)
                 ColourCells
                 ([
-                    (faces.Red, (0, 1)),
-                    (faces.Green, (2, 1))
+                    (net.Red, (0, 1)),
+                    (net.Green, (2, 1))
                 ]);
             if (numPieces >= 2)
                 ColourCells
                 ([
-                    (faces.Green, (0, 1)),
-                    (faces.Orange, (2, 1))
+                    (net.Green, (0, 1)),
+                    (net.Orange, (2, 1))
                 ]);
             if (numPieces >= 3)
                 ColourCells
                 ([
-                    (faces.Orange, (0, 1)),
-                    (faces.Blue, (2, 1))
+                    (net.Orange, (0, 1)),
+                    (net.Blue, (2, 1))
                 ]);
             if (numPieces == 4)
                 ColourCells
                 ([
-                    (faces.Blue, (0, 1)),
-                    (faces.Red, (2, 1))
+                    (net.Blue, (0, 1)),
+                    (net.Red, (2, 1))
                 ]);
         }
 
@@ -121,38 +126,38 @@ namespace RubiksCubeSolver.Forms.Util
             if (subStep >= Stage.WhiteEdgesSubStep)
                 ColourCells
                 ([
-                    (faces.White, (0, 1)),
-                    (faces.White, (1, 0)),
-                    (faces.White, (2, 1)),
-                    (faces.White, (1, 2))
+                    (net.White, (0, 1)),
+                    (net.White, (1, 0)),
+                    (net.White, (2, 1)),
+                    (net.White, (1, 2))
                 ]);
             if (subStep >= Stage.WhiteCornersSubStep)
                 ColourCells
                 ([
-                    (faces.White, (0, 0)),
-                    (faces.White, (2, 0)),
-                    (faces.White, (0, 2)),
-                    (faces.White, (2, 2))
+                    (net.White, (0, 0)),
+                    (net.White, (2, 0)),
+                    (net.White, (0, 2)),
+                    (net.White, (2, 2))
                 ]);
             if (subStep >= Stage.PermutingCornersSubStep)
                 ColourCells
                 ([
-                    (faces.Green, (0, 0)),
-                    (faces.Green, (2, 0)),
-                    (faces.Orange, (0, 0)),
-                    (faces.Orange, (2, 0)),
-                    (faces.Blue, (0, 0)),
-                    (faces.Blue, (2, 0)),
-                    (faces.Red, (0, 0)),
-                    (faces.Red, (2, 0))
+                    (net.Green, (0, 0)),
+                    (net.Green, (2, 0)),
+                    (net.Orange, (0, 0)),
+                    (net.Orange, (2, 0)),
+                    (net.Blue, (0, 0)),
+                    (net.Blue, (2, 0)),
+                    (net.Red, (0, 0)),
+                    (net.Red, (2, 0))
                 ]);
             if (subStep == Stage.PermutingEdgesSubStep)
                 ColourCells
                 ([
-                    (faces.Green, (1, 0)),
-                    (faces.Orange, (1, 0)),
-                    (faces.Blue, (1, 0)),
-                    (faces.Red, (1, 0))
+                    (net.Green, (1, 0)),
+                    (net.Orange, (1, 0)),
+                    (net.Blue, (1, 0)),
+                    (net.Red, (1, 0))
                 ]);
         }
 
@@ -161,7 +166,7 @@ namespace RubiksCubeSolver.Forms.Util
             if (stage.Step == StageStep.LastLayer)
                 throw new InvalidOperationException($"Last Layer stages (currently {StageInfo.GetName(stage)}) do not have set numPiece values");
             if (stage.Step < colourStep) return 0;
-            return colourStep == stage.Step ? stage.SubStep+1 : maxNumPieces;
+            return colourStep == stage.Step ? stage.SubStep+1 : maxNumPiecesToColour;
         }
 
         public void ColourCubeNet(Stage stage)
