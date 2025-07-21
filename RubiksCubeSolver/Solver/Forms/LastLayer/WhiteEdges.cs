@@ -4,6 +4,9 @@ using RubiksCubeSolver.Forms.Util;
 
 namespace RubiksCubeSolver.Solver.Forms
 {
+    /// <summary>
+    /// A form explaining how to solve the 'White Edges' stage.
+    /// </summary>
     internal partial class WhiteEdges : Form
     {
         public WhiteEdges()

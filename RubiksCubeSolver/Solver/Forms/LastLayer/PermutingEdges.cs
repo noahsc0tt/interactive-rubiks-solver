@@ -4,15 +4,18 @@ using RubiksCubeSolver.Forms.Util;
 
 namespace RubiksCubeSolver.Solver.Forms
 {
-    internal partial class PermutingCorners : Form
+    /// <summary>
+    /// A form explaining how to solve the 'Permuting Edges' stage.
+    /// </summary>
+    internal partial class PermutingEdges : Form
     {
-        public PermutingCorners()
+        public PermutingEdges()
         {
             InitializeComponent();
             this.ApplyDefaultFormSettings();
         }
 
         private void FinishButton_Click(object sender, EventArgs e) =>
-            FormNavigator.Navigate<CheckingCube>(this, Stage.PermutingCorners);
+            FormNavigator.Navigate<CheckingCube>(this, Stage.PermutingEdges);
     }
 }
