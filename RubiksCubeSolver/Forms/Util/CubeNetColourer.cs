@@ -20,13 +20,6 @@ namespace RubiksCubeSolver.Forms.Util
             AddCellsToFace(face);
             ColourCentreCell(face);
             face.ClearSelection(); //un-highlighting cell buttons
-
-            // ensuring cells do not get painted over
-            face.CellPainting += (sender, e) =>
-            {
-                e.PaintBackground(e.ClipBounds, true);
-                e.Handled = true;
-            };
         }
 
         private static void AddCellsToFace(Face face)
@@ -36,7 +29,7 @@ namespace RubiksCubeSolver.Forms.Util
             int cellSize = face.Width / CubeNetFaces.Dimension;
             for (int i = 0; i < CubeNetFaces.Dimension; i++)
             {
-                face.Columns.Add(new DataGridViewButtonColumn { Width = cellSize });
+                face.Columns.Add(new DataGridViewButtonColumn { Width = cellSize, FlatStyle = FlatStyle.Flat });
                 face.Rows[face.Rows.Add()].Height = cellSize;
             }
         }
