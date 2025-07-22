@@ -8,14 +8,15 @@ namespace RubiksCubeSolver.Forms.Util
     /// </summary>
     internal static class DefaultFormSettings
     {
-        public static readonly Size DefaultFormSize = new (1920, 1080);
+        public static readonly Size DefaultFormSize = new (1024, 640);
+
 
         /// <summary>
         /// Applies fixed size and window settings to avoid manual frontend scaling work...
         /// </summary>
         public static void ApplyDefaultFormSettings(this Form form)
         {
-            form.MaximumSize = form.MinimumSize = form.Size = DefaultFormSize;
+            form.MinimumSize = form.Size = DefaultFormSize;
             form.WindowState = FormWindowState.Maximized;
             form.KeyPreview = true;
         }
