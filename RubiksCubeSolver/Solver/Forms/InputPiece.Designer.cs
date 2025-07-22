@@ -58,7 +58,7 @@
             instructionsLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             instructionsLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             instructionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            instructionsLabel.Location = new System.Drawing.Point(862, 72);
+            instructionsLabel.Location = new System.Drawing.Point(862, 93);
             instructionsLabel.Name = "instructionsLabel";
             instructionsLabel.Size = new System.Drawing.Size(355, 178);
             instructionsLabel.TabIndex = 0;
@@ -90,7 +90,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             orangeFace.DefaultCellStyle = dataGridViewCellStyle2;
             orangeFace.EnableHeadersVisualStyles = false;
-            orangeFace.Location = new System.Drawing.Point(279, 308);
+            orangeFace.Location = new System.Drawing.Point(279, 329);
             orangeFace.Name = "orangeFace";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -129,7 +129,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             redFace.DefaultCellStyle = dataGridViewCellStyle4;
             redFace.EnableHeadersVisualStyles = false;
-            redFace.Location = new System.Drawing.Point(751, 308);
+            redFace.Location = new System.Drawing.Point(751, 329);
             redFace.Name = "redFace";
             redFace.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             redFace.RowHeadersVisible = false;
@@ -161,7 +161,7 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             greenFace.DefaultCellStyle = dataGridViewCellStyle5;
             greenFace.EnableHeadersVisualStyles = false;
-            greenFace.Location = new System.Drawing.Point(515, 308);
+            greenFace.Location = new System.Drawing.Point(515, 329);
             greenFace.Name = "greenFace";
             greenFace.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             greenFace.RowHeadersVisible = false;
@@ -193,7 +193,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             yellowFace.DefaultCellStyle = dataGridViewCellStyle6;
             yellowFace.EnableHeadersVisualStyles = false;
-            yellowFace.Location = new System.Drawing.Point(515, 544);
+            yellowFace.Location = new System.Drawing.Point(515, 565);
             yellowFace.Name = "yellowFace";
             yellowFace.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             yellowFace.RowHeadersVisible = false;
@@ -225,7 +225,7 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             whiteFace.DefaultCellStyle = dataGridViewCellStyle7;
             whiteFace.EnableHeadersVisualStyles = false;
-            whiteFace.Location = new System.Drawing.Point(515, 72);
+            whiteFace.Location = new System.Drawing.Point(515, 93);
             whiteFace.Name = "whiteFace";
             whiteFace.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             whiteFace.RowHeadersVisible = false;
@@ -242,7 +242,7 @@
             // 
             finishButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             finishButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            finishButton.Location = new System.Drawing.Point(910, 663);
+            finishButton.Location = new System.Drawing.Point(910, 684);
             finishButton.Name = "finishButton";
             finishButton.Size = new System.Drawing.Size(307, 111);
             finishButton.TabIndex = 11;
@@ -269,7 +269,7 @@
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             blueFace.DefaultCellStyle = dataGridViewCellStyle8;
             blueFace.EnableHeadersVisualStyles = false;
-            blueFace.Location = new System.Drawing.Point(987, 308);
+            blueFace.Location = new System.Drawing.Point(987, 329);
             blueFace.Name = "blueFace";
             blueFace.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             blueFace.RowHeadersVisible = false;
@@ -287,7 +287,7 @@
             menuButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             menuButton.BackColor = System.Drawing.Color.LightCyan;
             menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            menuButton.Location = new System.Drawing.Point(43, 72);
+            menuButton.Location = new System.Drawing.Point(43, 93);
             menuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             menuButton.Name = "menuButton";
             menuButton.Size = new System.Drawing.Size(264, 99);

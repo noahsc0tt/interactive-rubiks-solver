@@ -59,7 +59,7 @@
             // 
             nextStageButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             nextStageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            nextStageButton.Location = new System.Drawing.Point(896, 581);
+            nextStageButton.Location = new System.Drawing.Point(896, 607);
             nextStageButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             nextStageButton.MaximumSize = new System.Drawing.Size(321, 120);
             nextStageButton.MinimumSize = new System.Drawing.Size(321, 120);
@@ -77,7 +77,7 @@
             chooseStageComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             chooseStageComboBox.FormattingEnabled = true;
             chooseStageComboBox.Items.AddRange(new object[] { "Yellow Edges", "Yellow Corners", "Middle Layer Edges", "White Edges", "White Corners", "Corner Permutation", "Edge Permutation" });
-            chooseStageComboBox.Location = new System.Drawing.Point(896, 707);
+            chooseStageComboBox.Location = new System.Drawing.Point(896, 733);
             chooseStageComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             chooseStageComboBox.MaximumSize = new System.Drawing.Size(320, 0);
             chooseStageComboBox.MinimumSize = new System.Drawing.Size(320, 0);
@@ -92,7 +92,7 @@
             // 
             cubeLayoutLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             cubeLayoutLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            cubeLayoutLabel.Location = new System.Drawing.Point(59, 200);
+            cubeLayoutLabel.Location = new System.Drawing.Point(59, 226);
             cubeLayoutLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             cubeLayoutLabel.Name = "cubeLayoutLabel";
             cubeLayoutLabel.Size = new System.Drawing.Size(264, 95);
@@ -127,7 +127,7 @@
             whiteFace.DefaultCellStyle = dataGridViewCellStyle2;
             whiteFace.Enabled = false;
             whiteFace.EnableHeadersVisualStyles = false;
-            whiteFace.Location = new System.Drawing.Point(515, 65);
+            whiteFace.Location = new System.Drawing.Point(515, 91);
             whiteFace.Name = "whiteFace";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -165,7 +165,7 @@
             greenFace.DefaultCellStyle = dataGridViewCellStyle4;
             greenFace.Enabled = false;
             greenFace.EnableHeadersVisualStyles = false;
-            greenFace.Location = new System.Drawing.Point(515, 301);
+            greenFace.Location = new System.Drawing.Point(515, 327);
             greenFace.Name = "greenFace";
             greenFace.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             greenFace.RowHeadersVisible = false;
@@ -196,7 +196,7 @@
             orangeFace.DefaultCellStyle = dataGridViewCellStyle5;
             orangeFace.Enabled = false;
             orangeFace.EnableHeadersVisualStyles = false;
-            orangeFace.Location = new System.Drawing.Point(279, 301);
+            orangeFace.Location = new System.Drawing.Point(279, 327);
             orangeFace.Name = "orangeFace";
             orangeFace.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             orangeFace.RowHeadersVisible = false;
@@ -227,7 +227,7 @@
             yellowFace.DefaultCellStyle = dataGridViewCellStyle6;
             yellowFace.Enabled = false;
             yellowFace.EnableHeadersVisualStyles = false;
-            yellowFace.Location = new System.Drawing.Point(515, 537);
+            yellowFace.Location = new System.Drawing.Point(515, 563);
             yellowFace.Name = "yellowFace";
             yellowFace.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             yellowFace.RowHeadersVisible = false;
@@ -258,7 +258,7 @@
             redFace.DefaultCellStyle = dataGridViewCellStyle7;
             redFace.Enabled = false;
             redFace.EnableHeadersVisualStyles = false;
-            redFace.Location = new System.Drawing.Point(751, 301);
+            redFace.Location = new System.Drawing.Point(751, 327);
             redFace.Name = "redFace";
             redFace.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             redFace.RowHeadersVisible = false;
@@ -289,7 +289,7 @@
             blueFace.DefaultCellStyle = dataGridViewCellStyle8;
             blueFace.Enabled = false;
             blueFace.EnableHeadersVisualStyles = false;
-            blueFace.Location = new System.Drawing.Point(987, 301);
+            blueFace.Location = new System.Drawing.Point(987, 327);
             blueFace.Name = "blueFace";
             blueFace.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             blueFace.RowHeadersVisible = false;
@@ -304,7 +304,7 @@
             // 
             instructionsLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             instructionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            instructionsLabel.Location = new System.Drawing.Point(816, 65);
+            instructionsLabel.Location = new System.Drawing.Point(816, 91);
             instructionsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             instructionsLabel.Name = "instructionsLabel";
             instructionsLabel.Size = new System.Drawing.Size(602, 207);
@@ -317,7 +317,7 @@
             menuButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             menuButton.BackColor = System.Drawing.Color.LightCyan;
             menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            menuButton.Location = new System.Drawing.Point(59, 65);
+            menuButton.Location = new System.Drawing.Point(59, 91);
             menuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             menuButton.Name = "menuButton";
             menuButton.Size = new System.Drawing.Size(264, 99);

@@ -97,7 +97,7 @@
             startLabel.BackColor = System.Drawing.Color.Transparent;
             startLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             startLabel.ForeColor = System.Drawing.Color.Black;
-            startLabel.Location = new System.Drawing.Point(329, 752);
+            startLabel.Location = new System.Drawing.Point(329, 772);
             startLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             startLabel.Name = "startLabel";
             startLabel.Size = new System.Drawing.Size(794, 99);

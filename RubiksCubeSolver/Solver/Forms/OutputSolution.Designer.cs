@@ -43,7 +43,7 @@
             cubeOrientationLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             cubeOrientationLabel.BackColor = System.Drawing.Color.Thistle;
             cubeOrientationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            cubeOrientationLabel.Location = new System.Drawing.Point(67, 18);
+            cubeOrientationLabel.Location = new System.Drawing.Point(67, 36);
             cubeOrientationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             cubeOrientationLabel.Name = "cubeOrientationLabel";
             cubeOrientationLabel.Size = new System.Drawing.Size(563, 196);
@@ -56,7 +56,7 @@
             sequenceLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             sequenceLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             sequenceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F);
-            sequenceLabel.Location = new System.Drawing.Point(67, 375);
+            sequenceLabel.Location = new System.Drawing.Point(67, 393);
             sequenceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             sequenceLabel.Name = "sequenceLabel";
             sequenceLabel.Size = new System.Drawing.Size(562, 421);
@@ -67,7 +67,7 @@
             // 
             finishButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             finishButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            finishButton.Location = new System.Drawing.Point(1122, 744);
+            finishButton.Location = new System.Drawing.Point(1122, 762);
             finishButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             finishButton.Name = "finishButton";
             finishButton.Size = new System.Drawing.Size(156, 52);
@@ -82,7 +82,7 @@
             stageNameLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             stageNameLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             stageNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            stageNameLabel.Location = new System.Drawing.Point(695, 18);
+            stageNameLabel.Location = new System.Drawing.Point(695, 36);
             stageNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             stageNameLabel.Name = "stageNameLabel";
             stageNameLabel.Size = new System.Drawing.Size(583, 196);
@@ -95,7 +95,7 @@
             explanationLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             explanationLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             explanationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            explanationLabel.Location = new System.Drawing.Point(695, 351);
+            explanationLabel.Location = new System.Drawing.Point(695, 369);
             explanationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             explanationLabel.MaximumSize = new System.Drawing.Size(687, 645);
             explanationLabel.Name = "explanationLabel";
@@ -108,7 +108,7 @@
             sequenceHeaderLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             sequenceHeaderLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             sequenceHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
-            sequenceHeaderLabel.Location = new System.Drawing.Point(67, 304);
+            sequenceHeaderLabel.Location = new System.Drawing.Point(67, 322);
             sequenceHeaderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             sequenceHeaderLabel.MaximumSize = new System.Drawing.Size(697, 112);
             sequenceHeaderLabel.Name = "sequenceHeaderLabel";
@@ -122,7 +122,7 @@
             explanationHeaderLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             explanationHeaderLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             explanationHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            explanationHeaderLabel.Location = new System.Drawing.Point(695, 301);
+            explanationHeaderLabel.Location = new System.Drawing.Point(695, 319);
             explanationHeaderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             explanationHeaderLabel.MaximumSize = new System.Drawing.Size(264, 49);
             explanationHeaderLabel.Name = "explanationHeaderLabel";
@@ -135,7 +135,7 @@
             menuButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             menuButton.BackColor = System.Drawing.Color.LightCyan;
             menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            menuButton.Location = new System.Drawing.Point(1760, 42);
+            menuButton.Location = new System.Drawing.Point(1760, 60);
             menuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             menuButton.Name = "menuButton";
             menuButton.Size = new System.Drawing.Size(264, 99);

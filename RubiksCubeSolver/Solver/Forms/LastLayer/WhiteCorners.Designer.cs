@@ -44,7 +44,7 @@
             // 
             finishButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             finishButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            finishButton.Location = new System.Drawing.Point(1225, 739);
+            finishButton.Location = new System.Drawing.Point(1225, 757);
             finishButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             finishButton.MinimumSize = new System.Drawing.Size(133, 52);
             finishButton.Name = "finishButton";
@@ -85,7 +85,7 @@
             pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pictureBox2.Image = Properties.Resources.completed_white_layer_corners;
             pictureBox2.InitialImage = (System.Drawing.Image)resources.GetObject("pictureBox2.InitialImage");
-            pictureBox2.Location = new System.Drawing.Point(867, 609);
+            pictureBox2.Location = new System.Drawing.Point(867, 627);
             pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new System.Drawing.Size(255, 233);
@@ -99,7 +99,7 @@
             pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pictureBox1.Image = Properties.Resources.oriented_corner;
             pictureBox1.InitialImage = (System.Drawing.Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new System.Drawing.Point(342, 609);
+            pictureBox1.Location = new System.Drawing.Point(342, 627);
             pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(259, 233);

@@ -68,7 +68,7 @@
             // 
             label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.55F);
-            label2.Location = new System.Drawing.Point(733, 150);
+            label2.Location = new System.Drawing.Point(733, 178);
             label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(710, 34);
@@ -80,7 +80,7 @@
             // 
             label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.55F);
-            label3.Location = new System.Drawing.Point(733, 386);
+            label3.Location = new System.Drawing.Point(733, 414);
             label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(710, 28);
@@ -92,7 +92,7 @@
             // 
             label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.55F);
-            label4.Location = new System.Drawing.Point(733, 617);
+            label4.Location = new System.Drawing.Point(733, 645);
             label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(710, 29);
@@ -104,7 +104,7 @@
             // 
             label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.55F);
-            label5.Location = new System.Drawing.Point(31, 233);
+            label5.Location = new System.Drawing.Point(31, 261);
             label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(629, 58);
@@ -117,7 +117,7 @@
             label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.55F, System.Drawing.FontStyle.Bold);
-            label6.Location = new System.Drawing.Point(31, 132);
+            label6.Location = new System.Drawing.Point(31, 150);
             label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(629, 73);
@@ -129,7 +129,7 @@
             // 
             label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.55F);
-            label7.Location = new System.Drawing.Point(31, 642);
+            label7.Location = new System.Drawing.Point(31, 670);
             label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(629, 61);
@@ -141,7 +141,7 @@
             // 
             label8.Anchor = System.Windows.Forms.AnchorStyles.None;
             label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.55F);
-            label8.Location = new System.Drawing.Point(31, 443);
+            label8.Location = new System.Drawing.Point(31, 471);
             label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(629, 55);
@@ -153,7 +153,7 @@
             // 
             pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
             pictureBox6.Image = Properties.Resources.edge_piece;
-            pictureBox6.Location = new System.Drawing.Point(263, 501);
+            pictureBox6.Location = new System.Drawing.Point(263, 529);
             pictureBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pictureBox6.MinimumSize = new System.Drawing.Size(154, 119);
             pictureBox6.Name = "pictureBox6";
@@ -166,7 +166,7 @@
             // 
             pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             pictureBox5.Image = Properties.Resources.centre_piece;
-            pictureBox5.Location = new System.Drawing.Point(263, 706);
+            pictureBox5.Location = new System.Drawing.Point(263, 734);
             pictureBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pictureBox5.MinimumSize = new System.Drawing.Size(154, 119);
             pictureBox5.Name = "pictureBox5";
@@ -179,7 +179,7 @@
             // 
             pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             pictureBox4.Image = Properties.Resources.corner_piece;
-            pictureBox4.Location = new System.Drawing.Point(263, 294);
+            pictureBox4.Location = new System.Drawing.Point(263, 322);
             pictureBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pictureBox4.MinimumSize = new System.Drawing.Size(154, 119);
             pictureBox4.Name = "pictureBox4";
@@ -192,7 +192,7 @@
             // 
             pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             pictureBox3.Image = Properties.Resources.Notation_3;
-            pictureBox3.Location = new System.Drawing.Point(733, 657);
+            pictureBox3.Location = new System.Drawing.Point(733, 685);
             pictureBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pictureBox3.MinimumSize = new System.Drawing.Size(710, 168);
             pictureBox3.Name = "pictureBox3";
@@ -205,7 +205,7 @@
             // 
             pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             pictureBox2.Image = Properties.Resources.Notation_2;
-            pictureBox2.Location = new System.Drawing.Point(733, 417);
+            pictureBox2.Location = new System.Drawing.Point(733, 445);
             pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pictureBox2.MinimumSize = new System.Drawing.Size(710, 168);
             pictureBox2.Name = "pictureBox2";
@@ -218,7 +218,7 @@
             // 
             pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.Notation_1;
-            pictureBox1.Location = new System.Drawing.Point(733, 187);
+            pictureBox1.Location = new System.Drawing.Point(733, 215);
             pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pictureBox1.MinimumSize = new System.Drawing.Size(710, 168);
             pictureBox1.Name = "pictureBox1";

@@ -42,7 +42,7 @@
             // 
             finishButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             finishButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            finishButton.Location = new System.Drawing.Point(1155, 667);
+            finishButton.Location = new System.Drawing.Point(1155, 720);
             finishButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             finishButton.MinimumSize = new System.Drawing.Size(133, 52);
             finishButton.Name = "finishButton";
@@ -71,7 +71,7 @@
             pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pictureBox1.Image = Properties.Resources.white_edges;
             pictureBox1.InitialImage = (System.Drawing.Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new System.Drawing.Point(397, 592);
+            pictureBox1.Location = new System.Drawing.Point(397, 645);
             pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pictureBox1.MaximumSize = new System.Drawing.Size(689, 178);
             pictureBox1.MinimumSize = new System.Drawing.Size(689, 178);
