@@ -15,7 +15,7 @@ namespace RubiksCubeSolver.Forms.Util
     {
         private const int maxNumPiecesToColour = 4;
 
-        private void PopulateCubeFace(Face face)
+        private static void PopulateCubeFace(Face face)
         {
             AddCellsToFace(face);
             ColourCentreCell(face);
@@ -29,7 +29,7 @@ namespace RubiksCubeSolver.Forms.Util
             };
         }
 
-        private void AddCellsToFace(Face face)
+        private static void AddCellsToFace(Face face)
         {
             face.Width = face.Height = Math.Min(face.Width, face.Height);
             // adding each cell (3x3) to the face
@@ -41,7 +41,7 @@ namespace RubiksCubeSolver.Forms.Util
             }
         }
 
-        private void ColourCentreCell(Face face) =>
+        private static void ColourCentreCell(Face face) =>
             face[CubeNetFaces.CentrePieceCellCoords.x, CubeNetFaces.CentrePieceCellCoords.y].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
 
         public void PopulateCubeNet() =>
