@@ -1,9 +1,11 @@
 using System;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace RubiksCubeSolver.Forms.Util
 {
     using Solver;
+    using System.Drawing;
     using Face = DataGridView;
     
     /// <summary>
@@ -15,6 +17,21 @@ namespace RubiksCubeSolver.Forms.Util
 
         private void PopulateCubeFace(Face face)
         {
+            AddCellsToFace(face);
+            ColourCentreCell(face);
+            face.ClearSelection(); //un-highlighting cell buttons
+
+            // ensuring cells do not get painted over
+            face.CellPainting += (sender, e) =>
+            {
+                e.PaintBackground(e.ClipBounds, true);
+                e.Handled = true;
+            };
+        }
+
+        private void AddCellsToFace(Face face)
+        {
+            face.Width = face.Height = Math.Min(face.Width, face.Height);
             // adding each cell (3x3) to the face
             int cellSize = face.Width / CubeNetFaces.Dimension;
             for (int i = 0; i < CubeNetFaces.Dimension; i++)
@@ -22,11 +39,10 @@ namespace RubiksCubeSolver.Forms.Util
                 face.Columns.Add(new DataGridViewButtonColumn { Width = cellSize });
                 face.Rows[face.Rows.Add()].Height = cellSize;
             }
-            // colouring the centre cell
-            (int x, int y) = CubeNetFaces.CentrePieceCellCoords;
-            face[x, y].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
-            face.ClearSelection(); //un-highlighting cell buttons
         }
+
+        private void ColourCentreCell(Face face) =>
+            face[CubeNetFaces.CentrePieceCellCoords.x, CubeNetFaces.CentrePieceCellCoords.y].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
 
         public void PopulateCubeNet() =>
             Array.ForEach(faces.GetFaces(), PopulateCubeFace);
