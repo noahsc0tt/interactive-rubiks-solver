@@ -117,7 +117,7 @@
             sequenceHeaderLabel.Text = "Sequence Of Moves:";
             sequenceHeaderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // explanationLabelHeader
+            // explanationHeaderLabel
             // 
             explanationHeaderLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             explanationHeaderLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -125,16 +125,24 @@
             explanationHeaderLabel.Location = new System.Drawing.Point(695, 301);
             explanationHeaderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             explanationHeaderLabel.MaximumSize = new System.Drawing.Size(264, 49);
-            explanationHeaderLabel.Name = "explanationLabelHeader";
+            explanationHeaderLabel.Name = "explanationHeaderLabel";
             explanationHeaderLabel.Size = new System.Drawing.Size(227, 49);
             explanationHeaderLabel.TabIndex = 6;
             explanationHeaderLabel.Text = "Explanation:";
             // 
             // menuButton
             // 
+            menuButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            menuButton.BackColor = System.Drawing.Color.LightCyan;
+            menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             menuButton.Location = new System.Drawing.Point(1760, 42);
+            menuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            menuButton.Name = "menuButton";
             menuButton.Size = new System.Drawing.Size(264, 99);
             menuButton.TabIndex = 7;
+            menuButton.TabStop = false;
+            menuButton.Text = "Menu";
+            menuButton.UseVisualStyleBackColor = false;
             // 
             // OutputSolution
             // 
@@ -166,6 +174,6 @@
         private System.Windows.Forms.Label explanationLabel;
         private System.Windows.Forms.Label sequenceHeaderLabel;
         private System.Windows.Forms.Label explanationHeaderLabel;
-        private System.Windows.Forms.Button menuButton;
+        private RubiksCubeSolver.Forms.MenuButton menuButton;
     }
 }

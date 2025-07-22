@@ -38,7 +38,7 @@
             // 
             // previousSolveHeaderLabel
             // 
-            previousSolveHeaderLabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            previousSolveHeaderLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             previousSolveHeaderLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             previousSolveHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
             previousSolveHeaderLabel.Location = new System.Drawing.Point(370, 44);
@@ -53,7 +53,7 @@
             // 
             // previousTimeLabel
             // 
-            previousTimeLabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            previousTimeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             previousTimeLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             previousTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 80F);
             previousTimeLabel.Location = new System.Drawing.Point(370, 135);
@@ -68,6 +68,7 @@
             // 
             // scrambleHeaderLabel
             // 
+            scrambleHeaderLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             scrambleHeaderLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             scrambleHeaderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
             scrambleHeaderLabel.Location = new System.Drawing.Point(370, 340);
@@ -80,6 +81,7 @@
             // 
             // scrambleLabel
             // 
+            scrambleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             scrambleLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             scrambleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             scrambleLabel.Location = new System.Drawing.Point(370, 431);
@@ -91,6 +93,7 @@
             // 
             // startLabel
             // 
+            startLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             startLabel.BackColor = System.Drawing.Color.Transparent;
             startLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             startLabel.ForeColor = System.Drawing.Color.Black;
@@ -104,6 +107,7 @@
             // 
             // menuButton
             // 
+            menuButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             menuButton.BackColor = System.Drawing.Color.LightCyan;
             menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             menuButton.Location = new System.Drawing.Point(34, 44);

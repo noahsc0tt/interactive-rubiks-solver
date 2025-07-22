@@ -57,6 +57,7 @@
             // 
             // label3
             // 
+            label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label3.Location = new System.Drawing.Point(62, 119);
             label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -68,6 +69,7 @@
             // 
             // titleLabel
             // 
+            titleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             titleLabel.Location = new System.Drawing.Point(342, -12);
             titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -79,6 +81,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pictureBox2.Image = Properties.Resources.completed_white_layer_corners;
             pictureBox2.InitialImage = (System.Drawing.Image)resources.GetObject("pictureBox2.InitialImage");
@@ -92,6 +95,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pictureBox1.Image = Properties.Resources.oriented_corner;
             pictureBox1.InitialImage = (System.Drawing.Image)resources.GetObject("pictureBox1.InitialImage");
@@ -105,6 +109,7 @@
             // 
             // label4
             // 
+            label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label4.Location = new System.Drawing.Point(62, 246);
@@ -117,6 +122,7 @@
             // 
             // menuButton1
             // 
+            menuButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             menuButton1.BackColor = System.Drawing.Color.LightCyan;
             menuButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             menuButton1.Location = new System.Drawing.Point(62, 12);

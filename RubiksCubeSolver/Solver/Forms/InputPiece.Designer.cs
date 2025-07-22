@@ -55,7 +55,7 @@
             // 
             // instructionsLabel
             // 
-            instructionsLabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            instructionsLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             instructionsLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             instructionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             instructionsLabel.Location = new System.Drawing.Point(862, 72);
@@ -240,6 +240,7 @@
             // 
             // finishButton
             // 
+            finishButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             finishButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             finishButton.Location = new System.Drawing.Point(910, 663);
             finishButton.Name = "finishButton";
@@ -283,6 +284,7 @@
             // 
             // menuButton
             // 
+            menuButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             menuButton.BackColor = System.Drawing.Color.LightCyan;
             menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             menuButton.Location = new System.Drawing.Point(43, 72);

@@ -35,6 +35,7 @@
             // 
             // solverButton
             // 
+            solverButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             solverButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
             solverButton.ForeColor = System.Drawing.SystemColors.ControlText;
             solverButton.Location = new System.Drawing.Point(49, 48);
@@ -49,6 +50,7 @@
             // 
             // timerButton
             // 
+            timerButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             timerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
             timerButton.Location = new System.Drawing.Point(49, 455);
             timerButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -62,6 +64,7 @@
             // 
             // notationButton
             // 
+            notationButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             notationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 56F);
             notationButton.Location = new System.Drawing.Point(796, 455);
             notationButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);

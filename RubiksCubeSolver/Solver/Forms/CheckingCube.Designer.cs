@@ -106,6 +106,7 @@
             whiteFace.AllowUserToDeleteRows = false;
             whiteFace.AllowUserToResizeColumns = false;
             whiteFace.AllowUserToResizeRows = false;
+            whiteFace.Anchor = System.Windows.Forms.AnchorStyles.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -150,6 +151,7 @@
             greenFace.AllowUserToDeleteRows = false;
             greenFace.AllowUserToResizeColumns = false;
             greenFace.AllowUserToResizeRows = false;
+            greenFace.Anchor = System.Windows.Forms.AnchorStyles.None;
             greenFace.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             greenFace.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             greenFace.ColumnHeadersVisible = false;
@@ -180,6 +182,7 @@
             orangeFace.AllowUserToDeleteRows = false;
             orangeFace.AllowUserToResizeColumns = false;
             orangeFace.AllowUserToResizeRows = false;
+            orangeFace.Anchor = System.Windows.Forms.AnchorStyles.None;
             orangeFace.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             orangeFace.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             orangeFace.ColumnHeadersVisible = false;
@@ -210,6 +213,7 @@
             yellowFace.AllowUserToDeleteRows = false;
             yellowFace.AllowUserToResizeColumns = false;
             yellowFace.AllowUserToResizeRows = false;
+            yellowFace.Anchor = System.Windows.Forms.AnchorStyles.None;
             yellowFace.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             yellowFace.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             yellowFace.ColumnHeadersVisible = false;
@@ -240,6 +244,7 @@
             redFace.AllowUserToDeleteRows = false;
             redFace.AllowUserToResizeColumns = false;
             redFace.AllowUserToResizeRows = false;
+            redFace.Anchor = System.Windows.Forms.AnchorStyles.None;
             redFace.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             redFace.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             redFace.ColumnHeadersVisible = false;
@@ -270,6 +275,7 @@
             blueFace.AllowUserToDeleteRows = false;
             blueFace.AllowUserToResizeColumns = false;
             blueFace.AllowUserToResizeRows = false;
+            blueFace.Anchor = System.Windows.Forms.AnchorStyles.None;
             blueFace.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             blueFace.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             blueFace.ColumnHeadersVisible = false;
@@ -308,6 +314,7 @@
             // 
             // menuButton
             // 
+            menuButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             menuButton.BackColor = System.Drawing.Color.LightCyan;
             menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             menuButton.Location = new System.Drawing.Point(59, 65);

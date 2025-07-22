@@ -55,6 +55,7 @@
             // 
             // titleLabel
             // 
+            titleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             titleLabel.Location = new System.Drawing.Point(453, 14);
             titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -66,6 +67,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pictureBox1.Image = Properties.Resources.white_edges;
             pictureBox1.InitialImage = (System.Drawing.Image)resources.GetObject("pictureBox1.InitialImage");
@@ -81,6 +83,7 @@
             // 
             // label3
             // 
+            label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label3.Location = new System.Drawing.Point(137, 162);
             label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -92,6 +95,7 @@
             // 
             // label2
             // 
+            label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             label2.Location = new System.Drawing.Point(137, 307);
@@ -104,6 +108,7 @@
             // 
             // menuButton
             // 
+            menuButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             menuButton.BackColor = System.Drawing.Color.LightCyan;
             menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             menuButton.Location = new System.Drawing.Point(63, 18);
