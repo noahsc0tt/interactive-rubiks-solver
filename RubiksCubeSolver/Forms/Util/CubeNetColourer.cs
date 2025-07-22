@@ -4,7 +4,6 @@ using System.Windows.Forms;
 namespace RubiksCubeSolver.Forms.Util
 {
     using Solver;
-    using Solver.Util;
     using Face = DataGridView;
     
     /// <summary>
@@ -17,8 +16,12 @@ namespace RubiksCubeSolver.Forms.Util
         private void PopulateCubeFace(Face face)
         {
             // adding each cell (3x3) to the face
-            for (int i = CubeNetCellLocation.MinCoordValue; i <= CubeNetCellLocation.MaxCoordValue; i++)
-                face.Rows.Add("", "", "");
+            int cellSize = face.Width / CubeNetFaces.Dimension;
+            for (int i = 0; i < CubeNetFaces.Dimension; i++)
+            {
+                face.Columns.Add(new DataGridViewButtonColumn { Width = cellSize });
+                face.Rows[face.Rows.Add()].Height = cellSize;
+            }
             // colouring the centre cell
             (int x, int y) = CubeNetFaces.CentrePieceCellCoords;
             face[x, y].Style.BackColor = FaceColourExtension.FromFaceName(face.Name).ToColor();
