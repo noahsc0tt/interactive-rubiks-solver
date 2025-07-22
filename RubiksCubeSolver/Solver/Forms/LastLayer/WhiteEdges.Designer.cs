@@ -57,7 +57,7 @@
             // 
             titleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            titleLabel.Location = new System.Drawing.Point(453, 14);
+            titleLabel.Location = new System.Drawing.Point(453, 45);
             titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new System.Drawing.Size(576, 99);
@@ -111,7 +111,7 @@
             menuButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             menuButton.BackColor = System.Drawing.Color.LightCyan;
             menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            menuButton.Location = new System.Drawing.Point(63, 18);
+            menuButton.Location = new System.Drawing.Point(63, 49);
             menuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             menuButton.Name = "menuButton";
             menuButton.Size = new System.Drawing.Size(264, 99);

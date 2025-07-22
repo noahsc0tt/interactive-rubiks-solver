@@ -45,7 +45,7 @@
             // 
             finishButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             finishButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            finishButton.Location = new System.Drawing.Point(1221, 718);
+            finishButton.Location = new System.Drawing.Point(1222, 740);
             finishButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             finishButton.MinimumSize = new System.Drawing.Size(133, 52);
             finishButton.Name = "finishButton";
@@ -72,7 +72,7 @@
             // 
             label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label3.Location = new System.Drawing.Point(249, 129);
+            label3.Location = new System.Drawing.Point(249, 157);
             label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(1013, 97);
@@ -84,7 +84,7 @@
             // 
             titleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            titleLabel.Location = new System.Drawing.Point(384, 1);
+            titleLabel.Location = new System.Drawing.Point(384, 29);
             titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new System.Drawing.Size(790, 148);
@@ -98,7 +98,7 @@
             pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pictureBox2.Image = Properties.Resources.completed_permuted_corners;
             pictureBox2.InitialImage = (System.Drawing.Image)resources.GetObject("pictureBox2.InitialImage");
-            pictureBox2.Location = new System.Drawing.Point(837, 571);
+            pictureBox2.Location = new System.Drawing.Point(838, 593);
             pictureBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new System.Drawing.Size(259, 250);
@@ -112,7 +112,7 @@
             pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pictureBox1.Image = Properties.Resources.headlights;
             pictureBox1.InitialImage = (System.Drawing.Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new System.Drawing.Point(364, 571);
+            pictureBox1.Location = new System.Drawing.Point(365, 593);
             pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(270, 250);
@@ -125,7 +125,7 @@
             label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label4.Location = new System.Drawing.Point(64, 244);
+            label4.Location = new System.Drawing.Point(64, 280);
             label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(1345, 256);
@@ -138,7 +138,7 @@
             menuButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             menuButton.BackColor = System.Drawing.Color.LightCyan;
             menuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            menuButton.Location = new System.Drawing.Point(64, 30);
+            menuButton.Location = new System.Drawing.Point(64, 58);
             menuButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             menuButton.Name = "menuButton";
             menuButton.Size = new System.Drawing.Size(264, 99);

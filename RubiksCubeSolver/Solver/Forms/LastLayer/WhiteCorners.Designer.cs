@@ -59,7 +59,7 @@
             // 
             label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label3.Location = new System.Drawing.Point(62, 119);
+            label3.Location = new System.Drawing.Point(62, 158);
             label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(1351, 106);
@@ -71,7 +71,7 @@
             // 
             titleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            titleLabel.Location = new System.Drawing.Point(342, -12);
+            titleLabel.Location = new System.Drawing.Point(342, 27);
             titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new System.Drawing.Size(790, 148);
@@ -112,10 +112,10 @@
             label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            label4.Location = new System.Drawing.Point(62, 246);
+            label4.Location = new System.Drawing.Point(62, 276);
             label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(1351, 344);
+            label4.Size = new System.Drawing.Size(1351, 325);
             label4.TabIndex = 19;
             label4.Text = resources.GetString("label4.Text");
             label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -125,7 +125,7 @@
             menuButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             menuButton1.BackColor = System.Drawing.Color.LightCyan;
             menuButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            menuButton1.Location = new System.Drawing.Point(62, 12);
+            menuButton1.Location = new System.Drawing.Point(62, 51);
             menuButton1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             menuButton1.Name = "menuButton1";
             menuButton1.Size = new System.Drawing.Size(264, 99);
