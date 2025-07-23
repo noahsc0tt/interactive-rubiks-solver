@@ -19,14 +19,23 @@ namespace RubiksCubeSolver.Forms.Util
         {
             AddCellsToFace(face);
             ColourCentreCell(face);
+            // Force redraw
+            face.Invalidate();
+            face.Update();
             face.ClearSelection(); //un-highlighting cell buttons
         }
 
         private static void AddCellsToFace(Face face)
         {
-            face.Width = face.Height = Math.Min(face.Width, face.Height);
-            // adding each cell (3x3) to the face
-            int cellSize = face.Width / CubeNetFaces.Dimension;
+            face.Width = face.Height = Math.Min(face.Width, face.Height); // ensuring a square face
+
+            // ensuring cell and face borders don't overlap to create a thicker border (not sure why this works)
+            face.AdvancedCellBorderStyle.Left = face.AdvancedCellBorderStyle.Top = 
+                DataGridViewAdvancedCellBorderStyle.None;
+
+            int cellSize = (int)Math.Round((double)face.Width / CubeNetFaces.Dimension);
+            
+            // adding each cell to the face
             for (int i = 0; i < CubeNetFaces.Dimension; i++)
             {
                 face.Columns.Add(new DataGridViewButtonColumn { Width = cellSize, FlatStyle = FlatStyle.Flat });
