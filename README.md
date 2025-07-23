@@ -20,7 +20,7 @@ A Windows Forms application for learning, practicing, and timing Rubik's Cube so
 
 ## Getting Started
 
-1. Download `RubiksCubeSolver.exe` from the [Releases](https://github.com/noahsc0tt/Rubiks-Cube-Solver/releases) section
+1. Download the latest `.exe` file from the [Releases](https://github.com/noahsc0tt/Rubiks-Cube-Solver/releases) section
 2. Run the executable
 
 ## Requirements for Building
