@@ -82,7 +82,6 @@
             // pictureBox2
             // 
             pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pictureBox2.Image = Properties.Resources.completed_white_layer_corners;
             pictureBox2.InitialImage = (System.Drawing.Image)resources.GetObject("pictureBox2.InitialImage");
             pictureBox2.Location = new System.Drawing.Point(867, 627);
@@ -96,7 +95,6 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pictureBox1.Image = Properties.Resources.oriented_corner;
             pictureBox1.InitialImage = (System.Drawing.Image)resources.GetObject("pictureBox1.InitialImage");
             pictureBox1.Location = new System.Drawing.Point(342, 627);

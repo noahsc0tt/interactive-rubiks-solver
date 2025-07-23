@@ -80,7 +80,6 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pictureBox1.Image = Properties.Resources.pll_bar;
             pictureBox1.InitialImage = (System.Drawing.Image)resources.GetObject("pictureBox1.InitialImage");
             pictureBox1.Location = new System.Drawing.Point(604, 590);

@@ -68,7 +68,6 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             pictureBox1.Image = Properties.Resources.white_edges;
             pictureBox1.InitialImage = (System.Drawing.Image)resources.GetObject("pictureBox1.InitialImage");
             pictureBox1.Location = new System.Drawing.Point(397, 645);
@@ -77,7 +76,7 @@
             pictureBox1.MinimumSize = new System.Drawing.Size(689, 178);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(689, 178);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
             // 

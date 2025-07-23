@@ -128,7 +128,7 @@
             whiteFace.Enabled = false;
             whiteFace.EnableHeadersVisualStyles = false;
             whiteFace.GridColor = System.Drawing.Color.Black;
-            whiteFace.Location = new System.Drawing.Point(515, 91);
+            whiteFace.Location = new System.Drawing.Point(515, 90);
             whiteFace.Name = "whiteFace";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -199,7 +199,7 @@
             orangeFace.Enabled = false;
             orangeFace.EnableHeadersVisualStyles = false;
             orangeFace.GridColor = System.Drawing.Color.Black;
-            orangeFace.Location = new System.Drawing.Point(279, 327);
+            orangeFace.Location = new System.Drawing.Point(278, 327);
             orangeFace.Name = "orangeFace";
             orangeFace.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             orangeFace.RowHeadersVisible = false;
@@ -231,7 +231,7 @@
             yellowFace.Enabled = false;
             yellowFace.EnableHeadersVisualStyles = false;
             yellowFace.GridColor = System.Drawing.Color.Black;
-            yellowFace.Location = new System.Drawing.Point(515, 563);
+            yellowFace.Location = new System.Drawing.Point(515, 564);
             yellowFace.Name = "yellowFace";
             yellowFace.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             yellowFace.RowHeadersVisible = false;
@@ -263,7 +263,7 @@
             redFace.Enabled = false;
             redFace.EnableHeadersVisualStyles = false;
             redFace.GridColor = System.Drawing.Color.Black;
-            redFace.Location = new System.Drawing.Point(751, 327);
+            redFace.Location = new System.Drawing.Point(752, 327);
             redFace.Name = "redFace";
             redFace.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             redFace.RowHeadersVisible = false;
@@ -295,7 +295,7 @@
             blueFace.Enabled = false;
             blueFace.EnableHeadersVisualStyles = false;
             blueFace.GridColor = System.Drawing.Color.Black;
-            blueFace.Location = new System.Drawing.Point(987, 327);
+            blueFace.Location = new System.Drawing.Point(989, 327);
             blueFace.Name = "blueFace";
             blueFace.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             blueFace.RowHeadersVisible = false;
