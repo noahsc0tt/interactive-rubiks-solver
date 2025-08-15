@@ -1,4 +1,4 @@
-# Rubik's Cube Solver
+# Educational Rubik's Cube Solver
 
 A Windows Forms application for learning, practicing, and timing Rubik's Cube solves.  
 
